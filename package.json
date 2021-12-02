@@ -4,7 +4,9 @@
   "description": "The gratz.io testbed",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ava": "export $(cat .env|tr -d [:blank:]|xargs) && ava -v -w --timeout=2m",
+    "init": "cp \"./.env.dist.${npm_config_run:-testnet}\" ./.env.dist && envdist",
+    "test": "ttab -w -d $PWD exec npm run ava \"${npm_config_run:-test/*.test.mjs}\""
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
   "devDependencies": {
     "ava": "^3.15.0",
     "envdist": "^1.0.14",
+    "esbuild": "^0.14.1",
     "ttab": "^0.7.2"
   }
 }

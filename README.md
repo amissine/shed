@@ -9,9 +9,31 @@ The project's goal is to establish a Distributed Autonomous Organization (DAO), 
 
 When the account is funded, its holder can do favors to other users for more GRAT, and/or send GRAT to other accounts in exchange of favors from their holders.
 
-## Test case 1 - initial setup
+## Setup
 
-Create account for the asset issuer (maintainer). Fund it with the initial amount of GRAT.
+Run
+
+```bash
+npm i && npm run init [ --run=<stellar_network> ]
+```
+
+and add public and secret keys of maintainer's account when prompted. From now on, the maintainer is also the asset issuer.
+
+The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*.
+
+## Test case 1 - fund maintainer
+
+Fund maintainer (the asset issuer)  with the initial amount of GRAT. To do so, run
+
+```bash
+npm test --run=test/fund-maintainer.test.mjs
+```
+
+To locate and fix bugs, run
+
+```bash
+npx esbuild --outfile=dist/index.mjs --format=esm test/fund-maintainer.test.mjs
+```
 
 ## Test case 2 - add user
 
