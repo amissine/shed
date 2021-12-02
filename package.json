@@ -19,5 +19,14 @@
   "homepage": "https://github.com/amissine/gratzio#readme",
   "workspaces": [
     "join"
-  ]
+  ],
+  "dependencies": {
+    "bignumber.js": "^9.0.1",
+    "stellar-sdk": "^9.1.0"
+  },
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "envdist": "^1.0.14",
+    "ttab": "^0.7.2"
+  }
 }
