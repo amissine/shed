@@ -1,6 +1,6 @@
 {
   "name": "gratzio",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "The gratz.io testbed",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/amissine/gratzio#readme",
   "workspaces": [
-    "join"
+    "join",
+    "v2"
   ],
   "dependencies": {
     "bignumber.js": "^9.0.1",

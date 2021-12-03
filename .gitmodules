@@ -1,3 +1,6 @@
 [submodule "join"]
 	path = join
 	url = git+https://github.com/amissine/gratzio-join.git
+[submodule "v2"]
+	path = v2
+	url = ssh://ubuntu@ubuntu:/home/ubuntu/process/gratzio-v2

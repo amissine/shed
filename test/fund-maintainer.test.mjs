@@ -1,6 +1,9 @@
 import test from 'ava' // {{{1
+/*
+ * https://developers.stellar.org/docs/issuing-assets/
+ */
 
-// First, check the env{{{1
+// First, check the env {{{1
 console.log(`- STELLAR_NETWORK is ${process.env.STELLAR_NETWORK}
 - HORIZON_URL is ${process.env.HORIZON_URL}
 - MAINTAINER is ${process.env.MAINTAINER}

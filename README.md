@@ -17,7 +17,7 @@ Run
 npm i && npm run init [ --run=<stellar_network> ]
 ```
 
-and add public and secret keys of maintainer's account when prompted. From now on, the maintainer is also the asset issuer.
+and add public and secret keys for asset issuer and maintainer when prompted. 
 
 The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*. Here's more on merging (TODO elaborate):
 
@@ -25,7 +25,7 @@ The default value for *\<stellar_network\>* above is *testnet*. Alternatively, u
 
 ## Test case 1 - fund maintainer
 
-Fund maintainer (the asset issuer)  with the initial amount of GRAT. To do so, run
+Fund maintainer with 1 billion GRAT. To do so, run
 
 ```bash
 npm test --run=test/fund-maintainer.test.mjs
