@@ -19,7 +19,9 @@ npm i && npm run init [ --run=<stellar_network> ]
 
 and add public and secret keys of maintainer's account when prompted. From now on, the maintainer is also the asset issuer.
 
-The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*.
+The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*. Here's more on merging (TODO elaborate):
+
+![On merging with git](./gitmerge.png "From old files")
 
 ## Test case 1 - fund maintainer
 
