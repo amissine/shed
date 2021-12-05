@@ -25,7 +25,7 @@ The default value for *\<stellar_network\>* above is *testnet*. Alternatively, u
 
 ## Test case 0 - get maintainer account by public/secret key
 
-![Test case 0 results](./account.test.png "Shoot 2")
+![Test case 0 results](./account.test.png "Shoot 3")
 
 ## Test case 1 - fund maintainer
 
