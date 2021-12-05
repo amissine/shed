@@ -2086,7 +2086,7 @@ setlocal wrap
 setlocal wrapmargin=0
 61
 normal! zo
-let s:l = 61 - ((60 * winheight(0) + 23) / 46)
+let s:l = 61 - ((0 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -2211,16 +2211,14 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-1
-normal! zo
 4
 normal! zo
-let s:l = 9 - ((8 * winheight(0) + 7) / 15)
+let s:l = 12 - ((11 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
-normal! 08|
+12
+normal! 019|
 wincmd w
 argglobal
 if bufexists("v2/lib/account.mjs") | buffer v2/lib/account.mjs | else | edit v2/lib/account.mjs | endif
@@ -2349,9 +2347,9 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 69
-normal! 052|
+normal! $
 wincmd w
-3wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe '2resize ' . ((&lines * 15 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)

@@ -6,8 +6,10 @@ test('get maintainer account by public/secret key', async t => { // {{{1
   const m2 = await new Account(process.env.MAINTAINER_SECRET)
   const xdr = m2.put('key1', 'value1').toXDR()
   console.log(xdr)
-  await m2.submit(xdr)
-  await m2.put('key2', 'value2').submit()
+  let txId = await m2.submit(xdr)
+  console.log(txId)
+  txId = await m2.put('key2', 'value2').submit()
+  console.log(txId)
 
   t.assert(m1.account.id == process.env.MAINTAINER
     && m2.account.id == process.env.MAINTAINER, 
