@@ -23,9 +23,9 @@ The default value for *\<stellar_network\>* above is *testnet*. Alternatively, u
 
 ![On merging with git](./gitmerge.png "From old files")
 
-## Test case 0 - get maintainer account by public key
+## Test case 0 - get maintainer account by public/secret key
 
-![Test case 0 results](./account.test.png "Shoot 1")
+![Test case 0 results](./account.test.png "Shoot 2")
 
 ## Test case 1 - fund maintainer
 

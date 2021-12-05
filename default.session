@@ -578,7 +578,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 10 - ((9 * winheight(0) + 5) / 11)
+let s:l = 10 - ((0 * winheight(0) + 5) / 11)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -710,7 +710,6 @@ normal! zt
 29
 normal! 0
 wincmd w
-5wincmd w
 exe '1resize ' . ((&lines * 15 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 73 + 89) / 179)
 exe '2resize ' . ((&lines * 21 + 24) / 49)
@@ -1964,9 +1963,9 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 23 + 24) / 49)
+exe '2resize ' . ((&lines * 15 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 22 + 24) / 49)
+exe '3resize ' . ((&lines * 30 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
 argglobal
 balt v2/lib/account.mjs
@@ -2085,13 +2084,13 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-36
+61
 normal! zo
-let s:l = 48 - ((0 * winheight(0) + 23) / 46)
+let s:l = 61 - ((60 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-48
+61
 normal! 0
 wincmd w
 argglobal
@@ -2216,12 +2215,12 @@ setlocal wrapmargin=0
 normal! zo
 4
 normal! zo
-let s:l = 10 - ((9 * winheight(0) + 11) / 23)
+let s:l = 9 - ((8 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-10
-normal! 049|
+9
+normal! 08|
 wincmd w
 argglobal
 if bufexists("v2/lib/account.mjs") | buffer v2/lib/account.mjs | else | edit v2/lib/account.mjs | endif
@@ -2341,26 +2340,27 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-3
+26
 normal! zo
-4
+63
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 11) / 22)
+let s:l = 69 - ((68 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+69
+normal! 052|
 wincmd w
+3wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 23 + 24) / 49)
+exe '2resize ' . ((&lines * 15 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 22 + 24) / 49)
+exe '3resize ' . ((&lines * 30 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-tabnext 1
+tabnext 4
 set stal=1
 badd +1 join/package.json
-badd +4 README.md
+badd +1 README.md
 badd +1 .env
 badd +1 ../txf-agent/turrets/lib/stellar-smart-contract-utils.mjs
 badd +1 package.json
@@ -2374,7 +2374,7 @@ badd +1 ../txf-agent/turrets/utils.sh
 badd +1 v2/lib/set-home-domain.mjs
 badd +1 v2/lib/issue-asset.mjs
 badd +1 v2/lib/account.mjs
-badd +0 test/account.test.mjs
+badd +1 test/account.test.mjs
 badd +10 lib/set-home-domain.mjs
 badd +1 ../txf-agent/.env.dist.template
 badd +1 ../txf-agent/turrets/package.json
@@ -2382,6 +2382,7 @@ badd +1 ../txf-agent/init.sh
 badd +1 ../txf-agent/package.json
 badd +68 ../txf-agent/turrets/create-turrets.sh
 badd +1 ../txf-agent/.gitignore
+badd +349 test.log
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
