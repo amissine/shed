@@ -41,6 +41,9 @@ To locate and fix bugs, run
 npx esbuild --outfile=dist/index.mjs --format=esm test/fund-maintainer.test.mjs
 ```
 
+![Test case 1 results](./fund-maintainer-1.test.png "Shoot 1")
+![Test case 1 results](./fund-maintainer-2.test.png "Shoot 1")
+
 ## Test case 2 - add user
 
 Create account for the user. Setup the trustline with asset issuer. Fund user with GRAT.
