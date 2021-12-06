@@ -2081,12 +2081,12 @@ setlocal wrapmargin=0
 normal! zo
 4
 normal! zo
-let s:l = 14 - ((13 * winheight(0) + 23) / 46)
+let s:l = 17 - ((16 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
-normal! 023|
+17
+normal! 045|
 wincmd w
 argglobal
 if bufexists("v2/lib/account.mjs") | buffer v2/lib/account.mjs | else | edit v2/lib/account.mjs | endif
@@ -2208,16 +2208,19 @@ setlocal wrap
 setlocal wrapmargin=0
 26
 normal! zo
-57
+27
 normal! zo
-let s:l = 62 - ((61 * winheight(0) + 23) / 46)
+27
+normal! zc
+65
+normal! zo
+let s:l = 71 - ((70 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-62
-normal! 05|
+71
+normal! 01|
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 tabnext 4
@@ -2225,7 +2228,7 @@ set stal=1
 badd +1 join/package.json
 badd +1 README.md
 badd +1 .env
-badd +1 ../txf-agent/turrets/lib/stellar-smart-contract-utils.mjs
+badd +12 test/account.test.mjs
 badd +1 package.json
 badd +1 .gitignore
 badd +1 v2/package.json
@@ -2237,7 +2240,7 @@ badd +1 ../txf-agent/turrets/utils.sh
 badd +1 v2/lib/set-home-domain.mjs
 badd +1 v2/lib/issue-asset.mjs
 badd +1 v2/lib/account.mjs
-badd +12 test/account.test.mjs
+badd +1 ../txf-agent/turrets/lib/stellar-smart-contract-utils.mjs
 badd +10 lib/set-home-domain.mjs
 badd +1 ../txf-agent/.env.dist.template
 badd +1 ../txf-agent/turrets/package.json
