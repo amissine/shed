@@ -46,6 +46,17 @@ npx esbuild --outfile=dist/index.mjs --format=esm test/fund-maintainer.test.mjs
 
 ## Test case 2 - add user
 
-Create account for the user. Setup the trustline with asset issuer. Fund user with GRAT.
+Have maintainer:
+
+- create an account for the user PK;
+- setup and authorize the trustline with GRAT asset issuer;
+- fund user with 1000 GRAT;
+- fund user with 0 XLM.
+
+To do so, run
+
+```bash
+npm test --run=test/add-user.test.mjs
+```
 
 ## Test case 3 - exchange favors
