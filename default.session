@@ -703,13 +703,14 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 59 - ((27 * winheight(0) + 17) / 34)
+let s:l = 62 - ((28 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-59
-normal! 022|
+62
+normal! 013|
 wincmd w
+5wincmd w
 exe '1resize ' . ((&lines * 15 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 73 + 89) / 179)
 exe '2resize ' . ((&lines * 21 + 24) / 49)
@@ -1812,12 +1813,12 @@ setlocal wrapmargin=0
 normal! zo
 11
 normal! zo
-let s:l = 11 - ((0 * winheight(0) + 11) / 22)
+let s:l = 34 - ((20 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-11
-normal! 041|
+34
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/lib/account.mjs") | buffer v2/lib/account.mjs | else | edit v2/lib/account.mjs | endif
@@ -1947,14 +1948,16 @@ normal! zo
 normal! zc
 57
 normal! zo
-77
+83
 normal! zo
-let s:l = 76 - ((19 * winheight(0) + 11) / 23)
+107
+normal! zo
+let s:l = 111 - ((23 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-76
-normal! 0
+111
+normal! 05|
 wincmd w
 argglobal
 if bufexists("test/add-user.mjs") | buffer test/add-user.mjs | else | edit test/add-user.mjs | endif
@@ -2078,36 +2081,37 @@ setlocal wrapmargin=0
 normal! zo
 5
 normal! zo
-let s:l = 6 - ((5 * winheight(0) + 23) / 46)
+let s:l = 17 - ((16 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-6
-normal! 043|
+17
+normal! 02|
 wincmd w
-2wincmd w
 exe '1resize ' . ((&lines * 22 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe '2resize ' . ((&lines * 23 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-tabnext 4
+tabnext 1
 set stal=1
 badd +1 join/package.json
 badd +1 README.md
 badd +1 .env
-badd +0 test/account.test.mjs
 badd +1 package.json
 badd +1 .gitignore
 badd +1 v2/package.json
 badd +19 join/.well-known/stellar.toml
 badd +1 .env.dist.testnet
-badd +8 v2/src/fund-maintainer.mjs
-badd +0 test/fund-maintainer.test.mjs
 badd +1 ../txf-agent/turrets/utils.sh
+badd +1 test/fund-maintainer.test.mjs
 badd +31 v2/lib/set-home-domain.mjs
+badd +8 v2/src/fund-maintainer.mjs
+badd +25 test/account.mjs
+badd +0 v2/lib/account.mjs
+badd +1 test/add-user.mjs
+badd +1 test/account.test.mjs
 badd +13 v2/lib/issue-asset.mjs
-badd +1 v2/lib/account.mjs
 badd +1 ../txf-agent/turrets/lib/stellar-smart-contract-utils.mjs
 badd +10 lib/set-home-domain.mjs
 badd +1 ../txf-agent/.env.dist.template
@@ -2117,8 +2121,7 @@ badd +1 ../txf-agent/package.json
 badd +68 ../txf-agent/turrets/create-turrets.sh
 badd +1 ../txf-agent/.gitignore
 badd +349 test.log
-badd +0 test/add-user.mjs
-badd +25 test/account.mjs
+badd +35 examples/boilerplate.mjs
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -2130,6 +2133,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
