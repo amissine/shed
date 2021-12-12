@@ -1,7 +1,7 @@
 # 👷 gratzio
 The gratz.io testbed
 
-The project's goal is to establish a Distributed Autonomous Organization (DAO), whose members (users) exchange favors with each other. The DAO is [Stellar](https://stellar.org/)-based. To join it, the **user** clones and installs the [amissine/gratzio-join](https://github.com/amissine/gratzio-join) public repository. This results in a request for the **maintaner** to:
+The project's goal is to establish a Distributed Autonomous Organization (DAO), whose members (users) exchange favors with each other. The DAO is [Stellar](https://stellar.org/)-based. To join it, the **user** clones and installs the [amissine/gratzio-join](https://github.com/amissine/gratzio-join) public repository. This results in a request for the **agent** to:
 
 - create a Stellar account for the user;
 - create a trustline from this account to the project's **asset issuer**;
@@ -17,36 +17,36 @@ Run
 npm i && npm run init [ --run=<stellar_network> ]
 ```
 
-and add public and secret keys for asset issuer and maintainer when prompted. 
+and add public and secret keys for asset issuer and agent when prompted. 
 
 The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*. Here's more on merging (TODO elaborate):
 
 ![On merging with git](./gitmerge.png "From old files")
 
-## Test case 0 - get maintainer account by public/secret key
+## Test case 0 - get agent account by public/secret key
 
 ![Test case 0 results](./account.test.png "Shoot 3")
 
-## Test case 1 - fund maintainer
+## Test case 1 - fund agent
 
-Fund maintainer with 1 billion GRAT. To do so, run
+Fund agent with 1 billion GRAT. To do so, run
 
 ```bash
-npm test --run=test/fund-maintainer.test.mjs
+npm test --run=test/fund-agent.mjs
 ```
 
 To locate and fix bugs, run
 
 ```bash
-npx esbuild --outfile=dist/index.mjs --format=esm test/fund-maintainer.test.mjs
+npx esbuild --outfile=dist/index.mjs --format=esm test/fund-agent.mjs
 ```
 
-![Test case 1 results](./fund-maintainer-1.test.png "Shoot 1")
-![Test case 1 results](./fund-maintainer-2.test.png "Shoot 1")
+![Test case 1 results](./fund-agent-1.test.png "Shoot 1")
+![Test case 1 results](./fund-agent-2.test.png "Shoot 1")
 
 ## Test case 2 - add user
 
-Have maintainer:
+Have agent:
 
 - create an account for the user PK;
 - fund user with 0 XLM;

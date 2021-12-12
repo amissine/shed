@@ -5,7 +5,6 @@ import { Keypair } from 'stellar-sdk'
 test('add user', async t => { // {{{1
   const userKeys = Keypair.random()
   const userPK = userKeys.publicKey()
-  const issuerPK = process.env.ASSET_ISSUER
 
   console.log(`- creating ${userPK}...`)
   let agent = await new Poke(process.env.MAINTAINER_SECRET)
