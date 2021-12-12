@@ -62,3 +62,11 @@ npm test --run=test/add-user.mjs
 ![Test case 2 results](./add-user.test.png "Shoot 1")
 
 ## Test case 3 - exchange favors
+
+Exchange favors between the users.
+
+```bash
+npm start
+```
+
+![Test case 3 results](./exchange-favors.test.png "Shoot 1")
