@@ -1,11 +1,11 @@
 import test from 'ava' // {{{1
-import { fundMaintainer } from '../v2/src/fund-maintainer.mjs'
+import { fundAgent } from '../v2/src/fund-agent.mjs'
 /*
  * https://developers.stellar.org/docs/issuing-assets/
  */
 
-test('fund maintainer', async t => { // {{{1
-  const r = await fundMaintainer()
+test('fund agent', async t => { // {{{1
+  const r = await fundAgent()
 
   t.assert(r == 'OK', `- UNEXPECTED: '${r}'`)
 })
