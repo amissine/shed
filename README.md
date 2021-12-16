@@ -79,3 +79,4 @@ For all users, set their locations. To do so, run
 npm test --run=test/set-locations.mjs
 ```
 
+![Test case 3.1 results](./set-9-locations.test.png "Shoot 1")
