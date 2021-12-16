@@ -1,10 +1,13 @@
 import test from 'ava' // {{{1
-import { Poke, Txdr } from '../v2/lib/account.mjs'
+import { Poke, Txdr, encrypt, decrypt } from '../v2/lib/account.mjs'
 import { Asset, Keypair, } from 'stellar-sdk'
 
 test('add user', async t => { // {{{1
   const userKeys = Keypair.random()
   const userPK = userKeys.publicKey()
+  const userSECRET = userKeys.secret()
+  const encrypted = encrypt(userSECRET)
+  const td1 = encrypted.slice(0, 64), td2 = encrypted.slice(64)
 
   console.log(`- creating ${userPK}...`)
   let agent = await new Poke(process.env.AGENT_SECRET)
@@ -12,6 +15,7 @@ test('add user', async t => { // {{{1
   .begin(userPK)
   .createAccount(userPK, '0')
   .changeTrust(Poke.asset, '1000000', userPK)
+  .put('td1', td1, userPK).put('td2', td2, userPK)
   .end(userPK).toXDR()
   console.log('  - XDR signed by agent')
 
