@@ -83,17 +83,17 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 15 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 90 + 90) / 180)
+exe 'vert 1resize ' . ((&columns * 89 + 90) / 180)
 exe '2resize ' . ((&lines * 21 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 90 + 90) / 180)
+exe 'vert 2resize ' . ((&columns * 89 + 90) / 180)
 exe '3resize ' . ((&lines * 8 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 50 + 90) / 180)
 exe '4resize ' . ((&lines * 8 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 39 + 90) / 180)
+exe 'vert 4resize ' . ((&columns * 38 + 90) / 180)
 exe '5resize ' . ((&lines * 11 + 24) / 49)
-exe 'vert 5resize ' . ((&columns * 89 + 90) / 180)
+exe 'vert 5resize ' . ((&columns * 90 + 90) / 180)
 exe '6resize ' . ((&lines * 34 + 24) / 49)
-exe 'vert 6resize ' . ((&columns * 89 + 90) / 180)
+exe 'vert 6resize ' . ((&columns * 90 + 90) / 180)
 argglobal
 balt package.json
 setlocal noautoindent
@@ -336,12 +336,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 43 - ((20 * winheight(0) + 10) / 21)
+let s:l = 40 - ((17 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-43
-normal! 0
+40
+normal! 05|
 wincmd w
 argglobal
 if bufexists(".gitignore") | buffer .gitignore | else | edit .gitignore | endif
@@ -711,12 +711,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 6 - ((0 * winheight(0) + 5) / 11)
+let s:l = 8 - ((7 * winheight(0) + 5) / 11)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-6
-normal! 0112|
+8
+normal! 0120|
 wincmd w
 argglobal
 if bufexists("README.md") | buffer README.md | else | edit README.md | endif
@@ -836,41 +836,39 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 82 - ((32 * winheight(0) + 17) / 34)
+let s:l = 81 - ((31 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-82
-normal! 042|
+81
+normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 15 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 90 + 90) / 180)
+exe 'vert 1resize ' . ((&columns * 89 + 90) / 180)
 exe '2resize ' . ((&lines * 21 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 90 + 90) / 180)
+exe 'vert 2resize ' . ((&columns * 89 + 90) / 180)
 exe '3resize ' . ((&lines * 8 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 50 + 90) / 180)
 exe '4resize ' . ((&lines * 8 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 39 + 90) / 180)
+exe 'vert 4resize ' . ((&columns * 38 + 90) / 180)
 exe '5resize ' . ((&lines * 11 + 24) / 49)
-exe 'vert 5resize ' . ((&columns * 89 + 90) / 180)
+exe 'vert 5resize ' . ((&columns * 90 + 90) / 180)
 exe '6resize ' . ((&lines * 34 + 24) / 49)
-exe 'vert 6resize ' . ((&columns * 89 + 90) / 180)
+exe 'vert 6resize ' . ((&columns * 90 + 90) / 180)
 tabnext
 edit .env
 set splitbelow splitright
 wincmd _ | wincmd |
 split
-wincmd _ | wincmd |
-split
-wincmd _ | wincmd |
-split
-3wincmd k
+1wincmd k
 wincmd _ | wincmd |
 vsplit
 1wincmd h
 wincmd w
 wincmd w
-wincmd w
+wincmd _ | wincmd |
+vsplit
+1wincmd h
 wincmd w
 set nosplitbelow
 set nosplitright
@@ -879,13 +877,14 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 20 + 24) / 49)
+exe '1resize ' . ((&lines * 22 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 88 + 90) / 180)
-exe '2resize ' . ((&lines * 20 + 24) / 49)
+exe '2resize ' . ((&lines * 22 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 91 + 90) / 180)
-exe '3resize ' . ((&lines * 2 + 24) / 49)
-exe '4resize ' . ((&lines * 7 + 24) / 49)
-exe '5resize ' . ((&lines * 14 + 24) / 49)
+exe '3resize ' . ((&lines * 23 + 24) / 49)
+exe 'vert 3resize ' . ((&columns * 89 + 90) / 180)
+exe '4resize ' . ((&lines * 23 + 24) / 49)
+exe 'vert 4resize ' . ((&columns * 90 + 90) / 180)
 argglobal
 balt join/.well-known/stellar.toml
 setlocal noautoindent
@@ -1003,7 +1002,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 10) / 20)
+let s:l = 1 - ((0 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1128,7 +1127,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 3 - ((2 * winheight(0) + 10) / 20)
+let s:l = 3 - ((0 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1136,133 +1135,8 @@ normal! zt
 normal! $
 wincmd w
 argglobal
-if bufexists("v2/.env.dist.testnet") | buffer v2/.env.dist.testnet | else | edit v2/.env.dist.testnet | endif
-balt .env.dist.testnet
-setlocal noautoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != ''
-setlocal filetype=
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-set foldmethod=marker
-setlocal foldmethod=marker
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != ''
-setlocal syntax=
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 1) / 2)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 085|
-wincmd w
-argglobal
 if bufexists(".env.dist.testnet") | buffer .env.dist.testnet | else | edit .env.dist.testnet | endif
-balt v2/.env.dist.testnet
+balt v2/dist.sh
 setlocal noautoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -1378,7 +1252,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 6 - ((5 * winheight(0) + 3) / 7)
+let s:l = 6 - ((5 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1386,8 +1260,8 @@ normal! zt
 normal! 0
 wincmd w
 argglobal
-if bufexists("../txf-agent/turrets/utils.sh") | buffer ../txf-agent/turrets/utils.sh | else | edit ../txf-agent/turrets/utils.sh | endif
-balt test/fund-maintainer.test.mjs
+if bufexists("v2/dist.sh") | buffer v2/dist.sh | else | edit v2/dist.sh | endif
+balt .env.dist.testnet
 setlocal noautoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -1503,24 +1377,21 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-2
-normal! zo
-24
-normal! zo
-let s:l = 2 - ((0 * winheight(0) + 7) / 14)
+let s:l = 4 - ((3 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
-normal! 0
+4
+normal! 016|
 wincmd w
-exe '1resize ' . ((&lines * 20 + 24) / 49)
+exe '1resize ' . ((&lines * 22 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 88 + 90) / 180)
-exe '2resize ' . ((&lines * 20 + 24) / 49)
+exe '2resize ' . ((&lines * 22 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 91 + 90) / 180)
-exe '3resize ' . ((&lines * 2 + 24) / 49)
-exe '4resize ' . ((&lines * 7 + 24) / 49)
-exe '5resize ' . ((&lines * 14 + 24) / 49)
+exe '3resize ' . ((&lines * 23 + 24) / 49)
+exe 'vert 3resize ' . ((&columns * 89 + 90) / 180)
+exe '4resize ' . ((&lines * 23 + 24) / 49)
+exe 'vert 4resize ' . ((&columns * 90 + 90) / 180)
 tabnext
 edit test/account.mjs
 set splitbelow splitright
@@ -2077,6 +1948,8 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
+1
+normal! zo
 39
 normal! zo
 88
@@ -2087,11 +1960,11 @@ normal! zo
 normal! zo
 148
 normal! zo
-let s:l = 149 - ((67 * winheight(0) + 23) / 46)
+let s:l = 3 - ((2 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-149
+3
 normal! 0
 wincmd w
 argglobal
@@ -2212,20 +2085,16 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-6
+12
 normal! zo
-13
-normal! zo
-6
-normal! zc
 24
 normal! zo
-let s:l = 39 - ((38 * winheight(0) + 21) / 42)
+let s:l = 1 - ((0 * winheight(0) + 21) / 42)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-39
-normal! 05|
+1
+normal! 0
 wincmd w
 argglobal
 if bufexists("test/add-user.mjs") | buffer test/add-user.mjs | else | edit test/add-user.mjs | endif
@@ -2352,14 +2221,13 @@ normal! zt
 1
 normal! 0
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 90) / 180)
 exe '2resize ' . ((&lines * 42 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 90 + 90) / 180)
 exe '3resize ' . ((&lines * 3 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 90 + 90) / 180)
 tabnext
-edit v2/public/index.mjs
+edit v2/bin/www.mjs
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -2372,10 +2240,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 89 + 90) / 180)
-exe 'vert 2resize ' . ((&columns * 90 + 90) / 180)
+exe 'vert 1resize ' . ((&columns * 90 + 90) / 180)
+exe 'vert 2resize ' . ((&columns * 89 + 90) / 180)
 argglobal
-balt v2/public/style.css
+balt v2/src/index.mjs
 setlocal autoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -2493,170 +2361,15 @@ setlocal wrap
 setlocal wrapmargin=0
 3
 normal! zo
-8
-normal! zo
-15
-normal! zo
-24
-normal! zo
-let s:l = 13 - ((12 * winheight(0) + 23) / 46)
+let s:l = 1 - ((0 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
-normal! 018|
-wincmd w
-argglobal
-if bufexists("v2/public/style.css") | buffer v2/public/style.css | else | edit v2/public/style.css | endif
-balt v2/public/index.mjs
-setlocal noautoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'css'
-setlocal filetype=css
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-set foldmethod=marker
-setlocal foldmethod=marker
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=
-setlocal includeexpr=
-setlocal indentexpr=GetCSSIndent()
-setlocal indentkeys=0{,0},!^F,o,O
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=csscomplete#CompleteCSS
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'css'
-setlocal syntax=css
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-let s:l = 2 - ((0 * winheight(0) + 23) / 46)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-2
+1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 89 + 90) / 180)
-exe 'vert 2resize ' . ((&columns * 90 + 90) / 180)
-tabnext
-edit v2/src/index.mjs
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 90) / 180)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 90) / 180)
-exe 'vert 3resize ' . ((&columns * 90 + 90) / 180)
 argglobal
+if bufexists("v2/src/index.mjs") | buffer v2/src/index.mjs | else | edit v2/src/index.mjs | endif
 balt v2/bin/www.mjs
 setlocal autoindent
 setlocal backupcopy=
@@ -2775,143 +2488,46 @@ setlocal wrap
 setlocal wrapmargin=0
 1
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 11) / 23)
+let s:l = 1 - ((0 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
 wincmd w
-argglobal
-if bufexists("v2/bin/www.mjs") | buffer v2/bin/www.mjs | else | edit v2/bin/www.mjs | endif
-balt v2/src/index.mjs
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=//%s
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-set foldmethod=marker
-setlocal foldmethod=marker
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetJavascriptIndent()
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=.,,
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-54
-normal! zo
-let s:l = 57 - ((56 * winheight(0) + 11) / 22)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-57
-normal! 0
+exe 'vert 1resize ' . ((&columns * 90 + 90) / 180)
+exe 'vert 2resize ' . ((&columns * 89 + 90) / 180)
+tabnext
+edit v2/www/index.html
+set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
 wincmd w
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 15 + 24) / 49)
+exe '2resize ' . ((&lines * 30 + 24) / 49)
+exe 'vert 2resize ' . ((&columns * 90 + 90) / 180)
+exe '3resize ' . ((&lines * 15 + 24) / 49)
+exe 'vert 3resize ' . ((&columns * 89 + 90) / 180)
+exe '4resize ' . ((&lines * 14 + 24) / 49)
+exe 'vert 4resize ' . ((&columns * 89 + 90) / 180)
 argglobal
-if bufexists("v2/public/index.html") | buffer v2/public/index.html | else | edit v2/public/index.html | endif
-balt v2/public/index.mjs
+balt v2/dev/index.html
 setlocal noautoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -3027,44 +2643,429 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 4 - ((1 * winheight(0) + 23) / 46)
+3
+normal! zo
+7
+normal! zo
+16
+normal! zo
+let s:l = 20 - ((10 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
-normal! 018|
+20
+normal! 07|
 wincmd w
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 90) / 180)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 90) / 180)
-exe 'vert 3resize ' . ((&columns * 90 + 90) / 180)
-tabnext 4
+argglobal
+if bufexists("v2/www/index.mjs") | buffer v2/www/index.mjs | else | edit v2/www/index.mjs | endif
+balt v2/dev/index.mjs
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'javascript'
+setlocal filetype=javascript
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetJavascriptIndent()
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=javascriptcomplete#CompleteJS
+setlocal path=.,,
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'javascript'
+setlocal syntax=javascript
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+let s:l = 6 - ((5 * winheight(0) + 15) / 30)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+6
+normal! 01|
+wincmd w
+argglobal
+if bufexists("v2/www/model/users.mjs") | buffer v2/www/model/users.mjs | else | edit v2/www/model/users.mjs | endif
+balt v2/dev/model/users.mjs
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'javascript'
+setlocal filetype=javascript
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetJavascriptIndent()
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=javascriptcomplete#CompleteJS
+setlocal path=.,,
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'javascript'
+setlocal syntax=javascript
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+1
+normal! zo
+let s:l = 2 - ((1 * winheight(0) + 7) / 15)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+2
+normal! 03|
+wincmd w
+argglobal
+if bufexists("v2/www/style.css") | buffer v2/www/style.css | else | edit v2/www/style.css | endif
+balt v2/dev/style.css
+setlocal noautoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'css'
+setlocal filetype=css
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=
+setlocal includeexpr=
+setlocal indentexpr=GetCSSIndent()
+setlocal indentkeys=0{,0},!^F,o,O
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=csscomplete#CompleteCSS
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'css'
+setlocal syntax=css
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+let s:l = 1 - ((0 * winheight(0) + 7) / 14)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+exe '1resize ' . ((&lines * 15 + 24) / 49)
+exe '2resize ' . ((&lines * 30 + 24) / 49)
+exe 'vert 2resize ' . ((&columns * 90 + 90) / 180)
+exe '3resize ' . ((&lines * 15 + 24) / 49)
+exe 'vert 3resize ' . ((&columns * 89 + 90) / 180)
+exe '4resize ' . ((&lines * 14 + 24) / 49)
+exe 'vert 4resize ' . ((&columns * 89 + 90) / 180)
+tabnext 6
 set stal=1
 badd +1 join/package.json
 badd +1 README.md
 badd +1 .env
 badd +1 test/account.mjs
 badd +1 v2/lib/account.mjs
+badd +1 v2/public/index.mjs
 badd +1 v2/src/index.mjs
 badd +10 package.json
 badd +1 .gitignore
 badd +1 v2/.gitignore
 badd +1 v2/package.json
 badd +1 join/.well-known/stellar.toml
-badd +1 v2/.env.dist.testnet
+badd +0 v2/.env.dist.testnet
 badd +1 .env.dist.testnet
-badd +1 ../txf-agent/turrets/utils.sh
-badd +2 test/fund-maintainer.test.mjs
+badd +0 ../txf-agent/turrets/utils.sh
+badd +0 test/fund-maintainer.test.mjs
 badd +1 test/fund-agent.mjs
 badd +1 v2/src/fund-agent.mjs
 badd +26 v2/src/fund-maintainer.mjs
 badd +1 test/set-locations.mjs
 badd +1 test/add-user.mjs
-badd +1 v2/bin/www.mjs
-badd +0 v2/public/index.mjs
-badd +1 v2/public/index.html
-badd +1 v2/public/style.css
+badd +2 v2/public/style.css
+badd +12 v2/bin/www.mjs
+badd +4 v2/public/index.html
 badd +1 v2/lib/set-home-domain.mjs
 badd +54 ../txf-agent/turrets/src/stellar-sdk-utils.mjs
 badd +1 test/account.test.mjs
@@ -3079,6 +3080,15 @@ badd +1 ../txf-agent/turrets/create-turrets.sh
 badd +1 ../txf-agent/.gitignore
 badd +349 test.log
 badd +35 examples/boilerplate.mjs
+badd +1 v2/dev/index.mjs
+badd +1 v2/dev/style.css
+badd +4 v2/dev/index.html
+badd +5 v2/dev/model/users.mjs
+badd +1 v2/dist.sh
+badd +0 v2/www/model/users.mjs
+badd +0 v2/www/style.css
+badd +0 v2/www/index.mjs
+badd +0 v2/www/index.html
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -3090,7 +3100,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
