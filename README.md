@@ -66,7 +66,7 @@ npm test --run=test/add-user.mjs
 Exchange favors between the users.
 
 ```bash
-npm start
+npm run dev 
 ```
 
 ![Test case 3 results](./exchange-favors.test.png "Shoot 1")
@@ -80,3 +80,8 @@ npm test --run=test/set-locations.mjs
 ```
 
 ![Test case 3.1 results](./set-9-locations.test.png "Shoot 1")
+
+Then map users:
+
+![Test case 3.1 results](./get-9-locations-1.test.png "Shoot 1")
+![Test case 3.1 results](./get-9-locations-2.test.png "Shoot 1")
