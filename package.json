@@ -7,6 +7,7 @@
     "ava": "export $(cat .env|tr -d [:blank:]|xargs) && ava -v -w --timeout=2m",
     "init": "cp \"./.env.dist.${npm_config_run:-testnet}\" ./.env.dist && envdist",
     "dev": "cd v2 && npm run dev && ttab -w -d $PWD exec npm run www",
+    "qa": "cd v2 && npm run qa",
     "test": "ttab -w -d $PWD exec npm run ava \"${npm_config_run:-test/*.test.mjs}\""
   },
   "repository": {
