@@ -968,13 +968,14 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 88 - ((33 * winheight(0) + 17) / 34)
+let s:l = 2 - ((1 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-88
-normal! 030|
+2
+normal! 055|
 wincmd w
+7wincmd w
 exe '1resize ' . ((&lines * 3 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe '2resize ' . ((&lines * 10 + 24) / 49)
@@ -2794,14 +2795,14 @@ setlocal wrap
 setlocal wrapmargin=0
 3
 normal! zo
-12
+13
 normal! zo
-let s:l = 7 - ((6 * winheight(0) + 7) / 15)
+let s:l = 15 - ((2 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
-normal! 04|
+15
+normal! 039|
 wincmd w
 argglobal
 if bufexists("v2/www/style.css") | buffer v2/www/style.css | else | edit v2/www/style.css | endif
@@ -2921,11 +2922,29 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 7 - ((6 * winheight(0) + 7) / 15)
+15
+normal! zo
+32
+normal! zo
+31
+normal! zo
+49
+normal! zo
+48
+normal! zo
+58
+normal! zo
+57
+normal! zo
+75
+normal! zo
+74
+normal! zo
+let s:l = 82 - ((12 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
+82
 normal! 0
 wincmd w
 argglobal
@@ -3457,7 +3476,7 @@ exe 'vert 5resize ' . ((&columns * 88 + 89) / 179)
 exe '6resize ' . ((&lines * 14 + 24) / 49)
 exe 'vert 6resize ' . ((&columns * 88 + 89) / 179)
 tabnext
-edit v2/www/index.mjs
+edit v2/www/style.css
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -3473,8 +3492,8 @@ set winwidth=1
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 argglobal
-balt v2/view/add-user.mjs
-setlocal autoindent
+balt v2/www/view/add-user.mjs
+setlocal noautoindent
 setlocal backupcopy=
 setlocal nobinary
 setlocal nobreakindent
@@ -3487,8 +3506,8 @@ setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=//%s
+setlocal comments=s1:/*,mb:*,ex:*/
+setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal completefunc=
 setlocal nocopyindent
@@ -3497,14 +3516,14 @@ setlocal nocursorbind
 setlocal nocursorcolumn
 setlocal nocursorline
 setlocal cursorlineopt=both
-setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
+setlocal define=
 setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
+if &filetype != 'css'
+setlocal filetype=css
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -3525,10 +3544,10 @@ setlocal formatprg=
 setlocal grepprg=
 setlocal iminsert=0
 setlocal imsearch=-1
-setlocal include=
+setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=
 setlocal includeexpr=
-setlocal indentexpr=GetJavascriptIndent()
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
+setlocal indentexpr=GetCSSIndent()
+setlocal indentkeys=0{,0},!^F,o,O
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
@@ -3545,8 +3564,8 @@ setlocal nrformats=bin,octal,hex
 set number
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=.,,
+setlocal omnifunc=csscomplete#CompleteCSS
+setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -3567,11 +3586,11 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=
 setlocal statusline=
-setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
+setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
+if &syntax != 'css'
+setlocal syntax=css
 endif
 setlocal tabstop=2
 setlocal tagcase=
@@ -3589,30 +3608,38 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-1
-normal! zo
-5
-normal! zo
-9
-normal! zo
-16
+15
 normal! zo
 32
 normal! zo
-41
-normal! zo
-32
+15
 normal! zc
-let s:l = 19 - ((17 * winheight(0) + 23) / 46)
+31
+normal! zo
+49
+normal! zo
+31
+normal! zc
+48
+normal! zo
+58
+normal! zo
+57
+normal! zo
+75
+normal! zo
+74
+normal! zo
+let s:l = 74 - ((73 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 01|
+74
+normal! 074|
 wincmd w
 argglobal
 if bufexists("v2/www/view/add-user.mjs") | buffer v2/www/view/add-user.mjs | else | edit v2/www/view/add-user.mjs | endif
-balt v2/view/add-user.mjs
+balt v2/www/style.css
 setlocal autoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -3728,13 +3755,33 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-73
+4
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+7
+normal! zo
+25
+normal! zo
+7
+normal! zc
+24
+normal! zo
+28
+normal! zo
+24
+normal! zc
+27
+normal! zo
+33
+normal! zo
+27
+normal! zc
+53
+normal! zo
+let s:l = 4 - ((3 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+4
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
@@ -3878,7 +3925,7 @@ exe s:l
 normal! zt
 4
 normal! 0
-tabnext 6
+tabnext 1
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
@@ -3904,11 +3951,13 @@ badd +1 test/set-locations.mjs
 badd +1 test/add-user.mjs
 badd +1 v2/src/index.mjs
 badd +1 v2/www/style.css
+badd +1 v2/www/presenter/action.mjs
 badd +7 v2/presenter/action.mjs
-badd +1 v2/www/index.mjs
+badd +19 v2/www/index.mjs
 badd +4 v2/www/model/process.mjs
 badd +1 v2/www/model/users.mjs
-badd +84 v2/view/add-user.mjs
+badd +0 v2/view/add-user.mjs
+badd +79 v2/www/view/add-user.mjs
 badd +4 v2/dev/index.html
 badd +474 v2/dev/index.js
 badd +1 v2/dev/index.mjs
@@ -3933,9 +3982,7 @@ badd +1 ../txf-agent/turrets/create-turrets.sh
 badd +1 ../txf-agent/.gitignore
 badd +349 test.log
 badd +35 examples/boilerplate.mjs
-badd +0 v2/www/view/add-user.mjs
-badd +0 v2/www/presenter/action.mjs
-badd +0 v2/www/kit.fontawesome.com-a076d05399.js
+badd +1 v2/www/kit.fontawesome.com-a076d05399.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

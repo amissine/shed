@@ -1,5 +1,5 @@
 # 👷 gratzio
-The gratz.io testbed
+The gratz.io testbed. QA: [https://gratzio.w3spaces.com](https://gratzio.w3spaces.com)
 
 The project's goal is to establish a Distributed Autonomous Organization (DAO), whose members (users) exchange favors with each other. The DAO is [Stellar](https://stellar.org/)-based. To join it, the **user** clones and installs the [amissine/gratzio-join](https://github.com/amissine/gratzio-join) public repository. This results in a request for the **agent** to:
 
