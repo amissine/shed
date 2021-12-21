@@ -975,7 +975,6 @@ normal! zt
 2
 normal! 055|
 wincmd w
-7wincmd w
 exe '1resize ' . ((&lines * 3 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe '2resize ' . ((&lines * 10 + 24) / 49)
@@ -2802,7 +2801,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 15
-normal! 039|
+normal! 05|
 wincmd w
 argglobal
 if bufexists("v2/www/style.css") | buffer v2/www/style.css | else | edit v2/www/style.css | endif
@@ -2924,27 +2923,19 @@ setlocal wrap
 setlocal wrapmargin=0
 15
 normal! zo
-32
-normal! zo
 31
 normal! zo
 49
 normal! zo
-48
-normal! zo
 58
-normal! zo
-57
 normal! zo
 75
 normal! zo
-74
-normal! zo
-let s:l = 82 - ((12 * winheight(0) + 7) / 15)
+let s:l = 46 - ((9 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-82
+46
 normal! 0
 wincmd w
 argglobal
@@ -3196,15 +3187,17 @@ setlocal wrapmargin=0
 normal! zo
 5
 normal! zo
+6
+normal! zo
 9
 normal! zo
 16
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 11) / 22)
+let s:l = 6 - ((5 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+6
 normal! 0
 wincmd w
 argglobal
@@ -3608,34 +3601,20 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-15
-normal! zo
-32
-normal! zo
-15
-normal! zc
 31
 normal! zo
 49
 normal! zo
-31
-normal! zc
-48
-normal! zo
 58
-normal! zo
-57
 normal! zo
 75
 normal! zo
-74
-normal! zo
-let s:l = 74 - ((73 * winheight(0) + 23) / 46)
+let s:l = 84 - ((17 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-74
-normal! 074|
+84
+normal! 016|
 wincmd w
 argglobal
 if bufexists("v2/www/view/add-user.mjs") | buffer v2/www/view/add-user.mjs | else | edit v2/www/view/add-user.mjs | endif
@@ -3755,35 +3734,22 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-4
+5
 normal! zo
-7
+5
 normal! zo
-25
+22
 normal! zo
-7
-normal! zc
-24
+51
 normal! zo
-28
-normal! zo
-24
-normal! zc
-27
-normal! zo
-33
-normal! zo
-27
-normal! zc
-53
-normal! zo
-let s:l = 4 - ((3 * winheight(0) + 23) / 46)
+let s:l = 17 - ((16 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
-normal! 0
+17
+normal! 054|
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 tabnext
@@ -3925,7 +3891,7 @@ exe s:l
 normal! zt
 4
 normal! 0
-tabnext 1
+tabnext 7
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
@@ -3956,8 +3922,8 @@ badd +7 v2/presenter/action.mjs
 badd +19 v2/www/index.mjs
 badd +4 v2/www/model/process.mjs
 badd +1 v2/www/model/users.mjs
-badd +0 v2/view/add-user.mjs
 badd +79 v2/www/view/add-user.mjs
+badd +1 v2/view/add-user.mjs
 badd +4 v2/dev/index.html
 badd +474 v2/dev/index.js
 badd +1 v2/dev/index.mjs
