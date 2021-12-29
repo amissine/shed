@@ -2,28 +2,29 @@ import test from 'ava' // {{{1
 import { Poke, Txdr, encrypt, decrypt } from '../v2/lib/account.mjs'
 import { Asset, Keypair, } from 'stellar-sdk'
 
-test('add user', async t => { // {{{1
-  const userKeys = Keypair.random()
+/*test('add user', async t => { // {{{1
+  const userKeys = Keypair.random() // {{{2
   const userPK = userKeys.publicKey()
   const userSECRET = userKeys.secret()
   const encrypted = encrypt(userSECRET)
   const td1 = encrypted.slice(0, 64), td2 = encrypted.slice(64)
+console.log(userSECRET)
 
-  console.log(`- creating ${userPK}...`)
+  console.log(`- creating ${userPK}...`) // {{{2
   let agent = await new Poke(process.env.AGENT_SECRET)
   let xdr = await agent
   .begin(userPK)
-  .createAccount(userPK, '0')
+  .createAccount(userPK, '0.0002') // 0.0002 XLM to fund merging in the end
   .changeTrust(Poke.asset, '1000000', userPK)
   .put('td1', td1, userPK).put('td2', td2, userPK)
   .end(userPK).toXDR()
   console.log('  - XDR signed by agent')
 
-  let txId = await new Txdr(xdr).submit({ keys: [userKeys] })
+  let txId = await new Txdr(xdr).submit({ keys: [userKeys] }) // {{{2
   console.log('  - XDR signed and submitted by user')
   console.log(`- txId ${txId}`)
 
-  console.log(`- funding and trusting ${userPK}...`)
+  console.log(`- funding and trusting ${userPK}...`) // {{{2
   const offr = new Asset('OFFR', userPK)
   const rqst = new Asset('RQST', userPK)
   agent = await new Poke(process.env.AGENT_SECRET)
@@ -33,11 +34,57 @@ test('add user', async t => { // {{{1
     .changeTrust(rqst, '1000')
     .submit()
   console.log(`- txId ${txId}`)
-
+// }}}2
   t.assert(!!txId, `- UNEXPECTED: '${txId}'`)
 })
-/*
- * GDEJMOKBI5PBL52DYCJBCZSHNSNHMMADZVYB6F4YKVNESJID7WWLZAMX
- * GCCWNYH3ZBWJGC3P343N74OOGCRMEQL5VNNUWHVAVGFJI2JDB6OW4UGG
- * GA42SYL5VKX64GVQLHHRYBUX7S5XG6LUM2JZ7XUOA2GLH2R7GKDBMSRQ
- */
+*/
+test('remove user', async t => { // {{{1
+  const userSECRET = 'SBDVJC3STHUUIO2BZL77AEHPLH4NQQNF3ZC7NJZZQ5DGBZKMEKEEYYNV' // TODO add userSECRET to remove {{{2
+  const userKeys = Keypair.fromSecret(userSECRET)
+  const userPK = userKeys.publicKey()
+  let agent, xdr, txId, user
+
+  console.log(`- delete trustlines for OFFR, RQST assets from AGENT...`) // {{{2
+  agent = await new Poke(process.env.AGENT_SECRET)
+  txId = await agent
+    .changeTrust(new Asset('OFFR', userPK), '0')
+    .changeTrust(new Asset('RQST', userPK), '0')
+    .submit()
+  console.log(`- txId ${txId}`)
+
+  console.log(`- pay GRAT back from user to AGENT, delete trustline for GRAT from user...`) // {{{2
+  agent = await new Poke(process.env.AGENT_SECRET)
+  xdr = await agent
+  .begin(userPK)
+  .payment(process.env.AGENT, Poke.asset, '1000', userPK) // TODO make sure 1000 is enough
+  .changeTrust(Poke.asset, '0', userPK)
+  .end(userPK).toXDR()
+  console.log('  - payback XDR signed by agent')
+
+  txId = await new Txdr(xdr).submit({ keys: [userKeys] }) // {{{2
+  console.log('  - XDR signed and submitted by user')
+  console.log(`- txId ${txId}`)
+
+  console.log(`- delete signers and data entries from user...`) // TODO combine with the previous transaction {{{2
+  agent = await new Poke(process.env.AGENT_SECRET)
+  xdr = await agent
+  .begin(userPK)
+  //.setOpts({ masterWeight: 1, source: userPK })
+  .put('td1', null, userPK).put('td2', null, userPK)
+  .end(userPK).toXDR()
+  console.log('  - delete signers and data entries XDR signed by agent')
+
+  txId = await new Txdr(xdr).submit({ keys: [userKeys] }) // {{{2
+  console.log('  - XDR signed and submitted by user')
+  console.log(`- txId ${txId}`)
+
+  console.log(`- merging ${userPK} to AGENT...`) // {{{2
+  user = await new Poke(userSECRET)
+  txId = await user
+  .merge(userPK, process.env.AGENT)
+  .submit()
+  console.log(`- txId ${txId}`)
+// }}}2
+  t.assert(!!txId, `- UNEXPECTED: '${txId}'`)
+})
+
