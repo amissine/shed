@@ -86,3 +86,7 @@ Then map users:
 ![Test case 3.1 results](./get-9-locations-1.test.png "Shoot 1")
 ![Test case 3.1 results](./get-9-locations-2.test.png "Shoot 1")
 ![Test case 3.1 results](./map-9-locations.test.png "Shoot 1")
+
+And Happy coming New 2022!
+
+![Test case 3.1 results](./add-saskatoon.test.png "Shoot 1")
