@@ -39,10 +39,12 @@ console.log(userSECRET)
 })
 */
 test('remove user', async t => { // {{{1
-  const userSECRET = 'SBDVJC3STHUUIO2BZL77AEHPLH4NQQNF3ZC7NJZZQ5DGBZKMEKEEYYNV' // TODO add userSECRET to remove {{{2
-  const userKeys = Keypair.fromSecret(userSECRET)
-  const userPK = userKeys.publicKey()
   let agent, xdr, txId, user
+  const userPK = '' // TODO add userPK to remove {{{2
+  user = await new Poke(userPK)
+  const data = user.data()
+  const userSECRET = decrypt(data.td1 + data.td2)
+  const userKeys = Keypair.fromSecret(userSECRET)
 
   console.log(`- delete trustlines for OFFR, RQST assets from AGENT...`) // {{{2
   agent = await new Poke(process.env.AGENT_SECRET)
@@ -78,7 +80,7 @@ test('remove user', async t => { // {{{1
   console.log('  - XDR signed and submitted by user')
   console.log(`- txId ${txId}`)
 
-  console.log(`- merging ${userPK} to AGENT...`) // {{{2
+  console.log(`- merge ${userPK} to AGENT...`) // {{{2
   user = await new Poke(userSECRET)
   txId = await user
   .merge(userPK, process.env.AGENT)
