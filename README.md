@@ -90,3 +90,12 @@ Then map users:
 And Happy coming New 2022!
 
 ![Test case 3.1 results](./add-saskatoon.test.png "Shoot 1")
+
+### Test case 3.2 - request favor
+
+Select a user. Have the user request favor.
+
+```bash
+npm test --run=test/request-favor.mjs
+```
+
