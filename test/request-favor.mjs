@@ -11,6 +11,7 @@ test('request favor', async t => { // {{{1
   for (let u of users) {
     const data = Poke.b2a(u.data)
     let decrypted = decrypt(data.td1 + data.td2)
+    console.log(decrypted)
     userKeys.push(Keypair.fromSecret(decrypted))
   }
   await Favor.add(rqst = new FavorRequest(
@@ -20,8 +21,8 @@ test('request favor', async t => { // {{{1
     The total length of the text is limited to 2000 characters.`,
     9000
   ))
-  //await delay(10000)
-  //await Favor.remove(rqst)
+  await delay(15000)
+  await Favor.remove(rqst)
 
   t.assert(users.length > 0, `- UNEXPECTED: users.length ${users.length}`)
 })
