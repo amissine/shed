@@ -128,3 +128,293 @@ d36035e334d58a30d22582a9f1b236e7999a0de0c4e12ce3ba3a0057b8d3ca4f
 
   1 test passed [16:01:56]
 ```
+
+### Test case 3.3 - collect liquidity
+
+Starting with
+
+```bash
+https://horizon-testnet.stellar.org/accounts/GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD/effects?cursor=now&order=desc
+```
+
+, go back and collect ALL claimable `FavorRequest`/`FavorOffer` instances.
+
+```bash
+npm test --run=test/collect-liquidity.mjs
+```
+
+Test results (cut):
+
+```bash
+...
+1578855747821570-2
+[
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001578855747821570-0000000002',
+    paging_token: '1578855747821570-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T17:59:06Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '000000007658121f80611e7c7984d35da1ada0fa897fee69a2e1b8f83ee9d1aa45426f8e',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001578671064223746-0000000002',
+    paging_token: '1578671064223746-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T17:55:23Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '00000000856640256fa68771a5ea8ab97ee4a882a0d3a5cc39eb6ab48e61d68b94e06bb5',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001575376824311810-0000000002',
+    paging_token: '1575376824311810-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:47:59Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '00000000900cf046308f152393b1aa3f2720fff731136adacb26ae4fa1fca42c5c73a6a7',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001575303809867778-0000000002',
+    paging_token: '1575303809867778-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:46:32Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '000000008cb02d4c904717833a2c21132a2e1af29af1c7bbbcfba6de47ad01052516073c',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001575020342026242-0000000002',
+    paging_token: '1575020342026242-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:40:51Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '00000000045d5b5b72c429980705d20089966ffca392c2525f7fe0732cf114a7a038d8af',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001574882903072770-0000000002',
+    paging_token: '1574882903072770-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:37:59Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '000000000baf12b1424a4360fd57cc6ed7b7b18c21f1e1805aa447ef6681faec174b11a8',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001574092629094402-0000000002',
+    paging_token: '1574092629094402-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:21:52Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '000000003e0f26c13a681dd36df3188bf5dcaef0de9c90c5328cd57e170757925e8fcded',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001573263700398082-0000000002',
+    paging_token: '1573263700398082-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:05:04Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '000000009aaff2676adc8103e094d621c0f739b22fae32aa3a16e23e0b389622a2c9b485',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001573225045692418-0000000002',
+    paging_token: '1573225045692418-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:04:17Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '00000000338ad5149445a1966b998a691d29251e7b6251e3bd61b8bb8d2774e51b4f1aa6',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001573031772164098-0000000002',
+    paging_token: '1573031772164098-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:00:20Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '000000005c86c8dda25a7b4821067d3e2ac7a2a8643aaee7c324830c234c36084f7315ae',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  }
+]
+1578671064223746-2
+[
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001578671064223746-0000000002',
+    paging_token: '1578671064223746-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T17:55:23Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '00000000856640256fa68771a5ea8ab97ee4a882a0d3a5cc39eb6ab48e61d68b94e06bb5',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001575376824311810-0000000002',
+    paging_token: '1575376824311810-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:47:59Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '00000000900cf046308f152393b1aa3f2720fff731136adacb26ae4fa1fca42c5c73a6a7',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001575303809867778-0000000002',
+    paging_token: '1575303809867778-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:46:32Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '000000008cb02d4c904717833a2c21132a2e1af29af1c7bbbcfba6de47ad01052516073c',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001575020342026242-0000000002',
+    paging_token: '1575020342026242-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:40:51Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '00000000045d5b5b72c429980705d20089966ffca392c2525f7fe0732cf114a7a038d8af',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001574882903072770-0000000002',
+    paging_token: '1574882903072770-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:37:59Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '000000000baf12b1424a4360fd57cc6ed7b7b18c21f1e1805aa447ef6681faec174b11a8',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001574092629094402-0000000002',
+    paging_token: '1574092629094402-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:21:52Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '000000003e0f26c13a681dd36df3188bf5dcaef0de9c90c5328cd57e170757925e8fcded',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001573263700398082-0000000002',
+    paging_token: '1573263700398082-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:05:04Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '000000009aaff2676adc8103e094d621c0f739b22fae32aa3a16e23e0b389622a2c9b485',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001573225045692418-0000000002',
+    paging_token: '1573225045692418-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:04:17Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '00000000338ad5149445a1966b998a691d29251e7b6251e3bd61b8bb8d2774e51b4f1aa6',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001573031772164098-0000000002',
+    paging_token: '1573031772164098-2',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_claimant_created',
+    type_i: 51,
+    created_at: '2022-01-06T16:00:20Z',
+    asset: 'GRAT:GBUM2WBDFB5M5K3WTZKQCWPQ5MJSDPRQOZAAMVMQ3YM2PCHZRQYD52A4',
+    balance_id: '000000005c86c8dda25a7b4821067d3e2ac7a2a8643aaee7c324830c234c36084f7315ae',
+    amount: '1.1000000',
+    predicate: { rel_before: '9' }
+  },
+  {
+    _links: { operation: [Object], succeeds: [Object], precedes: [Object] },
+    id: '0001525366225113090-0000000005',
+    paging_token: '1525366225113090-5',
+    account: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD',
+    type: 'claimable_balance_sponsorship_created',
+    type_i: 69,
+    created_at: '2022-01-05T23:47:24Z',
+    balance_id: '00000000bb468d1981a7b8247f167ee2e42e69a72abcada2529045ce4eadde6854ac2792',
+    sponsor: 'GCF3CIAMD3OXA67KTCPSGQRVU62XAJXQJKDIY435ELR3EZKO4PSUIYRD'
+  }
+]
+  ✔ collect-liquidity.mjs › collect liquidity (5.3s)
+  ─
+
+  1 test passed [16:05:01]
+
+```
+
