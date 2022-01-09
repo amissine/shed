@@ -418,3 +418,16 @@ Test results (cut):
 
 ```
 
+```bash
+> export $(cat .env|tr -d [:blank:]|xargs) && ava -v -w --timeout=2m "test/collect-liquidity.mjs"
+
+
+Favor description goes here.
+    Favor description consists of one or more lines of text.
+    The total length of the text is limited to 2000 characters.
+  ✔ collect-liquidity.mjs › collect liquidity (516ms)
+  ─
+
+  1 test passed [15:49:09]
+
+```
