@@ -431,3 +431,19 @@ Favor description goes here.
   1 test passed [15:49:09]
 
 ```
+
+### Test case 3.4 - request/bid/accept/produce favor (integration test 1)
+
+There are 3 actors in this test:
+
+- Favor Requestor;
+- Favor Producer 1; and
+- Favor Producer 2.
+
+The test kicks off when Favor Producer 1 starts looking for favor requests. It finds no existing requests in the past, and continues to wait for a future request.
+
+Three seconds pass, and Favor Requestor makes a request and starts waiting for bids. Favor Producer 1 bids on the request right away, then continues to wait for Favor Requestor to accept the bid. Favor Requestor receives the bid and deliberates on it.
+
+Two seconds pass, and Favor Producer 2 starts looking for favor requests. It finds the existing request and bids on it, then continues to wait for Favor Requestor to accept the bid. Favor Requestor receives the bid and deliberates on it.
+
+One second passes, and Favor Requestor decides to accept the bid from Favor Producer 2, and sets aside GRATs to be collected by Favor Producer 2 after the favor is produced. Favor Producer 2 gets notified, produces the favor and collects GRATs. THE END
