@@ -447,3 +447,6 @@ Three seconds pass, and Favor Requestor makes a request and starts waiting for b
 Two seconds pass, and Favor Producer 2 starts looking for favor requests. It finds the existing request and bids on it, then continues to wait for Favor Requestor to accept the bid. Favor Requestor receives the bid and deliberates on it.
 
 One second passes, and Favor Requestor decides to accept the bid from Favor Producer 2, and sets aside GRATs to be collected by Favor Producer 2 after the favor is produced. Favor Producer 2 gets notified, produces the favor and collects GRATs. THE END
+
+Confirming successful test of wait/notify functionality:
+![Test case 3.4.1 results](./wait-notify.test.png "Shoot 1")
