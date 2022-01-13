@@ -15,10 +15,8 @@ echo "- running $0 with $ENV_FILE..."; echo
 #npx ttab -w -d $PWD/turrets exec npm run www
 
 # Run the integration test
-#f2e . turrets
-#turrets/bin/run.mjs $0
 npm test --run=test/it1-favor-producer1.mjs
 npm test --run=test/it1-favor-requestor1.mjs
-npm test --run=test/it1-favor-producer2.mjs
+#npm test --run=test/it1-favor-producer2.mjs
 
 # TODO Teardown

@@ -14,25 +14,17 @@ test('IT1 Favor Producer 1', async t => { // {{{1
     Date.now() - new Date(records[0].created_at).getTime() < 10000
   ) {
     console.log('TODO test request already exists')
-  } else { // wait for test request
+  } else {
+    // Wait for test request
     request = await Favor.waitFor(new FavorRequest(), self)
-    console.log(request)
-  }
+    let balanceId = JSON.parse(request.json).balance_id
+    request.requestor = await Favor.requestor(balanceId)
+    console.log(request.requestor)
 
-  //console.log(await Favor.description(records[0].balance_id))
+    // Bid on the request
 
-  /*console.log(prev)
-  while (records[9].type == 'claimable_balance_claimant_created') {
-    console.log(records)
-    await delay(1500) // the rate limit is 1000 ms
-    effects = await Poke.effects(prev)
-    records = effects._embedded.records
-    prev = new URL(effects._links.prev.href).searchParams.
-      get('cursor').toString()
-    console.log(prev)
+    // Wait for Favor Requestor to accept the bid
   }
-  console.log(records)
-  */
 
   t.assert(!!effects, `- UNEXPECTED: effects ${effects}`)
 })
