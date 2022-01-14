@@ -7,7 +7,7 @@ import { Keypair } from 'stellar-sdk'
 test('IT1 Favor Producer 1', async t => { // {{{1
   let effects = await Poke.effects()
   let records = effects._embedded.records, request
-  let self = new URL(effects._links.self.href).searchParams.get('cursor').toString()
+  let from = new URL(effects._links.self.href).searchParams.get('cursor').toString()
 
   // See if a test request already exists
   if (records[0].type == 'claimable_balance_claimant_created' &&
@@ -16,7 +16,7 @@ test('IT1 Favor Producer 1', async t => { // {{{1
     console.log('TODO test request already exists')
   } else {
     // Wait for test request
-    request = await Favor.waitFor(new FavorRequest(), self)
+    request = await Favor.waitFor(new FavorRequest(), from)
     let balanceId = JSON.parse(request.json).balance_id
     request.requestor = await Favor.requestor(balanceId)
     console.log(request.requestor)
