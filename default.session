@@ -1565,9 +1565,9 @@ exe '2resize ' . ((&lines * 15 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 84 + 89) / 179)
 exe '3resize ' . ((&lines * 14 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 84 + 89) / 179)
-exe '4resize ' . ((&lines * 11 + 24) / 49)
+exe '4resize ' . ((&lines * 20 + 24) / 49)
 exe 'vert 4resize ' . ((&columns * 94 + 89) / 179)
-exe '5resize ' . ((&lines * 11 + 24) / 49)
+exe '5resize ' . ((&lines * 2 + 24) / 49)
 exe 'vert 5resize ' . ((&columns * 94 + 89) / 179)
 exe '6resize ' . ((&lines * 11 + 24) / 49)
 exe 'vert 6resize ' . ((&columns * 94 + 89) / 179)
@@ -2081,11 +2081,11 @@ setlocal wrapmargin=0
 normal! zo
 7
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 5) / 11)
+let s:l = 10 - ((3 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+10
 normal! 0
 wincmd w
 argglobal
@@ -2206,7 +2206,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 5) / 11)
+let s:l = 1 - ((0 * winheight(0) + 1) / 2)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -2471,9 +2471,9 @@ exe '2resize ' . ((&lines * 15 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 84 + 89) / 179)
 exe '3resize ' . ((&lines * 14 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 84 + 89) / 179)
-exe '4resize ' . ((&lines * 11 + 24) / 49)
+exe '4resize ' . ((&lines * 20 + 24) / 49)
 exe 'vert 4resize ' . ((&columns * 94 + 89) / 179)
-exe '5resize ' . ((&lines * 11 + 24) / 49)
+exe '5resize ' . ((&lines * 2 + 24) / 49)
 exe 'vert 5resize ' . ((&columns * 94 + 89) / 179)
 exe '6resize ' . ((&lines * 11 + 24) / 49)
 exe 'vert 6resize ' . ((&columns * 94 + 89) / 179)
@@ -2619,16 +2619,28 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-1
-normal! zo
 7
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 20) / 40)
+10
+normal! zo
+10
+normal! zc
+18
+normal! zo
+18
+normal! zc
+22
+normal! zo
+23
+normal! zo
+27
+normal! zo
+let s:l = 23 - ((22 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+23
+normal! 027|
 wincmd w
 argglobal
 if bufexists("test/it1.sh") | buffer test/it1.sh | else | edit test/it1.sh | endif
@@ -2748,11 +2760,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 18 - ((1 * winheight(0) + 2) / 5)
+let s:l = 20 - ((3 * winheight(0) + 2) / 5)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
+20
 normal! 0
 wincmd w
 argglobal
@@ -2873,16 +2885,34 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-1
-normal! zo
 7
 normal! zo
-let s:l = 7 - ((6 * winheight(0) + 23) / 46)
+8
+normal! zo
+11
+normal! zo
+10
+normal! zo
+19
+normal! zo
+18
+normal! zo
+27
+normal! zo
+26
+normal! zo
+32
+normal! zo
+38
+normal! zo
+37
+normal! zo
+let s:l = 27 - ((26 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
-normal! 027|
+27
+normal! 03|
 wincmd w
 exe '1resize ' . ((&lines * 40 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
@@ -3024,22 +3054,14 @@ setlocal wrap
 setlocal wrapmargin=0
 39
 normal! zo
-205
-normal! zo
 255
 normal! zo
-310
-normal! zo
-339
-normal! zo
-310
-normal! zc
-let s:l = 256 - ((1 * winheight(0) + 23) / 46)
+let s:l = 255 - ((50 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-256
-normal! 034|
+255
+normal! 016|
 wincmd w
 argglobal
 if bufexists("v2/lib/favor.mjs") | buffer v2/lib/favor.mjs | else | edit v2/lib/favor.mjs | endif
@@ -3159,16 +3181,48 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-139
+5
 normal! zo
-140
+8
 normal! zo
-let s:l = 140 - ((139 * winheight(0) + 23) / 46)
+42
+normal! zo
+43
+normal! zo
+48
+normal! zo
+52
+normal! zo
+42
+normal! zc
+57
+normal! zo
+58
+normal! zo
+64
+normal! zo
+68
+normal! zo
+57
+normal! zc
+80
+normal! zo
+112
+normal! zo
+130
+normal! zo
+133
+normal! zo
+149
+normal! zo
+188
+normal! zo
+let s:l = 130 - ((13 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-140
-normal! 015|
+130
+normal! 034|
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
@@ -5126,6 +5180,7 @@ badd +1 v2/shim.js
 badd +1 README.md
 badd +1 .env
 badd +1 test/account.mjs
+badd +10 test/it1-favor-producer1.mjs
 badd +1 v2/lib/account.mjs
 badd +1 test/request-favor.log
 badd +1 v2/bin/www.mjs
@@ -5143,12 +5198,14 @@ badd +1 v2/dist.sh
 badd +1 test/fund-maintainer.test.mjs
 badd +18 v2/src/fund-agent.mjs
 badd +1 test/fund-agent.mjs
+badd +26 test/collect-liquidity.mjs
 badd +26 test/set-locations.mjs
-badd +13 test/add-user.mjs
-badd +0 v2/lib/utils.mjs
-badd +0 ../txf-agent/turrets/lib/bosh-do.mjs
-badd +1 v2/lib/favor.mjs
 badd +24 test/request-favor.mjs
+badd +13 test/add-user.mjs
+badd +1 test/it1.sh
+badd +1 test/it1-favor-requestor1.mjs
+badd +0 v2/lib/favor.mjs
+badd +1 v2/lib/utils.mjs
 badd +1 v2/src/index.mjs
 badd +1 v2/www/style.css
 badd +1 v2/www/presenter/action.mjs
@@ -5158,6 +5215,7 @@ badd +4 v2/www/model/process.mjs
 badd +1 v2/www/model/users.mjs
 badd +1 v2/www/view/add-user.mjs
 badd +1 v2/www/model/agent.mjs
+badd +1 ../txf-agent/turrets/lib/bosh-do.mjs
 badd +1 v2/src/fund-maintainer.mjs
 badd +1 v2/view/add-user.mjs
 badd +4 v2/dev/index.html
@@ -5187,10 +5245,6 @@ badd +35 examples/boilerplate.mjs
 badd +1 v2/www/kit.fontawesome.com-a076d05399.js
 badd +4 v2/qa/index.js
 badd +1 ../pms/test/wrangler.js
-badd +26 test/collect-liquidity.mjs
-badd +0 test/it1.sh
-badd +10 test/it1-favor-producer1.mjs
-badd +0 test/it1-favor-requestor1.mjs
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

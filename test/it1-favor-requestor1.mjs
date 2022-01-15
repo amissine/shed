@@ -16,8 +16,7 @@ test('IT1 Favor Requestor 1', async t => { // {{{1
   }
 
   await delay(3000) // {{{2
-  await Favor.addRequest(rqst = new FavorRequest(
-    new FavorRequestor(userKeys[0]),
+  await Favor.addRequest(rqst = new FavorRequest(new FavorRequestor(userKeys[0]),
     `Favor description goes here.
     Favor description consists of one or more lines of text.
     The total length of the text is limited to 2000 characters.`,
@@ -25,13 +24,13 @@ test('IT1 Favor Requestor 1', async t => { // {{{1
   ))
 
   // Wait for 2 bids {{{2
-  /*
-  for await (let bid of rqst.waitForBids(2)) {
+  for await (let bid of rqst.bids(2)) {
     bids.push(bid)
     console.log(bid)
   }
 
   // Accept the bid from Favor Producer 2 {{{2
+  /*
   await delay(1000)
   */
 
