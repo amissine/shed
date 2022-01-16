@@ -15,6 +15,7 @@ test('IT1 Favor Requestor 1', async t => { // {{{1
     userKeys.push(Keypair.fromSecret(decrypted))
   }
 
+  console.log(Date.now())
   await delay(3000) // {{{2
   await Favor.addRequest(rqst = new FavorRequest(new FavorRequestor(userKeys[0]),
     `Favor description goes here.
@@ -22,15 +23,16 @@ test('IT1 Favor Requestor 1', async t => { // {{{1
     The total length of the text is limited to 2000 characters.`,
     9000 // 9s validity, defalt amount 1.1 GRAT
   ))
+  console.log(Date.now())
 
   // Wait for 2 bids {{{2
+  /*
   for await (let bid of rqst.bids(2)) {
     bids.push(bid)
     console.log(bid)
   }
 
   // Accept the bid from Favor Producer 2 {{{2
-  /*
   await delay(1000)
   */
 

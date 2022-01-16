@@ -17,6 +17,6 @@ echo "- running $0 with $ENV_FILE..."; echo
 # Run the integration test
 npm test --run=test/it1-favor-producer1.mjs
 npm test --run=test/it1-favor-requestor1.mjs
-#npm test --run=test/it1-favor-producer2.mjs
+npm test --run=test/it1-favor-producer2.mjs
 
 # TODO Teardown

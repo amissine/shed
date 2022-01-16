@@ -2480,14 +2480,17 @@ exe 'vert 6resize ' . ((&columns * 94 + 89) / 179)
 exe '7resize ' . ((&lines * 10 + 24) / 49)
 exe 'vert 7resize ' . ((&columns * 94 + 89) / 179)
 tabnext
-edit test/it1-favor-producer1.mjs
+edit test/it1-favor-producer2.mjs
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
 wincmd _ | wincmd |
 split
-1wincmd k
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
 wincmd w
 wincmd w
 set nosplitbelow
@@ -2497,13 +2500,146 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 40 + 24) / 49)
+exe '1resize ' . ((&lines * 21 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 5 + 24) / 49)
+exe '2resize ' . ((&lines * 20 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe '3resize ' . ((&lines * 3 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
 argglobal
-balt test/it1.sh
+balt test/it1-favor-producer1.mjs
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'javascript'
+setlocal filetype=javascript
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetJavascriptIndent()
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=javascriptcomplete#CompleteJS
+setlocal path=.,,
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'javascript'
+setlocal syntax=javascript
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+7
+normal! zo
+22
+normal! zo
+23
+normal! zo
+let s:l = 25 - ((0 * winheight(0) + 10) / 21)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+25
+normal! 019|
+wincmd w
+argglobal
+if bufexists("test/it1-favor-producer1.mjs") | buffer test/it1-favor-producer1.mjs | else | edit test/it1-favor-producer1.mjs | endif
+balt test/it1-favor-producer2.mjs
 setlocal autoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -2625,22 +2761,16 @@ normal! zo
 normal! zo
 10
 normal! zc
-18
+21
 normal! zo
-18
-normal! zc
-22
+41
 normal! zo
-23
-normal! zo
-27
-normal! zo
-let s:l = 23 - ((22 * winheight(0) + 20) / 40)
+let s:l = 41 - ((0 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 027|
+41
+normal! 026|
 wincmd w
 argglobal
 if bufexists("test/it1.sh") | buffer test/it1.sh | else | edit test/it1.sh | endif
@@ -2760,12 +2890,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 20 - ((3 * winheight(0) + 2) / 5)
+let s:l = 20 - ((2 * winheight(0) + 1) / 3)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 20
-normal! 0
+normal! 039|
 wincmd w
 argglobal
 if bufexists("test/it1-favor-requestor1.mjs") | buffer test/it1-favor-requestor1.mjs | else | edit test/it1-favor-requestor1.mjs | endif
@@ -2901,7 +3031,7 @@ normal! zo
 normal! zo
 26
 normal! zo
-32
+33
 normal! zo
 38
 normal! zo
@@ -2914,11 +3044,13 @@ normal! zt
 27
 normal! 03|
 wincmd w
-exe '1resize ' . ((&lines * 40 + 24) / 49)
+exe '1resize ' . ((&lines * 21 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 5 + 24) / 49)
+exe '2resize ' . ((&lines * 20 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe '3resize ' . ((&lines * 3 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
 tabnext
 edit v2/lib/account.mjs
 set splitbelow splitright
@@ -3193,8 +3325,6 @@ normal! zo
 normal! zo
 52
 normal! zo
-42
-normal! zc
 57
 normal! zo
 58
@@ -3207,24 +3337,23 @@ normal! zo
 normal! zc
 80
 normal! zo
-112
+82
 normal! zo
-130
+110
 normal! zo
-133
+129
 normal! zo
-149
+158
 normal! zo
-188
+197
 normal! zo
-let s:l = 130 - ((13 * winheight(0) + 23) / 46)
+let s:l = 84 - ((2 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-130
-normal! 034|
+84
+normal! 09|
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 91 + 89) / 179)
 tabnext
@@ -3360,12 +3489,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 16) / 32)
+let s:l = 17 - ((16 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+17
+normal! 091|
 wincmd w
 argglobal
 if bufexists("v2/lib/utils.mjs") | buffer v2/lib/utils.mjs | else | edit v2/lib/utils.mjs | endif
@@ -5174,13 +5303,13 @@ normal! 019|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-tabnext 5
+tabnext 4
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
 badd +1 .env
 badd +1 test/account.mjs
-badd +10 test/it1-favor-producer1.mjs
+badd +42 test/it1-favor-producer1.mjs
 badd +1 v2/lib/account.mjs
 badd +1 test/request-favor.log
 badd +1 v2/bin/www.mjs
@@ -5245,6 +5374,8 @@ badd +35 examples/boilerplate.mjs
 badd +1 v2/www/kit.fontawesome.com-a076d05399.js
 badd +4 v2/qa/index.js
 badd +1 ../pms/test/wrangler.js
+badd +12 test/it1-favor-producer.mjs
+badd +0 test/it1-favor-producer2.mjs
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

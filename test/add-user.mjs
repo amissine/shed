@@ -2,7 +2,7 @@ import test from 'ava' // {{{1
 import { Poke, Txdr, encrypt, decrypt } from '../v2/lib/account.mjs'
 import { Asset, Keypair, } from 'stellar-sdk'
 
-/*test('add user', async t => { // {{{1
+test('add user', async t => { // {{{1
   const userKeys = Keypair.random() // {{{2
   const userPK = userKeys.publicKey()
   const userSECRET = userKeys.secret()
@@ -20,25 +20,21 @@ console.log(userSECRET)
   .end(userPK).toXDR()
   console.log('  - XDR signed by agent')
 
-  let txId = await new Txdr(xdr).submit({ keys: [userKeys] }) // {{{2
+  let txBody = await new Txdr(xdr).submit({ keys: [userKeys] }) // {{{2
   console.log('  - XDR signed and submitted by user')
-  console.log(`- txId ${txId}`)
+  console.log(`- txId ${txBody.id}`)
 
-  console.log(`- funding and trusting ${userPK}...`) // {{{2
-  const offr = new Asset('OFFR', userPK)
-  const rqst = new Asset('RQST', userPK)
+  console.log(`- funding ${userPK}...`) // {{{2
   agent = await new Poke(process.env.AGENT_SECRET)
-  txId = await agent
+  let txId = await agent
     .payment(userPK, Poke.asset, '1000')
-    .changeTrust(offr, '1000')
-    .changeTrust(rqst, '1000')
     .submit()
   console.log(`- txId ${txId}`)
 // }}}2
   t.assert(!!txId, `- UNEXPECTED: '${txId}'`)
 })
-*/
-test('remove user', async t => { // {{{1
+/* FIXME
+test('remove user', async t => { // FIXME {{{1
   let agent, xdr, txId, user
   const userPK = '' // TODO add userPK to remove {{{2
   user = await new Poke(userPK)
@@ -89,4 +85,4 @@ test('remove user', async t => { // {{{1
 // }}}2
   t.assert(!!txId, `- UNEXPECTED: '${txId}'`)
 })
-
+*/

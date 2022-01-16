@@ -22,15 +22,17 @@ const locations = [ // {{{1
 ]
 
 test('set locations', async t => { // {{{1
-  let agent = await new Poke(process.env.AGENT)
-  const users = agent.account.balances
-    .filter(b => b.asset_code == 'RQST') // or 'OFFR'
+  const users = await Poke.users(false)
+  console.log(users.length)
 
   let i = 0
   for (let u of users) {
-    let userPK = u.asset_issuer
+    let userPK = u.account_id
     let user = await new Poke(userPK)
     const data = user.data()
+    if (!data.td1) {
+      continue;
+    }
     let decrypted = decrypt(data.td1 + data.td2)
     let userKeys = Keypair.fromSecret(decrypted)
     let lat = locations[i++], lng = locations[i++]
@@ -43,9 +45,9 @@ console.log(decrypted, lat, lng)
       .end(userPK).toXDR()
 console.log('  - XDR signed by agent')
 
-    let txId = await new Txdr(xdr).submit({ keys: [userKeys] })
-console.log(txId)
+    let txBody = await new Txdr(xdr).submit({ keys: [userKeys] })
+console.log(txBody.id)
   }
 
-  t.assert(users.length == 9, `- UNEXPECTED: users.length ${users.length}`)
+  t.assert(users.length > 0, `- UNEXPECTED: users.length ${users.length}`)
 })

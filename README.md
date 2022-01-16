@@ -11,7 +11,7 @@ When the account is funded, its holder can do favors to other users for more GRA
 
 ## Setup
 
-Run
+If present, remove file `.env`. Run
 
 ```bash
 npm i && npm run init [ --run=<stellar_network> ]
@@ -19,7 +19,11 @@ npm i && npm run init [ --run=<stellar_network> ]
 
 and add public and secret keys for GRAT issuer and agent when prompted. 
 
-The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*. Here's more on merging (TODO elaborate):
+The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*.
+
+If testing, run `./reset.sh`.
+
+Here's more on merging (TODO elaborate):
 
 ![On merging with git](./gitmerge.png "From old files")
 

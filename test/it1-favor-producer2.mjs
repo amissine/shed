@@ -4,7 +4,8 @@ import { acceptance, Favor, FavorRequest, FavorRequestor } from '../v2/lib/favor
 import { delay } from '../v2/lib/utils.mjs'
 import { Keypair } from 'stellar-sdk'
 
-test('IT1 Favor Producer 1', async t => { // {{{1
+test('IT1 Favor Producer 2', async t => { // {{{1
+  await delay(12000)
   const users = await Poke.users() // {{{2
 
   let userKeys = [] // {{{2
@@ -26,9 +27,9 @@ test('IT1 Favor Producer 1', async t => { // {{{1
     console.log(request.requestor)
 
     // Bid on the request
-    let bid = {}, validity = 10000 //ms
+    let bid = { userKeys: userKeys[2] }, validity = 10000 //ms
     await delay(1000)
-    Favor.bidOn.call(bid, request, userKeys[2], validity) // defalt amount 0.1 GRAT
+    Favor.bidOn.call(bid, request, validity) // defalt amount 0.1 GRAT
 
     // Wait for Favor Requestor to accept the bid
     let timeout = validity * 1.5
@@ -46,9 +47,9 @@ test('IT1 Favor Producer 1', async t => { // {{{1
     console.log(request.requestor)
 
     // Bid on the request
-    let bid = { userKeys: userKeys[1] }, validity = 10000 //ms
+    let bid = {}, validity = 10000 //ms
     await delay(1000)
-    Favor.bidOn.call(bid, request, validity) // defalt amount 0.1 GRAT
+    Favor.bidOn.call(bid, request, userKeys[1], validity) // defalt amount 0.1 GRAT
 
     // Wait for Favor Requestor to accept the bid
     let timeout = validity * 1.5
