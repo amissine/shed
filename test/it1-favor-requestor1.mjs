@@ -11,7 +11,6 @@ test('IT1 Favor Requestor 1', async t => { // {{{1
   for (let u of users) {
     const data = Poke.b2a(u.data)
     let decrypted = decrypt(data.td1 + data.td2)
-    console.log(decrypted)
     userKeys.push(Keypair.fromSecret(decrypted))
   }
 
@@ -21,7 +20,7 @@ test('IT1 Favor Requestor 1', async t => { // {{{1
     `Favor description goes here.
     Favor description consists of one or more lines of text.
     The total length of the text is limited to 2000 characters.`,
-    9000 // 9s validity, defalt amount 1.1 GRAT
+    29000 // 29s validity, defalt amount 1.1 GRAT
   ))
   console.log(Date.now())
 
@@ -37,7 +36,7 @@ test('IT1 Favor Requestor 1', async t => { // {{{1
   */
 
   // TODO make sure the request is removed {{{2
-  await delay(15000)
+  await delay(35000)
   await Favor.removeRequest(rqst)
   // }}}2
   t.assert(users.length > 0, `- UNEXPECTED: users.length ${users.length}`)

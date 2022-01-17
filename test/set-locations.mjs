@@ -30,7 +30,7 @@ test('set locations', async t => { // {{{1
     let userPK = u.account_id
     let user = await new Poke(userPK)
     const data = user.data()
-    if (!data.td1) {
+    if (!data.td1 || !data.td2) {
       continue;
     }
     let decrypted = decrypt(data.td1 + data.td2)
