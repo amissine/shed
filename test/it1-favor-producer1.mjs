@@ -46,13 +46,13 @@ test('IT1 Favor Producer 1', async t => { // {{{1
     console.log(request.requestor)
 
     // Bid on the request TODO lock AGENT
-    let bid = { userKeys: userKeys[1] }, validity = 10000 //ms
-    await delay(1000)
-    Favor.bidOn.call(bid, request, validity) // defalt amount 0.1 GRAT
+    let bid = { userKeys: userKeys[1] }, validity = 26000 //ms
+    await delay(6000)
+    await Favor.bidOn.call(bid, request, validity) // defalt amount 0.1 GRAT
 
     // Wait for Favor Requestor to accept the bid
     let timeout = validity * 1.5
-    await acceptance.call(bid, request.requestor, request.balanceId, timeout)
+    await acceptance.call(bid, request.requestor, bid.balanceId, timeout)
     if (!!bid.json) {
       console.log(JSON.parse(bid.json))
     } else {

@@ -5,7 +5,7 @@ import { delay } from '../v2/lib/utils.mjs'
 import { Keypair } from 'stellar-sdk'
 
 test('IT1 Favor Producer 2', async t => { // {{{1
-  await delay(22000)
+  await delay(27000)
   const users = await Poke.users() // {{{2
 
   let userKeys = [] // {{{2
@@ -28,13 +28,13 @@ test('IT1 Favor Producer 2', async t => { // {{{1
     console.log(request.requestor)
 
     // Bid on the request TODO lock AGENT
-    let bid = { userKeys: userKeys[2] }, validity = 10000 //ms
+    let bid = { userKeys: userKeys[2] }, validity = 24000 //ms
     await delay(1000)
-    Favor.bidOn.call(bid, request, validity) // defalt amount 0.1 GRAT
+    await Favor.bidOn.call(bid, request, validity) // defalt amount 0.1 GRAT
 
     // Wait for Favor Requestor to accept the bid
     let timeout = validity * 1.5
-    await acceptance.call(bid, request.requestor, request.balanceId, timeout)
+    await acceptance.call(bid, request.requestor, bid.balanceId, timeout)
     if (!!bid.json) {
       console.log(JSON.parse(bid.json))
     } else {

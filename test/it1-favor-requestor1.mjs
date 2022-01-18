@@ -20,24 +20,32 @@ test('IT1 Favor Requestor 1', async t => { // {{{1
     `Favor description goes here.
     Favor description consists of one or more lines of text.
     The total length of the text is limited to 2000 characters.`,
-    29000 // 29s validity, defalt amount 1.1 GRAT
+    34000 // 29s validity, defalt amount 1.1 GRAT
   ))
   console.log(Date.now())
 
   // Wait for 2 bids {{{2
-  /*
-  for await (let bid of rqst.bids(2)) {
+  let rqstBids = rqst.bids(2)
+  for await (let bid of rqstBids) {
+    bid = JSON.parse(bid)
     bids.push(bid)
     console.log(bid)
   }
 
   // Accept the bid from Favor Producer 2 {{{2
   await delay(1000)
-  */
-
+  let bidToAccept = bids[1]
+  await Favor.removeRequest(rqst)
+  if (await rqst.accept(bidToAccept)) {
+    // Consume the favor, send gratitude
+    //await Favor.gratitude(rqst, bidToAccept)
+  } else { // FIXME?
+  }
+/*
   // TODO make sure the request is removed {{{2
-  await delay(35000)
+  await delay(40000)
   await Favor.removeRequest(rqst)
   // }}}2
+*/
   t.assert(users.length > 0, `- UNEXPECTED: users.length ${users.length}`)
 })
