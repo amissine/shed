@@ -24,11 +24,11 @@ test('IT1 Favor Producer 2', async t => { // {{{1
   if (request.type == 'claimable_balance_claimant_created' && // {{{3
     Date.now() - new Date(request.created_at).getTime() < 30000
   ) { // Favor Producer 2
-    request.requestor = await Favor.requestor(request.balance_id)
+    request.requestor = await Favor.creator(request.balance_id)
     console.log(request.requestor)
 
     // Bid on the request TODO lock AGENT
-    let bid = { userKeys: userKeys[2] }, validity = 24000 //ms
+    let bid = { userKeys: userKeys[5] }, validity = 24000 //ms
     await delay(1000)
     await Favor.bidOn.call(bid, request, validity) // defalt amount 0.1 GRAT
 

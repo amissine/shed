@@ -42,11 +42,11 @@ test('IT1 Favor Producer 1', async t => { // {{{1
     // Wait for test request
     request = await Favor.tail(new FavorRequest(), cursor)
     request.balanceId = JSON.parse(request.json).balance_id
-    request.requestor = await Favor.requestor(request.balanceId)
+    request.requestor = await Favor.creator(request.balanceId)
     console.log(request.requestor)
 
     // Bid on the request TODO lock AGENT
-    let bid = { userKeys: userKeys[1] }, validity = 26000 //ms
+    let bid = { userKeys: userKeys[4] }, validity = 26000 //ms
     await delay(6000)
     await Favor.bidOn.call(bid, request, validity) // defalt amount 0.1 GRAT
 

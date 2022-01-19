@@ -16,7 +16,7 @@ test('IT1 Favor Requestor 1', async t => { // {{{1
 
   console.log(Date.now())
   await delay(3000) // {{{2
-  await Favor.addRequest(rqst = new FavorRequest(new FavorRequestor(userKeys[0]),
+  await Favor.addRequest(rqst = new FavorRequest(new FavorRequestor(userKeys[3]),
     `Favor description goes here.
     Favor description consists of one or more lines of text.
     The total length of the text is limited to 2000 characters.`,
@@ -34,18 +34,21 @@ test('IT1 Favor Requestor 1', async t => { // {{{1
 
   // Accept the bid from Favor Producer 2 {{{2
   await delay(1000)
-  let bidToAccept = bids[1]
+  let bidToAccept = bids[1], acceptedBidder
   await Favor.removeRequest(rqst)
   if (await rqst.accept(bidToAccept)) {
-    // Consume the favor, send gratitude
-    //await Favor.gratitude(rqst, bidToAccept)
-  } else { // FIXME?
+    // Consume the favor, send gratitude to the accepted bidder
+    acceptedBidder = await Favor.creator(bidToAccept.balance_id)
+    await Favor.gratitude(rqst.requestor, acceptedBidder, rqst.amount)
+  } else {
+    throw new Error('UNEXPECTED')
   }
-/*
-  // TODO make sure the request is removed {{{2
-  await delay(40000)
-  await Favor.removeRequest(rqst)
+  let consumer = await new Poke(rqst.requestor.keypair.publicKey())
+  console.log(consumer.account.balances)
+  let producer = await new Poke(acceptedBidder)
+  console.log(producer.account.balances)
+  console.log('=== THE END ===')
   // }}}2
-*/
+
   t.assert(users.length > 0, `- UNEXPECTED: users.length ${users.length}`)
 })
