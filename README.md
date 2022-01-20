@@ -454,3 +454,9 @@ One second passes, and Favor Requestor decides to accept the bid from Favor Prod
 
 Confirming successful test of wait/notify functionality:
 ![Test case 3.4.1 results](./wait-notify.test.png "Shoot 1")
+
+## The Gratzio Demo on TESTNET
+
+TODO:
+
+- Update `./reset.sh` to produce `v2/www/model/process.mjs` and `v2/www/model/agent.mjs` from their `*.testnet` counterparts.
