@@ -969,12 +969,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 452 - ((26 * winheight(0) + 17) / 34)
+let s:l = 460 - ((23 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-452
-normal! 0
+460
+normal! 04|
 wincmd w
 exe '1resize ' . ((&lines * 3 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
@@ -3869,12 +3869,16 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 16) / 33)
+13
+normal! zo
+21
+normal! zo
+let s:l = 17 - ((16 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+17
+normal! 053|
 wincmd w
 argglobal
 if bufexists("v2/www/style.css") | buffer v2/www/style.css | else | edit v2/www/style.css | endif
@@ -4031,13 +4035,13 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 23 + 24) / 49)
+exe '1resize ' . ((&lines * 7 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
+exe '2resize ' . ((&lines * 38 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 23 + 24) / 49)
+exe '3resize ' . ((&lines * 15 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-exe '4resize ' . ((&lines * 22 + 24) / 49)
+exe '4resize ' . ((&lines * 30 + 24) / 49)
 exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
 argglobal
 balt v2/presenter/action.mjs
@@ -4158,7 +4162,7 @@ setlocal wrap
 setlocal wrapmargin=0
 3
 normal! zo
-let s:l = 7 - ((6 * winheight(0) + 11) / 23)
+let s:l = 7 - ((6 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -4283,8 +4287,6 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-1
-normal! zo
 5
 normal! zo
 6
@@ -4297,12 +4299,16 @@ normal! zo
 normal! zo
 32
 normal! zo
-let s:l = 12 - ((0 * winheight(0) + 11) / 22)
+32
+normal! zc
+53
+normal! zo
+let s:l = 11 - ((10 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-12
-normal! 033|
+11
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/www/model/process.mjs") | buffer v2/www/model/process.mjs | else | edit v2/www/model/process.mjs | endif
@@ -4424,7 +4430,7 @@ setlocal wrap
 setlocal wrapmargin=0
 1
 normal! zo
-let s:l = 8 - ((7 * winheight(0) + 11) / 23)
+let s:l = 8 - ((7 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -4553,20 +4559,20 @@ setlocal wrapmargin=0
 normal! zo
 3
 normal! zo
-let s:l = 15 - ((0 * winheight(0) + 11) / 22)
+let s:l = 1 - ((0 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
-normal! 038|
+1
+normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 23 + 24) / 49)
+exe '1resize ' . ((&lines * 7 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
+exe '2resize ' . ((&lines * 38 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 23 + 24) / 49)
+exe '3resize ' . ((&lines * 15 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-exe '4resize ' . ((&lines * 22 + 24) / 49)
+exe '4resize ' . ((&lines * 30 + 24) / 49)
 exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
 tabnext
 edit v2/www/model/storage.js
@@ -4703,12 +4709,12 @@ setlocal wrap
 setlocal wrapmargin=0
 1
 normal! zo
-let s:l = 2 - ((0 * winheight(0) + 23) / 46)
+let s:l = 1 - ((0 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
-normal! 010|
+1
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/www/view/add-user.mjs") | buffer v2/www/view/add-user.mjs | else | edit v2/www/view/add-user.mjs | endif
@@ -4980,24 +4986,20 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-1
+27
 normal! zo
-19
+244
 normal! zo
-48
-normal! zo
-117
-normal! zo
-let s:l = 20 - ((19 * winheight(0) + 23) / 46)
+let s:l = 244 - ((87 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
-normal! 013|
+244
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
-balt v2/www/model/account.mjs
+balt v2/www/model/account-new.mjs
 setlocal autoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -5126,7 +5128,7 @@ normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-tabnext 7
+tabnext 9
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
@@ -5199,6 +5201,7 @@ badd +1 v2/www/kit.fontawesome.com-a076d05399.js
 badd +4 v2/qa/index.js
 badd +1 ../pms/test/wrangler.js
 badd +12 test/it1-favor-producer.mjs
+badd +244 v2/www/model/account-new.mjs
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
