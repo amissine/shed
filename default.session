@@ -56,6 +56,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit v2/shim.js
 set splitbelow splitright
@@ -969,12 +970,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 460 - ((23 * winheight(0) + 17) / 34)
+let s:l = 1 - ((0 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-460
-normal! 04|
+1
+normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 3 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
@@ -991,7 +992,7 @@ exe 'vert 6resize ' . ((&columns * 89 + 89) / 179)
 exe '7resize ' . ((&lines * 34 + 24) / 49)
 exe 'vert 7resize ' . ((&columns * 89 + 89) / 179)
 tabnext
-edit .env
+edit join/README.md
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -999,6 +1000,10 @@ split
 wincmd _ | wincmd |
 vsplit
 1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 wincmd w
 wincmd w
 wincmd _ | wincmd |
@@ -1012,16 +1017,143 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 35 + 24) / 49)
+exe '1resize ' . ((&lines * 27 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
-exe '2resize ' . ((&lines * 35 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 91 + 89) / 179)
-exe '3resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
-exe '4resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 90 + 89) / 179)
+exe '2resize ' . ((&lines * 8 + 24) / 49)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
+exe '3resize ' . ((&lines * 36 + 24) / 49)
+exe 'vert 3resize ' . ((&columns * 91 + 89) / 179)
+exe '4resize ' . ((&lines * 9 + 24) / 49)
+exe 'vert 4resize ' . ((&columns * 88 + 89) / 179)
+exe '5resize ' . ((&lines * 9 + 24) / 49)
+exe 'vert 5resize ' . ((&columns * 90 + 89) / 179)
 argglobal
-balt join/.well-known/stellar.toml
+balt .env
+setlocal noautoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=fb:*,fb:-,fb:+,n:>
+setlocal commentstring=<!--%s-->
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'markdown'
+setlocal filetype=markdown
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcqln
+setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\|^[-*+]\\s\\+\\|^\\[^\\ze[^\\]]\\+\\]:
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'markdown'
+setlocal syntax=markdown
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+argglobal
+if bufexists(".env") | buffer .env | else | edit .env | endif
+balt join/README.md
 setlocal noautoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -1137,7 +1269,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 17) / 35)
+let s:l = 1 - ((0 * winheight(0) + 4) / 8)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1262,7 +1394,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 3 - ((0 * winheight(0) + 17) / 35)
+let s:l = 3 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1387,7 +1519,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 6 - ((5 * winheight(0) + 5) / 10)
+let s:l = 6 - ((5 * winheight(0) + 4) / 9)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1512,21 +1644,24 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 5 - ((4 * winheight(0) + 5) / 10)
+let s:l = 5 - ((4 * winheight(0) + 4) / 9)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 5
 normal! 039|
 wincmd w
-exe '1resize ' . ((&lines * 35 + 24) / 49)
+2wincmd w
+exe '1resize ' . ((&lines * 27 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
-exe '2resize ' . ((&lines * 35 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 91 + 89) / 179)
-exe '3resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
-exe '4resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 90 + 89) / 179)
+exe '2resize ' . ((&lines * 8 + 24) / 49)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
+exe '3resize ' . ((&lines * 36 + 24) / 49)
+exe 'vert 3resize ' . ((&columns * 91 + 89) / 179)
+exe '4resize ' . ((&lines * 9 + 24) / 49)
+exe 'vert 4resize ' . ((&columns * 88 + 89) / 179)
+exe '5resize ' . ((&lines * 9 + 24) / 49)
+exe 'vert 5resize ' . ((&columns * 90 + 89) / 179)
 tabnext
 edit test/account.mjs
 set splitbelow splitright
@@ -2478,6 +2613,293 @@ exe '6resize ' . ((&lines * 11 + 24) / 49)
 exe 'vert 6resize ' . ((&columns * 94 + 89) / 179)
 exe '7resize ' . ((&lines * 10 + 24) / 49)
 exe 'vert 7resize ' . ((&columns * 94 + 89) / 179)
+tabnext
+edit test/remove-user.mjs
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+argglobal
+balt test/add-user.mjs
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'javascript'
+setlocal filetype=javascript
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetJavascriptIndent()
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=javascriptcomplete#CompleteJS
+setlocal path=.,,
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'javascript'
+setlocal syntax=javascript
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+1
+normal! zo
+5
+normal! zo
+7
+normal! zo
+15
+normal! zo
+24
+normal! zo
+28
+normal! zo
+37
+normal! zo
+41
+normal! zo
+let s:l = 11 - ((4 * winheight(0) + 23) / 46)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+11
+normal! 023|
+wincmd w
+argglobal
+if bufexists("test/add-user.mjs") | buffer test/add-user.mjs | else | edit test/add-user.mjs | endif
+balt test/remove-user.mjs
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'javascript'
+setlocal filetype=javascript
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetJavascriptIndent()
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=javascriptcomplete#CompleteJS
+setlocal path=.,,
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'javascript'
+setlocal syntax=javascript
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+1
+normal! zo
+5
+normal! zo
+let s:l = 35 - ((33 * winheight(0) + 23) / 46)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+35
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 tabnext
 edit test/it1-favor-producer2.mjs
 set splitbelow splitright
@@ -4559,12 +4981,12 @@ setlocal wrapmargin=0
 normal! zo
 3
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 15) / 30)
+let s:l = 7 - ((6 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+7
+normal! 033|
 wincmd w
 exe '1resize ' . ((&lines * 7 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
@@ -4707,15 +5129,13 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-27
+347
 normal! zo
-230
-normal! zo
-let s:l = 230 - ((73 * winheight(0) + 23) / 46)
+let s:l = 351 - ((350 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-230
+351
 normal! 0
 wincmd w
 argglobal
@@ -4836,16 +5256,18 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-2
-normal! zo
 22
 normal! zo
-let s:l = 13 - ((12 * winheight(0) + 23) / 46)
+25
+normal! zo
+34
+normal! zo
+let s:l = 38 - ((37 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
-normal! 0
+38
+normal! 07|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
@@ -5119,16 +5541,16 @@ normal! zo
 normal! zc
 55
 normal! zo
-let s:l = 79 - ((78 * winheight(0) + 23) / 46)
+let s:l = 78 - ((77 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-79
-normal! 022|
+78
+normal! 016|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-tabnext 8
+tabnext 2
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
@@ -5202,6 +5624,8 @@ badd +4 v2/qa/index.js
 badd +1 ../pms/test/wrangler.js
 badd +12 test/it1-favor-producer.mjs
 badd +244 v2/www/model/account-new.mjs
+badd +0 test/remove-user.mjs
+badd +0 join/README.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
