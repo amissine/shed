@@ -8,7 +8,7 @@ test('remove user', async t => { // FIXME {{{1
   //user = await new Poke(userPK)
   //const data = user.data()
   //const userSECRET = decrypt(data.td1 + data.td2)
-  const userSECRET = '' // TODO add DEMO USER userSECRET to remove
+  const userSECRET = 'SCVODNUO4VQVAGD2N2QE7PD56FMTDR332BLCXIZJASP3P3B4RXA3P6AS' // TODO add DEMO USER userSECRET to remove
   const userKeys = Keypair.fromSecret(userSECRET)
   const userPK = userKeys.publicKey()
 
