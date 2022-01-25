@@ -8,6 +8,7 @@
     "init": "cp \"./.env.dist.${npm_config_run:-testnet}\" ./.env.dist && envdist",
     "dev": "cd v2 && npm run dev && ttab -w -d $PWD exec npm run www",
     "qa": "cd v2 && npm run qa",
+    "qasource": "cd v2 && npm run qasource",
     "test": "ttab -w -d $PWD exec npm run ava \"${npm_config_run:-test/*.test.mjs}\""
   },
   "repository": {
