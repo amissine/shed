@@ -4,6 +4,7 @@
   "description": "The gratz.io testbed",
   "main": "index.js",
   "scripts": {
+    "admin": "export $(cat .env|tr -d [:blank:]|xargs) && v2/bin/run.mjs \"${npm_config_run}\"",
     "ava": "export $(cat .env|tr -d [:blank:]|xargs) && ava -v -w --timeout=2m",
     "bd": "cd v2 && npm run dev",
     "cd": "npm run bd && npm run cfw && sleep 5 && npm run ttff",
