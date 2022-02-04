@@ -2911,9 +2911,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 21 + 24) / 49)
+exe '1resize ' . ((&lines * 12 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 20 + 24) / 49)
+exe '2resize ' . ((&lines * 29 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 exe '3resize ' . ((&lines * 3 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
@@ -3041,7 +3041,7 @@ normal! zo
 normal! zo
 23
 normal! zo
-let s:l = 25 - ((1 * winheight(0) + 10) / 21)
+let s:l = 25 - ((1 * winheight(0) + 6) / 12)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -3172,7 +3172,7 @@ normal! zo
 normal! zo
 41
 normal! zo
-let s:l = 41 - ((0 * winheight(0) + 10) / 20)
+let s:l = 41 - ((0 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -3441,9 +3441,9 @@ normal! zt
 27
 normal! 03|
 wincmd w
-exe '1resize ' . ((&lines * 21 + 24) / 49)
+exe '1resize ' . ((&lines * 12 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 20 + 24) / 49)
+exe '2resize ' . ((&lines * 29 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 exe '3resize ' . ((&lines * 3 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
@@ -3844,12 +3844,14 @@ setlocal wrap
 setlocal wrapmargin=0
 1
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+147
+normal! zo
+let s:l = 147 - ((146 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+147
+normal! 016|
 wincmd w
 exe '1resize ' . ((&lines * 41 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
@@ -4140,12 +4142,16 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 45 - ((44 * winheight(0) + 16) / 33)
+100
+normal! zo
+115
+normal! zo
+let s:l = 118 - ((18 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-45
-normal! 01|
+118
+normal! 03|
 wincmd w
 argglobal
 if bufexists("v2/bin/www.mjs") | buffer v2/bin/www.mjs | else | edit v2/bin/www.mjs | endif
@@ -4515,24 +4521,16 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-3
-normal! zo
 16
 normal! zo
 21
 normal! zo
-29
-normal! zo
-79
-normal! zo
-91
-normal! zo
-let s:l = 27 - ((23 * winheight(0) + 23) / 46)
+let s:l = 25 - ((24 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-27
-normal! 010|
+25
+normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 33 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
@@ -4560,10 +4558,10 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 90 + 89) / 179)
-exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
 argglobal
 balt v2/www/presenter/onload.mjs
 setlocal autoindent
@@ -4822,16 +4820,16 @@ normal! zc
 normal! zo
 29
 normal! zo
-let s:l = 3 - ((2 * winheight(0) + 11) / 22)
+let s:l = 25 - ((24 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! 038|
+25
+normal! 026|
 wincmd w
 argglobal
 if bufexists("v2/www/view/onload.mjs") | buffer v2/www/view/onload.mjs | else | edit v2/www/view/onload.mjs | endif
-balt v2/www/model/users.mjs
+balt v2/www/model/storage.js
 setlocal autoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -4947,27 +4945,35 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-75
+1
 normal! zo
-82
+51
 normal! zo
-93
+58
 normal! zo
-157
+76
 normal! zo
-let s:l = 105 - ((104 * winheight(0) + 23) / 46)
+83
+normal! zo
+94
+normal! zo
+117
+normal! zo
+168
+normal! zo
+let s:l = 107 - ((27 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-105
-normal! 07|
+107
+normal! 043|
 wincmd w
 3wincmd w
 exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 90 + 89) / 179)
-exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
 tabnext
 edit v2/www/model/account.mjs
 set splitbelow splitright
@@ -5251,7 +5257,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 2
-normal! 043|
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
@@ -5305,7 +5311,7 @@ badd +0 v2/www/view/add-user.mjs
 badd +1 v2/www/model/agent.mjs
 badd +0 v2/www/model/utils.mjs
 badd +1 test/request-favor.log
-badd +3 v2/www/model/storage.js
+badd +1 v2/www/model/storage.js
 badd +1 ../txf-agent/turrets/lib/bosh-do.mjs
 badd +1 v2/src/fund-maintainer.mjs
 badd +1 v2/view/add-user.mjs
