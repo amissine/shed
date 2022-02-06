@@ -1024,9 +1024,9 @@ exe '1resize ' . ((&lines * 27 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
 exe '2resize ' . ((&lines * 8 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
-exe '3resize ' . ((&lines * 18 + 24) / 49)
+exe '3resize ' . ((&lines * 11 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 91 + 89) / 179)
-exe '4resize ' . ((&lines * 17 + 24) / 49)
+exe '4resize ' . ((&lines * 24 + 24) / 49)
 exe 'vert 4resize ' . ((&columns * 91 + 89) / 179)
 exe '5resize ' . ((&lines * 9 + 24) / 49)
 exe 'vert 5resize ' . ((&columns * 88 + 89) / 179)
@@ -1399,12 +1399,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 9 - ((0 * winheight(0) + 9) / 18)
+let s:l = 1 - ((0 * winheight(0) + 5) / 11)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
-normal! 026|
+1
+normal! 0
 wincmd w
 argglobal
 if bufexists("join/.well-known/stellar.toml") | buffer join/.well-known/stellar.toml | else | edit join/.well-known/stellar.toml | endif
@@ -1524,12 +1524,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 3 - ((0 * winheight(0) + 8) / 17)
+let s:l = 33 - ((23 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! $
+33
+normal! 0
 wincmd w
 argglobal
 if bufexists(".env.dist.testnet") | buffer .env.dist.testnet | else | edit .env.dist.testnet | endif
@@ -1785,9 +1785,9 @@ exe '1resize ' . ((&lines * 27 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
 exe '2resize ' . ((&lines * 8 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
-exe '3resize ' . ((&lines * 18 + 24) / 49)
+exe '3resize ' . ((&lines * 11 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 91 + 89) / 179)
-exe '4resize ' . ((&lines * 17 + 24) / 49)
+exe '4resize ' . ((&lines * 24 + 24) / 49)
 exe 'vert 4resize ' . ((&columns * 91 + 89) / 179)
 exe '5resize ' . ((&lines * 9 + 24) / 49)
 exe 'vert 5resize ' . ((&columns * 88 + 89) / 179)
@@ -2867,11 +2867,15 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 5) / 10)
+5
+normal! zo
+6
+normal! zo
+let s:l = 6 - ((5 * winheight(0) + 5) / 10)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+6
 normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 10 + 24) / 49)
@@ -4019,12 +4023,12 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 33 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
 exe '2resize ' . ((&lines * 6 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
 exe '3resize ' . ((&lines * 5 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 4resize ' . ((&columns * 91 + 89) / 179)
 argglobal
 balt v2/bin/www.mjs
 setlocal noautoindent
@@ -4146,12 +4150,12 @@ setlocal wrapmargin=0
 normal! zo
 115
 normal! zo
-let s:l = 118 - ((18 * winheight(0) + 16) / 33)
+let s:l = 100 - ((0 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-118
-normal! 03|
+100
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/bin/www.mjs") | buffer v2/bin/www.mjs | else | edit v2/bin/www.mjs | endif
@@ -4523,22 +4527,34 @@ setlocal wrap
 setlocal wrapmargin=0
 16
 normal! zo
-21
+29
 normal! zo
-let s:l = 25 - ((24 * winheight(0) + 23) / 46)
+31
+normal! zo
+50
+normal! zo
+50
+normal! zc
+101
+normal! zo
+102
+normal! zo
+159
+normal! zo
+let s:l = 127 - ((98 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-25
+127
 normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 33 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
 exe '2resize ' . ((&lines * 6 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
 exe '3resize ' . ((&lines * 5 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 4resize ' . ((&columns * 91 + 89) / 179)
 tabnext
 edit v2/www/model/add-user.mjs
 set splitbelow splitright
@@ -4557,9 +4573,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 23 + 24) / 49)
+exe '1resize ' . ((&lines * 5 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
+exe '2resize ' . ((&lines * 40 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
 argglobal
@@ -4679,14 +4695,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-6
-normal! zo
-let s:l = 7 - ((6 * winheight(0) + 11) / 23)
+let s:l = 1 - ((0 * winheight(0) + 2) / 5)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
-normal! 03|
+1
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/www/presenter/onload.mjs") | buffer v2/www/presenter/onload.mjs | else | edit v2/www/presenter/onload.mjs | endif
@@ -4808,24 +4822,22 @@ setlocal wrap
 setlocal wrapmargin=0
 1
 normal! zo
-5
+9
 normal! zo
-16
+20
 normal! zo
-24
+40
 normal! zo
-16
-normal! zc
-23
+76
 normal! zo
-29
+79
 normal! zo
-let s:l = 25 - ((24 * winheight(0) + 11) / 22)
+let s:l = 79 - ((70 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-25
-normal! 026|
+79
+normal! 03|
 wincmd w
 argglobal
 if bufexists("v2/www/view/onload.mjs") | buffer v2/www/view/onload.mjs | else | edit v2/www/view/onload.mjs | endif
@@ -4945,33 +4957,27 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-1
-normal! zo
-51
-normal! zo
-58
-normal! zo
 76
 normal! zo
-83
+84
 normal! zo
-94
+92
 normal! zo
-117
+103
 normal! zo
-168
-normal! zo
-let s:l = 107 - ((27 * winheight(0) + 23) / 46)
+92
+normal! zc
+let s:l = 91 - ((90 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-107
-normal! 043|
+91
+normal! 0
 wincmd w
 3wincmd w
-exe '1resize ' . ((&lines * 23 + 24) / 49)
+exe '1resize ' . ((&lines * 5 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
+exe '2resize ' . ((&lines * 40 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
 tabnext
@@ -5242,22 +5248,18 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-3
+5
 normal! zo
-12
+14
 normal! zo
-13
-normal! zo
-15
-normal! zo
-24
+18
 normal! zo
 let s:l = 2 - ((1 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 2
-normal! 0
+normal! 035|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
@@ -5270,8 +5272,8 @@ badd +1 test/fund-agent.mjs
 badd +1 test/it1-favor-producer2.mjs
 badd +1 v2/lib/account.mjs
 badd +1 v2/bin/run.mjs
-badd +1 v2/bin/www.mjs
-badd +1 v2/www/presenter/action.mjs
+badd +15 v2/www/style.css
+badd +1 v2/www/model/add-user.mjs
 badd +1 v2/www/model/account.mjs
 badd +1 join/package.json
 badd +10 package.json
@@ -5296,22 +5298,22 @@ badd +1 test/it1.sh
 badd +1 test/it1-favor-requestor1.mjs
 badd +1 v2/lib/utils.mjs
 badd +1 v2/lib/favor.mjs
+badd +1 v2/bin/www.mjs
 badd +1 v2/src/index.mjs
 badd +1 v2/www/index.html
-badd +15 v2/www/style.css
-badd +0 v2/presenter/action.mjs
 badd +1 v2/www/presenter/onload.mjs
-badd +3 v2/www/index.mjs
-badd +0 v2/www/model/process.mjs
-badd +0 v2/www/model/add-user.mjs
 badd +66 v2/www/view/onload.mjs
-badd +8 v2/www/model/users.mjs
-badd +2 v2/tmp.json
-badd +0 v2/www/view/add-user.mjs
-badd +1 v2/www/model/agent.mjs
-badd +0 v2/www/model/utils.mjs
-badd +1 test/request-favor.log
 badd +1 v2/www/model/storage.js
+badd +1 v2/www/model/agent.mjs
+badd +1 v2/www/model/utils.mjs
+badd +1 v2/www/presenter/action.mjs
+badd +1 v2/presenter/action.mjs
+badd +3 v2/www/index.mjs
+badd +1 v2/www/model/process.mjs
+badd +1 v2/www/model/users.mjs
+badd +2 v2/tmp.json
+badd +1 v2/www/view/add-user.mjs
+badd +1 test/request-favor.log
 badd +1 ../txf-agent/turrets/lib/bosh-do.mjs
 badd +1 v2/src/fund-maintainer.mjs
 badd +1 v2/view/add-user.mjs
