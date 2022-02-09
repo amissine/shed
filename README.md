@@ -457,6 +457,6 @@ Confirming successful test of wait/notify functionality:
 
 ## The Gratzio Demo on TESTNET
 
-###TODO
+### TODO
 
 - Update `./reset.sh` to produce `v2/www/model/process.mjs` and `v2/www/model/agent.mjs` from their `*.testnet` counterparts.
