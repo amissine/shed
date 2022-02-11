@@ -56,6 +56,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit v2/shim.js
 set splitbelow splitright
@@ -5098,22 +5099,20 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-1
+10
 normal! zo
-9
+11
 normal! zo
-20
+19
 normal! zo
-79
+71
 normal! zo
-88
-normal! zo
-let s:l = 38 - ((32 * winheight(0) + 23) / 46)
+let s:l = 20 - ((19 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-38
-normal! 029|
+20
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/www/model/process.mjs") | buffer v2/www/model/process.mjs | else | edit v2/www/model/process.mjs | endif
@@ -5235,7 +5234,7 @@ setlocal wrap
 setlocal wrapmargin=0
 3
 normal! zo
-let s:l = 13 - ((6 * winheight(0) + 5) / 11)
+let s:l = 13 - ((0 * winheight(0) + 5) / 11)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -5366,35 +5365,165 @@ normal! zo
 normal! zo
 84
 normal! zo
-88
-normal! zo
-87
-normal! zo
-98
-normal! zo
-87
-normal! zc
-97
-normal! zo
 112
 normal! zo
 113
 normal! zo
 123
 normal! zo
-let s:l = 99 - ((2 * winheight(0) + 17) / 34)
+let s:l = 131 - ((34 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-99
-normal! 064|
+131
+normal! 05|
 wincmd w
-3wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe '2resize ' . ((&lines * 11 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 exe '3resize ' . ((&lines * 34 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+tabnext
+edit v2/www/model/favor.mjs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+balt v2/www/view/onload.mjs
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'javascript'
+setlocal filetype=javascript
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetJavascriptIndent()
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=javascriptcomplete#CompleteJS
+setlocal path=.,,
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'javascript'
+setlocal syntax=javascript
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+181
+normal! zo
+182
+normal! zo
+275
+normal! zo
+275
+normal! zc
+let s:l = 221 - ((220 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+221
+normal! 01|
 tabnext
 edit v2/www/model/account.mjs
 set splitbelow splitright
@@ -5536,7 +5665,7 @@ normal! zo
 normal! zo
 44
 normal! zo
-347
+332
 normal! zo
 let s:l = 49 - ((48 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
@@ -5686,7 +5815,7 @@ badd +1 test/it1-favor-producer2.mjs
 badd +1 v2/lib/account.mjs
 badd +1 v2/bin/run.mjs
 badd +1 v2/www/style.css
-badd +1 v2/www/model/add-user.mjs
+badd +1 v2/www/presenter/onload.mjs
 badd +1 v2/www/model/account.mjs
 badd +1 join/package.json
 badd +10 package.json
@@ -5711,20 +5840,21 @@ badd +1 test/it1.sh
 badd +1 test/it1-favor-requestor1.mjs
 badd +1 v2/lib/utils.mjs
 badd +1 v2/lib/favor.mjs
-badd +1 v2/www/index.mjs
+badd +1 v2/www/presenter/utils.mjs
+badd +2 v2/tmp.json
 badd +1 v2/bin/www.mjs
 badd +1 v2/src/index.mjs
 badd +1 v2/www/index.html
-badd +1 v2/www/presenter/onload.mjs
+badd +1 v2/www/model/add-user.mjs
+badd +1 v2/www/model/process.mjs
 badd +1 v2/www/view/onload.mjs
-badd +1 v2/www/model/storage.js
 badd +1 v2/www/model/agent.mjs
 badd +1 v2/www/model/utils.mjs
+badd +1 v2/www/index.mjs
+badd +1 v2/www/model/storage.js
 badd +1 v2/www/presenter/action.mjs
 badd +1 v2/presenter/action.mjs
-badd +1 v2/www/model/process.mjs
 badd +1 v2/www/model/users.mjs
-badd +2 v2/tmp.json
 badd +1 v2/www/view/add-user.mjs
 badd +1 test/request-favor.log
 badd +1 ../txf-agent/turrets/lib/bosh-do.mjs
@@ -5761,7 +5891,7 @@ badd +12 test/it1-favor-producer.mjs
 badd +244 v2/www/model/account-new.mjs
 badd +8 v2/www/modal.html
 badd +147 v2/www/modal-form.html
-badd +0 v2/www/presenter/utils.mjs
+badd +0 v2/www/model/favor.mjs
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -5773,6 +5903,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
