@@ -4978,12 +4978,12 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 11 + 24) / 49)
+exe '2resize ' . ((&lines * 5 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 34 + 24) / 49)
+exe '3resize ' . ((&lines * 40 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
 argglobal
-balt v2/www/model/add-user.mjs
+balt ../txf-agent/turrets/lib/bosh-do.mjs
 setlocal autoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -5099,19 +5099,17 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-10
+9
 normal! zo
-11
+51
 normal! zo
-19
+138
 normal! zo
-71
-normal! zo
-let s:l = 20 - ((19 * winheight(0) + 23) / 46)
+let s:l = 50 - ((49 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
+50
 normal! 0
 wincmd w
 argglobal
@@ -5232,14 +5230,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-3
-normal! zo
-let s:l = 13 - ((0 * winheight(0) + 5) / 11)
+let s:l = 1 - ((0 * winheight(0) + 2) / 5)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
-normal! 09|
+1
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/www/view/onload.mjs") | buffer v2/www/view/onload.mjs | else | edit v2/www/view/onload.mjs | endif
@@ -5363,25 +5359,30 @@ setlocal wrapmargin=0
 normal! zo
 76
 normal! zo
-84
+77
 normal! zo
-112
+81
 normal! zo
-113
+77
+normal! zc
+80
 normal! zo
-123
+126
 normal! zo
-let s:l = 131 - ((34 * winheight(0) + 17) / 34)
+137
+normal! zo
+let s:l = 86 - ((10 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-131
-normal! 05|
+86
+normal! 024|
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 11 + 24) / 49)
+exe '2resize ' . ((&lines * 5 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 34 + 24) / 49)
+exe '3resize ' . ((&lines * 40 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
 tabnext
 edit v2/www/model/favor.mjs
@@ -5510,20 +5511,24 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-181
+6
 normal! zo
-182
+9
 normal! zo
-275
+172
 normal! zo
-275
+173
+normal! zo
+266
+normal! zo
+266
 normal! zc
-let s:l = 221 - ((220 * winheight(0) + 23) / 47)
+let s:l = 22 - ((21 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-221
-normal! 01|
+22
+normal! 021|
 tabnext
 edit v2/www/model/account.mjs
 set splitbelow splitright
@@ -5667,12 +5672,12 @@ normal! zo
 normal! zo
 332
 normal! zo
-let s:l = 49 - ((48 * winheight(0) + 23) / 46)
+let s:l = 44 - ((43 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-49
-normal! 07|
+44
+normal! 055|
 wincmd w
 argglobal
 if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
@@ -5794,14 +5799,18 @@ setlocal wrap
 setlocal wrapmargin=0
 14
 normal! zo
-18
+15
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+33
+normal! zo
+15
+normal! zc
+let s:l = 49 - ((48 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+49
+normal! 01|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
@@ -5857,7 +5866,7 @@ badd +1 v2/presenter/action.mjs
 badd +1 v2/www/model/users.mjs
 badd +1 v2/www/view/add-user.mjs
 badd +1 test/request-favor.log
-badd +1 ../txf-agent/turrets/lib/bosh-do.mjs
+badd +78 ../txf-agent/turrets/lib/bosh-do.mjs
 badd +1 v2/src/fund-maintainer.mjs
 badd +1 v2/view/add-user.mjs
 badd +4 v2/dev/index.html
@@ -5891,7 +5900,7 @@ badd +12 test/it1-favor-producer.mjs
 badd +244 v2/www/model/account-new.mjs
 badd +8 v2/www/modal.html
 badd +147 v2/www/modal-form.html
-badd +0 v2/www/model/favor.mjs
+badd +1 v2/www/model/favor.mjs
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -5903,7 +5912,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
