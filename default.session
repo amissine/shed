@@ -5007,9 +5007,9 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
-exe '2resize ' . ((&lines * 23 + 24) / 49)
+exe '2resize ' . ((&lines * 12 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 179)
-exe '3resize ' . ((&lines * 22 + 24) / 49)
+exe '3resize ' . ((&lines * 33 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
 argglobal
 balt ../txf-agent/turrets/lib/bosh-do.mjs
@@ -5128,26 +5128,16 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-1
-normal! zo
 10
 normal! zo
-35
+11
 normal! zo
-60
-normal! zo
-128
-normal! zo
-160
-normal! zo
-204
-normal! zo
-let s:l = 200 - ((40 * winheight(0) + 23) / 46)
+let s:l = 11 - ((10 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-200
-normal! 024|
+11
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/www/model/process.mjs") | buffer v2/www/model/process.mjs | else | edit v2/www/model/process.mjs | endif
@@ -5269,12 +5259,12 @@ setlocal wrap
 setlocal wrapmargin=0
 3
 normal! zo
-let s:l = 13 - ((0 * winheight(0) + 11) / 23)
+let s:l = 7 - ((0 * winheight(0) + 6) / 12)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
-normal! 09|
+7
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/www/view/onload.mjs") | buffer v2/www/view/onload.mjs | else | edit v2/www/view/onload.mjs | endif
@@ -5412,17 +5402,18 @@ normal! zo
 normal! zo
 218
 normal! zo
-let s:l = 112 - ((0 * winheight(0) + 11) / 22)
+let s:l = 112 - ((0 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 112
 normal! 010|
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
-exe '2resize ' . ((&lines * 23 + 24) / 49)
+exe '2resize ' . ((&lines * 12 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 179)
-exe '3resize ' . ((&lines * 22 + 24) / 49)
+exe '3resize ' . ((&lines * 33 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
 tabnext
 edit v2/www/presenter/utils.mjs
@@ -5688,12 +5679,12 @@ setlocal wrapmargin=0
 normal! zo
 4
 normal! zo
-let s:l = 15 - ((14 * winheight(0) + 23) / 46)
+let s:l = 16 - ((15 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
-normal! 03|
+16
+normal! 058|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
@@ -5850,22 +5841,26 @@ normal! zo
 normal! zo
 123
 normal! zc
+168
+normal! zo
 189
 normal! zo
 190
 normal! zo
 219
 normal! zo
-230
+218
 normal! zo
-230
+231
+normal! zo
+231
 normal! zc
-let s:l = 199 - ((104 * winheight(0) + 23) / 46)
+let s:l = 309 - ((117 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-199
-normal! 048|
+309
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
@@ -6295,7 +6290,7 @@ normal! 026|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-tabnext 10
+tabnext 8
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
