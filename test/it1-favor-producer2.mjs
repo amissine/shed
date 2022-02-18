@@ -1,6 +1,6 @@
 import test from 'ava' // {{{1
 import { Poke, Txdr, encrypt, decrypt } from '../v2/lib/account.mjs'
-import { acceptance, Favor, FavorRequest, FavorRequestor } from '../v2/lib/favor.mjs'
+import { acceptance, Favor, FavorRequestor } from '../v2/lib/favor.mjs'
 import { delay } from '../v2/lib/utils.mjs'
 import { Keypair } from 'stellar-sdk'
 
