@@ -5132,28 +5132,16 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-11
+13
 normal! zo
-12
+29
 normal! zo
-20
-normal! zo
-59
-normal! zo
-20
-normal! zc
-68
-normal! zo
-96
-normal! zo
-271
-normal! zo
-let s:l = 73 - ((72 * winheight(0) + 23) / 46)
+let s:l = 44 - ((43 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-73
-normal! 041|
+44
+normal! 030|
 wincmd w
 argglobal
 if bufexists("v2/www/model/process.mjs") | buffer v2/www/model/process.mjs | else | edit v2/www/model/process.mjs | endif
@@ -5275,12 +5263,12 @@ setlocal wrap
 setlocal wrapmargin=0
 3
 normal! zo
-let s:l = 22 - ((18 * winheight(0) + 11) / 23)
+let s:l = 15 - ((14 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
-normal! 016|
+15
+normal! 037|
 wincmd w
 argglobal
 if bufexists("v2/www/view/onload.mjs") | buffer v2/www/view/onload.mjs | else | edit v2/www/view/onload.mjs | endif
@@ -5404,22 +5392,12 @@ setlocal wrapmargin=0
 normal! zo
 114
 normal! zo
-149
-normal! zo
-155
-normal! zo
-166
-normal! zo
-178
-normal! zo
-221
-normal! zo
-let s:l = 169 - ((37 * winheight(0) + 11) / 22)
+let s:l = 113 - ((17 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-169
-normal! 09|
+113
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
 exe '2resize ' . ((&lines * 23 + 24) / 49)
@@ -5561,22 +5539,18 @@ setlocal wrap
 setlocal wrapmargin=0
 101
 normal! zo
-102
-normal! zo
-183
+151
 normal! zo
 201
 normal! zo
 202
 normal! zo
-230
-normal! zo
-let s:l = 102 - ((101 * winheight(0) + 23) / 46)
+let s:l = 154 - ((53 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-102
-normal! 0
+154
+normal! 042|
 wincmd w
 argglobal
 if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
@@ -5696,26 +5670,18 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-1
-normal! zo
 16
-normal! zo
-17
-normal! zo
-37
 normal! zo
 47
 normal! zo
-67
+64
 normal! zo
-80
-normal! zo
-let s:l = 27 - ((0 * winheight(0) + 23) / 46)
+let s:l = 49 - ((48 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-27
-normal! 021|
+49
+normal! 05|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
@@ -6000,12 +5966,12 @@ normal! zo
 normal! zo
 18
 normal! zo
-let s:l = 8 - ((7 * winheight(0) + 11) / 23)
+let s:l = 4 - ((3 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
-normal! 0
+4
+normal! 035|
 wincmd w
 argglobal
 if bufexists("v2/www/presenter/agent.mjs") | buffer v2/www/presenter/agent.mjs | else | edit v2/www/presenter/agent.mjs | endif
@@ -6132,9 +6098,8 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 25
-normal! 01|
+normal! 0
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe '2resize ' . ((&lines * 23 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
@@ -6412,22 +6377,22 @@ normal! zo
 normal! zo
 47
 normal! zo
-67
+64
 normal! zo
-80
+76
 normal! zo
-115
+111
 normal! zo
-let s:l = 110 - ((29 * winheight(0) + 23) / 46)
+let s:l = 106 - ((29 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-110
+106
 normal! 045|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-tabnext 10
+tabnext 8
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
@@ -6437,7 +6402,7 @@ badd +1 test/it1-favor-producer2.mjs
 badd +1 v2/lib/account.mjs
 badd +1 v2/bin/run.mjs
 badd +1 v2/www/style.css
-badd +283 v2/www/presenter/onload.mjs
+badd +183 v2/www/presenter/onload.mjs
 badd +1 v2/www/model/favor.mjs
 badd +1 v2/www/model/account.mjs
 badd +1 join/package.json
@@ -6471,13 +6436,13 @@ badd +1 v2/www/index.html
 badd +0 ../txf-agent/turrets/lib/bosh-do.mjs
 badd +1 v2/www/model/process.mjs
 badd +1 v2/www/view/onload.mjs
-badd +1 v2/www/presenter/agent.mjs
 badd +125 v2/www/model/agent.mjs
+badd +1 v2/www/presenter/agent.mjs
+badd +1 v2/www/model/storage.js
 badd +1 v2/www/model/add-user.mjs
 badd +172 ./semaphore.txt
 badd +1 v2/www/model/utils.mjs
 badd +1 v2/www/index.mjs
-badd +1 v2/www/model/storage.js
 badd +1 v2/www/presenter/action.mjs
 badd +1 v2/presenter/action.mjs
 badd +1 v2/www/model/users.mjs
