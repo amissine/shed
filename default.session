@@ -4176,16 +4176,22 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-100
+101
 normal! zo
-128
+199
 normal! zo
-let s:l = 128 - ((127 * winheight(0) + 23) / 46)
+210
+normal! zo
+199
+normal! zc
+209
+normal! zo
+let s:l = 212 - ((211 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-128
-normal! 0
+212
+normal! 037|
 wincmd w
 argglobal
 if bufexists("v2/www/presenter/utils.mjs") | buffer v2/www/presenter/utils.mjs | else | edit v2/www/presenter/utils.mjs | endif
@@ -5544,7 +5550,6 @@ normal! zt
 130
 normal! 0
 wincmd w
-3wincmd w
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
 exe '2resize ' . ((&lines * 21 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 179)
@@ -5687,24 +5692,26 @@ setlocal wrapmargin=0
 normal! zo
 138
 normal! zo
-199
+165
 normal! zo
-200
+238
 normal! zo
-199
+239
+normal! zo
+238
 normal! zc
-242
+281
 normal! zo
-243
+282
 normal! zo
-242
+281
 normal! zc
-let s:l = 140 - ((139 * winheight(0) + 23) / 46)
+let s:l = 188 - ((187 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-140
-normal! 0
+188
+normal! 01|
 wincmd w
 argglobal
 if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
@@ -5828,12 +5835,12 @@ setlocal wrapmargin=0
 normal! zo
 64
 normal! zo
-let s:l = 73 - ((72 * winheight(0) + 23) / 46)
+let s:l = 74 - ((73 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-73
-normal! 05|
+74
+normal! 018|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
@@ -5977,12 +5984,16 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+1
+normal! zo
+177
+normal! zo
+let s:l = 180 - ((179 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+180
+normal! 03|
 wincmd w
 argglobal
 if bufexists("v2/www/model/storage.js") | buffer v2/www/model/storage.js | else | edit v2/www/model/storage.js | endif
@@ -6229,12 +6240,14 @@ setlocal wrap
 setlocal wrapmargin=0
 4
 normal! zo
-let s:l = 11 - ((10 * winheight(0) + 19) / 38)
+12
+normal! zo
+let s:l = 15 - ((14 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-11
-normal! 01|
+15
+normal! 06|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe '2resize ' . ((&lines * 7 + 24) / 49)
@@ -6513,20 +6526,20 @@ normal! zo
 normal! zo
 64
 normal! zo
-76
+77
 normal! zo
-111
+112
 normal! zo
-let s:l = 106 - ((29 * winheight(0) + 23) / 46)
+let s:l = 107 - ((29 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-106
+107
 normal! 045|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-tabnext 8
+tabnext 9
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
