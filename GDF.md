@@ -13,4 +13,4 @@ GDF offers developers worldwide the following favors:
 - support for Quality Assurance (QA) of FE projects under development;
 - support for General Availability (GA) of FE products.
 
-All Stellar accounts with GRAT are GDF stakeholders.
+All Stellar accounts with GRAT are GDF stakeholders. All GDF profits are to be distributed among its stakeholders.
