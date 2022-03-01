@@ -1660,12 +1660,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 22 - ((12 * winheight(0) + 12) / 24)
+let s:l = 29 - ((7 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
-normal! 024|
+29
+normal! 012|
 wincmd w
 argglobal
 if bufexists(".env.dist.testnet") | buffer .env.dist.testnet | else | edit .env.dist.testnet | endif
@@ -5407,18 +5407,24 @@ setlocal wrap
 setlocal wrapmargin=0
 13
 normal! zo
-22
-normal! zo
 84
 normal! zo
 92
 normal! zo
-let s:l = 93 - ((92 * winheight(0) + 23) / 46)
+111
+normal! zo
+133
+normal! zo
+188
+normal! zo
+283
+normal! zo
+let s:l = 145 - ((132 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-93
-normal! 0
+145
+normal! 037|
 wincmd w
 argglobal
 if bufexists("v2/www/model/process.mjs") | buffer v2/www/model/process.mjs | else | edit v2/www/model/process.mjs | endif
@@ -5667,9 +5673,9 @@ setlocal wrap
 setlocal wrapmargin=0
 96
 normal! zo
-114
-normal! zo
 129
+normal! zo
+138
 normal! zo
 let s:l = 130 - ((29 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
@@ -5678,6 +5684,7 @@ normal! zt
 130
 normal! 0
 wincmd w
+3wincmd w
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
 exe '2resize ' . ((&lines * 21 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 179)
@@ -5816,6 +5823,8 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
+1
+normal! zo
 101
 normal! zo
 138
@@ -6368,7 +6377,7 @@ setlocal wrapmargin=0
 normal! zo
 12
 normal! zo
-let s:l = 15 - ((14 * winheight(0) + 19) / 38)
+let s:l = 15 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -6646,31 +6655,22 @@ setlocal wrap
 setlocal wrapmargin=0
 16
 normal! zo
-17
+57
 normal! zo
-37
-normal! zo
-47
-normal! zo
-64
-normal! zo
-77
-normal! zo
-112
-normal! zo
-let s:l = 107 - ((29 * winheight(0) + 23) / 46)
+let s:l = 58 - ((57 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-107
-normal! 045|
+58
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-tabnext 11
+tabnext 9
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
+badd +1 GDF.md
 badd +1 join/README.md
 badd +1 test/fund-agent.mjs
 badd +1 test/it1-favor-producer2.mjs
@@ -6756,7 +6756,6 @@ badd +12 test/it1-favor-producer.mjs
 badd +244 v2/www/model/account-new.mjs
 badd +8 v2/www/modal.html
 badd +147 v2/www/modal-form.html
-badd +0 GDF.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
