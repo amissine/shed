@@ -5241,22 +5241,28 @@ normal! zo
 normal! zo
 43
 normal! zo
-59
+76
 normal! zo
-79
+76
+normal! zc
+96
 normal! zo
-110
+127
 normal! zo
-131
+96
+normal! zc
+148
 normal! zo
-132
+149
 normal! zo
-let s:l = 39 - ((0 * winheight(0) + 23) / 46)
+148
+normal! zc
+let s:l = 56 - ((17 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-39
-normal! 0
+56
+normal! 032|
 wincmd w
 exe '1resize ' . ((&lines * 33 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
@@ -5284,9 +5290,9 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
-exe '2resize ' . ((&lines * 21 + 24) / 49)
+exe '2resize ' . ((&lines * 9 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 179)
-exe '3resize ' . ((&lines * 24 + 24) / 49)
+exe '3resize ' . ((&lines * 36 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
 argglobal
 balt ../txf-agent/turrets/lib/bosh-do.mjs
@@ -5407,24 +5413,26 @@ setlocal wrap
 setlocal wrapmargin=0
 13
 normal! zo
-84
+64
 normal! zo
-92
+85
 normal! zo
-111
+85
+normal! zc
+112
 normal! zo
-133
+134
 normal! zo
-188
+285
 normal! zo
-283
+296
 normal! zo
-let s:l = 145 - ((132 * winheight(0) + 23) / 46)
+let s:l = 157 - ((84 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-145
-normal! 037|
+157
+normal! 042|
 wincmd w
 argglobal
 if bufexists("v2/www/model/process.mjs") | buffer v2/www/model/process.mjs | else | edit v2/www/model/process.mjs | endif
@@ -5546,11 +5554,11 @@ setlocal wrap
 setlocal wrapmargin=0
 3
 normal! zo
-let s:l = 7 - ((0 * winheight(0) + 10) / 21)
+let s:l = 8 - ((0 * winheight(0) + 4) / 9)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
+8
 normal! 0
 wincmd w
 argglobal
@@ -5673,22 +5681,28 @@ setlocal wrap
 setlocal wrapmargin=0
 96
 normal! zo
+101
+normal! zo
+114
+normal! zo
 129
 normal! zo
 138
 normal! zo
-let s:l = 130 - ((29 * winheight(0) + 12) / 24)
+171
+normal! zo
+let s:l = 101 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-130
-normal! 0
+101
+normal! 03|
 wincmd w
 3wincmd w
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
-exe '2resize ' . ((&lines * 21 + 24) / 49)
+exe '2resize ' . ((&lines * 9 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 179)
-exe '3resize ' . ((&lines * 24 + 24) / 49)
+exe '3resize ' . ((&lines * 36 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
 tabnext
 edit v2/www/model/favor.mjs
