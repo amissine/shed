@@ -4980,18 +4980,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-15
-normal! zo
-101
-normal! zo
-116
-normal! zo
-let s:l = 30 - ((14 * winheight(0) + 16) / 33)
+let s:l = 1 - ((0 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-30
-normal! 016|
+1
+normal! 0
 wincmd w
 argglobal
 if bufexists("v2/bin/www.mjs") | buffer v2/bin/www.mjs | else | edit v2/bin/www.mjs | endif
@@ -5363,14 +5357,24 @@ setlocal wrap
 setlocal wrapmargin=0
 16
 normal! zo
-18
+45
 normal! zo
-let s:l = 40 - ((39 * winheight(0) + 23) / 46)
+79
+normal! zo
+123
+normal! zo
+142
+normal! zo
+175
+normal! zo
+193
+normal! zo
+let s:l = 86 - ((41 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-40
-normal! 0
+86
+normal! 065|
 wincmd w
 exe '1resize ' . ((&lines * 33 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
@@ -5519,13 +5523,19 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-112
+116
 normal! zo
-let s:l = 292 - ((291 * winheight(0) + 23) / 46)
+272
+normal! zo
+276
+normal! zo
+306
+normal! zo
+let s:l = 305 - ((304 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-292
+305
 normal! 0
 wincmd w
 argglobal
@@ -5773,28 +5783,24 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-51
+206
 normal! zo
-55
+207
 normal! zo
-51
+212
+normal! zo
+207
 normal! zc
-70
+211
 normal! zo
-75
+282
 normal! zo
-78
-normal! zo
-210
-normal! zo
-215
-normal! zo
-let s:l = 78 - ((77 * winheight(0) + 18) / 36)
+let s:l = 213 - ((212 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-78
-normal! 0
+213
+normal! 057|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
 exe '2resize ' . ((&lines * 9 + 24) / 49)
@@ -5934,16 +5940,78 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-101
+8
+normal! zo
+9
+normal! zo
+12
+normal! zo
+18
+normal! zo
+19
+normal! zo
+23
+normal! zo
+27
+normal! zo
+37
+normal! zo
+37
+normal! zc
+130
 normal! zo
 131
 normal! zo
-let s:l = 135 - ((134 * winheight(0) + 23) / 46)
+134
+normal! zo
+130
+normal! zc
+139
+normal! zo
+140
+normal! zo
+139
+normal! zc
+145
+normal! zo
+146
+normal! zo
+145
+normal! zc
+152
+normal! zo
+153
+normal! zo
+152
+normal! zc
+159
+normal! zo
+160
+normal! zo
+159
+normal! zc
+303
+normal! zo
+303
+normal! zc
+346
+normal! zo
+347
+normal! zo
+346
+normal! zc
+353
+normal! zo
+354
+normal! zo
+359
+normal! zo
+let s:l = 25 - ((24 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-135
-normal! 014|
+25
+normal! 03|
 wincmd w
 argglobal
 if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
@@ -6063,19 +6131,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-7
-normal! zo
-16
-normal! zo
-64
-normal! zo
-77
-normal! zo
-let s:l = 11 - ((0 * winheight(0) + 23) / 46)
+let s:l = 1 - ((0 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-11
+1
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
@@ -6619,22 +6679,22 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-11
-normal! zo
 35
+normal! zo
+186
 normal! zo
 339
 normal! zo
-let s:l = 16 - ((15 * winheight(0) + 23) / 46)
+let s:l = 186 - ((185 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
-normal! 0
+186
+normal! 03|
 wincmd w
 argglobal
-if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
-balt v2/www/model/add-user.mjs
+if bufexists("v2/www/model/account.mjs") | buffer v2/www/model/account.mjs | else | edit v2/www/model/account.mjs | endif
+balt v2/www/model/agent.mjs
 setlocal autoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -6750,24 +6810,26 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-16
+35
 normal! zo
-57
+237
 normal! zo
-let s:l = 58 - ((57 * winheight(0) + 23) / 46)
+339
+normal! zo
+let s:l = 198 - ((12 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-58
-normal! 0
+198
+normal! 01|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-tabnext 8
+tabnext 9
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
-badd +16 GDF.md
+badd +1 GDF.md
 badd +1 join/README.md
 badd +1 test/fund-agent.mjs
 badd +1 test/it1-favor-producer2.mjs
@@ -6807,11 +6869,11 @@ badd +1 v2/src/index.mjs
 badd +1 v2/www/index.html
 badd +1 ../txf-agent/turrets/lib/bosh-do.mjs
 badd +1 v2/www/model/process.mjs
-badd +142 v2/www/view/onload.mjs
-badd +125 v2/www/model/agent.mjs
+badd +1 v2/www/view/onload.mjs
+badd +58 v2/www/model/agent.mjs
 badd +1 v2/www/presenter/agent.mjs
 badd +1 v2/www/model/storage.js
-badd +1 v2/www/model/add-user.mjs
+badd +0 v2/www/model/add-user.mjs
 badd +172 ./semaphore.txt
 badd +1 v2/www/model/utils.mjs
 badd +1 v2/www/index.mjs
