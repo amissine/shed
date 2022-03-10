@@ -3342,14 +3342,14 @@ normal! zo
 normal! zo
 152
 normal! zo
-181
+173
 normal! zo
-let s:l = 8 - ((7 * winheight(0) + 23) / 46)
+let s:l = 164 - ((161 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
-normal! 053|
+164
+normal! 023|
 wincmd w
 argglobal
 if bufexists("v2/www/presenter/utils.mjs") | buffer v2/www/presenter/utils.mjs | else | edit v2/www/presenter/utils.mjs | endif
@@ -3601,7 +3601,6 @@ normal! zt
 2
 normal! 04|
 wincmd w
-3wincmd w
 exe 'vert 1resize ' . ((&columns * 109 + 89) / 179)
 exe '2resize ' . ((&lines * 41 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 69 + 89) / 179)
@@ -3749,21 +3748,31 @@ setlocal wrap
 setlocal wrapmargin=0
 1
 normal! zo
-3
+5
 normal! zo
-4
+6
 normal! zo
-11
+20
 normal! zo
-14
+19
 normal! zo
-21
+23
 normal! zo
-let s:l = 2 - ((1 * winheight(0) + 23) / 46)
+22
+normal! zo
+35
+normal! zo
+44
+normal! zo
+54
+normal! zo
+63
+normal! zo
+let s:l = 1 - ((0 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
+1
 normal! 0
 wincmd w
 argglobal
@@ -4596,12 +4605,12 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
-exe '2resize ' . ((&lines * 9 + 24) / 49)
+exe '2resize ' . ((&lines * 23 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 179)
-exe '3resize ' . ((&lines * 36 + 24) / 49)
+exe '3resize ' . ((&lines * 22 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
 argglobal
-balt ../txf-agent/turrets/lib/bosh-do.mjs
+balt v2/www/presenter/utils.mjs
 setlocal autoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -4719,19 +4728,13 @@ setlocal wrap
 setlocal wrapmargin=0
 89
 normal! zo
-90
+106
 normal! zo
-116
-normal! zo
-192
-normal! zo
-322
-normal! zo
-let s:l = 199 - ((198 * winheight(0) + 23) / 46)
+let s:l = 107 - ((106 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-199
+107
 normal! 0
 wincmd w
 argglobal
@@ -4854,7 +4857,7 @@ setlocal wrap
 setlocal wrapmargin=0
 3
 normal! zo
-let s:l = 15 - ((0 * winheight(0) + 4) / 9)
+let s:l = 15 - ((1 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -4985,7 +4988,7 @@ normal! zo
 normal! zo
 282
 normal! zo
-let s:l = 213 - ((212 * winheight(0) + 18) / 36)
+let s:l = 213 - ((0 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -4993,9 +4996,9 @@ normal! zt
 normal! 057|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
-exe '2resize ' . ((&lines * 9 + 24) / 49)
+exe '2resize ' . ((&lines * 23 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 179)
-exe '3resize ' . ((&lines * 36 + 24) / 49)
+exe '3resize ' . ((&lines * 22 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
 tabnext
 edit v2/www/model/favor.mjs
@@ -5130,78 +5133,18 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-8
+170
 normal! zo
-9
+200
 normal! zo
-12
+292
 normal! zo
-21
-normal! zo
-22
-normal! zo
-26
-normal! zo
-32
-normal! zo
-42
-normal! zo
-42
-normal! zc
-135
-normal! zo
-136
-normal! zo
-139
-normal! zo
-135
-normal! zc
-144
-normal! zo
-145
-normal! zo
-144
-normal! zc
-150
-normal! zo
-151
-normal! zo
-150
-normal! zc
-157
-normal! zo
-158
-normal! zo
-157
-normal! zc
-164
-normal! zo
-165
-normal! zo
-164
-normal! zc
-308
-normal! zo
-308
-normal! zc
-351
-normal! zo
-352
-normal! zo
-351
-normal! zc
-358
-normal! zo
-359
-normal! zo
-364
-normal! zo
-let s:l = 27 - ((15 * winheight(0) + 23) / 46)
+let s:l = 200 - ((199 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-27
-normal! 034|
+200
+normal! 03|
 wincmd w
 argglobal
 if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
@@ -6029,18 +5972,18 @@ normal! 072|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-tabnext 5
+tabnext 6
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
-badd +2 v2/narrative.md
+badd +1 v2/narrative.md
 badd +1 test/it1-favor-producer2.mjs
 badd +1 v2/lib/account.mjs
-badd +1 v2/lib/aim.mjs
+badd +22 v2/lib/aim.mjs
 badd +1 v2/www/style.css
 badd +1 v2/www/presenter/onload.mjs
 badd +1 v2/www/model/favor.mjs
-badd +0 v2/www/model/account.mjs
+badd +1 v2/www/model/account.mjs
 badd +1 join/package.json
 badd +10 package.json
 badd +1 .gitignore
@@ -6062,7 +6005,7 @@ badd +9 test/request-favor.mjs
 badd +1 v2/bin/run.mjs
 badd +1 v2/www/presenter/utils.mjs
 badd +2 v2/tmp.json
-badd +1 v2/www/presenter/agent.mjs
+badd +15 v2/www/presenter/agent.mjs
 badd +58 v2/www/model/agent.mjs
 badd +1 v2/bin/www.mjs
 badd +1 v2/src/index.mjs
