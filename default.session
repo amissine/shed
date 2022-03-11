@@ -57,7 +57,6 @@ tabnew
 tabnew
 tabnew
 tabnew
-tabnew
 tabrewind
 edit v2/shim.js
 set splitbelow splitright
@@ -91,19 +90,19 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 3 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
 exe '2resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 178)
 exe '3resize ' . ((&lines * 20 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 89 + 89) / 178)
 exe '4resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 50 + 89) / 179)
+exe 'vert 4resize ' . ((&columns * 50 + 89) / 178)
 exe '5resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 5resize ' . ((&columns * 38 + 89) / 179)
+exe 'vert 5resize ' . ((&columns * 38 + 89) / 178)
 exe '6resize ' . ((&lines * 11 + 24) / 49)
-exe 'vert 6resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 6resize ' . ((&columns * 88 + 89) / 178)
 exe '7resize ' . ((&lines * 34 + 24) / 49)
-exe 'vert 7resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 7resize ' . ((&columns * 88 + 89) / 178)
 argglobal
 balt join/package.json
 setlocal autoindent
@@ -979,19 +978,19 @@ normal! zt
 normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 3 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
 exe '2resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 178)
 exe '3resize ' . ((&lines * 20 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 89 + 89) / 178)
 exe '4resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 50 + 89) / 179)
+exe 'vert 4resize ' . ((&columns * 50 + 89) / 178)
 exe '5resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 5resize ' . ((&columns * 38 + 89) / 179)
+exe 'vert 5resize ' . ((&columns * 38 + 89) / 178)
 exe '6resize ' . ((&lines * 11 + 24) / 49)
-exe 'vert 6resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 6resize ' . ((&columns * 88 + 89) / 178)
 exe '7resize ' . ((&lines * 34 + 24) / 49)
-exe 'vert 7resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 7resize ' . ((&columns * 88 + 89) / 178)
 tabnext
 edit v2/narrative.md
 set splitbelow splitright
@@ -1029,21 +1028,21 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 87 + 89) / 178)
 exe '2resize ' . ((&lines * 17 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 178)
 exe '3resize ' . ((&lines * 8 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 87 + 89) / 178)
 exe '4resize ' . ((&lines * 11 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 4resize ' . ((&columns * 90 + 89) / 178)
 exe '5resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 5resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 5resize ' . ((&columns * 90 + 89) / 178)
 exe '6resize ' . ((&lines * 14 + 24) / 49)
-exe 'vert 6resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 6resize ' . ((&columns * 90 + 89) / 178)
 exe '7resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 7resize ' . ((&columns * 88 + 89) / 179)
+exe 'vert 7resize ' . ((&columns * 88 + 89) / 178)
 exe '8resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 8resize ' . ((&columns * 90 + 89) / 179)
+exe 'vert 8resize ' . ((&columns * 89 + 89) / 178)
 argglobal
 balt join/README.md
 setlocal noautoindent
@@ -2044,585 +2043,21 @@ normal! zt
 normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 87 + 89) / 178)
 exe '2resize ' . ((&lines * 17 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 178)
 exe '3resize ' . ((&lines * 8 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 87 + 89) / 178)
 exe '4resize ' . ((&lines * 11 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 4resize ' . ((&columns * 90 + 89) / 178)
 exe '5resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 5resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 5resize ' . ((&columns * 90 + 89) / 178)
 exe '6resize ' . ((&lines * 14 + 24) / 49)
-exe 'vert 6resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 6resize ' . ((&columns * 90 + 89) / 178)
 exe '7resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 7resize ' . ((&columns * 88 + 89) / 179)
+exe 'vert 7resize ' . ((&columns * 88 + 89) / 178)
 exe '8resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 8resize ' . ((&columns * 90 + 89) / 179)
-tabnext
-edit test/it1-favor-producer2.mjs
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd _ | wincmd |
-split
-wincmd _ | wincmd |
-split
-2wincmd k
-wincmd w
-wincmd w
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe '1resize ' . ((&lines * 3 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 38 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 3 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
-argglobal
-balt test/it1-favor-producer1.mjs
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=//%s
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-set foldmethod=marker
-setlocal foldmethod=marker
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetJavascriptIndent()
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=.,,
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-1
-normal! zo
-7
-normal! zo
-18
-normal! zo
-23
-normal! zo
-24
-normal! zo
-43
-normal! zo
-let s:l = 3 - ((0 * winheight(0) + 1) / 3)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-3
-normal! 029|
-wincmd w
-argglobal
-if bufexists("test/it1-favor-producer1.mjs") | buffer test/it1-favor-producer1.mjs | else | edit test/it1-favor-producer1.mjs | endif
-balt test/it1-favor-producer2.mjs
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=//%s
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-set foldmethod=marker
-setlocal foldmethod=marker
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetJavascriptIndent()
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=.,,
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-7
-normal! zo
-21
-normal! zo
-41
-normal! zo
-let s:l = 43 - ((42 * winheight(0) + 19) / 38)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-43
-normal! 0
-wincmd w
-argglobal
-if bufexists("test/it1.sh") | buffer test/it1.sh | else | edit test/it1.sh | endif
-balt test/it1-favor-producer1.mjs
-setlocal noautoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=#%s
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'sh'
-setlocal filetype=sh
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-set foldmethod=marker
-setlocal foldmethod=marker
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetShIndent()
-setlocal indentkeys=0{,0},0),0],!^F,o,O,e,0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,0=end,),0=;;,0=;&,0=fin,0=fil,0=fip,0=fir,0=fix
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'sh'
-setlocal syntax=sh
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-let s:l = 20 - ((2 * winheight(0) + 1) / 3)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-20
-normal! 039|
-wincmd w
-argglobal
-if bufexists("test/it1-favor-requestor1.mjs") | buffer test/it1-favor-requestor1.mjs | else | edit test/it1-favor-requestor1.mjs | endif
-balt test/it1-favor-producer1.mjs
-setlocal autoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=//%s
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'javascript'
-setlocal filetype=javascript
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-set foldmethod=marker
-setlocal foldmethod=marker
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetJavascriptIndent()
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=.,,
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'javascript'
-setlocal syntax=javascript
-endif
-setlocal tabstop=2
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-7
-normal! zo
-8
-normal! zo
-10
-normal! zo
-18
-normal! zo
-27
-normal! zo
-35
-normal! zo
-let s:l = 39 - ((38 * winheight(0) + 23) / 46)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-39
-normal! 018|
-wincmd w
-exe '1resize ' . ((&lines * 3 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 38 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 3 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 8resize ' . ((&columns * 89 + 89) / 178)
 tabnext
 edit v2/lib/account.mjs
 set splitbelow splitright
@@ -2646,13 +2081,13 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 39 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 87 + 89) / 178)
 exe '2resize ' . ((&lines * 6 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 178)
 exe '3resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 90 + 89) / 178)
 exe '4resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 4resize ' . ((&columns * 90 + 89) / 178)
 argglobal
 balt v2/lib/utils.mjs
 setlocal autoindent
@@ -3189,13 +2624,13 @@ normal! zt
 normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 39 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 87 + 89) / 178)
 exe '2resize ' . ((&lines * 6 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 178)
 exe '3resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 90 + 89) / 178)
 exe '4resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 4resize ' . ((&columns * 90 + 89) / 178)
 tabnext
 edit v2/bin/run.mjs
 set splitbelow splitright
@@ -3214,11 +2649,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 109 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 109 + 89) / 178)
 exe '2resize ' . ((&lines * 41 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 69 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 69 + 89) / 178)
 exe '3resize ' . ((&lines * 4 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 69 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 69 + 89) / 178)
 argglobal
 balt v2/lib/aim.mjs
 setlocal autoindent
@@ -3601,11 +3036,11 @@ normal! zt
 2
 normal! 04|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 109 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 109 + 89) / 178)
 exe '2resize ' . ((&lines * 41 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 69 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 69 + 89) / 178)
 exe '3resize ' . ((&lines * 4 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 69 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 69 + 89) / 178)
 tabnext
 edit v2/lib/aim.mjs
 set splitbelow splitright
@@ -3624,11 +3059,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
 exe '2resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 178)
 exe '3resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 89 + 89) / 178)
 argglobal
 balt v2/www/presenter/agent.mjs
 setlocal autoindent
@@ -3752,11 +3187,7 @@ normal! zo
 normal! zo
 6
 normal! zo
-20
-normal! zo
 19
-normal! zo
-23
 normal! zo
 22
 normal! zo
@@ -3903,7 +3334,7 @@ normal! zo
 normal! zo
 77
 normal! zo
-let s:l = 35 - ((29 * winheight(0) + 11) / 23)
+let s:l = 35 - ((0 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -4034,18 +3465,18 @@ normal! zo
 normal! zo
 23
 normal! zo
-let s:l = 14 - ((13 * winheight(0) + 11) / 22)
+let s:l = 14 - ((0 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 14
 normal! 071|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
 exe '2resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 178)
 exe '3resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 89 + 89) / 178)
 tabnext
 edit v2/www/style.css
 set splitbelow splitright
@@ -4068,12 +3499,12 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 33 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 87 + 89) / 178)
 exe '2resize ' . ((&lines * 6 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 178)
 exe '3resize ' . ((&lines * 5 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 87 + 89) / 179)
-exe 'vert 4resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 87 + 89) / 178)
+exe 'vert 4resize ' . ((&columns * 90 + 89) / 178)
 argglobal
 balt v2/bin/www.mjs
 setlocal noautoindent
@@ -4568,24 +3999,32 @@ setlocal wrap
 setlocal wrapmargin=0
 16
 normal! zo
+45
+normal! zo
+63
+normal! zo
+79
+normal! zo
 175
+normal! zo
+176
 normal! zo
 193
 normal! zo
-let s:l = 193 - ((192 * winheight(0) + 23) / 46)
+let s:l = 201 - ((109 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-193
-normal! 0
+201
+normal! 03|
 wincmd w
 exe '1resize ' . ((&lines * 33 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 87 + 89) / 178)
 exe '2resize ' . ((&lines * 6 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 87 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 178)
 exe '3resize ' . ((&lines * 5 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 87 + 89) / 179)
-exe 'vert 4resize ' . ((&columns * 91 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 87 + 89) / 178)
+exe 'vert 4resize ' . ((&columns * 90 + 89) / 178)
 tabnext
 edit v2/www/presenter/onload.mjs
 set splitbelow splitright
@@ -4604,11 +4043,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
-exe '2resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 88 + 89) / 179)
-exe '3resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 90 + 89) / 178)
+exe '2resize ' . ((&lines * 5 + 24) / 49)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 178)
+exe '3resize ' . ((&lines * 40 + 24) / 49)
+exe 'vert 3resize ' . ((&columns * 87 + 89) / 178)
 argglobal
 balt v2/www/presenter/utils.mjs
 setlocal autoindent
@@ -4726,15 +4165,13 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-89
+116
 normal! zo
-106
-normal! zo
-let s:l = 107 - ((106 * winheight(0) + 23) / 46)
+let s:l = 218 - ((217 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-107
+218
 normal! 0
 wincmd w
 argglobal
@@ -4857,7 +4294,7 @@ setlocal wrap
 setlocal wrapmargin=0
 3
 normal! zo
-let s:l = 15 - ((1 * winheight(0) + 11) / 23)
+let s:l = 15 - ((0 * winheight(0) + 2) / 5)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -4982,24 +4419,18 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-206
-normal! zo
-211
-normal! zo
-282
-normal! zo
-let s:l = 213 - ((0 * winheight(0) + 11) / 22)
+let s:l = 148 - ((147 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-213
-normal! 057|
+148
+normal! 01|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 90 + 89) / 179)
-exe '2resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 88 + 89) / 179)
-exe '3resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 88 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 90 + 89) / 178)
+exe '2resize ' . ((&lines * 5 + 24) / 49)
+exe 'vert 2resize ' . ((&columns * 87 + 89) / 178)
+exe '3resize ' . ((&lines * 40 + 24) / 49)
+exe 'vert 3resize ' . ((&columns * 87 + 89) / 178)
 tabnext
 edit v2/www/model/favor.mjs
 set splitbelow splitright
@@ -5014,8 +4445,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
+exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
 argglobal
 balt v2/www/model/agent.mjs
 setlocal autoindent
@@ -5133,18 +4564,14 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-170
+203
 normal! zo
-200
-normal! zo
-292
-normal! zo
-let s:l = 200 - ((199 * winheight(0) + 23) / 46)
+let s:l = 203 - ((202 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-200
-normal! 03|
+203
+normal! 09|
 wincmd w
 argglobal
 if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
@@ -5277,8 +4704,8 @@ normal! zt
 5
 normal! 020|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
+exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
 tabnext
 edit v2/www/presenter/utils.mjs
 set splitbelow splitright
@@ -5297,11 +4724,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
 exe '2resize ' . ((&lines * 7 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
 exe '3resize ' . ((&lines * 38 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 88 + 89) / 178)
 argglobal
 balt v2/www/presenter/agent.mjs
 setlocal autoindent
@@ -5682,11 +5109,11 @@ normal! zt
 1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
 exe '2resize ' . ((&lines * 7 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
 exe '3resize ' . ((&lines * 38 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 3resize ' . ((&columns * 88 + 89) / 178)
 tabnext
 edit v2/www/model/account.mjs
 set splitbelow splitright
@@ -5701,8 +5128,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
+exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
 argglobal
 balt v2/www/model/agent.mjs
 setlocal autoindent
@@ -5820,16 +5247,16 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-33
+27
 normal! zo
-166
+206
 normal! zo
-let s:l = 166 - ((165 * winheight(0) + 23) / 46)
+let s:l = 206 - ((205 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-166
-normal! 04|
+206
+normal! 03|
 wincmd w
 argglobal
 if bufexists("v2/www/model/account.mjs") | buffer v2/www/model/account.mjs | else | edit v2/www/model/account.mjs | endif
@@ -5949,37 +5376,37 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-7
+3
 normal! zo
-33
+27
 normal! zo
-34
+28
 normal! zo
-49
+43
 normal! zo
-139
+133
 normal! zo
-239
+232
 normal! zo
-342
+333
 normal! zo
 let s:l = 53 - ((50 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 53
-normal! 072|
+normal! 01|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-tabnext 6
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
+exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
+tabnext 3
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
 badd +1 v2/narrative.md
 badd +1 test/it1-favor-producer2.mjs
 badd +1 v2/lib/account.mjs
-badd +22 v2/lib/aim.mjs
+badd +1 v2/bin/run.mjs
 badd +1 v2/www/style.css
 badd +1 v2/www/presenter/onload.mjs
 badd +1 v2/www/model/favor.mjs
@@ -5996,13 +5423,13 @@ badd +1 join/.well-known/stellar.toml
 badd +1 GDF.md
 badd +1 .env.dist.testnet
 badd +1 v2/dist.sh
-badd +42 test/it1-favor-producer1.mjs
-badd +1 test/it1.sh
-badd +1 test/it1-favor-requestor1.mjs
+badd +43 test/it1-favor-producer1.mjs
+badd +20 test/it1.sh
+badd +39 test/it1-favor-requestor1.mjs
 badd +1 v2/lib/utils.mjs
 badd +1 v2/lib/favor.mjs
 badd +9 test/request-favor.mjs
-badd +1 v2/bin/run.mjs
+badd +1 v2/lib/aim.mjs
 badd +1 v2/www/presenter/utils.mjs
 badd +2 v2/tmp.json
 badd +15 v2/www/presenter/agent.mjs
@@ -6010,10 +5437,10 @@ badd +58 v2/www/model/agent.mjs
 badd +1 v2/bin/www.mjs
 badd +1 v2/src/index.mjs
 badd +1 v2/www/index.html
-badd +1 ../txf-agent/turrets/lib/bosh-do.mjs
 badd +1 v2/www/model/process.mjs
 badd +1 v2/www/view/onload.mjs
 badd +1 v2/www/model/storage.js
+badd +1 ../txf-agent/turrets/lib/bosh-do.mjs
 badd +11 test/remove-user.mjs
 badd +1 test/fund-agent.mjs
 badd +1 test/account.mjs
