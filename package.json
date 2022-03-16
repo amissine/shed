@@ -7,7 +7,7 @@
     "admin": "export $(cat .env|tr -d [:blank:]|xargs) && v2/bin/run.mjs \"${npm_config_run}\" 2>&1 | tee join/admin.log",
     "ava": "export $(cat .env|tr -d [:blank:]|xargs) && ava -v -w --timeout=2m",
     "bd": "ttab -w -d $PWD exec npm run mdr && cd v2 && npm run dev",
-    "cd": "npm run bd && npm run cfw && sleep 5 && npm run ttff",
+    "cd": "npm run bd && npm run cfw && sleep 1 && npm run ttff",
     "cfw":  "ttab -w -d $PWD exec wrangler dev",
     "dev": "cd v2 && npm run dev && ttab -w -d $PWD exec npm run www",
     "ff": "open -Wa 'Firefox Developer Edition.app' 'http://localhost:8787'",
