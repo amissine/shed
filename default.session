@@ -57,6 +57,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit v2/shim.js
 set splitbelow splitright
@@ -3018,12 +3019,12 @@ normal! zo
 normal! zo
 221
 normal! zo
-let s:l = 227 - ((226 * winheight(0) + 23) / 46)
+let s:l = 222 - ((221 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-227
-normal! 05|
+222
+normal! 024|
 wincmd w
 argglobal
 if bufexists("v2/src/fund-agent.mjs") | buffer v2/src/fund-agent.mjs | else | edit v2/src/fund-agent.mjs | endif
@@ -3693,12 +3694,12 @@ setlocal wrap
 setlocal wrapmargin=0
 5
 normal! zo
-let s:l = 17 - ((9 * winheight(0) + 5) / 11)
+let s:l = 35 - ((6 * winheight(0) + 5) / 11)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-17
-normal! 03|
+35
+normal! 033|
 wincmd w
 argglobal
 if bufexists("v2/lib/aim.mjs") | buffer v2/lib/aim.mjs | else | edit v2/lib/aim.mjs | endif
@@ -3822,22 +3823,28 @@ setlocal wrapmargin=0
 normal! zo
 12
 normal! zo
-143
+22
 normal! zo
-144
+23
 normal! zo
-148
-normal! zo
-154
+27
 normal! zo
 154
-normal! zc
-let s:l = 161 - ((160 * winheight(0) + 17) / 34)
+normal! zo
+155
+normal! zo
+160
+normal! zo
+173
+normal! zo
+174
+normal! zo
+let s:l = 13 - ((2 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-161
-normal! 050|
+13
+normal! 05|
 wincmd w
 argglobal
 if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
@@ -3963,14 +3970,26 @@ normal! zo
 normal! zo
 36
 normal! zo
+16
+normal! zc
 36
 normal! zo
-let s:l = 42 - ((27 * winheight(0) + 16) / 32)
+67
+normal! zo
+87
+normal! zo
+122
+normal! zo
+87
+normal! zc
+122
+normal! zo
+let s:l = 67 - ((66 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-42
-normal! 016|
+67
+normal! 06|
 wincmd w
 argglobal
 if bufexists("v2/www/presenter/agent.mjs") | buffer v2/www/presenter/agent.mjs | else | edit v2/www/presenter/agent.mjs | endif
@@ -4096,14 +4115,16 @@ normal! zo
 normal! zo
 35
 normal! zo
-let s:l = 13 - ((4 * winheight(0) + 6) / 13)
+39
+normal! zo
+let s:l = 40 - ((4 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
-normal! 03|
+40
+normal! 090|
 wincmd w
-3wincmd w
+2wincmd w
 exe '1resize ' . ((&lines * 11 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 85 + 89) / 178)
 exe '2resize ' . ((&lines * 34 + 24) / 49)
@@ -4112,6 +4133,141 @@ exe '3resize ' . ((&lines * 32 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 92 + 89) / 178)
 exe '4resize ' . ((&lines * 13 + 24) / 49)
 exe 'vert 4resize ' . ((&columns * 92 + 89) / 178)
+tabnext
+edit v2/lib/reset-testnet.mjs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+balt v2/lib/aim.mjs
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'javascript'
+setlocal filetype=javascript
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetJavascriptIndent()
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=javascriptcomplete#CompleteJS
+setlocal path=.,,
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'javascript'
+setlocal syntax=javascript
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+5
+normal! zo
+let s:l = 21 - ((7 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+21
+normal! 013|
 tabnext
 edit v2/www/index.mjs
 set splitbelow splitright
@@ -5478,7 +5634,9 @@ normal! zo
 normal! zo
 36
 normal! zo
-72
+74
+normal! zo
+122
 normal! zo
 let s:l = 4 - ((3 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
@@ -6163,14 +6321,18 @@ setlocal wrap
 setlocal wrapmargin=0
 27
 normal! zo
-92
+28
 normal! zo
-let s:l = 92 - ((91 * winheight(0) + 23) / 46)
+77
+normal! zo
+135
+normal! zo
+let s:l = 28 - ((27 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-92
-normal! 055|
+28
+normal! 036|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
