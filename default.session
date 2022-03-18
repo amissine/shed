@@ -475,12 +475,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 7 - ((6 * winheight(0) + 10) / 20)
+let s:l = 10 - ((9 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
-normal! 055|
+10
+normal! 047|
 wincmd w
 argglobal
 if bufexists("v2/.gitignore") | buffer v2/.gitignore | else | edit v2/.gitignore | endif
@@ -1427,11 +1427,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 9 - ((8 * winheight(0) + 4) / 9)
+let s:l = 2 - ((1 * winheight(0) + 4) / 9)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
+2
 normal! 0
 wincmd w
 argglobal
@@ -1552,11 +1552,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 5 - ((2 * winheight(0) + 3) / 7)
+let s:l = 37 - ((6 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
+37
 normal! 0
 wincmd w
 argglobal
@@ -2721,16 +2721,14 @@ setlocal wrap
 setlocal wrapmargin=0
 1
 normal! zo
-16
+6
 normal! zo
-64
-normal! zo
-let s:l = 58 - ((57 * winheight(0) + 18) / 37)
+let s:l = 13 - ((12 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-58
-normal! 01|
+13
+normal! 0105|
 wincmd w
 argglobal
 if bufexists("v2/www/model/process.mjs") | buffer v2/www/model/process.mjs | else | edit v2/www/model/process.mjs | endif
@@ -3014,20 +3012,18 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-3
+104
 normal! zo
-108
+110
 normal! zo
-137
+221
 normal! zo
-165
-normal! zo
-let s:l = 9 - ((6 * winheight(0) + 23) / 46)
+let s:l = 227 - ((226 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
-normal! 029|
+227
+normal! 05|
 wincmd w
 argglobal
 if bufexists("v2/src/fund-agent.mjs") | buffer v2/src/fund-agent.mjs | else | edit v2/src/fund-agent.mjs | endif
@@ -3149,12 +3145,12 @@ setlocal wrap
 setlocal wrapmargin=0
 11
 normal! zo
-let s:l = 19 - ((18 * winheight(0) + 11) / 22)
+let s:l = 12 - ((0 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 027|
+12
+normal! 0
 wincmd w
 argglobal
 if bufexists("test/fund-agent.mjs") | buffer test/fund-agent.mjs | else | edit test/fund-agent.mjs | endif
@@ -3403,11 +3399,15 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 3) / 7)
+1
+normal! zo
+32
+normal! zo
+let s:l = 48 - ((0 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+48
 normal! 0
 wincmd w
 argglobal
@@ -3545,11 +3545,15 @@ exe 'vert 4resize ' . ((&columns * 68 + 89) / 178)
 exe '5resize ' . ((&lines * 4 + 24) / 49)
 exe 'vert 5resize ' . ((&columns * 68 + 89) / 178)
 tabnext
-edit v2/lib/aim.mjs
+edit v2/lib/reset-testnet.mjs
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 wincmd w
 wincmd _ | wincmd |
 split
@@ -3562,13 +3566,143 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
-exe '2resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
-exe '3resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 88 + 89) / 178)
+exe '1resize ' . ((&lines * 11 + 24) / 49)
+exe 'vert 1resize ' . ((&columns * 85 + 89) / 178)
+exe '2resize ' . ((&lines * 34 + 24) / 49)
+exe 'vert 2resize ' . ((&columns * 85 + 89) / 178)
+exe '3resize ' . ((&lines * 32 + 24) / 49)
+exe 'vert 3resize ' . ((&columns * 92 + 89) / 178)
+exe '4resize ' . ((&lines * 13 + 24) / 49)
+exe 'vert 4resize ' . ((&columns * 92 + 89) / 178)
 argglobal
-balt v2/www/presenter/agent.mjs
+balt v2/lib/aim.mjs
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=\\(^\\s*(*async\\s\\+function\\|(*function\\)\\|^\\s*\\(\\*\\|static\\|async\\|get\\|set\\|\\i\\+\\.\\)\\|^\\s*\\(\\ze\\i\\+\\)\\(([^)]*).*{$\\|\\s*[:=,]\\)\\|^\\s*\\(export\\s\\+\\|export\\s\\+default\\s\\+\\)*\\(var\\|let\\|const\\|function\\|class\\)\\|\\<as\\>
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'javascript'
+setlocal filetype=javascript
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetJavascriptIndent()
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0],0)
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=javascriptcomplete#CompleteJS
+setlocal path=.,,
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'javascript'
+setlocal syntax=javascript
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+5
+normal! zo
+let s:l = 17 - ((9 * winheight(0) + 5) / 11)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+17
+normal! 03|
+wincmd w
+argglobal
+if bufexists("v2/lib/aim.mjs") | buffer v2/lib/aim.mjs | else | edit v2/lib/aim.mjs | endif
+balt v2/lib/reset-testnet.mjs
 setlocal autoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -3688,14 +3822,22 @@ setlocal wrapmargin=0
 normal! zo
 12
 normal! zo
-34
+143
 normal! zo
-let s:l = 10 - ((9 * winheight(0) + 23) / 46)
+144
+normal! zo
+148
+normal! zo
+154
+normal! zo
+154
+normal! zc
+let s:l = 161 - ((160 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-10
-normal! 0
+161
+normal! 050|
 wincmd w
 argglobal
 if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
@@ -3815,16 +3957,20 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
+15
+normal! zo
 16
 normal! zo
-64
+36
 normal! zo
-let s:l = 64 - ((63 * winheight(0) + 11) / 23)
+36
+normal! zo
+let s:l = 42 - ((27 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-64
-normal! 0
+42
+normal! 016|
 wincmd w
 argglobal
 if bufexists("v2/www/presenter/agent.mjs") | buffer v2/www/presenter/agent.mjs | else | edit v2/www/presenter/agent.mjs | endif
@@ -3946,22 +4092,26 @@ setlocal wrap
 setlocal wrapmargin=0
 4
 normal! zo
-12
+13
 normal! zo
-23
+35
 normal! zo
-let s:l = 14 - ((0 * winheight(0) + 11) / 22)
+let s:l = 13 - ((4 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
-normal! 071|
+13
+normal! 03|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
-exe '2resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
-exe '3resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 88 + 89) / 178)
+3wincmd w
+exe '1resize ' . ((&lines * 11 + 24) / 49)
+exe 'vert 1resize ' . ((&columns * 85 + 89) / 178)
+exe '2resize ' . ((&lines * 34 + 24) / 49)
+exe 'vert 2resize ' . ((&columns * 85 + 89) / 178)
+exe '3resize ' . ((&lines * 32 + 24) / 49)
+exe 'vert 3resize ' . ((&columns * 92 + 89) / 178)
+exe '4resize ' . ((&lines * 13 + 24) / 49)
+exe 'vert 4resize ' . ((&columns * 92 + 89) / 178)
 tabnext
 edit v2/www/index.mjs
 set splitbelow splitright
@@ -4618,14 +4768,14 @@ setlocal wrapmargin=0
 normal! zo
 51
 normal! zo
-85
+53
 normal! zo
-let s:l = 93 - ((92 * winheight(0) + 23) / 46)
+let s:l = 61 - ((60 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-93
-normal! 041|
+61
+normal! 021|
 wincmd w
 exe '1resize ' . ((&lines * 4 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 178)
@@ -4778,15 +4928,13 @@ setlocal wrap
 setlocal wrapmargin=0
 116
 normal! zo
-218
+219
 normal! zo
-374
-normal! zo
-let s:l = 224 - ((108 * winheight(0) + 23) / 46)
+let s:l = 225 - ((224 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-224
+225
 normal! 0
 wincmd w
 argglobal
@@ -5038,12 +5186,14 @@ setlocal wrapmargin=0
 normal! zo
 211
 normal! zo
-let s:l = 223 - ((222 * winheight(0) + 20) / 40)
+264
+normal! zo
+let s:l = 212 - ((6 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-223
-normal! 025|
+212
+normal! 053|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 178)
 exe '2resize ' . ((&lines * 5 + 24) / 49)
@@ -5324,16 +5474,18 @@ setlocal wrap
 setlocal wrapmargin=0
 1
 normal! zo
-16
+15
 normal! zo
-64
+36
 normal! zo
-let s:l = 5 - ((4 * winheight(0) + 23) / 46)
+72
+normal! zo
+let s:l = 4 - ((3 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
-normal! 020|
+4
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
@@ -5731,7 +5883,9 @@ setlocal wrapmargin=0
 normal! zo
 4
 normal! zo
-12
+13
+normal! zo
+17
 normal! zo
 let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
@@ -5880,13 +6034,13 @@ setlocal wrap
 setlocal wrapmargin=0
 27
 normal! zo
-232
+235
 normal! zo
-let s:l = 252 - ((20 * winheight(0) + 23) / 46)
+let s:l = 255 - ((20 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-252
+255
 normal! 0
 wincmd w
 argglobal
@@ -6007,28 +6161,20 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-3
-normal! zo
 27
 normal! zo
-28
+92
 normal! zo
-132
-normal! zo
-232
-normal! zo
-344
-normal! zo
-let s:l = 53 - ((48 * winheight(0) + 23) / 46)
+let s:l = 92 - ((91 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-53
-normal! 0
+92
+normal! 055|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
-tabnext 3
+tabnext 5
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
@@ -6121,8 +6267,9 @@ badd +12 test/it1-favor-producer.mjs
 badd +244 v2/www/model/account-new.mjs
 badd +8 v2/www/modal.html
 badd +147 v2/www/modal-form.html
-badd +0 join/.gitignore
+badd +1 join/.gitignore
 badd +0 reset.sh
+badd +0 v2/lib/reset-testnet.mjs
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
