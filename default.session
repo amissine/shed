@@ -1428,7 +1428,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 2 - ((1 * winheight(0) + 4) / 9)
+let s:l = 2 - ((0 * winheight(0) + 4) / 9)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1553,7 +1553,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 37 - ((6 * winheight(0) + 3) / 7)
+let s:l = 37 - ((0 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -2178,7 +2178,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 30 - ((10 * winheight(0) + 7) / 14)
+let s:l = 30 - ((0 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -3694,12 +3694,12 @@ setlocal wrap
 setlocal wrapmargin=0
 5
 normal! zo
-let s:l = 35 - ((6 * winheight(0) + 5) / 11)
+let s:l = 35 - ((16 * winheight(0) + 5) / 11)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 35
-normal! 033|
+normal! 01|
 wincmd w
 argglobal
 if bufexists("v2/lib/aim.mjs") | buffer v2/lib/aim.mjs | else | edit v2/lib/aim.mjs | endif
@@ -3819,32 +3819,20 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-11
-normal! zo
-12
-normal! zo
-22
-normal! zo
-23
-normal! zo
-27
-normal! zo
-154
-normal! zo
-155
-normal! zo
-160
+167
 normal! zo
 173
 normal! zo
-174
+186
 normal! zo
-let s:l = 13 - ((2 * winheight(0) + 17) / 34)
+204
+normal! zo
+let s:l = 206 - ((205 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
-normal! 05|
+206
+normal! 034|
 wincmd w
 argglobal
 if bufexists("v2/www/model/agent.mjs") | buffer v2/www/model/agent.mjs | else | edit v2/www/model/agent.mjs | endif
@@ -3966,30 +3954,14 @@ setlocal wrap
 setlocal wrapmargin=0
 15
 normal! zo
-16
-normal! zo
 36
 normal! zo
-16
-normal! zc
-36
-normal! zo
-67
-normal! zo
-87
-normal! zo
-122
-normal! zo
-87
-normal! zc
-122
-normal! zo
-let s:l = 67 - ((66 * winheight(0) + 16) / 32)
+let s:l = 45 - ((44 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-67
-normal! 06|
+45
+normal! 08|
 wincmd w
 argglobal
 if bufexists("v2/www/presenter/agent.mjs") | buffer v2/www/presenter/agent.mjs | else | edit v2/www/presenter/agent.mjs | endif
@@ -4124,7 +4096,7 @@ normal! zt
 40
 normal! 090|
 wincmd w
-2wincmd w
+3wincmd w
 exe '1resize ' . ((&lines * 11 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 85 + 89) / 178)
 exe '2resize ' . ((&lines * 34 + 24) / 49)
@@ -4262,12 +4234,16 @@ setlocal wrap
 setlocal wrapmargin=0
 5
 normal! zo
-let s:l = 21 - ((7 * winheight(0) + 23) / 47)
+19
+normal! zo
+57
+normal! zo
+let s:l = 62 - ((61 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-21
-normal! 013|
+62
+normal! 049|
 tabnext
 edit v2/www/index.mjs
 set splitbelow splitright
@@ -5634,9 +5610,9 @@ normal! zo
 normal! zo
 36
 normal! zo
-74
+76
 normal! zo
-122
+124
 normal! zo
 let s:l = 4 - ((3 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
@@ -6341,18 +6317,20 @@ set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
 badd +1 v2/narrative.md
-badd +1 v2/lib/account.mjs
 badd +1 v2/bin/run.mjs
-badd +1 v2/www/style.css
+badd +1 v2/lib/reset-testnet.mjs
+badd +1 v2/www/index.mjs
 badd +1 v2/www/presenter/onload.mjs
 badd +1 v2/www/model/favor.mjs
 badd +1 v2/www/model/account.mjs
 badd +1 join/package.json
 badd +10 package.json
-badd +1 .gitignore
 badd +1 v2/.gitignore
+badd +1 .gitignore
+badd +1 join/.gitignore
 badd +7 v2/package.json
 badd +1 join/README.md
+badd +1 reset.sh
 badd +1 .env
 badd +1 wrangler.toml
 badd +1 join/.well-known/stellar.toml
@@ -6360,37 +6338,38 @@ badd +1 join/GDF.md
 badd +1 GDF.md
 badd +1 .env.dist.testnet
 badd +1 v2/dist.sh
-badd +1 v2/lib/utils.mjs
-badd +258 v2/lib/favor.mjs
-badd +0 test/request-favor.mjs
+badd +58 v2/www/model/agent.mjs
+badd +1 v2/www/model/process.mjs
 badd +1 v2/lib/aim.mjs
+badd +1 v2/src/fund-agent.mjs
+badd +1 test/fund-agent.mjs
 badd +1 v2/www/presenter/utils.mjs
 badd +2 v2/tmp.json
+badd +1 v2/lib/utils.mjs
 badd +15 v2/www/presenter/agent.mjs
-badd +58 v2/www/model/agent.mjs
+badd +1 v2/www/style.css
 badd +1 v2/bin/www.mjs
 badd +1 v2/src/index.mjs
 badd +1 v2/www/index.html
-badd +1 v2/www/model/process.mjs
 badd +1 v2/www/view/onload.mjs
 badd +1 v2/www/model/storage.js
+badd +1 v2/lib/account.mjs
+badd +258 v2/lib/favor.mjs
+badd +1 test/request-favor.mjs
 badd +1 test/it1-favor-producer2.mjs
 badd +43 test/it1-favor-producer1.mjs
 badd +20 test/it1.sh
 badd +39 test/it1-favor-requestor1.mjs
 badd +1 ../txf-agent/turrets/lib/bosh-do.mjs
 badd +11 test/remove-user.mjs
-badd +1 test/fund-agent.mjs
 badd +1 test/account.mjs
 badd +1 test/fund-maintainer.test.mjs
-badd +1 v2/src/fund-agent.mjs
 badd +10 test/collect-liquidity.mjs
 badd +1 test/set-locations.mjs
 badd +6 test/add-user.mjs
 badd +1 v2/www/model/add-user.mjs
 badd +172 ./semaphore.txt
 badd +1 v2/www/model/utils.mjs
-badd +1 v2/www/index.mjs
 badd +1 v2/www/presenter/action.mjs
 badd +1 v2/presenter/action.mjs
 badd +1 v2/www/model/users.mjs
@@ -6429,9 +6408,6 @@ badd +12 test/it1-favor-producer.mjs
 badd +244 v2/www/model/account-new.mjs
 badd +8 v2/www/modal.html
 badd +147 v2/www/modal-form.html
-badd +1 join/.gitignore
-badd +0 reset.sh
-badd +0 v2/lib/reset-testnet.mjs
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -6443,6 +6419,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
