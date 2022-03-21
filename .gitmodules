@@ -4,3 +4,18 @@
 [submodule "v2"]
 	path = v2
 	url = ssh://ubuntu@ubuntu:/home/ubuntu/process/gratzio-v2
+[submodule "www/view/api"]
+	path = www/view/api
+	url = git@github.com:amissine/gratzio-view-api.git
+[submodule "www/presenter/api"]
+	path = www/presenter/api
+	url = git@github.com:amissine/gratzio-presenter-api.git
+[submodule "cli"]
+	path = cli
+	url = ssh://ubuntu@ubuntu:/home/ubuntu/process/gratzio-cli
+[submodule "www/model"]
+	path = www/model
+	url = ssh://ubuntu@ubuntu:/home/ubuntu/process/gratzio-model
+[submodule "www/presenter/impl"]
+	path = www/presenter/impl
+	url = ssh://ubuntu@ubuntu:/home/ubuntu/process/gratzio-presenter-impl
