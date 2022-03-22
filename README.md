@@ -27,6 +27,28 @@ Here's more on merging (TODO elaborate):
 
 ![On merging with git](./gitmerge.png "From old files")
 
+## Scripts in `package.json`
+
+In addition to existing scripts, on March 22, 2022, a set of `p*` scripts is being introduced. The `p` letter stands for **p**roduct.
+
+### `pa`
+
+Starts 3 processes:
+
+- build process, `pb` (with optional command line flag `--el`);
+
+- CloudFlare `wrangler dev`, `cfw`;
+
+- Firefox `http://localhost:8787`, `ff`.
+
+### `pb`
+
+Build process. Runs `pc` (providing for **c**ontinuous development and testing), starts an external listener (occasionally used by the product) when env var `npm_config_el` is set to `true`.
+
+### `pc`
+
+Continuous development and testing, pre-committal.
+
 ## Test case 0 - get agent account by public/secret key
 
 ![Test case 0 results](./account.test.png "Shoot 3")

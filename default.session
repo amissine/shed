@@ -58,6 +58,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit v2/shim.js
 set splitbelow splitright
@@ -93,11 +94,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 3 + 24) / 49)
+exe '1resize ' . ((&lines * 2 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
-exe '2resize ' . ((&lines * 10 + 24) / 49)
+exe '2resize ' . ((&lines * 4 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 178)
-exe '3resize ' . ((&lines * 20 + 24) / 49)
+exe '3resize ' . ((&lines * 27 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 178)
 exe '4resize ' . ((&lines * 10 + 24) / 49)
 exe 'vert 4resize ' . ((&columns * 38 + 89) / 178)
@@ -105,9 +106,9 @@ exe '5resize ' . ((&lines * 10 + 24) / 49)
 exe 'vert 5resize ' . ((&columns * 22 + 89) / 178)
 exe '6resize ' . ((&lines * 10 + 24) / 49)
 exe 'vert 6resize ' . ((&columns * 27 + 89) / 178)
-exe '7resize ' . ((&lines * 11 + 24) / 49)
+exe '7resize ' . ((&lines * 20 + 24) / 49)
 exe 'vert 7resize ' . ((&columns * 88 + 89) / 178)
-exe '8resize ' . ((&lines * 34 + 24) / 49)
+exe '8resize ' . ((&lines * 25 + 24) / 49)
 exe 'vert 8resize ' . ((&columns * 88 + 89) / 178)
 argglobal
 balt join/package.json
@@ -226,7 +227,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 1) / 3)
+let s:l = 1 - ((0 * winheight(0) + 1) / 2)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -351,12 +352,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 3 - ((0 * winheight(0) + 5) / 10)
+let s:l = 1 - ((0 * winheight(0) + 2) / 4)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! 017|
+1
+normal! 0
 wincmd w
 argglobal
 if bufexists("package.json") | buffer package.json | else | edit package.json | endif
@@ -476,12 +477,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 10 - ((9 * winheight(0) + 10) / 20)
+let s:l = 19 - ((14 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-10
-normal! 047|
+19
+normal! 029|
 wincmd w
 argglobal
 if bufexists("v2/.gitignore") | buffer v2/.gitignore | else | edit v2/.gitignore | endif
@@ -976,12 +977,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 8 - ((4 * winheight(0) + 5) / 11)
+let s:l = 5 - ((4 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
-normal! 074|
+5
+normal! 013|
 wincmd w
 argglobal
 if bufexists("README.md") | buffer README.md | else | edit README.md | endif
@@ -1101,18 +1102,18 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 17) / 34)
+let s:l = 42 - ((12 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+42
+normal! 035|
 wincmd w
-exe '1resize ' . ((&lines * 3 + 24) / 49)
+exe '1resize ' . ((&lines * 2 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
-exe '2resize ' . ((&lines * 10 + 24) / 49)
+exe '2resize ' . ((&lines * 4 + 24) / 49)
 exe 'vert 2resize ' . ((&columns * 89 + 89) / 178)
-exe '3resize ' . ((&lines * 20 + 24) / 49)
+exe '3resize ' . ((&lines * 27 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 89 + 89) / 178)
 exe '4resize ' . ((&lines * 10 + 24) / 49)
 exe 'vert 4resize ' . ((&columns * 38 + 89) / 178)
@@ -1120,9 +1121,9 @@ exe '5resize ' . ((&lines * 10 + 24) / 49)
 exe 'vert 5resize ' . ((&columns * 22 + 89) / 178)
 exe '6resize ' . ((&lines * 10 + 24) / 49)
 exe 'vert 6resize ' . ((&columns * 27 + 89) / 178)
-exe '7resize ' . ((&lines * 11 + 24) / 49)
+exe '7resize ' . ((&lines * 20 + 24) / 49)
 exe 'vert 7resize ' . ((&columns * 88 + 89) / 178)
-exe '8resize ' . ((&lines * 34 + 24) / 49)
+exe '8resize ' . ((&lines * 25 + 24) / 49)
 exe 'vert 8resize ' . ((&columns * 88 + 89) / 178)
 tabnext
 edit v2/narrative.md
@@ -1157,7 +1158,10 @@ wincmd w
 wincmd w
 wincmd _ | wincmd |
 vsplit
-1wincmd h
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
@@ -1185,7 +1189,9 @@ exe 'vert 8resize ' . ((&columns * 90 + 89) / 178)
 exe '9resize ' . ((&lines * 9 + 24) / 49)
 exe 'vert 9resize ' . ((&columns * 88 + 89) / 178)
 exe '10resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 10resize ' . ((&columns * 89 + 89) / 178)
+exe 'vert 10resize ' . ((&columns * 44 + 89) / 178)
+exe '11resize ' . ((&lines * 9 + 24) / 49)
+exe 'vert 11resize ' . ((&columns * 44 + 89) / 178)
 argglobal
 balt join/README.md
 setlocal noautoindent
@@ -1553,12 +1559,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 37 - ((0 * winheight(0) + 3) / 7)
+let s:l = 23 - ((1 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-37
-normal! 0
+23
+normal! 0241|
 wincmd w
 argglobal
 if bufexists(".env") | buffer .env | else | edit .env | endif
@@ -1928,11 +1934,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 2) / 5)
+let s:l = 3 - ((0 * winheight(0) + 2) / 5)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+3
 normal! 0
 wincmd w
 argglobal
@@ -2053,12 +2059,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 16 - ((0 * winheight(0) + 1) / 3)
+let s:l = 3 - ((0 * winheight(0) + 1) / 3)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
-normal! 0
+3
+normal! 0295|
 wincmd w
 argglobal
 if bufexists("join/.well-known/stellar.toml") | buffer join/.well-known/stellar.toml | else | edit join/.well-known/stellar.toml | endif
@@ -2178,11 +2184,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 30 - ((0 * winheight(0) + 7) / 14)
+let s:l = 33 - ((13 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-30
+33
 normal! 0
 wincmd w
 argglobal
@@ -2311,8 +2317,8 @@ normal! zt
 normal! 0
 wincmd w
 argglobal
-if bufexists("v2/dist.sh") | buffer v2/dist.sh | else | edit v2/dist.sh | endif
-balt .env.dist.testnet
+if bufexists("v2/d2.sh") | buffer v2/d2.sh | else | edit v2/d2.sh | endif
+balt v2/dist.sh
 setlocal noautoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -2428,13 +2434,139 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 9 - ((8 * winheight(0) + 4) / 9)
+let s:l = 1 - ((0 * winheight(0) + 4) / 9)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
+1
 normal! 0
 wincmd w
+argglobal
+if bufexists("v2/dist.sh") | buffer v2/dist.sh | else | edit v2/dist.sh | endif
+balt v2/d2.sh
+setlocal noautoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=#%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'sh'
+setlocal filetype=sh
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetShIndent()
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,0=end,),0=;;,0=;&,0=fin,0=fil,0=fip,0=fir,0=fix
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'sh'
+setlocal syntax=sh
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+let s:l = 7 - ((6 * winheight(0) + 4) / 9)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+7
+normal! 0
+wincmd w
+10wincmd w
 exe '1resize ' . ((&lines * 9 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 178)
 exe '2resize ' . ((&lines * 9 + 24) / 49)
@@ -2454,7 +2586,142 @@ exe 'vert 8resize ' . ((&columns * 90 + 89) / 178)
 exe '9resize ' . ((&lines * 9 + 24) / 49)
 exe 'vert 9resize ' . ((&columns * 88 + 89) / 178)
 exe '10resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 10resize ' . ((&columns * 89 + 89) / 178)
+exe 'vert 10resize ' . ((&columns * 44 + 89) / 178)
+exe '11resize ' . ((&lines * 9 + 24) / 49)
+exe 'vert 11resize ' . ((&columns * 44 + 89) / 178)
+tabnext
+edit join/README.md
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+balt GDF.md
+setlocal noautoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=fb:*,fb:-,fb:+,n:>
+setlocal commentstring=<!--%s-->
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'markdown'
+setlocal filetype=markdown
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+set foldmethod=marker
+setlocal foldmethod=marker
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcqln
+setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\|^[-*+]\\s\\+\\|^\\[^\\ze[^\\]]\\+\\]:
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'markdown'
+setlocal syntax=markdown
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+let s:l = 39 - ((37 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+39
+normal! 0
 tabnext
 edit .env
 set splitbelow splitright
@@ -3013,19 +3280,15 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-3
-normal! zo
-104
-normal! zo
 110
 normal! zo
 221
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+let s:l = 104 - ((103 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+104
 normal! 0
 wincmd w
 argglobal
@@ -4760,14 +5023,12 @@ setlocal wrapmargin=0
 normal! zo
 51
 normal! zo
-53
-normal! zo
-let s:l = 61 - ((60 * winheight(0) + 23) / 46)
+let s:l = 92 - ((91 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-61
-normal! 021|
+92
+normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 4 + 24) / 49)
 exe 'vert 1resize ' . ((&columns * 87 + 89) / 178)
@@ -4920,13 +5181,13 @@ setlocal wrap
 setlocal wrapmargin=0
 116
 normal! zo
-219
+391
 normal! zo
-let s:l = 225 - ((224 * winheight(0) + 23) / 46)
+let s:l = 390 - ((118 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-225
+390
 normal! 0
 wincmd w
 argglobal
@@ -5174,18 +5435,30 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
+84
+normal! zo
+84
+normal! zc
+101
+normal! zo
+101
+normal! zc
 206
 normal! zo
-211
+214
 normal! zo
-264
+206
+normal! zc
+267
 normal! zo
-let s:l = 212 - ((6 * winheight(0) + 20) / 40)
+272
+normal! zo
+let s:l = 1 - ((0 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-212
-normal! 053|
+1
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 90 + 89) / 178)
 exe '2resize ' . ((&lines * 5 + 24) / 49)
@@ -6176,13 +6449,13 @@ normal! 036|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 89 + 89) / 178)
 exe 'vert 2resize ' . ((&columns * 88 + 89) / 178)
-tabnext 5
+tabnext 2
 set stal=1
 badd +1 v2/shim.js
 badd +1 README.md
 badd +1 v2/narrative.md
 badd +1 v2/bin/run.mjs
-badd +62 v2/lib/reset-testnet.mjs
+badd +1 v2/lib/reset-testnet.mjs
 badd +1 v2/www/index.mjs
 badd +1 v2/www/presenter/onload.mjs
 badd +1 v2/www/model/favor.mjs
@@ -6273,6 +6546,7 @@ badd +244 v2/www/model/account-new.mjs
 badd +8 v2/www/modal.html
 badd +147 v2/www/modal-form.html
 badd +0 v2/lib/test-clawbacks.mjs
+badd +0 v2/d2.sh
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
