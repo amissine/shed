@@ -1,4 +1,4 @@
-import { init } from '../view/onload.mjs'
+import { init } from './view/onload.mjs'
 
 function setenv () { // {{{1
   if (window.process) {

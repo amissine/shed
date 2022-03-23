@@ -1,4 +1,4 @@
-import { OnLoadViewInit, } from './view/impl/onload.mjs' // {{{1
+import { OnLoadViewInit, } from './impl/onload.mjs' // {{{1
 
 /*import { OnLoadPresenter, } from '../presenter/onload.mjs' // {{{1
 import { delay, } from '../presenter/utils.mjs'
