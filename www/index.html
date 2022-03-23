@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head> <!-- {{{1 -->
+    <meta charset="utf-8"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    FOR MAKERS: <i class="fas fa-user-clock"></i>
+    FOR TAKERS: <i class="fas fa-user-cog"></i>
+    colors: requestor, asker - red, offerer, bidder - green
+    -->
+    <script src='kit.fontawesome.com-a076d05399.js'></script>
+    <title>GRATZIO</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body onload='initApp()' onunload='releaseApp()'> <!-- {{{1 -->
+    <div id="map"></div>
+    <div id="user2join"> <!-- Show add user icon {{{2 -->
+      <i class='fas fa-user-plus' style='font-size:24px'></i>
+      <span>GRATZIO TESTNET Demo - click here!</span>
+    </div>
+    <div id="requestor">
+      <i class='fas fa-user-clock' style='font-size:24px;color:red'> Making your request, <img src='favicon.ico'/></i>
+    </div>
+    <div id="bidder0">
+      <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
+    </div>
+
+    <div id="bidder1">
+      <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
+    </div>
+
+    <div id="bidder2">
+      <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
+    </div>
+
+    <div id="bidder3">
+      <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
+    </div>
+   
+    <div id='bot4'>
+      <i class='fas fa-user-cog' style='font-size:24px;color:red'></i>
+      <span> XXX</span>
+    </div>
+
+    <div id="listener">
+      <i class='fas fa-user-clock' style='font-size:24px;color:green'></i>
+      <span>, you are now listening for favor requests. Click here to make (simulate) one!</span>
+    </div>
+
+    <!-- The common parent Modal {{{2 -->
+    <div id="commonParentModal" class="modal">
+      <!-- confirmBidAccept {{{3 -->
+      <div id='confirmBidAccept' class="modal-content">
+        <span id='confirmBidAcceptX' class="close">&times;</span>
+        <form> 
+          <p>, do you accept the following bid?</p>
+          <hr>
+          <p> the bid goes here </p>
+          <button id='confirmBidAcceptButton' type="button" onclick='confirmBidAccept()'>
+            Accept Bid
+          </button>
+          <div id='confirmBidAcceptCogs' style="display:none">
+            Accepting Bid... <img src='favicon.ico'/>
+          </div>
+        </form>
+      </div>
+
+      <!-- makeRequest {{{3 -->
+      <div id='makeRequest' class="modal-content">
+        <span id='makeRequestX' class="close">&times;</span>
+        <form> 
+          <p>, we'd like to show you now that the demo is listening for 
+          TESTNET requests in real time. Please click the "Make Request" button. 
+          This will start an external process that places on TESTNET the request below.
+          The demo detects the request in real time, and prompts you to bid on it.
+          The external process then takes your bid and sends you gratitude. When the
+          demo detects this event (again, in real time), you will be notified.</p>
+          <hr>
+          <p> 
+Need a babysitter tomorrow from 6pm to 11pm for 2 kids: boy 3 and girl 7 yo.
+Can give a ride back home. GRAT 100 obo.
+          </p>
+          <button id='makeRequestButton' type="button" onclick='makeRequest()'>
+            Make Request
+          </button>
+          <div id='makeRequestCogs' style="display:none">
+            Running External Process... <img src='favicon.ico'/>
+          </div>
+        </form>
+      </div>
+
+      <!-- part2End {{{3 -->
+      <div id='part2End' class="modal-content">
+        <span id='part2EndX' class="close">&times;</span>
+        <p>, your bid has been taken on XXX, and the gratitude is now being paid to
+        you. This concludes Part 2 of the Gratzio TESTNET Demo.
+        </p>
+        <p>If this was not a demo, you'd be expected to provide the requested help.
+        Failure to do so would result in a dispute request and a return of the
+        gratitude you received from the requestor back to her. To see how the
+        dispute process would work, please proceed to the final Part 3 of the demo.
+        You can do so by simply closing (clicking on the &times; thing in the 
+        top-right corner of) this modal window. 
+        </p>
+      </div>
+
+      <!-- payingBidder {{{3 -->
+      <div id='payingBidder' class="modal-content">
+        <span id='payingBidderX' class="close">&times;</span>
+        <p>, you are now paying GRAT XXX to bidder XXX. In this demo, it is assumed 
+        you receive the requested favor from the bidder and do not have to dispute it. 
+        When bidder XXX receives your payment, it gets removed - as well as other three
+        demo bidders. Please wait until this cleanup process is completed.</p>
+        <hr>
+        <div id='payingBidderCogs'>
+          Paying Bidder... <img src='favicon.ico'/>
+        </div>
+        <div id='removingBidderCogs' style="display:none">
+          Removing bidder X... <img src='favicon.ico'/>
+        </div>
+      </div>
+
+      <!-- req1Intro {{{3 -->
+      <div id='req1Intro' class="modal-content">
+        <span id='req1IntroX' class="close">&times;</span>
+        <form> 
+          <p>, your first request has default Time To Live of 180s. <!-- {{{4 -->
+            If you don't accept a bid before the TTL expires, your request 
+            will be revoked. But for this Demo, we can simulate bidders for your
+            request. Then, you can accept a bid from one of them by clicking on
+            the bidder. Try it out!
+          </p> <!-- }}}4 -->
+          <hr>
+          <button id='simulateBiddersButton' type="button" onclick='simulateBidders()'>
+            Simulate bidders
+          </button>
+          <div id='simulateBiddersCogs' style="display:none">
+            Creating bidding bot 1 of 4... <img src='favicon.ico'/>
+          </div>
+        </form>
+      </div>
+
+      <!-- testClawbacks {{{3 -->
+      <div id='testClawbacks' class="modal-content">
+        <span id='testClawbacksX' class="close">&times;</span>
+        <form> 
+          <p>, the final part of this demo is to test the Stellar feature that makes
+          Gratzio SAFE. Please click the "Test Clawbacks" button. This will start 
+          an external process that:
+          <ul>
+            <li>creates an Issuer Bot; then</li>
+            <li>the Issuer creates an Agent Bot and funds it with GRAT 1000; then</li>
+            <li>the Agent creates a User Bot and funds it with GRAT 200; then </li>
+            <li>the Issuer takes (claws) back GRAT 100 from both Agent and User:</li>
+            <li>IT WORKS!</li>
+            <li>then the bots get removed.</li>
+          </ul>
+          </p>
+          <p>
+          The output of this process is also available here: 
+          </p>
+          <p>
+          <a href='https://github.com/amissine/gratzio-join/blob/main/part3.log'>https://github.com/amissine/gratzio-join/blob/main/part3.log</a>
+          </p>
+          <button id='testClawbacksButton' type="button" onclick='testClawbacks()'>
+            Test Clawbacks
+          </button>
+          <div id='testClawbacksCogs' style="display:none">
+            Running External Process... <img src='favicon.ico'/>
+          </div>
+        </form>
+      </div>
+
+      <!-- Get user info {{{3 -->
+      <div id='getUserInfo' class="modal-content">
+        <span id='getUserInfoX' class="close">&times;</span>
+        <form> 
+          <p>Please fill in this form to create your Gratzio account.</p> <!-- {{{4 -->
+          <hr>
+          <label for="greeting"><b>Greeting</b></label>
+          <input type="text" placeholder="E.g., Miss Alice" id="greeting" required>
+          
+          <br/> <!-- Listen for Favor Requests/ Offers {{{4 -->
+          <label>
+            <input type="checkbox" checked="checked" id="listen4FRs" 
+            style="margin-bottom:15px"> Listen for Favor Requests
+          </label>
+          <label>
+            <input type="checkbox" checked="checked" id="listen4FOs"
+            style="margin-bottom:15px"> Listen for Favor Offers
+          </label>
+          
+          <br/> <!-- Make Favor Request {{{4 -->
+          <label>
+            <input type="checkbox" id="makeFR" checked='checked'
+                                   onclick="addMake('makeFR', 'descFR')"
+            style="margin-bottom:15px"> Make Favor Request
+          </label>
+          <textarea style='display:block' id="descFR" rows="5" cols="40" 
+            placeholder='Please describe your request in 2000 characters or less'>
+Need a babysitter tomorrow from 6pm to 11pm for 2 kids: boy 3 and girl 7 yo.
+Can give a ride back home. GRAT 100 obo.
+          </textarea>
+          
+          <br/> <!-- Make Favor Offer {{{4 -->
+          <label>
+            <input type="checkbox" id="makeFO" onclick="addMake('makeFO', 'descFO')"
+            style="margin-bottom:15px"> Make Favor Offer
+          </label>
+          <textarea style='display:none' id="descFO" rows="5" cols="40"
+            placeholder='Please describe your offer in 2000 characters or less'></textarea>
+          <!-- }}}4 -->
+          <p>By creating an account you agree to our 
+          <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
+          </p>
+          <button id='userInfoSubmit' type="button" onclick='addUser()'>Add user</button>
+          <div id='userInfoCogs' style="display:none">
+            Adding user... <img src='favicon.ico'/>
+          </div>
+        </form>
+      </div>
+      <!-- }}}3 -->
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/9.1.0/stellar-sdk.js"></script>
+    <script> // {{{2
+async function confirmBidAccept () { // {{{3
+  document.getElementById('confirmBidAcceptButton').style.display = 'none'
+  document.getElementById('confirmBidAcceptCogs').style.display = 'block'
+  try {
+    await process.presenter.demouser.acceptBid()
+  } catch(e) {
+    console.log(e)
+    alert(e)
+  }
+  process.demo.acceptBid()
+
+  let modal = document.getElementById("commonParentModal");
+  modal.style.display = "none";
+  let content = document.getElementById("confirmBidAccept")
+  content.style.display = "none";
+}
+
+function makeRequest () { // {{{3
+  try {
+    process.presenter.makeDemoRequest()
+  } catch(e) {
+    console.log(e)
+    alert(e)
+  }
+  document.getElementById('makeRequestButton').style.display = 'none'
+  document.getElementById('makeRequestCogs').style.display = 'block'
+}
+
+async function simulateBidders () { // {{{3
+  document.getElementById('simulateBiddersButton').style.display = 'none'
+  document.getElementById('simulateBiddersCogs').style.display = 'block'
+  try {
+    await process.presenter.createBiddingBots()
+  } catch(e) {
+    console.log(e)
+    alert(e)
+  }
+  let modal = document.getElementById("commonParentModal");
+  modal.style.display = "none";
+  let content = document.getElementById("req1Intro")
+  content.style.display = "none";
+}
+
+function testClawbacks () { // {{{3
+  try {
+    process.presenter.testClawbacks()
+  } catch(e) {
+    console.log(e)
+    alert(e)
+  }
+  document.getElementById('testClawbacksButton').style.display = 'none'
+  document.getElementById('testClawbacksCogs').style.display = 'block'
+}
+
+function addMake (mid, did) { // {{{3
+  let make = document.getElementById(mid), desc = document.getElementById(did)
+  if (make.checked) {
+    desc.style.display = 'block'
+    desc.required = true
+  } else {
+    desc.style.display = 'none'
+    desc.required = false
+  }
+}
+
+async function addUser () { // {{{3
+  try {
+    let greeting = document.getElementById('greeting').value
+    let listen4FRs = document.getElementById('listen4FRs').checked
+    let listen4FOs = document.getElementById('listen4FOs').checked
+    let makeFR = document.getElementById('makeFR').checked
+    let descFR = document.getElementById('descFR').value
+    let makeFO = document.getElementById('makeFO').checked
+    let descFO = document.getElementById('descFO').value
+
+    if (greeting.length == 0) { // {{{4
+      throw 'Greeting required'
+    }
+    if (makeFR && descFR.length == 0) {
+      throw 'Favor Request description required'
+    }
+    if (makeFO && descFO.length == 0) {
+      throw 'Favor Offer description required'
+    }
+    if (badValue(greeting)) {
+      throw 'Greeting: BAD VALUE'
+    }
+    if (descFO.length && badValue(descFO)) {
+      throw 'Favor Offer description: BAD VALUE'
+    }
+    if (descFR.length && badValue(descFR)) {
+      throw 'Favor Request description: BAD VALUE'
+    }
+    // }}}4
+    document.getElementById('userInfoSubmit').style.display = 'none'
+    document.getElementById('userInfoCogs').style.display = 'block'
+    await process.presenter.addUserAtCurrentLocation({
+      greeting, listen4FRs, listen4FOs, makeFR, descFR, makeFO, descFO
+    }).then(r => location.reload());
+  } catch(e) {
+    alert(e)
+  }
+}
+
+function badValue (s) { // {{{3
+  let allowed = /^[\w\s.,\-:)(]+$/.test(s)
+  return !allowed;
+}
+
+let myMap // {{{3
+function initMap() {
+  myMap = new google.maps.Map(document.getElementById("map"), {
+    center: new google.maps.LatLng(51.508742,-0.120850),
+    zoom: 2,
+  })
+}
+
+function initApp () { // {{{3
+  process.view.init()
+}
+
+async function releaseApp () { // {{{3
+  await process.presenter.release()
+}
+// }}}3
+    </script> <!-- }}}2 -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8M1uhXbbXIakKdUPJC_bhnwdlR38HTY4&callback=initMap&v=weekly"
+    ></script>
+    <script src="./index.js"></script>
+  </body> <!-- }}}1 -->
+</html>
