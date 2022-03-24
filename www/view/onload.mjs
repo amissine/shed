@@ -345,7 +345,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
   process.view.show()
 */
   const detail = { TODO: 'Make use of me' }
-  process.view = new OnLoadViewInit(new OnLoadPresenter())
+  process.view = new OnLoadViewInit(process.presenter = new OnLoadPresenter())
   process.view.presenter.dispatchEvent(new CustomEvent('init', { detail }))
 }
 // }}}1
