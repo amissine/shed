@@ -50,39 +50,6 @@ class Popup extends google.maps.OverlayView { // {{{1
   } // }}}2
 }
 
-class OnLoadView { // {{{1
-  constructor () { // {{{2
-  }
-
-  pan2currentPosition (userRole = 'user2join') { // {{{2
-    let infoWindow = new google.maps.InfoWindow()
-
-    // https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition
-    if (!navigator.geolocation) { // Browser doesn't support Geolocation
-      return handleLocationError(false, infoWindow, myMap.getCenter());
-    }
-    navigator.geolocation.getCurrentPosition(
-      position => this.welcome(position, userRole),
-      error => handleLocationError(true, infoWindow, myMap.getCenter())
-    )
-  }
-
-  welcome (position, userRole) { // {{{2
-    let p = new google.maps.LatLng(
-      position.coords.latitude,
-      position.coords.longitude
-    )
-    myMap.setCenter(p)
-    myMap.setZoom(11)
-
-    process.env.lat = position.coords.latitude.toString() 
-    process.env.lng = position.coords.longitude.toString()
-
-    return p;
-  }
-  // }}}2
-}
-
 class OnLoadGuestView extends OnLoadView { // {{{1
   constructor () { // {{{2
     super()
@@ -318,31 +285,11 @@ function showModal (contentId, close) { // {{{1
   }
 }
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) { // {{{1
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(
-    browserHasGeolocation
-      ? "Error: The Geolocation service failed."
-      : "Error: Your browser doesn't support geolocation."
-  );
-  infoWindow.open(myMap);
-}
 */
 function init () { // {{{1
 /* See also:
 https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter
 https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
-*/
-/*
-  process.presenter = new OnLoadPresenter()
-  let userInfo = process.presenter.getUserInfo()
-  process.view =
-    userInfo ?
-      userInfo.part3 ? new OnLoadUserViewPart3()
-      : userInfo.makeFR ? new OnLoadUser1stView() 
-        : new OnLoadUserView()
-    : new OnLoadGuestView()
-  process.view.show()
 */
   const detail = { TODO: 'Make use of me' }
   process.view = new OnLoadViewInit(process.presenter = new OnLoadPresenter())

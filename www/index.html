@@ -15,35 +15,35 @@
   </head>
   <body onload='initApp()' onunload='releaseApp()'> <!-- {{{1 -->
     <div id="map"></div>
-    <div id="user2join"> <!-- Show add user icon {{{2 -->
+    <div id="user2join"> <!-- Show add user icon TODO: remove{{{2 -->
       <i class='fas fa-user-plus' style='font-size:24px'></i>
       <span>GRATZIO TESTNET Demo - click here!</span>
     </div>
-    <div id="requestor">
+    <div id="requestor"> <!-- TODO: remove{{{2 -->
       <i class='fas fa-user-clock' style='font-size:24px;color:red'> Making your request, <img src='favicon.ico'/></i>
     </div>
-    <div id="bidder0">
+    <div id="bidder0">  <!-- TODO: remove{{{2 -->
       <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
     </div>
 
-    <div id="bidder1">
+    <div id="bidder1"> <!-- TODO: remove{{{2 -->
       <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
     </div>
 
-    <div id="bidder2">
+    <div id="bidder2">  <!-- TODO: remove{{{2 -->
       <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
     </div>
 
-    <div id="bidder3">
+    <div id="bidder3">  <!-- TODO: remove{{{2 -->
       <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
     </div>
    
-    <div id='bot4'>
+    <div id='bot4'>  <!-- TODO: remove{{{2 -->
       <i class='fas fa-user-cog' style='font-size:24px;color:red'></i>
       <span> XXX</span>
     </div>
 
-    <div id="listener">
+    <div id="listener">  <!-- TODO: remove{{{2 -->
       <i class='fas fa-user-clock' style='font-size:24px;color:green'></i>
       <span>, you are now listening for favor requests. Click here to make (simulate) one!</span>
     </div>
@@ -220,10 +220,58 @@ Can give a ride back home. GRAT 100 obo.
           </div>
         </form>
       </div>
+      <!-- GRATZIO Accept Pane {{{3 -->
+      <div id='acceptInviteOrPK' class="modal-content">
+        <span id='acceptInviteOrPKX' class="close">&times;</span>
+        <form> 
+          <p>Please fill in this form to create your Gratzio account.</p> <!-- {{{4 -->
+          <hr>
+          <label for="greeting"><b>Greeting</b></label>
+          <input type="text" placeholder="E.g., Miss Alice" id="greeting" required>
+          
+          <br/> <!-- Listen for Favor Requests/ Offers {{{4 -->
+          <label>
+            <input type="checkbox" checked="checked" id="listen4FRs" 
+            style="margin-bottom:15px"> Listen for Favor Requests
+          </label>
+          <label>
+            <input type="checkbox" checked="checked" id="listen4FOs"
+            style="margin-bottom:15px"> Listen for Favor Offers
+          </label>
+          
+          <br/> <!-- Make Favor Request {{{4 -->
+          <label>
+            <input type="checkbox" id="makeFR" checked='checked'
+                                   onclick="addMake('makeFR', 'descFR')"
+            style="margin-bottom:15px"> Make Favor Request
+          </label>
+          <textarea style='display:block' id="descFR" rows="5" cols="40" 
+            placeholder='Please describe your request in 2000 characters or less'>
+Need a babysitter tomorrow from 6pm to 11pm for 2 kids: boy 3 and girl 7 yo.
+Can give a ride back home. GRAT 100 obo.
+          </textarea>
+          
+          <br/> <!-- Make Favor Offer {{{4 -->
+          <label>
+            <input type="checkbox" id="makeFO" onclick="addMake('makeFO', 'descFO')"
+            style="margin-bottom:15px"> Make Favor Offer
+          </label>
+          <textarea style='display:none' id="descFO" rows="5" cols="40"
+            placeholder='Please describe your offer in 2000 characters or less'></textarea>
+          <!-- }}}4 -->
+          <p>By continuing you agree to our 
+          <a href="https://www.termsfeed.com/live/47782836-acc3-4660-a75b-a44a24dc50fb" style="color:dodgerblue">Terms & Conditions</a>.
+          </p>
+          <button id='userInfoSubmit' type="button" onclick='addUser()'>Accept</button>
+          <div id='userInfoCogs' style="display:none">
+            Accepting... <img src='favicon.ico'/>
+          </div>
+        </form>
+      </div>
       <!-- }}}3 -->
     </div>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/9.1.0/stellar-sdk.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/9.1.0/stellar-sdk.js"></script><!-- {{{2 -->
     <script> // {{{2
 async function confirmBidAccept () { // {{{3
   document.getElementById('confirmBidAcceptButton').style.display = 'none'
