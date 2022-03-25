@@ -49,6 +49,10 @@ Build process. Runs `pc` (providing for **c**ontinuous development and testing),
 
 Continuous development and testing, pre-committal.
 
+### `pd`
+
+Publish the distribution.
+
 ## Test case 0 - get agent account by public/secret key
 
 ![Test case 0 results](./account.test.png "Shoot 3")

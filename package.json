@@ -17,6 +17,7 @@
     "pa":"npm run pb; npm run cfw && sleep 1 && npm run ff",
     "pb":"npm run pc; [ $npm_config_el ] && ttab -w -d $PWD exec npm run tc",
     "pc":"cd v2 && npm run d2",
+    "pd":"cd v2 && npm run d3 && cd - && wrangler publish",
     "q":"------------------------------------------------------",
     "qa": "cd v2 && npm run qa",
     "qasource": "cd v2 && npm run qasource",
