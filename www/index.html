@@ -172,62 +172,15 @@ Can give a ride back home. GRAT 100 obo.
         </form>
       </div>
 
-      <!-- Get user info {{{3 -->
-      <div id='getUserInfo' class="modal-content">
-        <span id='getUserInfoX' class="close">&times;</span>
-        <form> 
-          <p>Please fill in this form to create your Gratzio account.</p> <!-- {{{4 -->
-          <hr>
-          <label for="greeting"><b>Greeting</b></label>
-          <input type="text" placeholder="E.g., Miss Alice" id="greeting" required>
-          
-          <br/> <!-- Listen for Favor Requests/ Offers {{{4 -->
-          <label>
-            <input type="checkbox" checked="checked" id="listen4FRs" 
-            style="margin-bottom:15px"> Listen for Favor Requests
-          </label>
-          <label>
-            <input type="checkbox" checked="checked" id="listen4FOs"
-            style="margin-bottom:15px"> Listen for Favor Offers
-          </label>
-          
-          <br/> <!-- Make Favor Request {{{4 -->
-          <label>
-            <input type="checkbox" id="makeFR" checked='checked'
-                                   onclick="addMake('makeFR', 'descFR')"
-            style="margin-bottom:15px"> Make Favor Request
-          </label>
-          <textarea style='display:block' id="descFR" rows="5" cols="40" 
-            placeholder='Please describe your request in 2000 characters or less'>
-Need a babysitter tomorrow from 6pm to 11pm for 2 kids: boy 3 and girl 7 yo.
-Can give a ride back home. GRAT 100 obo.
-          </textarea>
-          
-          <br/> <!-- Make Favor Offer {{{4 -->
-          <label>
-            <input type="checkbox" id="makeFO" onclick="addMake('makeFO', 'descFO')"
-            style="margin-bottom:15px"> Make Favor Offer
-          </label>
-          <textarea style='display:none' id="descFO" rows="5" cols="40"
-            placeholder='Please describe your offer in 2000 characters or less'></textarea>
-          <!-- }}}4 -->
-          <p>By creating an account you agree to our 
-          <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
-          </p>
-          <button id='userInfoSubmit' type="button" onclick='addUser()'>Add user</button>
-          <div id='userInfoCogs' style="display:none">
-            Adding user... <img src='favicon.ico'/>
-          </div>
-        </form>
-      </div>
       <!-- GRATZIO Welcome Pane {{{3 -->
       <div id='inviteOrPK' class="modal-content">
         <span id='inviteOrPKX' class="close">&times;</span>
         <form> 
           <p> <!-- {{{4 -->
-          Welcome to Gratzio! What would you like to do? (See our <a href='#'>FAQs</a>
-          for more info on your choices.)
-          </p>
+          Welcome to Gratzio!</p>
+          <p>
+          What would you like to do? (See our <a href='#'>FAQ</a>
+          for more info on your choices.)</p>
           <div>
           <input type='radio' name='welcome-choice' onclick='requestInvite()'>
                  Request a special invite
@@ -239,6 +192,21 @@ Can give a ride back home. GRAT 100 obo.
           <div>
           <input type='radio' name='welcome-choice' onclick='sendPK()'>
                  Send us your Public Key
+          </div>
+          <div id='invite' style='display:none'>
+            <b>Invite</b>
+            <input type="text" size='40' placeholder='Paste here the invite from our email'>
+          </div>
+          <div id='greeting' style='display:none'>
+            <b>Greeting</b>
+            <input type="text" placeholder="E.g., Miss Alice" required>
+          </div>
+          <div id='emailAddress' style='display:none'>
+            <b>Email</b>
+            <input type="text" placeholder="Your email address" required>
+          </div>
+          <div id='publicKey' style='display:none'>
+            <input type="text" size='56' maxlength='56' placeholder="Your Stellar account public key" required>
           </div>
           <hr>
           <!-- }}}4 -->
@@ -259,17 +227,47 @@ Can give a ride back home. GRAT 100 obo.
     <script> // {{{2
 function requestInvite () { // {{{3
   document.getElementById('inviteOrPK_go').disabled = false
+  document.getElementById('invite').style.display = 'none'
+  document.getElementById('invite').lastElementChild.value = ''
+  document.getElementById('greeting').style.display = 'block'
+  document.getElementById('emailAddress').style.display = 'block'
+  document.getElementById('publicKey').style.display = 'none'
+  document.getElementById('publicKey').lastElementChild.value = ''
 }
 
 function acceptInvite () { // {{{3
   document.getElementById('inviteOrPK_go').disabled = false
+  document.getElementById('invite').style.display = 'block'
+  document.getElementById('greeting').style.display = 'none'
+  document.getElementById('greeting').lastElementChild.value = ''
+  document.getElementById('emailAddress').style.display = 'none'
+  document.getElementById('emailAddress').lastElementChild.value = ''
+  document.getElementById('publicKey').style.display = 'none'
+  document.getElementById('publicKey').lastElementChild.value = ''
 }
 
 function sendPK () { // {{{3
   document.getElementById('inviteOrPK_go').disabled = false
+  document.getElementById('invite').style.display = 'none'
+  document.getElementById('invite').lastElementChild.value = ''
+  document.getElementById('greeting').style.display = 'block'
+  document.getElementById('emailAddress').style.display = 'block'
+  document.getElementById('publicKey').style.display = 'block'
 }
 
 function inviteOrPK_f () { // {{{3
+  // Collect data
+  let invite = document.getElementById('invite').lastElementChild.value
+  let greeting = document.getElementById('greeting').lastElementChild.value
+  let emailAddress = document.getElementById('emailAddress').lastElementChild.value
+  let publicKey = document.getElementById('publicKey').lastElementChild.value
+  let choice = invite ? 'acceptInvite' : publicKey ? 'sendPublicKey' : 'requestInvite'
+
+        console.log(choice)
+
+  // Validate data
+
+  // Process data
   document.getElementById('inviteOrPK_go').style.display = 'none'
   document.getElementById('inviteOrPK_goCogs').style.display = 'block'
 }
@@ -341,7 +339,7 @@ function addMake (mid, did) { // {{{3
 
 async function addUser () { // {{{3
   try {
-    let greeting = document.getElementById('greeting').value
+    let greeting = document.getElementById('greeting').value // {{{4
     let listen4FRs = document.getElementById('listen4FRs').checked
     let listen4FOs = document.getElementById('listen4FOs').checked
     let makeFR = document.getElementById('makeFR').checked
@@ -367,12 +365,12 @@ async function addUser () { // {{{3
     if (descFR.length && badValue(descFR)) {
       throw 'Favor Request description: BAD VALUE'
     }
-    // }}}4
-    document.getElementById('userInfoSubmit').style.display = 'none'
+    document.getElementById('userInfoSubmit').style.display = 'none' // {{{4
     document.getElementById('userInfoCogs').style.display = 'block'
     await process.presenter.addUserAtCurrentLocation({
       greeting, listen4FRs, listen4FOs, makeFR, descFR, makeFO, descFO
     }).then(r => location.reload());
+    // }}}4
   } catch(e) {
     alert(e)
   }
