@@ -226,6 +226,7 @@ Can give a ride back home. GRAT 100 obo.
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/9.1.0/stellar-sdk.js"></script><!-- {{{2 -->
     <script> // {{{2
 function requestInvite () { // {{{3
+  process.choice = 'requestInvite'
   document.getElementById('inviteOrPK_go').disabled = false
   document.getElementById('invite').style.display = 'none'
   document.getElementById('invite').lastElementChild.value = ''
@@ -236,6 +237,7 @@ function requestInvite () { // {{{3
 }
 
 function acceptInvite () { // {{{3
+  process.choice = 'acceptInvite'
   document.getElementById('inviteOrPK_go').disabled = false
   document.getElementById('invite').style.display = 'block'
   document.getElementById('greeting').style.display = 'none'
@@ -247,6 +249,7 @@ function acceptInvite () { // {{{3
 }
 
 function sendPK () { // {{{3
+  process.choice = 'sendPublicKey'
   document.getElementById('inviteOrPK_go').disabled = false
   document.getElementById('invite').style.display = 'none'
   document.getElementById('invite').lastElementChild.value = ''
@@ -261,16 +264,41 @@ function inviteOrPK_f () { // {{{3
   let greeting = document.getElementById('greeting').lastElementChild.value
   let emailAddress = document.getElementById('emailAddress').lastElementChild.value
   let publicKey = document.getElementById('publicKey').lastElementChild.value
-  let choice = invite ? 'acceptInvite' : publicKey ? 'sendPublicKey' : 'requestInvite'
-
-        console.log(choice)
-
-  // Validate data
-
-  // Process data
-  document.getElementById('inviteOrPK_go').style.display = 'none'
-  document.getElementById('inviteOrPK_goCogs').style.display = 'block'
+  try {
+    // Validate data
+    switch (process.choice) {
+      case 'acceptInvite':
+        if (!ok(invite)) throw 'Bad Invite';
+        break;
+      case 'sendPublicKey':
+        if (!ok(publicKey)) throw 'Bad Public Key';
+      case 'requestInvite':
+        if (!ok(greeting)) throw 'Bad Greeting';
+        if (!ok(emailAddress, true)) throw 'Bad Email';
+        break;
+      default:
+        throw 'UNEXPECTED';
+    }
+    delete process.choice
+    // Process data
+    document.getElementById('inviteOrPK_go').style.display = 'none'
+    document.getElementById('inviteOrPK_goCogs').style.display = 'block'
+  } catch(e) {
+    alert(e)
+  }
 }
+
+function ok (s, email = false) { // {{{3
+  if (s.length == 0 || !/^[\w\s.,\-:()@]+$/.test(s)) {
+    return false;
+  }
+  return email ? /^[\w.]+@[\w]+\.[a-z]{2,5}$/.test(s) : true;
+/* See also:
+  https://www.regular-expressions.info/shorthand.html
+  https://regex101.com/
+*/
+}
+
 ////////////////////////// Demo: ///////////////////////// {{{3
 async function confirmBidAccept () { // {{{3
   document.getElementById('confirmBidAcceptButton').style.display = 'none'
