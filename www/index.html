@@ -15,166 +15,11 @@
   </head>
   <body onload='initApp()' onunload='releaseApp()'> <!-- {{{1 -->
     <div id="map"></div>
-    <div id="user2join"> <!-- Show add user icon TODO: remove{{{2 -->
-      <i class='fas fa-user-plus' style='font-size:24px'></i>
-      <span>GRATZIO TESTNET Demo - click here!</span>
-    </div>
-    <div id="requestor"> <!-- TODO: remove{{{2 -->
-      <i class='fas fa-user-clock' style='font-size:24px;color:red'> Making your request, <img src='favicon.ico'/></i>
-    </div>
-    <div id="bidder0">  <!-- TODO: remove{{{2 -->
-      <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
-    </div>
-
-    <div id="bidder1"> <!-- TODO: remove{{{2 -->
-      <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
-    </div>
-
-    <div id="bidder2">  <!-- TODO: remove{{{2 -->
-      <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
-    </div>
-
-    <div id="bidder3">  <!-- TODO: remove{{{2 -->
-      <i class='fas fa-user-cog' style='font-size:24px;color:green'> Checking existing requests... <img src='favicon.ico'/></i>
-    </div>
-   
-    <div id='bot4'>  <!-- TODO: remove{{{2 -->
-      <i class='fas fa-user-cog' style='font-size:24px;color:red'></i>
-      <span> XXX</span>
-    </div>
-
-    <div id="listener">  <!-- TODO: remove{{{2 -->
-      <i class='fas fa-user-clock' style='font-size:24px;color:green'></i>
-      <span>, you are now listening for favor requests. Click here to make (simulate) one!</span>
-    </div>
-
     <!-- The common parent Modal {{{2 -->
     <div id="commonParentModal" class="modal">
-      <!-- confirmBidAccept {{{3 -->
-      <div id='confirmBidAccept' class="modal-content">
-        <span id='confirmBidAcceptX' class="close">&times;</span>
-        <form> 
-          <p>, do you accept the following bid?</p>
-          <hr>
-          <p> the bid goes here </p>
-          <button id='confirmBidAcceptButton' type="button" onclick='confirmBidAccept()'>
-            Accept Bid
-          </button>
-          <div id='confirmBidAcceptCogs' style="display:none">
-            Accepting Bid... <img src='favicon.ico'/>
-          </div>
-        </form>
-      </div>
-
-      <!-- makeRequest {{{3 -->
-      <div id='makeRequest' class="modal-content">
-        <span id='makeRequestX' class="close">&times;</span>
-        <form> 
-          <p>, we'd like to show you now that the demo is listening for 
-          TESTNET requests in real time. Please click the "Make Request" button. 
-          This will start an external process that places on TESTNET the request below.
-          The demo detects the request in real time, and prompts you to bid on it.
-          The external process then takes your bid and sends you gratitude. When the
-          demo detects this event (again, in real time), you will be notified.</p>
-          <hr>
-          <p> 
-Need a babysitter tomorrow from 6pm to 11pm for 2 kids: boy 3 and girl 7 yo.
-Can give a ride back home. GRAT 100 obo.
-          </p>
-          <button id='makeRequestButton' type="button" onclick='makeRequest()'>
-            Make Request
-          </button>
-          <div id='makeRequestCogs' style="display:none">
-            Running External Process... <img src='favicon.ico'/>
-          </div>
-        </form>
-      </div>
-
-      <!-- part2End {{{3 -->
-      <div id='part2End' class="modal-content">
-        <span id='part2EndX' class="close">&times;</span>
-        <p>, your bid has been taken on XXX, and the gratitude is now being paid to
-        you. This concludes Part 2 of the Gratzio TESTNET Demo.
-        </p>
-        <p>If this was not a demo, you'd be expected to provide the requested help.
-        Failure to do so would result in a dispute request and a return of the
-        gratitude you received from the requestor back to her. To see how the
-        dispute process would work, please proceed to the final Part 3 of the demo.
-        You can do so by simply closing (clicking on the &times; thing in the 
-        top-right corner of) this modal window. 
-        </p>
-      </div>
-
-      <!-- payingBidder {{{3 -->
-      <div id='payingBidder' class="modal-content">
-        <span id='payingBidderX' class="close">&times;</span>
-        <p>, you are now paying GRAT XXX to bidder XXX. In this demo, it is assumed 
-        you receive the requested favor from the bidder and do not have to dispute it. 
-        When bidder XXX receives your payment, it gets removed - as well as other three
-        demo bidders. Please wait until this cleanup process is completed.</p>
-        <hr>
-        <div id='payingBidderCogs'>
-          Paying Bidder... <img src='favicon.ico'/>
-        </div>
-        <div id='removingBidderCogs' style="display:none">
-          Removing bidder X... <img src='favicon.ico'/>
-        </div>
-      </div>
-
-      <!-- req1Intro {{{3 -->
-      <div id='req1Intro' class="modal-content">
-        <span id='req1IntroX' class="close">&times;</span>
-        <form> 
-          <p>, your first request has default Time To Live of 180s. <!-- {{{4 -->
-            If you don't accept a bid before the TTL expires, your request 
-            will be revoked. But for this Demo, we can simulate bidders for your
-            request. Then, you can accept a bid from one of them by clicking on
-            the bidder. Try it out!
-          </p> <!-- }}}4 -->
-          <hr>
-          <button id='simulateBiddersButton' type="button" onclick='simulateBidders()'>
-            Simulate bidders
-          </button>
-          <div id='simulateBiddersCogs' style="display:none">
-            Creating bidding bot 1 of 4... <img src='favicon.ico'/>
-          </div>
-        </form>
-      </div>
-
-      <!-- testClawbacks {{{3 -->
-      <div id='testClawbacks' class="modal-content">
-        <span id='testClawbacksX' class="close">&times;</span>
-        <form> 
-          <p>, the final part of this demo is to test the Stellar feature that makes
-          Gratzio SAFE. Please click the "Test Clawbacks" button. This will start 
-          an external process that:
-          <ul>
-            <li>creates an Issuer Bot; then</li>
-            <li>the Issuer creates an Agent Bot and funds it with GRAT 1000; then</li>
-            <li>the Agent creates a User Bot and funds it with GRAT 200; then </li>
-            <li>the Issuer takes (claws) back GRAT 100 from both Agent and User:</li>
-            <li>IT WORKS!</li>
-            <li>then the bots get removed.</li>
-          </ul>
-          </p>
-          <p>
-          The output of this process is also available here: 
-          </p>
-          <p>
-          <a href='https://github.com/amissine/gratzio-join/blob/main/part3.log'>https://github.com/amissine/gratzio-join/blob/main/part3.log</a>
-          </p>
-          <button id='testClawbacksButton' type="button" onclick='testClawbacks()'>
-            Test Clawbacks
-          </button>
-          <div id='testClawbacksCogs' style="display:none">
-            Running External Process... <img src='favicon.ico'/>
-          </div>
-        </form>
-      </div>
-
       <!-- GRATZIO Welcome Pane {{{3 -->
-      <div id='inviteOrPK' class="modal-content">
-        <span id='inviteOrPKX' class="close">&times;</span>
+      <div id='inviteOrSK' class="modal-content">
+        <span id='inviteOrSKX' class="close">&times;</span>
         <form> 
           <p> <!-- {{{4 -->
           Welcome to Gratzio!</p>
@@ -190,7 +35,7 @@ Can give a ride back home. GRAT 100 obo.
                  Accept the invite
           </div>
           <div>
-          <input type='radio' name='welcome-choice' onclick='sendPK()'>
+          <input type='radio' name='welcome-choice' onclick='storeSK()'>
                 Store your Stellar Secret Key on this device
           </div>
           <div id='invite' style='display:none'>
@@ -205,7 +50,7 @@ Can give a ride back home. GRAT 100 obo.
             <b>Email</b>
             <input type="text" placeholder="Your email address" required>
           </div>
-          <div id='publicKey' style='display:none'>
+          <div id='secretKey' style='display:none'>
             <input type="text" size='56' maxlength='56' placeholder="Your Stellar account secret key" required>
           </div>
           <hr>
@@ -213,9 +58,9 @@ Can give a ride back home. GRAT 100 obo.
           <p>By continuing you agree to our 
           <a href="https://www.termsfeed.com/live/47782836-acc3-4660-a75b-a44a24dc50fb" style="color:dodgerblue">Terms & Conditions</a>.
           </p>
-          <button id='inviteOrPK_go' type="button" 
-            disabled onclick='inviteOrPK_f()'>Continue</button>
-          <div id='inviteOrPK_goCogs' style="display:none">
+          <button id='inviteOrSK_go' type="button" 
+            disabled onclick='inviteOrSK_f()'>Continue</button>
+          <div id='inviteOrSK_goCogs' style="display:none">
             XXX... <img src='favicon.ico'/>
           </div>
         </form>
@@ -227,62 +72,70 @@ Can give a ride back home. GRAT 100 obo.
     <script> // {{{2
 function requestInvite () { // {{{3
   process.choice = 'requestInvite'
-  document.getElementById('inviteOrPK_go').disabled = false
+  document.getElementById('inviteOrSK_go').disabled = false
   document.getElementById('invite').style.display = 'none'
   document.getElementById('invite').lastElementChild.value = ''
   document.getElementById('greeting').style.display = 'block'
   document.getElementById('emailAddress').style.display = 'block'
-  document.getElementById('publicKey').style.display = 'none'
-  document.getElementById('publicKey').lastElementChild.value = ''
+  document.getElementById('secretKey').style.display = 'none'
+  document.getElementById('secretKey').lastElementChild.value = ''
 }
 
 function acceptInvite () { // {{{3
   process.choice = 'acceptInvite'
-  document.getElementById('inviteOrPK_go').disabled = false
+  document.getElementById('inviteOrSK_go').disabled = false
   document.getElementById('invite').style.display = 'block'
   document.getElementById('greeting').style.display = 'none'
   document.getElementById('greeting').lastElementChild.value = ''
   document.getElementById('emailAddress').style.display = 'none'
   document.getElementById('emailAddress').lastElementChild.value = ''
-  document.getElementById('publicKey').style.display = 'none'
-  document.getElementById('publicKey').lastElementChild.value = ''
+  document.getElementById('secretKey').style.display = 'none'
+  document.getElementById('secretKey').lastElementChild.value = ''
 }
 
-function sendPK () { // {{{3
-  process.choice = 'sendPublicKey'
-  document.getElementById('inviteOrPK_go').disabled = false
+function storeSK () { // {{{3
+  process.choice = 'storeSecretKey'
+  document.getElementById('inviteOrSK_go').disabled = false
   document.getElementById('invite').style.display = 'none'
   document.getElementById('invite').lastElementChild.value = ''
   document.getElementById('greeting').style.display = 'block'
   document.getElementById('emailAddress').style.display = 'block'
-  document.getElementById('publicKey').style.display = 'block'
+  document.getElementById('secretKey').style.display = 'block'
 }
 
-function inviteOrPK_f () { // {{{3
+function inviteOrSK_f () { // {{{3
   // Collect data
   let invite = document.getElementById('invite').lastElementChild.value
   let greeting = document.getElementById('greeting').lastElementChild.value
   let emailAddress = document.getElementById('emailAddress').lastElementChild.value
-  let publicKey = document.getElementById('publicKey').lastElementChild.value
+  let secretKey = document.getElementById('secretKey').lastElementChild.value
+  let textContent
   try {
     // Validate data
     switch (process.choice) {
       case 'acceptInvite':
         if (!ok(invite)) throw 'Bad Invite';
+        textContent = 'Creating your Stellar account and funding it with GRAT 1000'
         break;
-      case 'sendPublicKey':
-        if (!ok(publicKey)) throw 'Bad Public Key';
+      case 'storeSecretKey':
+        if (!ok(secretKey)) throw 'Bad Secret Key';
+        textContent = 'Storing your info on this device'
       case 'requestInvite':
         if (!ok(greeting)) throw 'Bad Greeting';
         if (!ok(emailAddress, true)) throw 'Bad Email';
+        textContent = process.choice == 'requestInvite' ?
+          'Sending you an email with your special invite' : textContent
         break;
       default:
         throw 'UNEXPECTED';
     }
     delete process.choice
     // Process data
-    document.getElementById('inviteOrPK_go').style.display = 'none'
-    document.getElementById('inviteOrPK_goCogs').style.display = 'block'
+    let cogs = document.getElementById('inviteOrSK_goCogs')
+    textContent = cogs.firstChild.textContent.replace('XXX', textContent)
+    cogs.firstChild.textContent = textContent
+    document.getElementById('inviteOrSK_go').style.display = 'none'
+    cogs.style.display = 'block'
   } catch(e) {
     alert(e)
   }

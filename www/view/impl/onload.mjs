@@ -32,8 +32,8 @@ class OnLoadView { // {{{1
 }
 
 class OnLoadViewInit extends OnLoadView { // {{{1
-  #inviteOrPK () { // {{{2
-    showModal('inviteOrPK')
+  #inviteOrSK () { // {{{2
+    showModal('inviteOrSK')
   }
 
   constructor (presenter) { // {{{2
@@ -45,7 +45,7 @@ class OnLoadViewInit extends OnLoadView { // {{{1
     this.pan2currentPosition()
     userInfo ?
       console.log('TODO:', userInfo)
-    : this.#inviteOrPK()
+    : this.#inviteOrSK()
   }
   // }}}2
 }
@@ -67,7 +67,7 @@ function showModal (contentId, close) { // {{{1
   let content = document.getElementById(contentId)
   let text
   switch (contentId) {
-    case 'inviteOrPK':
+    case 'inviteOrSK':
       break
     case 'part2End':
     case 'payingBidder':
