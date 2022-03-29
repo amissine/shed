@@ -129,13 +129,18 @@ function inviteOrSK_f () { // {{{3
       default:
         throw 'UNEXPECTED';
     }
-    delete process.choice
     // Process data
     let cogs = document.getElementById('inviteOrSK_goCogs')
     textContent = cogs.firstChild.textContent.replace('XXX', textContent)
     cogs.firstChild.textContent = textContent
     document.getElementById('inviteOrSK_go').style.display = 'none'
     cogs.style.display = 'block'
+    let detail = {
+      choice: process.choice, // 'requestInvite', 'acceptInvite', 'storeSecretKey'
+      invite, greeting, emailAddress, secretKey
+    }
+    delete process.choice
+    process.presenter.dispatchEvent(new CustomEvent('inviteOrSK', { detail }))
   } catch(e) {
     alert(e)
   }
@@ -150,116 +155,6 @@ function ok (s, email = false) { // {{{3
   https://www.regular-expressions.info/shorthand.html
   https://regex101.com/
 */
-}
-
-////////////////////////// Demo: ///////////////////////// {{{3
-async function confirmBidAccept () { // {{{3
-  document.getElementById('confirmBidAcceptButton').style.display = 'none'
-  document.getElementById('confirmBidAcceptCogs').style.display = 'block'
-  try {
-    await process.presenter.demouser.acceptBid()
-  } catch(e) {
-    console.log(e)
-    alert(e)
-  }
-  process.demo.acceptBid()
-
-  let modal = document.getElementById("commonParentModal");
-  modal.style.display = "none";
-  let content = document.getElementById("confirmBidAccept")
-  content.style.display = "none";
-}
-
-function makeRequest () { // {{{3
-  try {
-    process.presenter.makeDemoRequest()
-  } catch(e) {
-    console.log(e)
-    alert(e)
-  }
-  document.getElementById('makeRequestButton').style.display = 'none'
-  document.getElementById('makeRequestCogs').style.display = 'block'
-}
-
-async function simulateBidders () { // {{{3
-  document.getElementById('simulateBiddersButton').style.display = 'none'
-  document.getElementById('simulateBiddersCogs').style.display = 'block'
-  try {
-    await process.presenter.createBiddingBots()
-  } catch(e) {
-    console.log(e)
-    alert(e)
-  }
-  let modal = document.getElementById("commonParentModal");
-  modal.style.display = "none";
-  let content = document.getElementById("req1Intro")
-  content.style.display = "none";
-}
-
-function testClawbacks () { // {{{3
-  try {
-    process.presenter.testClawbacks()
-  } catch(e) {
-    console.log(e)
-    alert(e)
-  }
-  document.getElementById('testClawbacksButton').style.display = 'none'
-  document.getElementById('testClawbacksCogs').style.display = 'block'
-}
-
-function addMake (mid, did) { // {{{3
-  let make = document.getElementById(mid), desc = document.getElementById(did)
-  if (make.checked) {
-    desc.style.display = 'block'
-    desc.required = true
-  } else {
-    desc.style.display = 'none'
-    desc.required = false
-  }
-}
-
-async function addUser () { // {{{3
-  try {
-    let greeting = document.getElementById('greeting').value // {{{4
-    let listen4FRs = document.getElementById('listen4FRs').checked
-    let listen4FOs = document.getElementById('listen4FOs').checked
-    let makeFR = document.getElementById('makeFR').checked
-    let descFR = document.getElementById('descFR').value
-    let makeFO = document.getElementById('makeFO').checked
-    let descFO = document.getElementById('descFO').value
-
-    if (greeting.length == 0) { // {{{4
-      throw 'Greeting required'
-    }
-    if (makeFR && descFR.length == 0) {
-      throw 'Favor Request description required'
-    }
-    if (makeFO && descFO.length == 0) {
-      throw 'Favor Offer description required'
-    }
-    if (badValue(greeting)) {
-      throw 'Greeting: BAD VALUE'
-    }
-    if (descFO.length && badValue(descFO)) {
-      throw 'Favor Offer description: BAD VALUE'
-    }
-    if (descFR.length && badValue(descFR)) {
-      throw 'Favor Request description: BAD VALUE'
-    }
-    document.getElementById('userInfoSubmit').style.display = 'none' // {{{4
-    document.getElementById('userInfoCogs').style.display = 'block'
-    await process.presenter.addUserAtCurrentLocation({
-      greeting, listen4FRs, listen4FOs, makeFR, descFR, makeFO, descFO
-    }).then(r => location.reload());
-    // }}}4
-  } catch(e) {
-    alert(e)
-  }
-}
-
-function badValue (s) { // {{{3
-  let allowed = /^[\w\s.,\-:)(]+$/.test(s)
-  return !allowed;
 }
 
 let myMap // {{{3

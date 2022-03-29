@@ -38,7 +38,6 @@ class OnLoadViewInit extends OnLoadView { // {{{1
 
   constructor (presenter) { // {{{2
     super()
-    this.presenter = presenter
   }
 
   show (userInfo) { // {{{2
