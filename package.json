@@ -18,6 +18,7 @@
     "pb":"npm run pc; [ $npm_config_el ] && ttab -w -d $PWD exec npm run tc",
     "pc":"cd v2 && npm run d2",
     "pd":"cd v2 && npm run d3 && cd - && wrangler publish",
+    "pe": "export $(cat .env|tr -d [:blank:]|xargs) && cli/run.mjs \"${npm_config_run}\" 2>&1 | tee join/pe.log",
     "q":"------------------------------------------------------",
     "qa": "cd v2 && npm run qa",
     "qasource": "cd v2 && npm run qasource",

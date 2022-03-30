@@ -53,6 +53,10 @@ Continuous development and testing, pre-committal.
 
 Publish the distribution.
 
+### `pe`
+
+Populate the environment, run node task.
+
 ## Test case 0 - get agent account by public/secret key
 
 ![Test case 0 results](./account.test.png "Shoot 3")
