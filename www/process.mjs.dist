@@ -1,0 +1,23 @@
+import { init } from './view/onload.mjs'
+import { Semaphore, } from './model/impl/utils.mjs'
+
+function setenv () { // {{{1
+  if (window.process) {
+    return;
+  }
+  window.process = {
+    env: {
+      AGENT: '${AGENT}',
+      GRAT_ISSUER: '${GRAT_ISSUER}',
+      HORIZON_URL: '${HORIZON_URL}',
+      STELLAR_NETWORK: '${STELLAR_NETWORK}',
+    },
+    lock: new Semaphore(1),
+    session: {},
+    view: {
+      init,
+    },
+  }
+}
+// }}}1
+export { setenv }
