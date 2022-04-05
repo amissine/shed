@@ -53,6 +53,10 @@
           <div id='secretKey' style='display:none'>
             <input type="text" size='56' maxlength='56' placeholder="Your Stellar account secret key" required>
           </div>
+          <div id='fundsRequested' style='display:none'>
+            <b>Funds requested</b>, GRAT
+            <input type="text" size='3' maxlength='3' placeholder='999'>
+          </div>
           <hr>
           <!-- }}}4 -->
           <p>By continuing you agree to our 
@@ -79,6 +83,8 @@ function requestInvite () { // {{{3
   document.getElementById('emailAddress').style.display = 'block'
   document.getElementById('secretKey').style.display = 'none'
   document.getElementById('secretKey').lastElementChild.value = ''
+  document.getElementById('fundsRequested').style.display = 'none'
+  document.getElementById('fundsRequested').lastElementChild.value = ''
 }
 
 function acceptInvite () { // {{{3
@@ -91,6 +97,8 @@ function acceptInvite () { // {{{3
   document.getElementById('emailAddress').lastElementChild.value = ''
   document.getElementById('secretKey').style.display = 'none'
   document.getElementById('secretKey').lastElementChild.value = ''
+  document.getElementById('fundsRequested').style.display = 'none'
+  document.getElementById('fundsRequested').lastElementChild.value = ''
 }
 
 function storeSK () { // {{{3
@@ -101,6 +109,7 @@ function storeSK () { // {{{3
   document.getElementById('greeting').style.display = 'block'
   document.getElementById('emailAddress').style.display = 'block'
   document.getElementById('secretKey').style.display = 'block'
+  document.getElementById('fundsRequested').style.display = 'block'
 }
 
 function inviteOrSK_f () { // {{{3
@@ -109,6 +118,7 @@ function inviteOrSK_f () { // {{{3
   let greeting = document.getElementById('greeting').lastElementChild.value
   let emailAddress = document.getElementById('emailAddress').lastElementChild.value
   let secretKey = document.getElementById('secretKey').lastElementChild.value
+  let fundsRequested = document.getElementById('fundsRequested').lastElementChild.value
   let textContent
   try {
     // Validate data
@@ -120,6 +130,9 @@ function inviteOrSK_f () { // {{{3
       case 'storeSecretKey':
         if (!ok(secretKey)) throw 'Bad Secret Key';
         textContent = 'Storing your info on this device'
+        if (fundsRequested) {
+          textContent += ', funding your account with GRAT ' + fundsRequested
+        }
       case 'requestInvite':
         if (!ok(greeting)) throw 'Bad Greeting';
         if (!ok(emailAddress, true)) throw 'Bad Email';
@@ -137,7 +150,7 @@ function inviteOrSK_f () { // {{{3
     cogs.style.display = 'block'
     let detail = {
       choice: process.choice, // 'requestInvite', 'acceptInvite', 'storeSecretKey'
-      invite, greeting, emailAddress, secretKey
+      invite, greeting, emailAddress, secretKey, fundsRequested
     }
     delete process.choice
     process.presenter.dispatchEvent(new CustomEvent('inviteOrSK', { detail }))
