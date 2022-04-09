@@ -1,0 +1,10 @@
+account_id = "bdad930c09138487203077ef32b1ab7e"
+name = "gratzio"
+type = "webpack"
+route = ''
+zone_id = ''
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+site = {bucket = "./dev",entry-point = "workers-site"}
+compatibility_date = "2022-01-25"
