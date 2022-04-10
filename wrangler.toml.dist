@@ -1,4 +1,4 @@
-account_id = "bdad930c09138487203077ef32b1ab7e"
+account_id = "${CFW_ACCOUNT_ID}"
 name = "gratzio"
 type = "webpack"
 route = ''

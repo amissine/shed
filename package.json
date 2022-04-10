@@ -4,6 +4,8 @@
   "description": "The gratz.io testbed",
   "main": "index.js",
   "scripts": {
+    "a": "export $(cat .env|tr -d [:blank:]|xargs); envsubst < wrangler.toml.dist > wrangler.toml",
+    "ac": "export $(cat .env|tr -d [:blank:]|xargs); cd cli; envsubst < wrangler.toml.dist > wrangler.toml",
     "admin": "export $(cat .env|tr -d [:blank:]|xargs) && v2/bin/run.mjs \"${npm_config_run}\" 2>&1 | tee join/admin.log",
     "ava": "export $(cat .env|tr -d [:blank:]|xargs) && ava -v -w --timeout=2m",
     "bd": "ttab -w -d $PWD exec npm run tc && cd v2 && npm run dev",

@@ -5,6 +5,7 @@ qa
 package-lock.json
 .env
 .env.dist
+wrangler.toml
 
 # Vim
 .*.sw?
