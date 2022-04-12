@@ -10,18 +10,18 @@
     "ava": "export $(cat .env|tr -d [:blank:]|xargs) && ava -v -w --timeout=2m",
     "bd": "ttab -w -d $PWD exec npm run tc && cd v2 && npm run dev",
     "cd": "npm run bd && npm run cfw && sleep 1 && npm run ttff",
-    "cfw":  "ttab -w -d $PWD exec wrangler dev",
+    "cfw": "ttab -w -d $PWD exec wrangler dev",
     "dev": "cd v2 && npm run dev && ttab -w -d $PWD exec npm run www",
     "ff": "open -Wa 'Firefox Developer Edition.app' 'http://localhost:8787'",
     "init": "cp \"./.env.dist.${npm_config_run:-testnet}\" ./.env.dist && envdist",
     "mdr": "ssh ubuntu@ubuntu 'nc -l 8080 -W 1' && ttab -w -d $PWD exec npm run admin --run=makeDemoRequest",
-    "p":"------------------------------------------------------",
-    "pa":"npm run pb; npm run cfw && sleep 1 && npm run ff",
-    "pb":"npm run pc; [ $npm_config_el ] && ttab -w -d $PWD exec npm run tc",
-    "pc":"cd v2 && npm run d2",
-    "pd":"cd v2 && npm run d3 && cd - && wrangler publish",
+    "p": "------------------------------------------------------",
+    "pa": "npm run pb; npm run cfw && sleep 1 && npm run ff",
+    "pb": "npm run pc; [ $npm_config_el ] && ttab -w -d $PWD exec npm run tc",
+    "pc": "cd v2 && npm run d2",
+    "pd": "cd v2 && npm run d3 && cd - && wrangler publish",
     "pe": "export $(cat .env|tr -d [:blank:]|xargs) && cli/run.mjs \"${npm_config_run}\" 2>&1 | tee pe.log",
-    "q":"------------------------------------------------------",
+    "q": "------------------------------------------------------",
     "qa": "cd v2 && npm run qa",
     "qasource": "cd v2 && npm run qasource",
     "tc": "ssh ubuntu@ubuntu 'nc -l 8080 -W 1' && ttab -w -d $PWD exec npm run admin --run=testClawbacks",
@@ -40,6 +40,7 @@
   },
   "homepage": "https://github.com/amissine/gratzio#readme",
   "workspaces": [
+    "cli",
     "join",
     "v2"
   ],
@@ -51,7 +52,7 @@
     "formdata-node": "^4.3.1",
     "moment": "^2.29.1",
     "node-fetch": "^3.1.0",
-    "stellar-sdk": "^9.1.0"
+    "stellar-sdk": "^10.0.1"
   },
   "devDependencies": {
     "ava": "^3.15.0",
