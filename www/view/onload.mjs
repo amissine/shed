@@ -1,6 +1,7 @@
 import { OnLoadViewInit, } from './impl/onload.mjs' // {{{1
 
-/*import { OnLoadPresenter, } from '../presenter/onload.mjs' // {{{1
+/******************************************** {{{1
+import { OnLoadPresenter, } from '../presenter/onload.mjs'
 import { delay, } from '../presenter/utils.mjs'
 
 class Popup extends google.maps.OverlayView { // {{{1
@@ -244,7 +245,7 @@ class OnLoadUserViewPart3 extends OnLoadView { // {{{1
   // }}}2
 }
 
-*/
+***********************************************/ // {{{1
 function init () { // {{{1
 /* See also:
 https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter
