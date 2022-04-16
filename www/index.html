@@ -51,7 +51,7 @@
             <input type="text" placeholder="Your email address" required>
           </div>
           <div id='secretKey' style='display:none'>
-            <input type="text" size='58' maxlength='56' placeholder="Your Stellar account secret key" required>
+            <input type="text" size='60' maxlength='56' placeholder="Your Stellar account secret key" required>
           </div>
           <div id='fundsRequested' style='display:none'>
             <b>Funds requested</b>, GRAT
@@ -66,6 +66,14 @@
             disabled onclick='inviteOrSK_f()'>Continue</button>
           <div id='inviteOrSK_goCogs' style="display:none">
             XXX... <img src='favicon.ico'/>
+          </div>
+          <div id='onJoin' style="display:none">
+            Congratulations on joining our Help Exchange, XXX!
+            The Stellar Network in use is XXX.
+            XXX
+            You can now start your first user session with us. To do so, simply
+            close (click on the &times; thing in the top-right corner of) this 
+            modal window.
           </div>
         </form>
       </div>
@@ -113,7 +121,7 @@ function storeSK () { // {{{3
 }
 
 function inviteOrSK_f () { // {{{3
-  // Collect data
+  // Collect data {{{4
   let invite = document.getElementById('invite').lastElementChild.value
   let greeting = document.getElementById('greeting').lastElementChild.value
   let emailAddress = document.getElementById('emailAddress').lastElementChild.value
@@ -121,7 +129,7 @@ function inviteOrSK_f () { // {{{3
   let fundsRequested = document.getElementById('fundsRequested').lastElementChild.value
   let textContent
   try {
-    // Validate data
+    // Validate data {{{4
     switch (process.choice) {
       case 'acceptInvite':
         if (!ok(invite)) throw 'Bad Invite';
@@ -142,7 +150,7 @@ function inviteOrSK_f () { // {{{3
       default:
         throw 'UNEXPECTED';
     }
-    // Process data
+    // Process data {{{4
     let cogs = document.getElementById('inviteOrSK_goCogs')
     textContent = cogs.firstChild.textContent.replace('XXX', textContent)
     cogs.firstChild.textContent = textContent
@@ -157,6 +165,7 @@ function inviteOrSK_f () { // {{{3
   } catch(e) {
     alert(e)
   }
+  // }}}4
 }
 
 function ok (s, email = false) { // {{{3

@@ -1,3 +1,5 @@
+let debug = true // {{{1
+
 class OnLoadView { // {{{1
   constructor () { // {{{2
   }
@@ -33,11 +35,32 @@ class OnLoadView { // {{{1
 
 class OnLoadViewInit extends OnLoadView { // {{{1
   #inviteOrSK () { // {{{2
-    showModal('inviteOrSK')
+    showModal('inviteOrSK', () => location.reload())
   }
 
   constructor (presenter) { // {{{2
     super()
+  }
+
+  onJoin (txResultBody) { // {{{2
+    debug && console.log(txResultBody)
+    let cogs = document.getElementById('inviteOrSK_goCogs')
+    cogs.style.display = 'none'
+    let congrats = document.getElementById('onJoin')
+    let textContent = congrats.firstChild.textContent.replace(
+      'XXX', process.presenter.userInfo.greeting
+    )
+    textContent = textContent.replace(
+      'XXX', process.env.STELLAR_NETWORK
+    )
+    if (process.presenter.userInfo.fundsRequested) {
+      textContent = textContent.replace(
+        'XXX', 
+        `We funded you with GRAT ${process.presenter.userInfo.fundsRequested}.`
+      )
+    }
+    congrats.firstChild.textContent = textContent
+    congrats.style.display = 'block'
   }
 
   show (userInfo) { // {{{2
