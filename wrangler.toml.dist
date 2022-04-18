@@ -1,5 +1,5 @@
 account_id = "${CFW_ACCOUNT_ID}"
-name = "gratzio"
+name = "shed"
 type = "webpack"
 route = ''
 zone_id = ''
