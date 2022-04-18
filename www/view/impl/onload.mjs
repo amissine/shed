@@ -56,7 +56,7 @@ class OnLoadViewInit extends OnLoadView { // {{{1
     if (process.presenter.userInfo.fundsRequested) {
       textContent = textContent.replace(
         'XXX', 
-        `We funded you with GRAT ${process.presenter.userInfo.fundsRequested}.`
+        `We funded you with HEXA ${process.presenter.userInfo.fundsRequested}.`
       )
     }
     congrats.firstChild.textContent = textContent

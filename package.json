@@ -1,7 +1,7 @@
 {
-  "name": "gratzio",
+  "name": "shed",
   "version": "2.0.0",
-  "description": "The gratz.io testbed",
+  "description": "The Stellar Help Exchange testbed",
   "main": "index.js",
   "scripts": {
     "a": "export $(cat .env|tr -d [:blank:]|xargs); envsubst < wrangler.toml.dist > wrangler.toml",
@@ -30,15 +30,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amissine/gratzio.git"
+    "url": "git+https://github.com/amissine/shed.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amissine/gratzio/issues"
+    "url": "https://github.com/amissine/shed/issues"
   },
-  "homepage": "https://github.com/amissine/gratzio#readme",
+  "homepage": "https://github.com/amissine/shed#readme",
   "workspaces": [
     "cli",
     "join",

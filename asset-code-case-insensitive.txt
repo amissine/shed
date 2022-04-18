@@ -1,0 +1,27 @@
+# The output of
+#
+#   grep -rli 'GRAT' * > asset-code-case-insensitive.txt
+#
+# follows:
+
++NOTES.md
++README.md
+cli/genesis.log
++cli/run.mjs
+cli/test.log
++cli/wrangler.toml.dist
++cli/aim.mjs
+cli/.git/config
+cli/.git/hooks/fsmonitor-watchman.sample
++cli/src/poke.mjs
++package.json
+test/remove-user.mjs
+test/it1-favor-producer1.mjs
+test/it1-favor-producer2.mjs
+test/it1.sh
+test/it1-favor-requestor1.mjs
++www/index.html
+www/process.mjs
++www/process.mjs.dist
++www/view/impl/onload.mjs
+www/view/onload.mjs

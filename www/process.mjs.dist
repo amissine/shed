@@ -8,7 +8,7 @@ function setenv () { // {{{1
   window.process = {
     env: {
       AGENT: '${AGENT}',
-      GRAT_ISSUER: '${GRAT_ISSUER}',
+      HEXA_ISSUER: '${HEXA_ISSUER}',
       HORIZON_URL: '${HORIZON_URL}',
       STELLAR_NETWORK: '${STELLAR_NETWORK}',
     },

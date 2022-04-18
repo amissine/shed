@@ -22,13 +22,15 @@ See also:
 
 ## Setup
 
+Run `cli/genesis.sh`. save the output into `cli/genesis.log`.
+
 If present, remove file `.env`. Run
 
 ```bash
 npm i && npm run init [ --run=<stellar_network> ]
 ```
 
-and add public and secret keys for GRAT issuer and agent when prompted. 
+and add public and secret keys for HEXA issuer and agent when prompted. 
 
 The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*.
 
