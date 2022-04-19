@@ -22,7 +22,7 @@ See also:
 
 ## Setup
 
-Run `cli/genesis.sh`. save the output into `cli/genesis.log`.
+Run `cli/genesis.sh`. add the output to `cli/genesis.log`.
 
 If present, remove file `.env`. Run
 
