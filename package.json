@@ -1,7 +1,7 @@
 {
   "name": "shed",
   "version": "2.0.0",
-  "description": "The Stellar Help Exchange testbed",
+  "description": "Stellar Help Exchange, Development",
   "main": "index.js",
   "scripts": {
     "a": "export $(cat .env|tr -d [:blank:]|xargs); envsubst < wrangler.toml.dist > wrangler.toml",
@@ -13,7 +13,7 @@
     "cfw": "ttab -w -d $PWD exec wrangler dev",
     "dev": "cd v2 && npm run dev && ttab -w -d $PWD exec npm run www",
     "ff": "open -Wa 'Firefox Developer Edition.app' 'http://localhost:8787'",
-    "init": "cp \"./.env.dist.${npm_config_run:-testnet}\" ./.env.dist && envdist",
+    "i": "cli/genesis.sh ${npm_config_sk} ${npm_config_run:-testnet}",
     "mdr": "ssh ubuntu@ubuntu 'nc -l 8080 -W 1' && ttab -w -d $PWD exec npm run admin --run=makeDemoRequest",
     "p": "------------------------------------------------------",
     "pa": "npm run pb; npm run cfw && sleep 1 && npm run ff",
@@ -39,11 +39,6 @@
     "url": "https://github.com/amissine/shed/issues"
   },
   "homepage": "https://github.com/amissine/shed#readme",
-  "workspaces": [
-    "cli",
-    "join",
-    "v2"
-  ],
   "dependencies": {
     "bignumber.js": "^9.0.1",
     "crypto-js": "^4.1.1",

@@ -22,19 +22,15 @@ See also:
 
 ## Setup
 
-Run `cli/genesis.sh`. add the output to `cli/genesis.log`.
-
-If present, remove file `.env`. Run
+Run
 
 ```bash
-npm i && npm run init [ --run=<stellar_network> ]
+npm i && npm run i --sk=<CREATOR_SK> [ --run=<stellar_network> ]
 ```
 
-and add public and secret keys for HEXA issuer and agent when prompted. 
+and add env values when prompted. 
 
 The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*.
-
-If testing, run `./reset.sh`.
 
 Here's more on merging (TODO elaborate):
 

@@ -10,14 +10,14 @@
     colors: requestor, asker - red, offerer, bidder - green
     -->
     <script src='kit.fontawesome.com-a076d05399.js'></script>
-    <title>GRATZIO</title>
+    <title>Stellar Help Exchange</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body onload='initApp()' onunload='releaseApp()'> <!-- {{{1 -->
     <div id="map"></div>
     <!-- The common parent Modal {{{2 -->
     <div id="commonParentModal" class="modal">
-      <!-- GRATZIO Welcome Pane {{{3 -->
+      <!-- HEX Welcome Pane {{{3 -->
       <div id='inviteOrSK' class="modal-content">
         <span id='inviteOrSKX' class="close">&times;</span>
         <form> 
@@ -54,7 +54,7 @@
             <input type="text" size='60' maxlength='56' placeholder="Your Stellar account secret key" required>
           </div>
           <div id='fundsRequested' style='display:none'>
-            <b>Funds requested</b>, GRAT
+            <b>Funds requested</b>, HEXA
             <input type="text" size='3' maxlength='3' placeholder='999'>
           </div>
           <hr>
@@ -133,13 +133,13 @@ function inviteOrSK_f () { // {{{3
     switch (process.choice) {
       case 'acceptInvite':
         if (!ok(invite)) throw 'Bad Invite';
-        textContent = 'Creating your Stellar account and funding it with GRAT 1000'
+        textContent = 'Creating your Stellar account and funding it with HEXA 1000'
         break;
       case 'storeSecretKey':
         if (!ok(secretKey)) throw 'Bad Secret Key';
         textContent = 'Storing your info on this device'
         if (fundsRequested) {
-          textContent += ', funding your account with GRAT ' + fundsRequested
+          textContent += ', funding your account with HEXA ' + fundsRequested
         }
       case 'requestInvite':
         if (!ok(greeting)) throw 'Bad Greeting';

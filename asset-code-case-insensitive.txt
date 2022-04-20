@@ -25,3 +25,69 @@ www/process.mjs
 +www/process.mjs.dist
 +www/view/impl/onload.mjs
 www/view/onload.mjs
+
+  NOTES.md
+  README.md
+  asset-code-case-insensitive.txt
+cli/test.log
+  cli/model/impl/heapi.mjs
+  cli/model/impl/utils.mjs
+cli/model/.git/config
+cli/model/.git/hooks/fsmonitor-watchman.sample
+cli/.git/config
+cli/.git/hooks/fsmonitor-watchman.sample
+node_modules/@types/node/domain.d.ts
+node_modules/web-streams-polyfill/CHANGELOG.md
+node_modules/web-streams-polyfill/README.md
+node_modules/content-disposition/node_modules/safe-buffer/README.md
+node_modules/ci-info/index.js
+node_modules/ci-info/README.md
+node_modules/ci-info/package.json
+node_modules/moment/CHANGELOG.md
+node_modules/express/History.md
+node_modules/express/node_modules/safe-buffer/README.md
+node_modules/express/node_modules/debug/CHANGELOG.md
+node_modules/express/node_modules/debug/karma.conf.js
+node_modules/express/Readme.md
+node_modules/express/lib/application.js
+node_modules/ava/readme.md
+node_modules/string_decoder/node_modules/safe-buffer/README.md
+node_modules/safe-buffer/README.md
+node_modules/blueimp-md5/README.md
+node_modules/is-ci/README.md
+node_modules/is-ci/package.json
+node_modules/keyv/README.md
+node_modules/qs/CHANGELOG.md
+node_modules/got/readme.md
+node_modules/safer-buffer/Porting-Buffer.md
+node_modules/safer-buffer/Readme.md
+node_modules/is-core-module/CHANGELOG.md
+node_modules/body-parser/node_modules/debug/CHANGELOG.md
+node_modules/body-parser/node_modules/debug/karma.conf.js
+node_modules/serve-static/HISTORY.md
+node_modules/utility-types/dist/utility-types.d.ts
+node_modules/utility-types/README.md
+node_modules/busboy/deps/encoding/encoding-indexes.js
+node_modules/busboy/deps/encoding/encoding.js
+node_modules/send/node_modules/debug/CHANGELOG.md
+node_modules/send/node_modules/debug/karma.conf.js
+node_modules/finalhandler/node_modules/debug/CHANGELOG.md
+node_modules/finalhandler/node_modules/debug/karma.conf.js
+node_modules/ttab/README.md
+test/remove-user.mjs
+test/it1-favor-producer1.mjs
+test/it1-favor-producer2.mjs
+test/it1.sh
+test/it1-favor-requestor1.mjs
+  www/index.html
+  www/presenter/impl/onload.mjs
+www/presenter/impl/.git/config
+www/presenter/impl/.git/hooks/fsmonitor-watchman.sample
+  www/index.html.dist
+www/model/impl/heapi.mjs
+www/model/impl/utils.mjs
+www/model/impl/poke.mjs
+www/model/.git/config
+www/model/.git/hooks/fsmonitor-watchman.sample
+  www/view/impl/onload.mjs
+  www/view/onload.mjs
