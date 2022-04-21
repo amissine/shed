@@ -197,7 +197,7 @@ async function releaseApp () { // {{{3
 // }}}3
     </script> <!-- }}}2 -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=$(GOOGLEMAPS_API_KEY)&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=${GOOGLEMAPS_API_KEY}&callback=initMap&v=weekly"
     ></script>
     <script src='./presenter.js'></script>
     <script src="./index.js"></script>
