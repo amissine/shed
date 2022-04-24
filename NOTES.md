@@ -108,7 +108,7 @@ When an asker has already reclaimed her ask, the offer maker will not be able to
 ```
 Here, user Did Alik is the request maker, and user Ken is the request taker. Making a request costs 100 DOGs, payable to the Agent.
 
-When the Agent gets paid, all users are being notified of the newly made request. Some of them may be willing to have the request maker accept their bid. To indicate that, a bidder creates a Claimable Balance with two claimants - herself and the request maker. The CB amount can be any positive amount of DOGs. The asker can reclaim this amount back at any time.
+When the Agent gets paid, all users are being notified of the newly made request. Some of them may be willing to have the request maker accept their bid. To indicate that, a bidder creates a Claimable Balance with two claimants - herself and the request maker. The CB amount can be any positive amount of DOGs. The bidder can reclaim this amount back at any time.
 
 The requst maker claims one or more CBs, thus letting their respective bidders know their bids have been accepted. The bidder MUST deliver on her bid to the request maker.
 
