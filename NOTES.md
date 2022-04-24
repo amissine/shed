@@ -1,6 +1,6 @@
 # 👷 Notes
 
-The purpose of cloning `shed` from `gratzio` is to have a safe place for experimenting with Stellar, Cloudflare, and other technologies used by the project. It is also more open-source than its source `gratzio`, as the content of its `www/view` dir has been made public.
+The purpose of cloning `shed` from `gratzio` is to have a safe place for experimenting with Stellar, Cloudflare, and other technologies used by the project. It is also more open-source than its source `gratzio`, as the content of its `www/view` dir is now public.
 
 ## Project structure
 
@@ -32,10 +32,6 @@ and add env values when prompted.
 
 The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*.
 
-Here's more on merging (TODO elaborate):
-
-![On merging with git](./gitmerge.png "From old files")
-
 ## Scripts in `package.json`
 
 In addition to existing scripts, on March 22, 2022, a set of `p*` scripts is being introduced. The `p` letter stands for **p**roduct.
@@ -65,3 +61,56 @@ Publish the distribution.
 ### `pe`
 
 Populate the environment, run node task.
+
+## Offer/Ask Protocol Sample Sequence Diagram
+
+```
++---------+                   +-------+                          +----------+
+|  User   |                   | Agent |                          |   User   |
+| Gratzio |                   +-------+                          | Did Alik |
++---------+                       |                              +----------+
+     |                            |                                    |
+     | offer.make -> pay 100 DOGs |                                    | 
+     |--------------------------->|                                    |
+     |                            | notify -> offer                    |
+     |                            |----------------------------------->|
+     |                                          offer.ask -> Create CB |
+     |<----------------------------------------------------------------|
+     |                                                                 |  
+     | ask.fulfill -> Claim CB                                         |
+     |---------------------------------------------------------------->|
+```
+Here, user Gratzio is the offer maker, and user Did Alik is the offer taker. Making an offer costs 100 Drops Of Gratitude (DOGs), payable to the Agent. 1 HEXA is 10000000 DOGs.
+
+When the Agent gets paid, all users are being notified of the newly made offer. Some of them may be willing to have the offer maker fulfill their ask. To indicate that, an asker creates a Claimable Balance with two claimants - herself and the offer maker. The CB amount reflects how much HEXA the asker is willing to send to the maker if the maker fulfills her ask. The asker can reclaim this amount back at any time.
+
+The offer maker claims one or more CBs, thus letting their respective askers know their asks have been fulfilled. The offer maker MUST deliver on her offer to all of them.
+
+When an asker has already reclaimed her ask, the offer maker will not be able to claim it successfully. It is OK.
+
+## Request/Bid Protocol Sample Sequence Diagram
+
+```
++----------+                   +-------+                    +------+
+|   User   |                   | Agent |                    | User |
+| Did Alik |                   +-------+                    | Ken  |
++----------+                       |                        +------+
+    |                              |                            |
+    | request.make -> pay 100 DOGs |                            |
+    |----------------------------->|                            |
+    |                              | notify -> request          |
+    |                              |--------------------------->|
+    |                                  request.bid -> Create CB |
+    |<----------------------------------------------------------|
+    |                                                           |
+    | bid.accept -> Claim CB, send payment + claimed            |
+    |---------------------------------------------------------->|
+```
+Here, user Did Alik is the request maker, and user Ken is the request taker. Making a request costs 100 DOGs, payable to the Agent.
+
+When the Agent gets paid, all users are being notified of the newly made request. Some of them may be willing to have the request maker accept their bid. To indicate that, a bidder creates a Claimable Balance with two claimants - herself and the request maker. The CB amount can be any positive amount of DOGs. The asker can reclaim this amount back at any time.
+
+The requst maker claims one or more CBs, thus letting their respective bidders know their bids have been accepted. The bidder MUST deliver on her bid to the request maker.
+
+When a bidder has already reclaimed her bid, the request maker will not be able to claim it successfully. It is OK.
+
