@@ -74,43 +74,43 @@ Populate the environment, run node task.
      |--------------------------->|                                    |
      |                            | notify -> offer                    |
      |                            |----------------------------------->|
-     |              offer.ask -> Create CB for offer.amount + 100 DOGs |
+     |             offer.take -> Create CB for offer.amount + 100 DOGs |
      |<----------------------------------------------------------------|
      |                                                                 |  
-     | ask.fulfill -> Claim CB                                         |
+     | offer.ask.fulfill -> Claim CB: gratitude + 100 DOGs             |
      |---------------------------------------------------------------->|
 ```
 Here, user Gratzio is the offer maker, and user Did Alik is the offer taker. Making an offer costs 100 Drops Of Gratitude (DOGs), payable to the Agent. 1 HEXA is 10000000 DOGs.
 
-When the Agent gets paid, all users are being notified of the newly made offer. Some of them may be willing to have the offer maker fulfill their ask. To indicate that, an asker creates a Claimable Balance with two claimants - herself and the offer maker. The CB amount reflects how much HEXA the asker is willing to send to the maker if the maker fulfills her ask. The asker can reclaim this amount back at any time.
+When the Agent gets paid, all users are being notified of the newly made offer. Some of them may be willing to take it. To indicate that, a taker creates a Claimable Balance with two claimants - herself and the offer maker. The CB amount reflects how much HEXA the taker is willing to send to the maker if the maker fulfills her ask. Part of this amount (100 DOGs) is the taker's fee. The maker has already paid the taker's fee to the Agent, so the taker is now reimbursing it. Before the maker claims this amount, the taker can reclaim it back.
 
-The offer maker claims one or more CBs, thus letting their respective askers know their asks have been fulfilled. The offer maker MUST deliver on her offer to all of them.
+The maker claims one or more CBs, thus letting their respective takers know their asks have been fulfilled. The maker MUST deliver on her offer to all of them. The maker also MUST pay to the Agent all extra taker fees.
 
-When an asker has already reclaimed her ask, the offer maker will not be able to claim it successfully. It is OK.
+When a taker has already reclaimed her ask, the maker will not be able to claim it successfully. It is OK.
 
 ## Request/Bid Protocol Sample Sequence Diagram
 
 ```
-+----------+                   +-------+                    +------+
-|   User   |                   | Agent |                    | User |
-| Did Alik |                   +-------+                    | Ken  |
-+----------+                       |                        +------+
-    |                              |                            |
-    | request.make -> pay 200 DOGs |                            |
-    |----------------------------->|                            |
-    |                              | notify -> request          |
-    |                              |--------------------------->|
-    |    request.bid -> Create CB for request.amount + 100 DOGs |
-    |<----------------------------------------------------------|
-    |                                                           |
-    | bid.accept -> Claim CB, send payment + claimed - 100 DOGs |
-    |---------------------------------------------------------->|
++----------+                   +-------+                               +------+
+|   User   |                   | Agent |                               | User |
+| Did Alik |                   +-------+                               | Alex |
++----------+                       |                                   +------+
+    |                              |                                        |
+    | request.make -> pay 200 DOGs |                                        |
+    |----------------------------->|                                        |
+    |                              | notify -> request                      |
+    |                              |--------------------------------------->|
+    |               request.take -> Create CB for request.amount + 100 DOGs |
+    |<----------------------------------------------------------------------|
+    |                                                                       |
+    | request.bid.accept -> Claim CB, send gratitude + claimed - 100 DOGs   |
+    |---------------------------------------------------------------------->|
 ```
-Here, user Did Alik is the request maker, and user Ken is the request taker. Making a request costs 100 DOGs, payable to the Agent.
+Here, user Did Alik is the request maker, and user Alex is the request taker. Making a request costs 100 DOGs, payable to the Agent.
 
-When the Agent gets paid, all users are being notified of the newly made request. Some of them may be willing to have the request maker accept their bid. To indicate that, a bidder creates a Claimable Balance with two claimants - herself and the request maker. The CB amount can be any positive amount of DOGs. The bidder can reclaim this amount back anytime.
+When the Agent gets paid, all users are being notified of the newly made request. Some of them may be willing to take it. To indicate that, a taker creates a Claimable Balance with two claimants - herself and the request maker. The CB amount reflects how much HEXA the taker is willing to send to the maker if the maker accepts her bid. Part of this amount (100 DOGs) is the taker's fee. The maker has already paid the taker's fee to the Agent, so the taker is now reimbursing it. Before the maker claims this amount, the taker can reclaim it back.
 
-The requst maker claims one or more CBs, thus letting their respective bidders know their bids have been accepted. The bidder MUST deliver on her bid to the request maker.
+The maker claims one or more CBs, thus letting their respective takers know their bids have been accepted. A bidder MUST deliver on her bid to the request maker. The maker MUST pay to the Agent all extra taker fees.
 
-When a bidder has already reclaimed her bid, the request maker will not be able to claim it successfully. It is OK.
+When a taker has already reclaimed her bid, the maker will not be able to claim it successfully. It is OK.
 
