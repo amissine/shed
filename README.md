@@ -6,7 +6,7 @@ Need a ride, but there's no Uber or Lift in the vicinity? No problem! Use Stella
 
 ## The Details
 
-The project's goal is to establish a set of Distributed Autonomous Organizations, whose members (**user**s) exchange help offers/requests with each other. This set of DAOs is [Stellar](https://stellar.org/)-based. A user can be either self-paid or sponsored. To become a sponsored user, go to our (TESTNET) website [https://shed.didalik.workers.dev](https://shed.didalik.workers.dev) and accept our invite. This results in a request for the **agent** to:
+The project's goal is to establish a set of Distributed Autonomous Organizations, whose members (**user**s) exchange help offers/requests with each other. This set of DAOs is [Stellar](https://stellar.org/)-based. A user can be either self-paid or sponsored. To become a sponsored user, go to our ([TESTNET](#on_using_the_testnet_website)) website [https://shed.didalik.workers.dev](https://shed.didalik.workers.dev) and accept our invite. This results in a request for the **agent** to:
 
 - create a Stellar account for the user;
 - create a trustline from this account to the project's **HEXA issuer**;
@@ -25,6 +25,10 @@ When a user makes a help offer, the description of the offer is being broadcast 
 If the asker, who already sent the gratitude to the offerer, does not get the offered help from the offerer, the asker opens the dispute case with the agent. If the offerer is unable to prove to the agent that help has actually been provided, the agent confiscates the gratitude from the offerer and sends it back to the asker.
 
 Requestors make requests, offerers make offers; hence they are makers. Accepted bidders take requests, fulfilled askers take offers; hence they are takers. The Stellar Help Exchange user can be a maker and/or a taker. Or she can be idle.
+
+## On Using the TESTNET website
+
+This site uses Google Maps. Its [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key) is associated with our Google billing account. On Stellar TESTNET, we reduce the development costs by restricting access to the site to known IP addresses only.
 
 ## Frequently Asked Questions
 

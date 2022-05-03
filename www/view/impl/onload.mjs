@@ -65,9 +65,8 @@ class OnLoadViewInit extends OnLoadView { // {{{1
 
   show (userInfo) { // {{{2
     this.pan2currentPosition()
-    userInfo ?
-      console.log('TODO:', userInfo)
-    : this.#inviteOrSK()
+    userInfo ? console.log('TODO:', userInfo)
+      : this.#inviteOrSK()
   }
   // }}}2
 }

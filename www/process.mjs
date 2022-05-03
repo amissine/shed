@@ -1,3 +1,6 @@
+/*
+  NEVER edit process.mjs - ALWAYS edit process.mjs.dist
+*/
 import { init } from './view/onload.mjs'
 import { Semaphore, } from './model/impl/utils.mjs'
 
