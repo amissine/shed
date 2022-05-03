@@ -6,7 +6,7 @@ Need a ride, but there's no Uber or Lift in the vicinity? No problem! Use Stella
 
 ## The Details
 
-The project's goal is to establish a set of Distributed Autonomous Organizations, whose members (**user**s) exchange help offers/requests with each other. This set of DAOs is [Stellar](https://stellar.org/)-based. A user can be either self-paid or sponsored. To become a sponsored user, go to our ([TESTNET](#on_using_the_testnet_website)) website [https://shed.didalik.workers.dev](https://shed.didalik.workers.dev) and accept our invite. This results in a request for the **agent** to:
+The project's goal is to establish a set of Distributed Autonomous Organizations, whose members (**user**s) exchange help offers/requests with each other. This set of DAOs is [Stellar](https://stellar.org/)-based. A user can be either self-paid or sponsored. To become a sponsored user, go to our ([TESTNET](#on-using-the-testnet-website)) website [https://shed.didalik.workers.dev](https://shed.didalik.workers.dev) and accept our invite. This results in a request for the **agent** to:
 
 - create a Stellar account for the user;
 - create a trustline from this account to the project's **HEXA issuer**;
