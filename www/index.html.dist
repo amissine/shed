@@ -184,14 +184,60 @@ function ok (s, email = false) { // {{{3
 
 let myMap // {{{3
 function initMap() {
-  myMap = new google.maps.Map(document.getElementById("map"), {
-    center: new google.maps.LatLng(51.508742,-0.120850),
-    zoom: 2,
-  })
+  try {
+    myMap = new google.maps.Map(document.getElementById("map"), {
+      center: new google.maps.LatLng(51.508742,-0.120850),
+      zoom: 2,
+    })
+  } catch(e) {
+    console.error(e)
+    alert(e)
+  }
 }
 
+function handleRefererNotAllowedMapError(){ // {{{3
+    myMap = null
+}
+/* Source:
+
+https://code-examples.net/en/q/2b3cf70
+
+*/
+
+(function takeOverConsole() { // taken from http://tobyho.com/2012/07/27/taking-over-console-log/
+    var console = window.console
+    if (!console) return
+
+    function intercept(method) {
+        var original = console[method]
+        console[method] = function() {
+           // check message
+           if(arguments[0] && arguments[0].indexOf('RefererNotAllowedMapError') !== -1) {
+             handleRefererNotAllowedMapError();
+           }
+           
+            if (original.apply) {
+                // Do this for normal browsers
+                original.apply(console, arguments)
+            } else {
+                // Do this for IE
+                var message = Array.prototype.slice.apply(arguments).join(' ')
+                original(message)
+            }
+        }
+    }
+    var methods = ['error']; // only interested in the console.error method
+    for (var i = 0; i < methods.length; i++)
+        intercept(methods[i])
+}())
+
 function initApp () { // {{{3
-  process.view.init()
+  try {
+    process.view.init()
+  } catch(e) {
+    console.error(e)
+    alert(e)
+  }
 }
 
 async function releaseApp () { // {{{3

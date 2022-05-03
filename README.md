@@ -28,7 +28,7 @@ Requestors make requests, offerers make offers; hence they are makers. Accepted 
 
 ## On Using the TESTNET website
 
-This site uses Google Maps. Its [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key) is associated with our Google billing account. On Stellar TESTNET, we reduce the development costs by restricting access to the site to known IP addresses only.
+This site uses Google Maps API. Its [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key) is associated with our Google billing account. On Stellar TESTNET, we restrict access to the site to eliminate the risk of being overcharged by Google. Only known IP addresses are allowed to use Google Maps API on our TESTNET site.
 
 ## Frequently Asked Questions
 
