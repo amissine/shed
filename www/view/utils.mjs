@@ -1,4 +1,12 @@
-function showModal (contentId, close) { // {{{1
+function replaceXXX(contentId, ...values) { // {{{1
+  let textContent = document.getElementById(contentId).textContent
+  for (let v of values) {
+    textContent = textContent.replace('XXX', v)
+  }
+  document.getElementById(contentId).textContent = textContent
+}
+
+function showModal (contentId, close, ...r) { // {{{1
   // Show the modal
   let modal = document.getElementById("commonParentModal");
   modal.style.display = "block";
@@ -7,6 +15,10 @@ function showModal (contentId, close) { // {{{1
   switch (contentId) {
     case 'inviteOrSK':
       break
+    case 'showBrowserIP':
+      replaceXXX(...r)
+      break
+
     case 'part2End':
     case 'payingBidder':
       text = content.children[1].textContent

@@ -2,7 +2,6 @@
   NEVER edit process.mjs - ALWAYS edit process.mjs.dist
 */
 import { init } from './view/onload.mjs'
-import { Semaphore, } from './model/impl/utils.mjs'
 
 function setenv () { // {{{1
   if (window.process) {
@@ -15,7 +14,6 @@ function setenv () { // {{{1
       HORIZON_URL: 'https://horizon-testnet.stellar.org',
       STELLAR_NETWORK: 'TESTNET',
     },
-    lock: new Semaphore(1),
     session: {},
     view: {
       init,

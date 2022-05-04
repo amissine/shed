@@ -14,13 +14,14 @@
     -->
     <script src='kit.fontawesome.com-a076d05399.js'></script>
     <title>Stellar Help Exchange</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body onload='initApp()' onunload='releaseApp()'> <!-- {{{1 -->
     <div id="map"></div>
     <!-- The common parent Modal {{{2 -->
     <div id="commonParentModal" class="modal">
-      <!-- HEX Welcome Pane {{{3 -->
+      <!-- inviteOrSK {{{3 -->
       <div id='inviteOrSK' class="modal-content">
         <span id='inviteOrSKX' class="close">&times;</span>
         <form> 
@@ -80,6 +81,23 @@
           </div>
         </form>
       </div>
+
+      <!-- showBrowserIP {{{3 -->
+      <div id='showBrowserIP' class="modal-content">
+        <span id='showBrowserIPX' class="close">&times;</span>
+        <p> <!-- {{{4 -->
+Welcome to Stellar Help Exchange TESTNET website! We use Google Maps API here.
+To eliminate the risk of being overcharged by Google, we allow access to the site to
+known IP addresses only.</p><p>Your current IP address is as follows:</p>
+<p id='ip-info'>XXX</p><p>To enjoy our website, please 
+<a id='ip-email' href='mailto:didalik.aim@gmail.com?subject=My IP&body=XXX'>email it to us</a>. Also, make
+sure this is NOT your personal hotspot address, because personal hotspot addresses
+change too often for us to stay in sync. Thanks!
+        </p>
+
+        <!-- }}}4 -->
+      </div>
+
       <!-- }}}3 -->
     </div>
     

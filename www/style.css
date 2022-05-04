@@ -141,4 +141,14 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* The IPv4 / IPv6 info {{{1 */
+#ip-info {
+  text-align: center;
+  font-family: Pacifico, sans-serif;
+  font-size: 4em;
+  color: #3eb5f1;
+  margin: 0;
+}
+
 /* }}}1 */

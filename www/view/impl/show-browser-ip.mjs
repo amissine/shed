@@ -5,8 +5,18 @@ class ShowBrowserIpView { // {{{1
   }
 
   show (ips) { // {{{2
-    console.log(ips)
-    alert(ips.ipv4.ip) // 174.211.177.108
+    console.log(ips) // ips.ipv4.ip 174.211.177.108 - KEEPS CHANGING!
+    showModal(
+      'showBrowserIP', 
+      () => console.log(process.view),
+      'ip-info',
+      ips.ipv4.ip
+    )
+    let email = document.getElementById('ip-email').href
+    email = email.replace('XXX',
+      `Please add my IP ${ips.ipv4.ip} to your list of known ones. Thanks!`
+    )
+    document.getElementById('ip-email').href = email
   }
 
   // }}}2
