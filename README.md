@@ -30,6 +30,8 @@ Requestors make requests, offerers make offers; hence they are makers. Accepted 
 
 This site uses Google Maps API. Its [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key) is associated with our Google billing account. On Stellar TESTNET, we restrict access to the site to eliminate the risk of being overcharged by Google. Only known IP addresses are allowed to use Google Maps API on our TESTNET site.
 
+The first time you visit our site, we find out your IP addess and prepare an email from you to us. You can send it to us with just two clicks. Please do so! We will add your IP address to our list of known ones and email you when this is done. Enjoy our website!
+
 ## Frequently Asked Questions
 
 ### How to become a sponsored Stellar Help Exchange user?
