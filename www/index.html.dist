@@ -211,10 +211,11 @@ https://code-examples.net/en/q/2b3cf70
     function intercept(method) {
         var original = console[method]
         console[method] = function() {
-           // check message
+          if (myMap != null) {
            if(arguments[0] && arguments[0].indexOf('RefererNotAllowedMapError') !== -1) {
              handleRefererNotAllowedMapError();
            }
+          }
            
             if (original.apply) {
                 // Do this for normal browsers
