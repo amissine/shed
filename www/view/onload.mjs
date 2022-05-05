@@ -1,4 +1,4 @@
-import { OnLoadViewInit, } from './impl/onload.mjs' // {{{1
+import { OnLoadView, } from './impl/onload.mjs' // {{{1
 import { ShowBrowserIpView, } from './impl/show-browser-ip.mjs'
 
 /******************************************** {{{1
@@ -259,7 +259,7 @@ https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter
 https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
 */
   const detail = { TODO: 'Make use of me' }
-  process.view = new OnLoadViewInit(process.presenter = new OnLoadPresenter())
+  process.view = new OnLoadView(process.presenter = new OnLoadPresenter())
   process.presenter.dispatchEvent(new CustomEvent('init', { detail }))
 }
 

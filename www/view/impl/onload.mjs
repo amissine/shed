@@ -2,7 +2,7 @@ import { showModal, } from '../utils.mjs'
 
 let debug = true // {{{1
 
-class OnLoadView { // {{{1
+class GoogleMapsView { // {{{1
   constructor () { // {{{2
   }
 
@@ -35,9 +35,33 @@ class OnLoadView { // {{{1
   // }}}2
 }
 
-class OnLoadViewInit extends OnLoadView { // {{{1
+class OnLoadView extends GoogleMapsView { // {{{1
+  #addUI () { // {{{2
+    let historyButton = document.createElement('button')
+    historyButton.textContent = 'Show History of Makes'
+    historyButton.classList.add("custom-map-control-button")
+    myMap.controls[google.maps.ControlPosition.TOP_CENTER].push(historyButton)
+    this.historyButton = historyButton
+    historyButton.addEventListener("click", () => {
+      console.log(historyButton.textContent)
+      historyButton.disabled = true
+      historyButton.textContent = 'Wait...'
+      historyButton.style.cursor = 'not-allowed'
+      let detail = { type: 'make', callback: this.#onHistory }
+      process.presenter.dispatchEvent(new CustomEvent('history', { detail }))
+    })
+  }
+
   #inviteOrSK () { // {{{2
+    this.pan2currentPosition()
     showModal('inviteOrSK', () => location.reload())
+  }
+
+  #onHistory (history) { // {{{2
+    console.log(history)
+    this.historyButton.textContent = 'Next Event'
+    this.historyButton.disabled = false
+    this.historyButton.style.cursor = 'pointer'
   }
 
   constructor (presenter) { // {{{2
@@ -66,8 +90,9 @@ class OnLoadViewInit extends OnLoadView { // {{{1
   }
 
   show (userInfo) { // {{{2
-    this.pan2currentPosition()
+    let localSessionInfo = null // TODO get it from Presenter along with userInfo
     userInfo ? console.log('TODO:', userInfo)
+      : !localSessionInfo ? this.#addUI()
       : this.#inviteOrSK()
   }
   // }}}2
@@ -85,4 +110,4 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) { // {{{1
 
 
 // }}}1
-export { OnLoadViewInit, }
+export { OnLoadView, }
