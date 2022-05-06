@@ -59,11 +59,17 @@ class OnLoadView extends GoogleMapsView { // {{{1
 
   #onHistory (history) { // asc {{{2
     let p = null, index = 0, infoWindow = new google.maps.InfoWindow(), self = this
+    this.history = history
     for (let make of history) {
       if (make.user.pk != p) {
         p = make.user.pk
         index++
         let position = { lat: +make.user.lat[0], lng: +make.user.lng[0] }
+        let makes = history.filter(m => m.user.pk == p), content = ''
+        for (let m of makes) {
+          let color = m.memo.value == 'Offer' ? 'green' : 'red' 
+          content += `<p style='color: ${color}' onclick='process.view.onMakeSelected(${history.indexOf(m)})'>` + m.description + '</p>'
+        }
 
         let marker = new google.maps.Marker({ map: myMap, position,
           label: `${index}`,
@@ -71,7 +77,7 @@ class OnLoadView extends GoogleMapsView { // {{{1
         })
         marker.addListener("click", () => {
           infoWindow.close()
-          infoWindow.setContent(marker.getTitle())
+          infoWindow.setContent(content)
           infoWindow.open(marker.getMap(), marker)
           self.historyButton.textContent = `Select ${marker.getTitle()}'s Make`
         })
@@ -108,6 +114,10 @@ class OnLoadView extends GoogleMapsView { // {{{1
     }
     congrats.firstChild.textContent = textContent
     congrats.style.display = 'block'
+  }
+
+  onMakeSelected (i) { // {{{2
+    console.log(this.history[i])
   }
 
   show (userInfo) { // {{{2

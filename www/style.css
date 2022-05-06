@@ -168,5 +168,10 @@ body {
   background: rgb(235, 235, 235);
 }
 
+/* Hovering over paragraphs {{{1 */
+p:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
 
 /* }}}1 */
