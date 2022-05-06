@@ -47,7 +47,7 @@ class OnLoadView extends GoogleMapsView { // {{{1
       historyButton.disabled = true
       historyButton.textContent = 'Wait...'
       historyButton.style.cursor = 'not-allowed'
-      let detail = { type: 'make', callback: this.#onHistory }
+      let detail = { kind: 'make', callback: this.#onHistory }
       process.presenter.dispatchEvent(new CustomEvent('history', { detail }))
     })
   }
@@ -59,9 +59,9 @@ class OnLoadView extends GoogleMapsView { // {{{1
 
   #onHistory (history) { // {{{2
     console.log(history)
-    this.historyButton.textContent = 'Next Event'
-    this.historyButton.disabled = false
-    this.historyButton.style.cursor = 'pointer'
+    this.historyButton.textContent = 'Select Maker'
+    //this.historyButton.disabled = false
+    //this.historyButton.style.cursor = 'pointer'
   }
 
   constructor (presenter) { // {{{2
