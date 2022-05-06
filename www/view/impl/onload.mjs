@@ -57,9 +57,30 @@ class OnLoadView extends GoogleMapsView { // {{{1
     showModal('inviteOrSK', () => location.reload())
   }
 
-  #onHistory (history) { // {{{2
+  #onHistory (history) { // asc {{{2
+    let p = null, index = 0, infoWindow = new google.maps.InfoWindow(), self = this
+    for (let make of history) {
+      if (make.user.pk != p) {
+        p = make.user.pk
+        index++
+        let position = { lat: +make.user.lat[0], lng: +make.user.lng[0] }
+
+        let marker = new google.maps.Marker({ map: myMap, position,
+          label: `${index}`,
+          title: make.user.greeting,
+        })
+        marker.addListener("click", () => {
+          infoWindow.close()
+          infoWindow.setContent(marker.getTitle())
+          infoWindow.open(marker.getMap(), marker)
+          self.historyButton.textContent = `Select ${marker.getTitle()}'s Make`
+        })
+      }
+    }
+
     console.log(history)
     this.historyButton.textContent = 'Select Maker'
+
     //this.historyButton.disabled = false
     //this.historyButton.style.cursor = 'pointer'
   }
