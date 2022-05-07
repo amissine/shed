@@ -43,7 +43,6 @@ class OnLoadView extends GoogleMapsView { // {{{1
     myMap.controls[google.maps.ControlPosition.TOP_CENTER].push(historyButton)
     this.historyButton = historyButton
     historyButton.addEventListener("click", () => {
-      console.log(historyButton.textContent)
       historyButton.disabled = true
       historyButton.textContent = 'Wait...'
       historyButton.style.cursor = 'not-allowed'
@@ -70,7 +69,6 @@ class OnLoadView extends GoogleMapsView { // {{{1
           let color = m.memo.value == 'Offer' ? 'green' : 'red' 
           content += `<p style='color: ${color}' onclick='process.view.onMakeSelected(${history.indexOf(m)})'>` + m.description + '</p>'
         }
-
         let marker = new google.maps.Marker({ map: myMap, position,
           label: `${index}`,
           title: make.user.greeting,
@@ -83,12 +81,15 @@ class OnLoadView extends GoogleMapsView { // {{{1
         })
       }
     }
-
     console.log(history)
     this.historyButton.textContent = 'Select Maker'
-
     //this.historyButton.disabled = false
     //this.historyButton.style.cursor = 'pointer'
+  }
+
+  #onTakes (takes) { // asc {{{2
+    console.log(takes)
+    this.historyButton.textContent = 'Select Taker'
   }
 
   constructor (presenter) { // {{{2
@@ -117,7 +118,9 @@ class OnLoadView extends GoogleMapsView { // {{{1
   }
 
   onMakeSelected (i) { // {{{2
-    console.log(this.history[i])
+    this.historyButton.textContent = 'Wait...'
+    let detail = { kind: 'take', callback: this.#onTakes, self: this.history[i] }
+    process.presenter.dispatchEvent(new CustomEvent('history', { detail }))
   }
 
   show (userInfo) { // {{{2

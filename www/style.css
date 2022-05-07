@@ -170,7 +170,7 @@ body {
 
 /* Hovering over paragraphs {{{1 */
 p:hover {
-  background-color: yellow;
+  background-color: lightgrey;
   cursor: pointer;
 }
 
