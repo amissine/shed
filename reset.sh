@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-npm test --run=test/fund-agent.mjs; npm run admin --run=resetAgentTESTNET
-#for i in {1..9}; do
-#  echo "- creating user ${i}..."
-#  npm test --run=test/add-user.mjs
-#  sleep 14
-#done
-#npm test --run=test/set-locations.mjs
+rm -f cli/admin.log
+for i in {1..4}; do
+  echo "- creating test user ${i}..."
+  npm run admin --run=addTestUser --id="tu$i"
+done
+#mv cli/admin.log cli/aim-users.sh

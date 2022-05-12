@@ -6,7 +6,9 @@
   "scripts": {
     "a": "export $(cat .env|tr -d [:blank:]|xargs); envsubst < wrangler.toml.dist > wrangler.toml",
     "ac": "export $(cat .env|tr -d [:blank:]|xargs); cd cli; envsubst < wrangler.toml.dist > wrangler.toml",
-    "admin": "export $(cat .env|tr -d [:blank:]|xargs) && v2/bin/run.mjs \"${npm_config_run}\" 2>&1 | tee join/admin.log",
+    "admin": "export $(cat .env|tr -d [:blank:]|xargs) && cli/run.mjs \"${npm_config_run}\" 2>&1 | tee -a cli/admin.log",
+    "admin-b": "export $(cat .env|tr -d [:blank:]|xargs) && export \"${npm_config_id}\"  && cli/run.mjs \"${npm_config_run}\" 2>&1 | tee -a cli/admin.log",
+    "admin-v2": "export $(cat .env|tr -d [:blank:]|xargs) && v2/bin/run.mjs \"${npm_config_run}\" 2>&1 | tee join/admin.log",
     "ava": "export $(cat .env|tr -d [:blank:]|xargs) && ava -v -w --timeout=2m",
     "bd": "ttab -w -d $PWD exec npm run tc && cd v2 && npm run dev",
     "cd": "npm run bd && npm run cfw && sleep 1 && npm run ttff",
@@ -26,7 +28,8 @@
     "qasource": "cd v2 && npm run qasource",
     "tc": "ssh ubuntu@ubuntu 'nc -l 8080 -W 1' && ttab -w -d $PWD exec npm run admin --run=testClawbacks",
     "ttff": "ttab -w -d $PWD exec npm run ff",
-    "test": "ttab -w -d $PWD exec npm run ava \"${npm_config_run:-test/*.test.mjs}\""
+    "test": "./reset.sh",
+    "test-ava": "ttab -w -d $PWD exec npm run ava \"${npm_config_run:-test/*.test.mjs}\""
   },
   "repository": {
     "type": "git",
