@@ -32,6 +32,8 @@ and add env values when prompted.
 
 The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*.
 
+If on *testnet*, run `npm test`.
+
 ## Scripts in `package.json`
 
 In addition to existing scripts, on March 22, 2022, a set of `p*` scripts is being introduced. The `p` letter stands for **p**roduct.
