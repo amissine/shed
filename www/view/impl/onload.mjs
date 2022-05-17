@@ -56,22 +56,22 @@ class OnLoadView extends GoogleMapsView { // {{{1
     showModal('inviteOrSK', () => location.reload())
   }
 
-  #onHistory (history) { // asc {{{2
+  async #onHistory (history) { // desc {{{2
     let p = null, index = 0, infoWindow = new google.maps.InfoWindow(), self = this
     this.history = history
     for (let make of history) {
-      if (make.user.pk != p) {
-        p = make.user.pk
+      if (make.maker != p) {
+        p = make.maker
         index++
-        let position = { lat: +make.user.lat[0], lng: +make.user.lng[0] }
-        let makes = history.filter(m => m.user.pk == p), content = ''
+        let position = { lat: +make.makerCached.lat[0], lng: +make.makerCached.lng[0] }
+        let makes = history.filter(m => m.maker == p), content = ''
         for (let m of makes) {
           let color = m.memo.value == 'Offer' ? 'green' : 'red' 
           content += `<p style='color: ${color}' onclick='process.view.onMakeSelected(${history.indexOf(m)})'>` + m.description + '</p>'
         }
         let marker = new google.maps.Marker({ map: myMap, position,
           label: `${index}`,
-          title: make.user.greeting,
+          title: make.makerCached.greeting,
         })
         marker.addListener("click", () => {
           infoWindow.close()
@@ -81,10 +81,7 @@ class OnLoadView extends GoogleMapsView { // {{{1
         })
       }
     }
-    console.log(history)
     this.historyButton.textContent = 'Select Maker'
-    //this.historyButton.disabled = false
-    //this.historyButton.style.cursor = 'pointer'
   }
 
   #onTakes (takes) { // asc {{{2
