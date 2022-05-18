@@ -66,8 +66,7 @@ class OnLoadView extends GoogleMapsView { // {{{1
         let position = { lat: +make.makerCached.lat[0], lng: +make.makerCached.lng[0] }
         let makes = history.filter(m => m.maker == p), content = ''
         for (let m of makes) {
-          let color = m.memo.value == 'Offer' ? 'green' : 'red' 
-          content += `<p style='color: ${color}' onclick='process.view.onMakeSelected(${history.indexOf(m)})'>` + m.description + '</p>'
+          content += `<p class='${classP(m)}' onclick='process.view.onMakeSelected(${history.indexOf(m)})'>` + m.description + '</p>'
         }
         let marker = new google.maps.Marker({ map: myMap, position,
           label: `${index}`,
@@ -127,6 +126,19 @@ class OnLoadView extends GoogleMapsView { // {{{1
       : this.#inviteOrSK()
   }
   // }}}2
+}
+
+function classP (mot) { // make or take {{{1
+  let m = mot.memo.value
+  switch (m) {
+    case 'Offer':
+      return mot.takesCached.length > 0 ? 'offer-claimed' : 'offer-claimable';
+
+    case 'Request':
+      return mot.takesCached.length > 0 ? 'request-claimed' : 'request-claimable';
+
+    default: // TODO a take
+  }
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) { // {{{1
