@@ -169,6 +169,52 @@ body {
 }
 
 /* claimable, claimed: make/take {{{1 */
+p.ask-claimable {
+  color: red;
+  text-decoration-line: underline;
+  text-decoration-color: red;
+  text-decoration-style: wavy;
+}
+
+p.ask-claimable:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+p.ask-claimed {
+  color: red;
+}
+
+p.ask-reclaimed {
+  color: red;
+  text-decoration-line: line-through;
+  text-decoration-color: red;
+  text-decoration-style: solid;
+}
+
+p.bid-claimable {
+  color: green;
+  text-decoration-line: underline;
+  text-decoration-color: green;
+  text-decoration-style: wavy;
+}
+
+p.bid-claimable:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+p.bid-claimed {
+  color: green;
+}
+
+p.bid-reclaimed {
+  color: green;
+  text-decoration-line: line-through;
+  text-decoration-color: green;
+  text-decoration-style: solid;
+}
+
 p.offer-claimable {
   color: green;
   text-decoration-line: underline;

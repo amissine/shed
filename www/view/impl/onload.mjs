@@ -57,19 +57,18 @@ class OnLoadView extends GoogleMapsView { // {{{1
   }
 
   async #onHistory (history) { // desc {{{2
-    let p = null, index = 0, infoWindow = new google.maps.InfoWindow(), self = this
+    let p = null, index = 0, infoWindow = new google.maps.InfoWindow({maxWidth:300}), self = this
     this.history = history
     for (let make of history) {
       if (make.maker != p) {
         p = make.maker
         index++
-        let position = { lat: +make.makerCached.lat[0], lng: +make.makerCached.lng[0] }
+        let position = {lat:+make.makerCached.lat[0], lng:+make.makerCached.lng[0]}
         let makes = history.filter(m => m.maker == p), content = ''
         for (let m of makes) {
           content += `<p class='${classP(m)}' onclick='process.view.onMakeSelected(${history.indexOf(m)})'>` + m.description + '</p>'
         }
-        let marker = new google.maps.Marker({ map: myMap, position,
-          label: `${index}`,
+        let marker = new google.maps.Marker({map:myMap, position, label:`${index}`,
           title: make.makerCached.greeting,
         })
         marker.addListener("click", () => {
@@ -114,9 +113,20 @@ class OnLoadView extends GoogleMapsView { // {{{1
   }
 
   onMakeSelected (i) { // {{{2
-    this.historyButton.textContent = 'Wait...'
-    let detail = { kind: 'take', callback: this.#onTakes, self: this.history[i] }
-    process.presenter.dispatchEvent(new CustomEvent('history', { detail }))
+    this.historyButton.textContent = 'Reload'
+    let label = "ABCDEF...", j = 0
+
+    for (let take of this.history[i].takesCached) {
+      console.log(take)
+      let position = {lat:+take.takerCached.lat[0], lng:+take.takerCached.lng[0]}
+      let marker = new google.maps.Marker({map:myMap, position, label:label[j++],
+        title: take.takerCached.greeting,
+      })
+      let content = `<p class='${classP(take)}'>` + (take.description.length > 0 ? take.description : 'AS IS') + '</p>'
+      take.infoWindow = new google.maps.InfoWindow({maxWidth:300})
+      take.infoWindow.setContent(content)
+      take.infoWindow.open(marker.getMap(), marker)
+    }
   }
 
   show (userInfo) { // {{{2
@@ -129,15 +139,21 @@ class OnLoadView extends GoogleMapsView { // {{{1
 }
 
 function classP (mot) { // make or take {{{1
-  let m = mot.memo.value
+  let m = mot.memo ? mot.memo.value : 'take'
   switch (m) {
     case 'Offer':
       return mot.takesCached.length > 0 ? 'offer-claimed' : 'offer-claimable';
 
     case 'Request':
       return mot.takesCached.length > 0 ? 'request-claimed' : 'request-claimable';
+  }
+  m = mot.make.memo.value
+  switch (m) {
+    case 'Offer':
+      return mot.claimable ? 'ask-claimable' : mot.claimed ? 'ask-claimed' : 'ask-reclaimed';
 
-    default: // TODO a take
+    case 'Request':
+      return mot.claimable ? 'bid-claimable' : mot.claimed ? 'bid-claimed' : 'bid-reclaimed';
   }
 }
 
