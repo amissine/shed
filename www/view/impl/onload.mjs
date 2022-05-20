@@ -54,7 +54,7 @@ class OnLoadView extends GoogleMapsView { // {{{1
     showModal('inviteOrSK', () => location.reload())
   }
 
-  async #onHistory (history) { // desc {{{2
+  async #onHistory (history) { // asc {{{2
     let p = null, index = 0, infoWindow = new google.maps.InfoWindow({maxWidth:300}), self = this
     this.history = history
     for (let make of history) {
@@ -81,7 +81,13 @@ class OnLoadView extends GoogleMapsView { // {{{1
   }
 
   #showHistoryOfMakes (localSessionInfo) { // {{{2
-    console.log(localSessionInfo)
+    let historyButton = document.createElement('button')
+    historyButton.classList.add("custom-map-control-button")
+    historyButton.disabled = true
+    historyButton.style.cursor = 'not-allowed'
+    myMap.controls[google.maps.ControlPosition.TOP_CENTER].push(historyButton)
+    this.historyButton = historyButton
+    this.#onHistory(localSessionInfo.history)
   }
 
   constructor (presenter) { // {{{2
@@ -109,11 +115,10 @@ class OnLoadView extends GoogleMapsView { // {{{1
   }
 
   onMakeSelected (i) { // {{{2
-    this.historyButton.textContent = 'Reload current page'
+    this.historyButton.textContent = 'Please reload this page'
     let label = "ABCDEF...", j = 0
 
     for (let take of this.history[i].takesCached) {
-      console.log(take)
       let position = {lat:+take.takerCached.lat[0], lng:+take.takerCached.lng[0]}
       let marker = new google.maps.Marker({map:myMap, position, label:label[j++],
         title: take.takerCached.greeting,
