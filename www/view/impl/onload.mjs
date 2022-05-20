@@ -1,6 +1,4 @@
-import { showModal, } from '../utils.mjs'
-
-let debug = true // {{{1
+import { showModal, } from '../utils.mjs' // {{{1
 
 class GoogleMapsView { // {{{1
   constructor () { // {{{2
@@ -82,9 +80,8 @@ class OnLoadView extends GoogleMapsView { // {{{1
     this.historyButton.textContent = 'Select Maker'
   }
 
-  #onTakes (takes) { // asc {{{2
-    console.log(takes)
-    this.historyButton.textContent = 'Select Taker'
+  #showHistoryOfMakes (localSessionInfo) { // {{{2
+    console.log(localSessionInfo)
   }
 
   constructor (presenter) { // {{{2
@@ -92,7 +89,6 @@ class OnLoadView extends GoogleMapsView { // {{{1
   }
 
   onJoin (txResultBody) { // {{{2
-    debug && console.log(txResultBody)
     let cogs = document.getElementById('inviteOrSK_goCogs')
     cogs.style.display = 'none'
     let congrats = document.getElementById('onJoin')
@@ -113,7 +109,7 @@ class OnLoadView extends GoogleMapsView { // {{{1
   }
 
   onMakeSelected (i) { // {{{2
-    this.historyButton.textContent = 'Reload'
+    this.historyButton.textContent = 'Reload current page'
     let label = "ABCDEF...", j = 0
 
     for (let take of this.history[i].takesCached) {
@@ -129,10 +125,10 @@ class OnLoadView extends GoogleMapsView { // {{{1
     }
   }
 
-  show (userInfo) { // {{{2
-    let localSessionInfo = null // TODO get it from Presenter along with userInfo
+  show (userInfo, localSessionInfo) { // {{{2
     userInfo ? console.log('TODO:', userInfo)
       : !localSessionInfo ? this.#addUI()
+      : localSessionInfo.mode == 'showHistoryOfMakes' ? this.#showHistoryOfMakes(localSessionInfo)
       : this.#inviteOrSK()
   }
   // }}}2
