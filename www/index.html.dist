@@ -86,13 +86,39 @@
       <div id='showBrowserIP' class="modal-content">
         <span id='showBrowserIPX' class="close">&times;</span>
         <p> <!-- {{{4 -->
-Welcome to Stellar Help Exchange TESTNET website! We use Google Maps API here.
+Welcome to Stellar Help Exchange (SHEX) TESTNET website! We use Google Maps API here.
 To eliminate the risk of being overcharged by Google, we allow access to the site to
-known IP addresses only.</p><p>Your current IP address is as follows:</p>
-<p id='ip-info'>XXX</p><p>To enjoy our website, please 
-<a id='ip-email' href='mailto:didalik.aim@gmail.com?subject=My IP&body=XXX'>email it to us</a>. Also, make
-sure this is NOT your personal hotspot address, because personal hotspot addresses
-change too often for us to stay in sync. Thanks!
+known IP addresses only.</p>
+
+<p>Your current IP address is as follows:</p>
+<p id='ip-info'>XXX</p>
+
+<p>Please make sure this is NOT your personal hotspot address, because personal 
+hotspot addresses change too often for us to stay in sync.</p>
+
+<p>One way to join us on Stellar TESTNET is to simply do it right now. We will create
+and fund a SHEX user account for you. Its Stellar secret key will be stored on this
+device. The SHEX user  account will be associated with your current IP address. This
+address will then be allowed to access our TESTNET website.</p>
+
+<input type="checkbox" id="joinSHEXdefaults" name="joinSHEXdefaults" checked 
+  value="useDefaults" onclick='joinSHEXtoggle()'>
+<label for="joinSHEXdefaults"> Use defaults for greeting, email </label><br>
+<div id='joinSHEXfields' style='display:none'>
+  <b>Greeting</b>
+  <input type="text" placeholder="Guest">
+  <b>Email</b>
+  <input type="text" placeholder="email@not.set">
+</div>
+<button id='joinSHEXbutton' type="button" onclick='joinSHEX()'>Join SHEX Now</button>
+ 
+<p>Alternatively, if you already have a Stellar TESTNET account and would like to
+associate it with your current IP address, please 
+<a id='ip-email' href='mailto:didalik.aim@gmail.com?subject=My IP&body=XXX'>email 
+the IP address to us</a>. We will let you know when you can access Google Maps API 
+from this address and store your Stellar secret key on this device.</p>
+
+<p>Thanks!
         </p>
 
         <!-- }}}4 -->
@@ -103,6 +129,22 @@ change too often for us to stay in sync. Thanks!
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/9.1.0/stellar-sdk.js"></script><!-- {{{2 -->
     <script> // {{{2
+function joinSHEXtoggle () { // {{{3
+  let cb = document.getElementById('joinSHEXdefaults')
+  let fields = document.getElementById('joinSHEXfields')
+  fields.style.display = cb.checked ? 'none' : 'block'
+}
+
+function joinSHEX () { // {{{3
+  let cb = document.getElementById('joinSHEXdefaults')
+  let fields = document.getElementById('joinSHEXfields')
+  let g = fields.firstElementChild.nextElementSibling
+  let e = fields.lastElementChild
+  let greeting = g.textContent ? g.textContent : g.placeholder
+  let email = e.textContent ? e.textContent : e.placeholder
+  console.log(greeting, email)
+}
+
 function requestInvite () { // {{{3
   process.choice = 'requestInvite'
   document.getElementById('inviteOrSK_go').disabled = false
