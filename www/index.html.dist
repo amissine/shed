@@ -111,7 +111,8 @@ address will then be allowed to access our TESTNET website.</p>
   <input type="text" placeholder="email@not.set">
 </div>
 <button id='joinSHEXbutton' type="button" onclick='joinSHEX()'>Join SHEX Now</button>
- 
+<div id='joinSHEXappend' style='white-space: pre-line; display: none;'></div>
+<div id='joinSHEXalt' style='display:block'>
 <p>Alternatively, if you already have a Stellar TESTNET account and would like to
 associate it with your current IP address, please 
 <a id='ip-email' href='mailto:didalik.aim@gmail.com?subject=My IP&body=XXX'>email 
@@ -120,7 +121,7 @@ from this address and store your Stellar secret key on this device.</p>
 
 <p>Thanks!
         </p>
-
+</div>
         <!-- }}}4 -->
       </div>
 
@@ -140,9 +141,11 @@ function joinSHEX () { // {{{3
   let fields = document.getElementById('joinSHEXfields')
   let g = fields.firstElementChild.nextElementSibling
   let e = fields.lastElementChild
-  let greeting = g.textContent ? g.textContent : g.placeholder
-  let email = e.textContent ? e.textContent : e.placeholder
-  console.log(greeting, email)
+  let greeting = g.value ? g.value : g.placeholder
+  let email = e.value ? e.value : e.placeholder
+
+  let detail = { greeting, email }
+  process.presenter.dispatchEvent(new CustomEvent('joinSHEX', { detail }))
 }
 
 function requestInvite () { // {{{3

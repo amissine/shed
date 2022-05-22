@@ -4,8 +4,18 @@ class ShowBrowserIpView { // {{{1
   constructor () { // {{{2
   }
 
+  append (line) { // {{{2
+    let divAppend = document.getElementById('joinSHEXappend')
+    if (line.startsWith('- creating')) {
+      document.getElementById('joinSHEXalt').style.display = 'none'
+      divAppend.style.display = 'block'
+    }
+    let innerHTML = divAppend.innerHTML
+    innerHTML += '<br>' + line
+    divAppend.innerHTML = innerHTML
+  }
+
   show (ips) { // {{{2
-    console.log(ips) // ips.ipv4.ip 174.211.177.108 - KEEPS CHANGING!
     showModal(
       'showBrowserIP', 
       () => console.log(process.view),
