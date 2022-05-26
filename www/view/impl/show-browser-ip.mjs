@@ -15,7 +15,23 @@ class ShowBrowserIpView { // {{{1
     divAppend.innerHTML = innerHTML
   }
 
-  show (ips) { // {{{2
+  show (userInfo, ips) { // {{{2
+    if (userInfo) {
+      console.log(userInfo, ips)
+      if (userInfo.ipAddress.filter(addr => addr == ips.ipv4.ip).length > 0) {
+        showModal('accountAssociationInProgress',
+          () => console.log(process.view),
+          'ip-info-wait'
+        )
+      } else {
+        showModal('associateThisAddressToo',
+          () => console.log(process.view),
+          'ip-info-add',
+          ips.ipv4.ip
+        )
+      }
+      return;
+    }
     showModal(
       'showBrowserIP', 
       () => console.log(process.view),
