@@ -203,7 +203,7 @@ function update (index) { // {{{3
   let email = e.value ? e.value : e.placeholder
 
   let detail = add ? { greeting, email, atat } : { greeting, email }
-  process.presenter.dispatchEvent(new CustomEvent('update', { detail }))
+  process.presenter.dispatchEvent(new CustomEvent('updateUserInfo', { detail }))
 }
 
 function joinSHEXtoggle () { // {{{3
