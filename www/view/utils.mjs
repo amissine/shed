@@ -15,6 +15,9 @@ function showModal (contentId, close, ...r) { // {{{1
   switch (contentId) {
     case 'inviteOrSK':
       break
+
+    case 'accountIPaInProgress':
+    case 'associateThisAddressToo':
     case 'showBrowserIP':
       replaceXXX(...r)
       break
@@ -24,6 +27,7 @@ function showModal (contentId, close, ...r) { // {{{1
       text = content.children[1].textContent
       content.children[1].textContent = process.presenter.userInfo.greeting + text
       break
+
     default: // req1Intro, confirmBidAccept, makeRequest, testClawbacks
       text = content.children[1].firstElementChild.textContent
       content.children[1].firstElementChild.textContent =

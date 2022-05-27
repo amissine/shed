@@ -21,6 +21,69 @@
     <div id="map"></div>
     <!-- The common parent Modal {{{2 -->
     <div id="commonParentModal" class="modal">
+
+      <!-- accountIPaInProgress {{{3 -->
+      <div id='accountIPaInProgress' class="modal-content">
+        <span id='accountIPaInProgressX' class="close">&times;</span>
+        <p> <!-- {{{4 -->
+Hello, XXX! Your current IP address is as follows:</p>
+<p id='ip-info-wait'>XXX</p>
+
+<p>The process of associating your account with this IP address is manual and hasn't 
+yet been completed. It usually takes a day to get it done.
+</p>
+
+<p>To get notified by email when this process completes, please make sure your email
+below is valid and active:
+</p>
+<div id='updateFields1'>
+  <b>Greeting</b>
+  <input type="text" placeholder="XXX">
+  <b>Email</b>
+  <input type="text" placeholder="XXX">
+</div>
+<button id='updateButton' type="button" onclick='update(false)'>Update</button>
+
+<p>Thanks!
+        </p>
+        <!-- }}}4 -->
+      </div>
+
+      <!-- associateThisAddressToo {{{3 -->
+      <div id='associateThisAddressToo' class="modal-content">
+        <span id='associateThisAddressTooX' class="close">&times;</span>
+        <p> <!-- {{{4 -->
+Hello, XXX! Your current IP address is as follows:</p>
+<p id='ip-info-add'>XXX</p>
+
+<p>The process of associating your account with another IP address(es) is still in 
+progress. This process is manual and it usually takes a day to get it done.
+</p>
+
+<p>If you wish to add your current IP address to the list of addresses, associated
+with your account, click the "Update/Add" button below. Otherwise, uncheck this 
+checkbox:
+</p>
+<input type="checkbox" id="atat" name="atat" checked 
+  value="associateThisAddressToo">
+<label for="atat"> Add current IP address </label><br>
+
+<p>To get notified by email when this process completes, please make sure your email
+below is valid and active:
+</p>
+<div id='updateFields2'>
+  <b>Greeting</b>
+  <input type="text" placeholder="XXX">
+  <b>Email</b>
+  <input type="text" placeholder="XXX">
+</div>
+<button id='updateButton' type="button" onclick='update(true)'>Update/Add</button>
+
+<p>Thanks!
+        </p>
+        <!-- }}}4 -->
+      </div>
+
       <!-- inviteOrSK {{{3 -->
       <div id='inviteOrSK' class="modal-content">
         <span id='inviteOrSKX' class="close">&times;</span>
@@ -130,6 +193,19 @@ from this address and store your Stellar secret key on this device.</p>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/9.1.0/stellar-sdk.js"></script><!-- {{{2 -->
     <script> // {{{2
+function update (index) { // {{{3
+  let cb = document.getElementById('atat')
+  let atat = add ? cb.checked : null
+  let fields = document.getElementById(add ? 'updateFields2' : 'updateFields1')
+  let g = fields.firstElementChild.nextElementSibling
+  let e = fields.lastElementChild
+  let greeting = g.value ? g.value : g.placeholder
+  let email = e.value ? e.value : e.placeholder
+
+  let detail = add ? { greeting, email, atat } : { greeting, email }
+  process.presenter.dispatchEvent(new CustomEvent('update', { detail }))
+}
+
 function joinSHEXtoggle () { // {{{3
   let cb = document.getElementById('joinSHEXdefaults')
   let fields = document.getElementById('joinSHEXfields')
@@ -137,7 +213,6 @@ function joinSHEXtoggle () { // {{{3
 }
 
 function joinSHEX () { // {{{3
-  let cb = document.getElementById('joinSHEXdefaults')
   let fields = document.getElementById('joinSHEXfields')
   let g = fields.firstElementChild.nextElementSibling
   let e = fields.lastElementChild

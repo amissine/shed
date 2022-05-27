@@ -143,7 +143,7 @@ body {
 }
 
 /* The IPv4 / IPv6 info {{{1 */
-#ip-info {
+#ip-info, #ip-info-wait, #ip-info-add {
   text-align: center;
   font-family: Pacifico, sans-serif;
   font-size: 4em;
