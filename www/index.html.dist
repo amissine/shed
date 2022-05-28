@@ -77,7 +77,7 @@ below is valid and active:
   <b>Email</b>
   <input type="text" placeholder="XXX">
 </div>
-<button id='updateButton' type="button" onclick='update(true)'>Update/Add</button>
+<button id='updateAddButton' type="button" onclick='update(true)'>Update/Add</button>
 
 <p>Thanks!
         </p>
@@ -193,7 +193,7 @@ from this address and store your Stellar secret key on this device.</p>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/9.1.0/stellar-sdk.js"></script><!-- {{{2 -->
     <script> // {{{2
-function update (index) { // {{{3
+function update (add) { // {{{3
   let cb = document.getElementById('atat')
   let atat = add ? cb.checked : null
   let fields = document.getElementById(add ? 'updateFields2' : 'updateFields1')
@@ -204,6 +204,8 @@ function update (index) { // {{{3
 
   let detail = add ? { greeting, email, atat } : { greeting, email }
   process.presenter.dispatchEvent(new CustomEvent('updateUserInfo', { detail }))
+  let button = add ? 'updateAddButton' : 'updateButton'
+  document.getElementById(button).disabled = true
 }
 
 function joinSHEXtoggle () { // {{{3
@@ -221,6 +223,7 @@ function joinSHEX () { // {{{3
 
   let detail = { greeting, email }
   process.presenter.dispatchEvent(new CustomEvent('joinSHEX', { detail }))
+  document.getElementById('joinSHEXbutton').disabled = true
 }
 
 function requestInvite () { // {{{3
