@@ -2,9 +2,9 @@
 
 ## The Pitch
 
-Need help fixing your kitchen and found no bidders so far? Use Stellar Help Exchange - make a request! More work to do - keep the request and get more bids from other bidders!
+Need help fixing your kitchen and found no bidders so far? Use Stellar Help Exchange - make a request! More work to do - keep the request and get more bids from other bidders.
 
-Selling your business and found no buyers so far? Use Stellar Help Exchange - make an offer! Have some fresh catch to share with your neighbors? Use Stellar Help Exchange - make an offer and keep it until no more fish is left!
+Selling your business and found no buyers so far? Use Stellar Help Exchange - make an offer! Have some fresh catch to share with your neighbors? Use Stellar Help Exchange - make an offer and keep it until no more fish is left.
 
  With Stellar Help Exchange, you can exchange help offers/requests with your neighbors as easily as around the globe. And it is safe.
 
@@ -31,5 +31,8 @@ If the offer taker, who already sent the gratitude to the offer maker, does not 
 This site uses Google Maps API. Its [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key) is associated with our Google billing account. On Stellar TESTNET, we restrict access to the site to eliminate the risk of being overcharged by Google. Only known IP addresses are allowed to use Google Maps API on our TESTNET site.
 
 ## See also
+
+- [Offer/Ask Protocol Sample Sequence Diagram](./NOTES.md#offerask-protocol-sample-sequence-diagram)
+- [Request/Bid Protocol Sample Sequence Diagram](./NOTES.md#requestbid-protocol-sample-sequence-diagram)
 
 ❓xa
