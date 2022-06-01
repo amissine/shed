@@ -7,7 +7,7 @@ The purpose of cloning `shed` from `gratzio` is to have a safe place for experim
 ```
      .----------shed---------------.
     /              \                \
-  cli-----.         w----.           v2
+  cli-----.        www---.          v2
  /   \     \       / \    \
 model v     p   model v   presenter
      / \   / \       / \     / \

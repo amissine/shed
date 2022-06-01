@@ -131,10 +131,12 @@ class OnLoadView extends GoogleMapsView { // {{{1
   }
 
   show (userInfo, localSessionInfo) { // {{{2
-    userInfo ? console.log('TODO:', userInfo)
-      : !localSessionInfo ? this.#addUI()
+    this.userInfo = userInfo
+    userInfo ? 
+      !localSessionInfo ? this.#addUI()
       : localSessionInfo.mode == 'showHistoryOfMakes' ? this.#showHistoryOfMakes(localSessionInfo)
-      : this.#inviteOrSK()
+      : alert('Work in progress') //this.#inviteOrSK()
+    : alert('UNEXPECTED')
   }
   // }}}2
 }
