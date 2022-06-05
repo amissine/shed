@@ -1,6 +1,6 @@
 # 👷 Notes
 
-The purpose of cloning `shed` from `gratzio` is to have a safe place for experimenting with Stellar, Cloudflare, and other technologies used by the project. It is also more open-source than its source `gratzio`, as the content of its `www/view` dir is now public.
+The purpose of cloning `shed` from `gratzio` is to have a safe place for experimenting with Stellar, Cloudflare, and other technologies used in the project. It is also more open-source than its source `gratzio`, as the content of its `www/view` dir is now public.
 
 ## Project structure
 
