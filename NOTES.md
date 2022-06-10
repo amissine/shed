@@ -116,3 +116,7 @@ The maker claims one or more CBs, thus letting their respective takers know thei
 
 When a taker has already reclaimed her bid, the maker will not be able to claim it successfully. It is OK.
 
+## Misc
+
+http://maps.google.com/maps?q=loc:28.43242324,77.8977673
+
