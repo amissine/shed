@@ -1,77 +1,74 @@
+> cli@1.0.0 test
+> [ $npm_config_suite ] && ./test-suite.sh || ./test.sh
+
+=== START ./test-suite.sh on Sat Jun 11 14:19:43 EDT 2022 ===
+=== START test/realtime.sh on Sat Jun 11 14:19:43 EDT 2022 ===
+
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user2_sk SAWTL77OMXIG4IBZ4GY63DXFFJU4W7YYXEIWFDW76GHKGJUF2JK6NYFZ isMaker false
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user0_sk SCRIR45PDSHRHI5JRYLXSI4NPKCGRWV6GKXJRE3VO7XONOHCZ36UZQIF isMaker true
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user1_sk SAGVYLS3GOEW2BBXHUUDKW5EFIYBFWK423KDV53JQXZN62EP3VIPJPLW isMaker false
+Test case 2 User 2 GDV5QF6FLTBFUJ4NCG572PKWCBULRQHYFVUFZ5QZH727JID7WJAW3QK4
+Test case 2 User 1 GCSF4YEEEM35MQJ5ANGBT7SL323OGHDZAS6CNEAFDB7CU4O5KDQQASZ3
+Test case 2 User 0 GDSAQ7JRFFHYEHLFSWMXHH76H6XZVKSP5HVLTAPXQDBYYRPVZ3RRXWYD offer false
+57513ba3dc35494de4e8a265310ae03e8e14231721fe9686fb37252d741a4b0b
+Request Test case 2 User 0 GDSAQ7JRFFHYEHLFSWMXHH76H6XZVKSP5HVLTAPXQDBYYRPVZ3RRXWYD
+HEXA 1 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
+Request Test case 2 User 0 GDSAQ7JRFFHYEHLFSWMXHH76H6XZVKSP5HVLTAPXQDBYYRPVZ3RRXWYD
+HEXA 1 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
+make 1 f9053fd4bc2d99b2dcb67f58dc54eab0d40198f6ced14780839c43b9cf4166de 438e87d689390847e58e709db4268696ca93ff4d8e512cd2d992b6d2693fec37
+make 1 f9053fd4bc2d99b2dcb67f58dc54eab0d40198f6ced14780839c43b9cf4166de afb06a92015ef5a99de45b4c3fe653c9a7d16b571f7717398f5d7ba47ca3b298
+Request Test case 2 User 0 GDSAQ7JRFFHYEHLFSWMXHH76H6XZVKSP5HVLTAPXQDBYYRPVZ3RRXWYD
+HEXA 2 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
+Request Test case 2 User 0 GDSAQ7JRFFHYEHLFSWMXHH76H6XZVKSP5HVLTAPXQDBYYRPVZ3RRXWYD
+HEXA 2 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
+make 2 57513ba3dc35494de4e8a265310ae03e8e14231721fe9686fb37252d741a4b0b f9b05dbf7e23f8dddad7f6a9fdc92f81fa7c994d78d721a61ba1299e65faed77
+make 2 57513ba3dc35494de4e8a265310ae03e8e14231721fe9686fb37252d741a4b0b d9cec9b679deb11cd56a82a0bef9155d4bfded8213ebf8cc4d8f29e338ef6527
+take 1 {
+  txMemo: '57513ba3dc35494de4e8a265310ae03e8e14231721fe9686fb37252d741a4b0b',
+  dataItems: ''
+}
+take 2 {
+  txMemo: '57513ba3dc35494de4e8a265310ae03e8e14231721fe9686fb37252d741a4b0b',
+  dataItems: ''
+}
+^C===  STOP ./test-suite.sh on Sat Jun 11 14:21:06 EDT 2022 ===
+
+Interrupt: Press ENTER or type command to continue
+
+==================================================
 
 > cli@1.0.0 test
 > [ $npm_config_suite ] && ./test-suite.sh || ./test.sh
 
-=== START ./test-suite.sh on Sat Jun 11 08:25:25 EDT 2022 ===
-=== START test/realtime.sh on Sat Jun 11 08:25:25 EDT 2022 ===
+=== START ./test-suite.sh on Sat Jun 11 15:59:26 EDT 2022 ===
+=== START test/realtime.sh on Sat Jun 11 15:59:26 EDT 2022 ===
   /Users/alec/process/tmp/shed/cli/test/realtime-setup-check-funds.mjs: funds OK for 3 users
 
-export user0_sk=SDYFJZWI2BNB7DBDL2VP3TT4DXWFDLUXZNQSNES3SZTW57QRXXY3OM4O
-export user2_sk=SCEOUN4R7AYIWWHDVZ4KACHIFTEEHFTG5NPEHRAYAZ4YJYBRKYVU5CIX
-export user1_sk=SDG3LKPUJCOPFGC3MZJHLCDZTLLAQDR3Q3WINTZNU2DF2SL7UVAIWPSO
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user1_sk SDG3LKPUJCOPFGC3MZJHLCDZTLLAQDR3Q3WINTZNU2DF2SL7UVAIWPSO isMaker false
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user0_sk SDYFJZWI2BNB7DBDL2VP3TT4DXWFDLUXZNQSNES3SZTW57QRXXY3OM4O isMaker true
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user2_sk SCEOUN4R7AYIWWHDVZ4KACHIFTEEHFTG5NPEHRAYAZ4YJYBRKYVU5CIX isMaker false
-Test case 2 User 2 GBZYTY56DPSOWB4H5SSQYTZJ64JFG3YDE4DS3KVFV4RQGCSAYA3G2YZW
-Test case 2 User 1 GDI3ALNVVTBG5Q3MGERZ24EBZE3OJTLR3V3GURWQOCWWFH4I7OW44HJZ
-Test case 2 User 0 GB5GI4IYWXIJLBD5JJRLUVORSU2BVDRIGR7U3ZIKQOPMBYT6OWR4MUND offer true
-6ab2727073bc1dcac652a988a29590b9ca3deba43ef98af2bcd2cb2e2b14ca58
-Offer Test case 2 User 0 GB5GI4IYWXIJLBD5JJRLUVORSU2BVDRIGR7U3ZIKQOPMBYT6OWR4MUND
-HEXA 5 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
-Offer Test case 2 User 0 GB5GI4IYWXIJLBD5JJRLUVORSU2BVDRIGR7U3ZIKQOPMBYT6OWR4MUND
-HEXA 5 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
+export user1_sk=SCQHSNIT42ZJSFY3SWKPC6KTJMBR3HEW2FEIB5NJTF4UZDPGSMGMQUUC
+export user0_sk=SCVOJI637VR53ZYNPIXLQZO5CR3JFCAIHTNE7TGK2DBXOU3Z6HBCTS5S
+export user2_sk=SD5PVX74Y7QJ2NO6M7KULF5GA5DYUPG2HCHHLQDPQNQ6JLUHPACNOTCV
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user2_sk SD5PVX74Y7QJ2NO6M7KULF5GA5DYUPG2HCHHLQDPQNQ6JLUHPACNOTCV isMaker false
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user0_sk SCVOJI637VR53ZYNPIXLQZO5CR3JFCAIHTNE7TGK2DBXOU3Z6HBCTS5S isMaker true
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user1_sk SCQHSNIT42ZJSFY3SWKPC6KTJMBR3HEW2FEIB5NJTF4UZDPGSMGMQUUC isMaker false
+Test case 2 User 2 GDBWPRTVIOTDGYOJ6NWNAC4WTCUSXIBRG6UWC2MLJGEEURJB7F4ETTWI
+Test case 2 User 1 GCAYY23JOUDQUHUL4Q5U7X6THO2LDL2ZJZ4ZG6LK47SOYTOUIY6BIPVR
+Test case 2 User 0 GCJ624GUJLHZKMYIFCOWIFITUVYDHR5LXA7KMSPU3GYQ7YQO4DPUBHXS offer false
+46c21085ea2787754ed4db4c262b6c1e679932cce4919ddeed1ca60d7de6143b
+Request Test case 2 User 0 GCJ624GUJLHZKMYIFCOWIFITUVYDHR5LXA7KMSPU3GYQ7YQO4DPUBHXS
+HEXA 2 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
+Request Test case 2 User 0 GCJ624GUJLHZKMYIFCOWIFITUVYDHR5LXA7KMSPU3GYQ7YQO4DPUBHXS
+HEXA 2 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
+make 1 46c21085ea2787754ed4db4c262b6c1e679932cce4919ddeed1ca60d7de6143b c48aa5d76aa406b04373bd04b7f3004174b6847a73ab13fb87a2c2267ac25d8c
+make 1 46c21085ea2787754ed4db4c262b6c1e679932cce4919ddeed1ca60d7de6143b 988c9a7e70545c3c1646ff233523b26fb034506d4b607c0c09ae9874a6e154de
 take 1 {
-  _links: {
-    operation: {
-      href: 'https://horizon-testnet.stellar.org/operations/6150298678611969'
-    },
-    succeeds: {
-      href: 'https://horizon-testnet.stellar.org/effects?order=desc&cursor=6150298678611969-2'
-    },
-    precedes: {
-      href: 'https://horizon-testnet.stellar.org/effects?order=asc&cursor=6150298678611969-2'
-    }
-  },
-  id: '0006150298678611969-0000000002',
-  paging_token: '6150298678611969-2',
-  account: 'GB5GI4IYWXIJLBD5JJRLUVORSU2BVDRIGR7U3ZIKQOPMBYT6OWR4MUND',
-  type: 'claimable_balance_claimant_created',
-  type_i: 51,
-  created_at: '2022-06-11T12:25:56Z',
-  asset: 'HEXA:GCZMMTALRGKD7VC4RY6JLCTOG6ZZABUMY7T5BE7CKFXHXOQIIU46DRYW',
-  balance_id: '000000001a8b4809bd1fc3822054f8435e0f93c2b4ab49e2261bc68abdd961f844c6cbc9',
-  amount: '0.0000100',
-  predicate: { unconditional: true },
-  operation: [Function (anonymous)],
-  succeeds: [Function (anonymous)],
-  precedes: [Function (anonymous)]
+  txMemo: '46c21085ea2787754ed4db4c262b6c1e679932cce4919ddeed1ca60d7de6143b',
+  dataItems: 'My counter-offer is 1.4012645. Cheers, Test case 2 User 1'
 }
 take 2 {
-  _links: {
-    operation: {
-      href: 'https://horizon-testnet.stellar.org/operations/6150298678616065'
-    },
-    succeeds: {
-      href: 'https://horizon-testnet.stellar.org/effects?order=desc&cursor=6150298678616065-2'
-    },
-    precedes: {
-      href: 'https://horizon-testnet.stellar.org/effects?order=asc&cursor=6150298678616065-2'
-    }
-  },
-  id: '0006150298678616065-0000000002',
-  paging_token: '6150298678616065-2',
-  account: 'GB5GI4IYWXIJLBD5JJRLUVORSU2BVDRIGR7U3ZIKQOPMBYT6OWR4MUND',
-  type: 'claimable_balance_claimant_created',
-  type_i: 51,
-  created_at: '2022-06-11T12:25:56Z',
-  asset: 'HEXA:GCZMMTALRGKD7VC4RY6JLCTOG6ZZABUMY7T5BE7CKFXHXOQIIU46DRYW',
-  balance_id: '000000008c6cb78f42b8e6b73a6178c4279810858d177f643f7d9a855ce718605222bf22',
-  amount: '0.0000100',
-  predicate: { unconditional: true },
-  operation: [Function (anonymous)],
-  succeeds: [Function (anonymous)],
-  precedes: [Function (anonymous)]
+  txMemo: '46c21085ea2787754ed4db4c262b6c1e679932cce4919ddeed1ca60d7de6143b',
+  dataItems: 'My counter-offer is 1.1719016. Cheers, Test case 2 User 2'
 }
-make 1 6ab2727073bc1dcac652a988a29590b9ca3deba43ef98af2bcd2cb2e2b14ca58 4abd99187413dff115a82e9ec4a85af53f4194b4ff80f0d44384fc79c6143e1e
-make 1 6ab2727073bc1dcac652a988a29590b9ca3deba43ef98af2bcd2cb2e2b14ca58 b98450dc702382f4fd9fa9662db88adcdbfefe6879bace69ef78be4125add2da
-^C===  STOP ./test-suite.sh on Sat Jun 11 08:28:24 EDT 2022 ===
+^C===  STOP ./test-suite.sh on Sat Jun 11 16:00:20 EDT 2022 ===
+
+Interrupt: Press ENTER or type command to continue
+
