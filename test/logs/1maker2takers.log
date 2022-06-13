@@ -113,3 +113,54 @@ reclaimed 00000000d6b18d8eebcc63c264c3893a87d9107beb0670f7e20326b24c015e5d4db3ab
 
 Interrupt: Press ENTER or type command to continue
 
+==================================================
+
+> cli@1.0.0 test
+> [ $npm_config_suite ] && ./test-suite.sh || ./test.sh
+
+=== START ./test-suite.sh on Mon Jun 13 13:31:38 EDT 2022 ===
+=== START test/realtime.sh on Mon Jun 13 13:31:38 EDT 2022 ===
+  /Users/alec/process/tmp/shed/cli/test/realtime-setup-check-funds.mjs: funds OK for 3 users
+
+export user2_sk=SDOY7L4MEADIOX7X7OMTZXQLWVF25E7AUNMC7YUSCHXVZC73FY4PKKM7
+export user1_sk=SABVPSB6FWVVDUXMI7HFTEMBPCDMUC5EBNOX2ER5NBEM24PNYIRWMNL3
+export user0_sk=SCHOACDVBV4ASFRBJTXLGLKUGIPIXHUBN2MBAETMFGTEFJX7YBV4QZLK
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user0_sk SCHOACDVBV4ASFRBJTXLGLKUGIPIXHUBN2MBAETMFGTEFJX7YBV4QZLK isMaker true
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user2_sk SDOY7L4MEADIOX7X7OMTZXQLWVF25E7AUNMC7YUSCHXVZC73FY4PKKM7 isMaker false
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user1_sk SABVPSB6FWVVDUXMI7HFTEMBPCDMUC5EBNOX2ER5NBEM24PNYIRWMNL3 isMaker false
+Test case 2 User 2 GCAKDNRR6WC5NDP2FKOOHNMWGQP6SDFPOGE5DJDIFEHXQH3U27BIXYCG
+Test case 2 User 0 GDWSAQ3WBAMIG7PGRSPUUVRXUAT5VPQOBQWX3K4TXBLBP2NZ36RFDPCB offer false
+Test case 2 User 1 GCNVFSEXBACJCJER2RFUYUNS5SUWMITNRSUC53AJQCGLIQJ4756CUP2U
+2be59eaeffa52f970298254bab819ee709f56c06d54db87088f0010cc8068781
+Request GDWSAQ3WBAMIG7PGRSPUUVRXUAT5VPQOBQWX3K4TXBLBP2NZ36RFDPCB
+HEXA 4 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
+Request GDWSAQ3WBAMIG7PGRSPUUVRXUAT5VPQOBQWX3K4TXBLBP2NZ36RFDPCB
+HEXA 4 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
+make 1 2be59eaeffa52f970298254bab819ee709f56c06d54db87088f0010cc8068781 00000000e7f8352c3fad686d8cbb78566dd797e33badc1069ee421055d2764aab03ee1cd
+make 1 2be59eaeffa52f970298254bab819ee709f56c06d54db87088f0010cc8068781 00000000e6c736cc5794336f223430270d1dd51c646063fa4767bc42019725a6d7dc0d18
+take 1 {
+  balanceId: '00000000e7f8352c3fad686d8cbb78566dd797e33badc1069ee421055d2764aab03ee1cd',
+  txMemo: '2be59eaeffa52f970298254bab819ee709f56c06d54db87088f0010cc8068781',
+  dataItems: 'My counter-offer is HEXA 3.6659350. Cheers, Test case 2 User 2'
+}
+take 2 {
+  balanceId: '00000000e6c736cc5794336f223430270d1dd51c646063fa4767bc42019725a6d7dc0d18',
+  txMemo: '2be59eaeffa52f970298254bab819ee709f56c06d54db87088f0010cc8068781',
+  dataItems: 'My counter-offer is HEXA 3.6063421. Cheers, Test case 2 User 1'
+}
+reclaimed {
+  amount: '3.6659450',
+  balanceId: '00000000e7f8352c3fad686d8cbb78566dd797e33badc1069ee421055d2764aab03ee1cd',
+  claimant: 'GCAKDNRR6WC5NDP2FKOOHNMWGQP6SDFPOGE5DJDIFEHXQH3U27BIXYCG',
+  dataItems: ''
+}
+reclaimed {
+  amount: '3.6063521',
+  balanceId: '00000000e6c736cc5794336f223430270d1dd51c646063fa4767bc42019725a6d7dc0d18',
+  claimant: 'GCNVFSEXBACJCJER2RFUYUNS5SUWMITNRSUC53AJQCGLIQJ4756CUP2U',
+  dataItems: ''
+}
+^C===  STOP ./test-suite.sh on Mon Jun 13 13:34:25 EDT 2022 ===
+
+Interrupt: Press ENTER or type command to continue
+
