@@ -69,26 +69,31 @@ Populate the environment, run node task.
 ```
 +---------+                   +-------+                          +----------+
 |  User   |                   | Agent |                          |   User   |
-| Gratzio |                   +-------+                          | Did Alik |
+|  Alice  |                   +-------+                          | Did Alik |
 +---------+                       |                              +----------+
      |                            |                                    |
-     | offer.make -> pay 200 DOGs |                                    | 
+     | offer.make: pay 100 DOGs   |                                    | 
      |--------------------------->|                                    |
-     |                            | notify -> offer                    |
+     |                            | notify: offer                      |
      |                            |----------------------------------->|
-     |             offer.take -> Create CB for offer.amount + 100 DOGs |
+     |                            |           offer.ask: create CB for |
+     |                            |               gratitude + 100 DOGs |
      |<----------------------------------------------------------------|
-     |                                                                 |  
-     | offer.ask.fulfill -> Claim CB: gratitude + 100 DOGs             |
-     |---------------------------------------------------------------->|
+     |                            |                                    |  
+     | ask.fulfill: claim CB      |                                    |
+     | (gratitude + 100 DOGs),    |                                    |
+     | pay 100 DOGs               |                                    |
+     |--------------------------->|                                    |
+     |                            | notify: ask fulfilled              |
+     |                            |----------------------------------->|
 ```
-Here, user Gratzio is the offer maker, and user Did Alik is the offer taker. Making an offer costs 100 Drops Of Gratitude (DOGs), payable to SHEX agent. 1 HEXA is 10000000 DOGs.
+Here, user Alice is the offer maker, and user Did Alik is the offer taker. Making an offer costs 100 Drops Of Gratitude (DOGs), payable to SHEX agent (the maker's fee). 1 HEXA is 10000000 DOGs.
 
-When the agent gets paid, all users are being notified of the newly made offer. Some of them may be willing to take it. To indicate that, a taker creates a Claimable Balance with two claimants - herself and the offer maker. The CB amount reflects how much HEXA the taker is willing to send to the maker if the maker fulfills her ask. Part of this amount (100 DOGs) is the taker's fee. The maker has already paid the taker's fee to the agent, so the taker is now reimbursing it. Before the maker claims this amount, the taker can reclaim it back.
+When the agent gets paid, all users are being notified of the newly made offer. Some of them may be willing to take it. To indicate that, a taker creates Claimable Balance with two claimants - herself and the offer maker. The CB amount reflects how much HEXA the taker is willing to pay to the maker if the maker fulfills her ask. Part of this amount (100 DOGs) is the taker's fee. Before the maker claims the amount, the taker can reclaim it back.
 
-The maker claims one or more CBs, thus letting their respective takers know their asks have been fulfilled. The maker MUST deliver on her offer to all of them. The maker also MUST pay to the agent all extra taker fees.
+The maker claims one or more CBs. For each successfully claimed CB, the maker pays the taker's fee to the agent, thus letting the taker know her ask has been fulfilled.
 
-When a taker has already reclaimed her ask, the maker will not be able to claim it successfully. It is OK.
+When a taker has already reclaimed her ask, the maker will not be able to claim it successfully. It is OK, the transaction will not be committed.
 
 ## Request/Bid Protocol Sample Sequence Diagram
 
@@ -98,23 +103,26 @@ When a taker has already reclaimed her ask, the maker will not be able to claim 
 | Did Alik |                   +-------+                               | Alex |
 +----------+                       |                                   +------+
     |                              |                                        |
-    | request.make -> pay 200 DOGs |                                        |
+    | request.make: pay 100 DOGs   |                                        |
     |----------------------------->|                                        |
     |                              | notify -> request                      |
     |                              |--------------------------------------->|
-    |               request.take -> Create CB for request.amount + 100 DOGs |
+    |                              |    request.bid: create CB for 100 DOGs |
     |<----------------------------------------------------------------------|
-    |                                                                       |
-    | request.bid.accept -> Claim CB, send gratitude + claimed - 100 DOGs   |
+    |                              |                                        |
+    | bid.accept: claim CB,        |                                        |
+    | pay gratitude,               |                                        |
     |---------------------------------------------------------------------->|
+    | pay 100 DOGs                 |                                        |
+    |----------------------------->|                                        |
 ```
-Here, user Did Alik is the request maker, and user Alex is the request taker. Making a request costs 100 DOGs, payable to the agent.
+Here, user Did Alik is the request maker, and user Alex is the request taker. Making a request costs 100 DOGs, payable to the agent (the maker's fee).
 
-When the agent gets paid, all users are being notified of the newly made request. Some of them may be willing to take it. To indicate that, a taker creates a Claimable Balance with two claimants - herself and the request maker. The CB amount reflects how much HEXA the taker is willing to send to the maker if the maker accepts her bid. Part of this amount (100 DOGs) is the taker's fee. The maker has already paid the taker's fee to the agent, so the taker is now reimbursing it. Before the maker claims this amount, the taker can reclaim it back.
+When the agent gets paid, all users are being notified of the newly made request. Some of them may be willing to take it. To indicate that, a taker creates a Claimable Balance with two claimants - herself and the request maker. The CB amount (100 DOGs) is the taker's fee. Before the maker claims this amount, the taker can reclaim it back.
 
-The maker claims one or more CBs, thus letting their respective takers know their bids have been accepted. A bidder MUST deliver on her bid to the request maker. The maker MUST pay to the agent all extra taker fees.
+The maker claims one or more CBs. For each successfully claimed CB, the maker pays the taker's fee to the agent, thus letting the taker know her bid has been accepted. In the same transaction, the maker pays gratitude to the taker.
 
-When a taker has already reclaimed her bid, the maker will not be able to claim it successfully. It is OK.
+When a taker has already reclaimed her bid, the maker will not be able to claim it successfully. It is OK, the transaction will not be committed.
 
 ## Misc
 
