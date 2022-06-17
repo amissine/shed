@@ -1,166 +1,171 @@
 > cli@1.0.0 test
 > [ $npm_config_suite ] && ./test-suite.sh || ./test.sh
 
-=== START ./test-suite.sh on Sat Jun 11 14:19:43 EDT 2022 ===
-=== START test/realtime.sh on Sat Jun 11 14:19:43 EDT 2022 ===
+=== START ./test-suite.sh on Fri Jun 17 05:53:39 EDT 2022 ===
+=== START test/realtime.sh on Fri Jun 17 05:53:39 EDT 2022 ===
+  /Users/alec/process/tmp/shed/cli/test/realtime-setup-check-funds.mjs: funds OK for 3 users
 
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user2_sk SAWTL77OMXIG4IBZ4GY63DXFFJU4W7YYXEIWFDW76GHKGJUF2JK6NYFZ isMaker false
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user0_sk SCRIR45PDSHRHI5JRYLXSI4NPKCGRWV6GKXJRE3VO7XONOHCZ36UZQIF isMaker true
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user1_sk SAGVYLS3GOEW2BBXHUUDKW5EFIYBFWK423KDV53JQXZN62EP3VIPJPLW isMaker false
-Test case 2 User 2 GDV5QF6FLTBFUJ4NCG572PKWCBULRQHYFVUFZ5QZH727JID7WJAW3QK4
-Test case 2 User 1 GCSF4YEEEM35MQJ5ANGBT7SL323OGHDZAS6CNEAFDB7CU4O5KDQQASZ3
-Test case 2 User 0 GDSAQ7JRFFHYEHLFSWMXHH76H6XZVKSP5HVLTAPXQDBYYRPVZ3RRXWYD offer false
-57513ba3dc35494de4e8a265310ae03e8e14231721fe9686fb37252d741a4b0b
-Request Test case 2 User 0 GDSAQ7JRFFHYEHLFSWMXHH76H6XZVKSP5HVLTAPXQDBYYRPVZ3RRXWYD
-HEXA 1 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
-Request Test case 2 User 0 GDSAQ7JRFFHYEHLFSWMXHH76H6XZVKSP5HVLTAPXQDBYYRPVZ3RRXWYD
-HEXA 1 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
-make 1 f9053fd4bc2d99b2dcb67f58dc54eab0d40198f6ced14780839c43b9cf4166de 438e87d689390847e58e709db4268696ca93ff4d8e512cd2d992b6d2693fec37
-make 1 f9053fd4bc2d99b2dcb67f58dc54eab0d40198f6ced14780839c43b9cf4166de afb06a92015ef5a99de45b4c3fe653c9a7d16b571f7717398f5d7ba47ca3b298
-Request Test case 2 User 0 GDSAQ7JRFFHYEHLFSWMXHH76H6XZVKSP5HVLTAPXQDBYYRPVZ3RRXWYD
-HEXA 2 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
-Request Test case 2 User 0 GDSAQ7JRFFHYEHLFSWMXHH76H6XZVKSP5HVLTAPXQDBYYRPVZ3RRXWYD
-HEXA 2 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
-make 2 57513ba3dc35494de4e8a265310ae03e8e14231721fe9686fb37252d741a4b0b f9b05dbf7e23f8dddad7f6a9fdc92f81fa7c994d78d721a61ba1299e65faed77
-make 2 57513ba3dc35494de4e8a265310ae03e8e14231721fe9686fb37252d741a4b0b d9cec9b679deb11cd56a82a0bef9155d4bfded8213ebf8cc4d8f29e338ef6527
+export user1_sk=SALDCDD6PXWYEZXGY47FGOILX7PAXYUF65VXXZR36Q5NKQL3GOOZK2AQ
+export user2_sk=SANNQBCD26AXCHLW6VGV7HJEFOCY5CBYIUTO366BOUJDCMVK35E7SFNC
+export user0_sk=SA7UITNPPRCQIJQNQU2VLV4OO6ZCEWSYOYLLVRNRSL3MQCJFMDUR7JDD
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user1_sk SALDCDD6PXWYEZXGY47FGOILX7PAXYUF65VXXZR36Q5NKQL3GOOZK2AQ isMaker false
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user0_sk SA7UITNPPRCQIJQNQU2VLV4OO6ZCEWSYOYLLVRNRSL3MQCJFMDUR7JDD isMaker true
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user2_sk SANNQBCD26AXCHLW6VGV7HJEFOCY5CBYIUTO366BOUJDCMVK35E7SFNC isMaker false
+Test case 2 User 2 GDDW27CSRI4623B433NYCXULG5HAMDDCDNZKBWG6EZJQOJFHTRB5OV3L
+Test case 2 User 1 GDJRZRSVOLTCOPBI67PXQX5WWAG4MW4RK5LIXPDBWVZAI3YJL6F73J6T
+Test case 2 User 0 GD33RBNLCVSMILENOXHZN5COC3KKCFYOKR5MP3UHQWW3AK3Q66VAOQDM offer true
+9840de73c81e21fc04534cc98e6513601755d642cf68cc40627ea3dda32db5dc
+Offer GD33RBNLCVSMILENOXHZN5COC3KKCFYOKR5MP3UHQWW3AK3Q66VAOQDM HEXA 1 obo. Lorem ip
+Offer GD33RBNLCVSMILENOXHZN5COC3KKCFYOKR5MP3UHQWW3AK3Q66VAOQDM HEXA 1 obo. Lorem ip
+reclaim scheduled Test case 2 User 2
+reclaim scheduled Test case 2 User 1
+make 9840de73c81e21fc04534cc98e6513601755d642cf68cc40627ea3dda32db5dc 00000000c8f1e5023444d7dbe516df63332c120ac3b0a9d5c85ca20c985f3ab683295f96
+make 9840de73c81e21fc04534cc98e6513601755d642cf68cc40627ea3dda32db5dc 000000003550b6bc831064e6da77bba9312c10e7cad49450a188eb18ac54e8212390c308
+take 0 {
+  amount: '0.2552667',
+  balanceId: '00000000c8f1e5023444d7dbe516df63332c120ac3b0a9d5c85ca20c985f3ab683295f96',
+  description: 'My counter-offer, HEXA 0.2552667, is valid for 60 seconds. Cheers, Test case 2 User 2',
+  make: Offer {
+    description: 'HEXA 1 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0',
+    validity: '0',
+    fee: '0.0000100',
+    data: [
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct]
+    ],
+    memo: Memo { _type: 'text', _value: 'Offer' },
+    txHash: '9840de73c81e21fc04534cc98e6513601755d642cf68cc40627ea3dda32db5dc'
+  },
+  taker: 'GDDW27CSRI4623B433NYCXULG5HAMDDCDNZKBWG6EZJQOJFHTRB5OV3L',
+  txId: '19fd17bff36fe6beda2f4d555bb2f04856eaa957ce6758f7f046314d841b14f0'
+}
+take 1 00000000c8f1e5023444d7dbe516df63332c120ac3b0a9d5c85ca20c985f3ab683295f96 291ab3cfaf92247dde4b1a04c04f5934d88df5e79d7258f8f31d6dd2f5b67e72
 take 1 {
-  txMemo: '57513ba3dc35494de4e8a265310ae03e8e14231721fe9686fb37252d741a4b0b',
-  dataItems: ''
+  amount: '0.3979402',
+  balanceId: '000000003550b6bc831064e6da77bba9312c10e7cad49450a188eb18ac54e8212390c308',
+  description: 'My counter-offer, HEXA 0.3979402, is valid for 60 seconds. Cheers, Test case 2 User 1',
+  make: Offer {
+    description: 'HEXA 1 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0',
+    validity: '0',
+    fee: '0.0000100',
+    data: [
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct]
+    ],
+    memo: Memo { _type: 'text', _value: 'Offer' },
+    txHash: '9840de73c81e21fc04534cc98e6513601755d642cf68cc40627ea3dda32db5dc'
+  },
+  taker: 'GDJRZRSVOLTCOPBI67PXQX5WWAG4MW4RK5LIXPDBWVZAI3YJL6F73J6T',
+  txId: 'c6ab061bb70747321db065b6f736e268055e867a8938b1f809e24c8ebc8dd490'
 }
-take 2 {
-  txMemo: '57513ba3dc35494de4e8a265310ae03e8e14231721fe9686fb37252d741a4b0b',
-  dataItems: ''
-}
-^C===  STOP ./test-suite.sh on Sat Jun 11 14:21:06 EDT 2022 ===
+take 2 000000003550b6bc831064e6da77bba9312c10e7cad49450a188eb18ac54e8212390c308 3360486219a7692bb509da27b5ac08dc1172d356c30be5ee83652eeceb7f6d35
+runMaker 2
+reclaim cleared Test case 2 User 1
+claimed tx.id:  3360486219a7692bb509da27b5ac08dc1172d356c30be5ee83652eeceb7f6d35
+reclaim cleared Test case 2 User 2
+claimed tx.id:  291ab3cfaf92247dde4b1a04c04f5934d88df5e79d7258f8f31d6dd2f5b67e72
+===  STOP test/realtime.sh on Fri Jun 17 05:55:45 EDT 2022 ===
+===  STOP ./test-suite.sh on Fri Jun 17 05:55:45 EDT 2022 ===
 
-Interrupt: Press ENTER or type command to continue
+Press ENTER or type command to continue
 
-==================================================
+=======================================
 
 > cli@1.0.0 test
 > [ $npm_config_suite ] && ./test-suite.sh || ./test.sh
 
-=== START ./test-suite.sh on Sat Jun 11 15:59:26 EDT 2022 ===
-=== START test/realtime.sh on Sat Jun 11 15:59:26 EDT 2022 ===
+=== START ./test-suite.sh on Fri Jun 17 05:59:47 EDT 2022 ===
+=== START test/realtime.sh on Fri Jun 17 05:59:47 EDT 2022 ===
   /Users/alec/process/tmp/shed/cli/test/realtime-setup-check-funds.mjs: funds OK for 3 users
 
-export user1_sk=SCQHSNIT42ZJSFY3SWKPC6KTJMBR3HEW2FEIB5NJTF4UZDPGSMGMQUUC
-export user0_sk=SCVOJI637VR53ZYNPIXLQZO5CR3JFCAIHTNE7TGK2DBXOU3Z6HBCTS5S
-export user2_sk=SD5PVX74Y7QJ2NO6M7KULF5GA5DYUPG2HCHHLQDPQNQ6JLUHPACNOTCV
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user2_sk SD5PVX74Y7QJ2NO6M7KULF5GA5DYUPG2HCHHLQDPQNQ6JLUHPACNOTCV isMaker false
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user0_sk SCVOJI637VR53ZYNPIXLQZO5CR3JFCAIHTNE7TGK2DBXOU3Z6HBCTS5S isMaker true
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user1_sk SCQHSNIT42ZJSFY3SWKPC6KTJMBR3HEW2FEIB5NJTF4UZDPGSMGMQUUC isMaker false
-Test case 2 User 2 GDBWPRTVIOTDGYOJ6NWNAC4WTCUSXIBRG6UWC2MLJGEEURJB7F4ETTWI
-Test case 2 User 1 GCAYY23JOUDQUHUL4Q5U7X6THO2LDL2ZJZ4ZG6LK47SOYTOUIY6BIPVR
-Test case 2 User 0 GCJ624GUJLHZKMYIFCOWIFITUVYDHR5LXA7KMSPU3GYQ7YQO4DPUBHXS offer false
-46c21085ea2787754ed4db4c262b6c1e679932cce4919ddeed1ca60d7de6143b
-Request Test case 2 User 0 GCJ624GUJLHZKMYIFCOWIFITUVYDHR5LXA7KMSPU3GYQ7YQO4DPUBHXS
-HEXA 2 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
-Request Test case 2 User 0 GCJ624GUJLHZKMYIFCOWIFITUVYDHR5LXA7KMSPU3GYQ7YQO4DPUBHXS
-HEXA 2 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
-make 1 46c21085ea2787754ed4db4c262b6c1e679932cce4919ddeed1ca60d7de6143b c48aa5d76aa406b04373bd04b7f3004174b6847a73ab13fb87a2c2267ac25d8c
-make 1 46c21085ea2787754ed4db4c262b6c1e679932cce4919ddeed1ca60d7de6143b 988c9a7e70545c3c1646ff233523b26fb034506d4b607c0c09ae9874a6e154de
+export user0_sk=SAYXE7LBTY6QTUZOJ7FBWSKCZMOL2RPL5LGZZCS4IU2KRPZKH6ZBQR7I
+export user1_sk=SBWPL4QVYS2FALSW7PHEAGYZGM4XEHFOZELSCWLDSRWJ54OVW7VIUVGP
+export user2_sk=SAQDW45K3QWJDQE2M775LLFXHADEYBQOUMGDM75SEGMCG6OBWC4ZEKX4
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user1_sk SBWPL4QVYS2FALSW7PHEAGYZGM4XEHFOZELSCWLDSRWJ54OVW7VIUVGP isMaker false
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user0_sk SAYXE7LBTY6QTUZOJ7FBWSKCZMOL2RPL5LGZZCS4IU2KRPZKH6ZBQR7I isMaker true
+  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user2_sk SAQDW45K3QWJDQE2M775LLFXHADEYBQOUMGDM75SEGMCG6OBWC4ZEKX4 isMaker false
+Test case 2 User 2 GCSDGTVZV5HHEBREA2HMEZ6LDV5JRKNM3Q3FYABBGRE33ZKIHCD5HAKG
+Test case 2 User 1 GAUXIMY65R2QUL7TIY54YJ4KZNAYK32QDPLL3GQQG6VHWL7WL3MVGJZU
+Test case 2 User 0 GCNMHGLOPYHNZYECRKAW7IOONLDMCXUTSTFPYR3RAU22QHVZYQ4PXTMW offer false
+b4cc8e79ad074ded03df8af3cc035d3ea793bda504227b76971b4fbad35e68e1
+Request GCNMHGLOPYHNZYECRKAW7IOONLDMCXUTSTFPYR3RAU22QHVZYQ4PXTMW HEXA 5 obo. Lorem ip
+Request GCNMHGLOPYHNZYECRKAW7IOONLDMCXUTSTFPYR3RAU22QHVZYQ4PXTMW HEXA 5 obo. Lorem ip
+reclaim scheduled Test case 2 User 1
+make b4cc8e79ad074ded03df8af3cc035d3ea793bda504227b76971b4fbad35e68e1 000000000749a0afb59fbb463d71f1f8ac8a34130bbbc65ce02097d62a57e3928b0440a1
+reclaim scheduled Test case 2 User 2
+make b4cc8e79ad074ded03df8af3cc035d3ea793bda504227b76971b4fbad35e68e1 00000000992922f5c64d4228a36a7802e0db017ffb9c679a44817e3c6ead627cf4587b05
+take 0 {
+  amount: '4.1852706',
+  balanceId: '00000000992922f5c64d4228a36a7802e0db017ffb9c679a44817e3c6ead627cf4587b05',
+  description: 'My counter-offer, HEXA 4.1852706, is valid for 60 seconds. Cheers, Test case 2 User 2',
+  make: Request {
+    description: 'HEXA 5 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0',
+    validity: '0',
+    fee: '0.0000100',
+    data: [
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct]
+    ],
+    memo: Memo { _type: 'text', _value: 'Request' },
+    txHash: 'b4cc8e79ad074ded03df8af3cc035d3ea793bda504227b76971b4fbad35e68e1'
+  },
+  taker: 'GCSDGTVZV5HHEBREA2HMEZ6LDV5JRKNM3Q3FYABBGRE33ZKIHCD5HAKG',
+  txId: 'f15c8d977c0baf474d8a7d44b5f417abd739767cc5ff21484186fd1a9c0c7d29'
+}
+take 1 00000000992922f5c64d4228a36a7802e0db017ffb9c679a44817e3c6ead627cf4587b05 ece3680c825a8a44b8708645db806c65bc10ef381670cc9425d44c91dcda20e2
 take 1 {
-  txMemo: '46c21085ea2787754ed4db4c262b6c1e679932cce4919ddeed1ca60d7de6143b',
-  dataItems: 'My counter-offer is 1.4012645. Cheers, Test case 2 User 1'
+  amount: '4.9925316',
+  balanceId: '000000000749a0afb59fbb463d71f1f8ac8a34130bbbc65ce02097d62a57e3928b0440a1',
+  description: 'My counter-offer, HEXA 4.9925316, is valid for 60 seconds. Cheers, Test case 2 User 1',
+  make: Request {
+    description: 'HEXA 5 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0',
+    validity: '0',
+    fee: '0.0000100',
+    data: [
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct],
+      [ChildStruct], [ChildStruct]
+    ],
+    memo: Memo { _type: 'text', _value: 'Request' },
+    txHash: 'b4cc8e79ad074ded03df8af3cc035d3ea793bda504227b76971b4fbad35e68e1'
+  },
+  taker: 'GAUXIMY65R2QUL7TIY54YJ4KZNAYK32QDPLL3GQQG6VHWL7WL3MVGJZU',
+  txId: '320cb73a5319c68572d37ea87e36ed98d190075b41ba41a9d1f573e4ee4a5ebc'
 }
-take 2 {
-  txMemo: '46c21085ea2787754ed4db4c262b6c1e679932cce4919ddeed1ca60d7de6143b',
-  dataItems: 'My counter-offer is 1.1719016. Cheers, Test case 2 User 2'
+take 2 000000000749a0afb59fbb463d71f1f8ac8a34130bbbc65ce02097d62a57e3928b0440a1 null
+runMaker 2
+reclaim cleared Test case 2 User 2
+claimed tx.id:  ece3680c825a8a44b8708645db806c65bc10ef381670cc9425d44c91dcda20e2
+reclaiming 000000000749a0afb59fbb463d71f1f8ac8a34130bbbc65ce02097d62a57e3928b0440a1
+{
+  balanceId: '000000000749a0afb59fbb463d71f1f8ac8a34130bbbc65ce02097d62a57e3928b0440a1',
+  txId: '994c1608f100caf34494cfcac981d0249512ebd6a1b920b1e1f1d7493e2d51c7'
 }
-^C===  STOP ./test-suite.sh on Sat Jun 11 16:00:20 EDT 2022 ===
+===  STOP test/realtime.sh on Fri Jun 17 06:02:07 EDT 2022 ===
+===  STOP ./test-suite.sh on Fri Jun 17 06:02:07 EDT 2022 ===
 
-Interrupt: Press ENTER or type command to continue
-
-==================================================
-
-> cli@1.0.0 test
-> [ $npm_config_suite ] && ./test-suite.sh || ./test.sh
-
-=== START ./test-suite.sh on Sun Jun 12 08:28:42 EDT 2022 ===
-=== START test/realtime.sh on Sun Jun 12 08:28:42 EDT 2022 ===
-  /Users/alec/process/tmp/shed/cli/test/realtime-setup-check-funds.mjs: funds OK for 3 users
-
-export user1_sk=SBG3IFWH4YVITVUIJEYPWPGK7RYWT2YS33PGH6IZZQXH27HSLLY3CVTS
-export user0_sk=SDGZXDYIF5UIH4M4HJDQNXN47WXIONHJMCZFIAJHDUPD357YUM7RJRJQ
-export user2_sk=SDJH5MDA6XF4C66RHCLHQTEQSPY7ASEEHG2VAO7FGPNTEOEACMK7TPYW
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user2_sk SDJH5MDA6XF4C66RHCLHQTEQSPY7ASEEHG2VAO7FGPNTEOEACMK7TPYW isMaker false
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user1_sk SBG3IFWH4YVITVUIJEYPWPGK7RYWT2YS33PGH6IZZQXH27HSLLY3CVTS isMaker false
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: user0_sk SDGZXDYIF5UIH4M4HJDQNXN47WXIONHJMCZFIAJHDUPD357YUM7RJRJQ isMaker true
-Test case 2 User 1 GAYRFFJNX6JCAARY7W3KUXZ3EO4W5B55BYGFIW3LEQYEGH2CHCRYU5XD
-Test case 2 User 2 GCCS5LFNBYND2SXTY2KW675QL7B3BNUIEHG5FSIE2YHEBKPMBYTXHAIR
-Test case 2 User 0 GCGZLDEHILM3POOBUJBNCAXN6WLO5ITUIVXMVJLEUKU4QBGS5NVMIHZ5 offer true
-371af223d6e41dba150b4a6892ca861e65027c7981c5d86a1dabceaad35b2557
-Offer Test case 2 User 0 GCGZLDEHILM3POOBUJBNCAXN6WLO5ITUIVXMVJLEUKU4QBGS5NVMIHZ5
-HEXA 3 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
-Offer Test case 2 User 0 GCGZLDEHILM3POOBUJBNCAXN6WLO5ITUIVXMVJLEUKU4QBGS5NVMIHZ5
-HEXA 3 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
-make 1 371af223d6e41dba150b4a6892ca861e65027c7981c5d86a1dabceaad35b2557 000000001a63c532e76595dfafe2635842c2957664f74f1368dffab85f1caa36b9795647
-make 1 371af223d6e41dba150b4a6892ca861e65027c7981c5d86a1dabceaad35b2557 00000000d6b18d8eebcc63c264c3893a87d9107beb0670f7e20326b24c015e5d4db3ab92
-take 1 {
-  balanceId: '000000001a63c532e76595dfafe2635842c2957664f74f1368dffab85f1caa36b9795647',
-  txMemo: '371af223d6e41dba150b4a6892ca861e65027c7981c5d86a1dabceaad35b2557',
-  dataItems: 'My counter-offer is HEXA 2.9447339. Cheers, Test case 2 User 2'
-}
-take 2 {
-  balanceId: '00000000d6b18d8eebcc63c264c3893a87d9107beb0670f7e20326b24c015e5d4db3ab92',
-  txMemo: '371af223d6e41dba150b4a6892ca861e65027c7981c5d86a1dabceaad35b2557',
-  dataItems: 'My counter-offer is HEXA 2.0201116. Cheers, Test case 2 User 1'
-}
-reclaimed 000000001a63c532e76595dfafe2635842c2957664f74f1368dffab85f1caa36b9795647 c3c4c18b4a7cc82ffa4962a4b49aeccbb8662c0d213aca51421f27145f75be46
-reclaimed 00000000d6b18d8eebcc63c264c3893a87d9107beb0670f7e20326b24c015e5d4db3ab92 de20188d21e32f9c1150deadd5a7040a5c25e66e7bda01251c5ed2baacf132e6
-^C===  STOP ./test-suite.sh on Sun Jun 12 08:31:22 EDT 2022 ===
-
-Interrupt: Press ENTER or type command to continue
-
-==================================================
-
-> cli@1.0.0 test
-> [ $npm_config_suite ] && ./test-suite.sh || ./test.sh
-
-=== START ./test-suite.sh on Mon Jun 13 13:31:38 EDT 2022 ===
-=== START test/realtime.sh on Mon Jun 13 13:31:38 EDT 2022 ===
-  /Users/alec/process/tmp/shed/cli/test/realtime-setup-check-funds.mjs: funds OK for 3 users
-
-export user2_sk=SDOY7L4MEADIOX7X7OMTZXQLWVF25E7AUNMC7YUSCHXVZC73FY4PKKM7
-export user1_sk=SABVPSB6FWVVDUXMI7HFTEMBPCDMUC5EBNOX2ER5NBEM24PNYIRWMNL3
-export user0_sk=SCHOACDVBV4ASFRBJTXLGLKUGIPIXHUBN2MBAETMFGTEFJX7YBV4QZLK
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user0_sk SCHOACDVBV4ASFRBJTXLGLKUGIPIXHUBN2MBAETMFGTEFJX7YBV4QZLK isMaker true
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user2_sk SDOY7L4MEADIOX7X7OMTZXQLWVF25E7AUNMC7YUSCHXVZC73FY4PKKM7 isMaker false
-  /Users/alec/process/tmp/shed/cli/test/realtime-test.mjs: 3 user1_sk SABVPSB6FWVVDUXMI7HFTEMBPCDMUC5EBNOX2ER5NBEM24PNYIRWMNL3 isMaker false
-Test case 2 User 2 GCAKDNRR6WC5NDP2FKOOHNMWGQP6SDFPOGE5DJDIFEHXQH3U27BIXYCG
-Test case 2 User 0 GDWSAQ3WBAMIG7PGRSPUUVRXUAT5VPQOBQWX3K4TXBLBP2NZ36RFDPCB offer false
-Test case 2 User 1 GCNVFSEXBACJCJER2RFUYUNS5SUWMITNRSUC53AJQCGLIQJ4756CUP2U
-2be59eaeffa52f970298254bab819ee709f56c06d54db87088f0010cc8068781
-Request GDWSAQ3WBAMIG7PGRSPUUVRXUAT5VPQOBQWX3K4TXBLBP2NZ36RFDPCB
-HEXA 4 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
-Request GDWSAQ3WBAMIG7PGRSPUUVRXUAT5VPQOBQWX3K4TXBLBP2NZ36RFDPCB
-HEXA 4 obo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Cheers, Test case 2 User 0
-make 1 2be59eaeffa52f970298254bab819ee709f56c06d54db87088f0010cc8068781 00000000e7f8352c3fad686d8cbb78566dd797e33badc1069ee421055d2764aab03ee1cd
-make 1 2be59eaeffa52f970298254bab819ee709f56c06d54db87088f0010cc8068781 00000000e6c736cc5794336f223430270d1dd51c646063fa4767bc42019725a6d7dc0d18
-take 1 {
-  balanceId: '00000000e7f8352c3fad686d8cbb78566dd797e33badc1069ee421055d2764aab03ee1cd',
-  txMemo: '2be59eaeffa52f970298254bab819ee709f56c06d54db87088f0010cc8068781',
-  dataItems: 'My counter-offer is HEXA 3.6659350. Cheers, Test case 2 User 2'
-}
-take 2 {
-  balanceId: '00000000e6c736cc5794336f223430270d1dd51c646063fa4767bc42019725a6d7dc0d18',
-  txMemo: '2be59eaeffa52f970298254bab819ee709f56c06d54db87088f0010cc8068781',
-  dataItems: 'My counter-offer is HEXA 3.6063421. Cheers, Test case 2 User 1'
-}
-reclaimed {
-  amount: '3.6659450',
-  balanceId: '00000000e7f8352c3fad686d8cbb78566dd797e33badc1069ee421055d2764aab03ee1cd',
-  claimant: 'GCAKDNRR6WC5NDP2FKOOHNMWGQP6SDFPOGE5DJDIFEHXQH3U27BIXYCG',
-  dataItems: ''
-}
-reclaimed {
-  amount: '3.6063521',
-  balanceId: '00000000e6c736cc5794336f223430270d1dd51c646063fa4767bc42019725a6d7dc0d18',
-  claimant: 'GCNVFSEXBACJCJER2RFUYUNS5SUWMITNRSUC53AJQCGLIQJ4756CUP2U',
-  dataItems: ''
-}
-^C===  STOP ./test-suite.sh on Mon Jun 13 13:34:25 EDT 2022 ===
-
-Interrupt: Press ENTER or type command to continue
+Press ENTER or type command to continue
 
