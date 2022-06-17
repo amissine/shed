@@ -84,7 +84,7 @@ Populate the environment, run node task.
      | (gratitude + 100 DOGs),    |                                    |
      | pay 100 DOGs               |                                    |
      |--------------------------->|                                    |
-     |                            | notify: ask granted (fulfilled)    |
+     |                            | notify: ask claimed (fulfilled)    |
      |                            |----------------------------------->|
 ```
 Here, user Alice is the offer maker, and user Did Alik is the offer taker. Making an offer costs 100 Drops Of Gratitude (DOGs), payable to SHEX agent (the maker's fee). 1 HEXA is 10000000 DOGs.
@@ -115,7 +115,7 @@ When a taker has already reclaimed her ask, the maker will not be able to claim 
     |---------------------------------------------------------------------->|
     | pay 100 DOGs                 |                                        |
     |----------------------------->|                                        |
-    |                              | notify: bid granted (accepted)         |
+    |                              | notify: bid claimed (accepted)         |
     |                              |--------------------------------------->|
 ```
 Here, user Did Alik is the request maker, and user Alex is the request taker. Making a request costs 100 DOGs, payable to the agent (the maker's fee).
