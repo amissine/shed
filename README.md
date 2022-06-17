@@ -34,5 +34,4 @@ This site uses Google Maps API. Its [Google Maps API Key](https://developers.goo
 
 - [Offer/Ask Protocol Sample Sequence Diagram](./NOTES.md#offerask-protocol-sample-sequence-diagram)
 - [Request/Bid Protocol Sample Sequence Diagram](./NOTES.md#requestbid-protocol-sample-sequence-diagram)
-
-❓xa
+- [Proof of concept demo](./NOTES.md#proof-of-concept-demo)
