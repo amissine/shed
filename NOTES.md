@@ -128,7 +128,7 @@ When a taker has already reclaimed her bid, the maker will not be able to claim 
 
 ## Proof Of Concept Demo
 
-To show how these sequence diagrams work in real time, I recorded a quick [YouTube demo](https://youtu.be/BiZXWoC9Q74) for the use case with one maker and two takers. The maker broadcasts the make, and each taker wants to take on it. The maker receives the takes and claims both of them. When a taker gets notified of this event, the taker clears the scheduled reclaim.
+To show how these sequence diagrams work in real time, I recorded a quick [YouTube demo](https://youtu.be/BiZXWoC9Q74) for the use case with one maker and two takers. The maker broadcasts the make, and each taker wants to take it. The maker receives the takes and claims both of them. When a taker gets notified of this event, the taker clears the scheduled reclaim.
 
 The log data (see the link below) has this use case, and another one. In the second use case, the maker claims only one take and another take gets reclaimed.
 
