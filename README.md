@@ -12,7 +12,7 @@ Selling your business and found no buyers so far? Use Stellar Help Exchange - ma
 
 The project's goal is to establish a set of Distributed Autonomous Organizations, whose members (**user**s) exchange help offers/requests with each other. This set of DAOs is [Stellar](https://stellar.org/)-based, so we call it Stellar Help Exchange (SHEX). To become a user, go to SHEX TESTNET website [https://shed.didalik.workers.dev](https://shed.didalik.workers.dev) and follow the prompts. This results in a request for the SHEX **agent** to:
 
-- create a Stellar account for the user;
+- create a Stellar account for the user (unless it already exists);
 - create a trustline from this account to the SHEX **HEXA issuer**;
 - fund the user account with the initial amount of the SHEX asset **HEXA**.
 
