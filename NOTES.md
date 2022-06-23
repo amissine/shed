@@ -28,11 +28,9 @@ Run
 npm i && npm run i --sk=<CREATOR_SK> [ --run=<stellar_network> ]
 ```
 
-and add env values when prompted. 
+and add env values when prompted. Then take care of *wrangler secret* values.
 
-The default value for *\<stellar_network\>* above is *testnet*. Alternatively, use *public*.
-
-If on *testnet*, run `npm test`.
+The default value for *\<stellar_network\>* above is *test*. Alternatively, use *public* or *custom*.
 
 ## Scripts in `package.json`
 

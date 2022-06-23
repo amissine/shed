@@ -9,10 +9,18 @@ function setenv () { // {{{1
   }
   window.process = {
     env: {
-      AGENT: '${AGENT}',
-      HEXA_ISSUER: '${HEXA_ISSUER}',
-      HORIZON_URL: '${HORIZON_URL}',
-      STELLAR_NETWORK: '${STELLAR_NETWORK}',
+      AGENT_custom: '${AGENT_custom}',
+      AGENT_public: '${AGENT_public}',
+      AGENT_test: '${AGENT_test}',
+      HEXA_ISSUER_custom: '${HEXA_ISSUER_custom}',
+      HEXA_ISSUER_public: '${HEXA_ISSUER_public}',
+      HEXA_ISSUER_test: '${HEXA_ISSUER_test}',
+      HORIZON_URL_custom: '${HORIZON_URL_custom}',
+      HORIZON_URL_public: '${HORIZON_URL_public}',
+      HORIZON_URL_test: '${HORIZON_URL_test}',
+      STELLAR_NETWORK_custom: '${STELLAR_NETWORK_custom}',
+      STELLAR_NETWORK_public: '${STELLAR_NETWORK_public}',
+      STELLAR_NETWORK_test: '${STELLAR_NETWORK_test}',
     },
     session: {},
     view: {
