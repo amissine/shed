@@ -9,10 +9,18 @@ function setenv () { // {{{1
   }
   window.process = {
     env: {
-      AGENT: 'GBLF77YELSQU672HS3PSGNDAH45JHUBRFPHTCVOKH2KZRPSWZWERG7MX',
-      HEXA_ISSUER: 'GBL4R4CV66IKQ7SVF744RAMTCQAEWFEHWTO4B4SAYSHXBLNGWC2663KZ',
-      HORIZON_URL: 'https://horizon-testnet.stellar.org',
-      STELLAR_NETWORK: 'TESTNET',
+      AGENT_custom: '',
+      AGENT_public: '',
+      AGENT_test: '',
+      HEXA_ISSUER_custom: '',
+      HEXA_ISSUER_public: '',
+      HEXA_ISSUER_test: 'GCCQIGLTFK3OHKG65S2PQ67WZWN2Y6DTEJCTLZRA5NDSHQSJNB3ADE3S',
+      HORIZON_URL_custom: '',
+      HORIZON_URL_public: '',
+      HORIZON_URL_test: 'https://horizon-testnet.stellar.org',
+      STELLAR_NETWORK_custom: '',
+      STELLAR_NETWORK_public: '',
+      STELLAR_NETWORK_test: 'TESTNET',
     },
     session: {},
     view: {
