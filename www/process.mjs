@@ -11,10 +11,10 @@ function setenv () { // {{{1
     env: {
       AGENT_custom: '',
       AGENT_public: '',
-      AGENT_test: '',
+      AGENT_test: 'GBKIS3VW2E36LBHA7JE7WR532ACMHRPIDNCS3TFWZT7SNI6HKPHEOFYJ',
       HEXA_ISSUER_custom: '',
       HEXA_ISSUER_public: '',
-      HEXA_ISSUER_test: 'GCCQIGLTFK3OHKG65S2PQ67WZWN2Y6DTEJCTLZRA5NDSHQSJNB3ADE3S',
+      HEXA_ISSUER_test: 'GAY2ZYT2FWI6E7QSL36CQIT4RIJHLYG7FRZR3TIAZOYEMRPGUBKXQZNN',
       HORIZON_URL_custom: '',
       HORIZON_URL_public: '',
       HORIZON_URL_test: 'https://horizon-testnet.stellar.org',
