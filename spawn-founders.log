@@ -1,0 +1,76 @@
+=== START ./spawn-founders.sh on Mon Jul  4 12:27:51 EDT 2022 ===
+- Did Sashko OnLoadPresenter.#onMake: {
+  bad: [Function (anonymous)],
+  make: Offer {
+    description: 'Stellar Help Exchange Acceptance Initiative (SHEXAI) is a Distributed Autonomous Organisation (DAO) that develops and supports SHEX-based websites and apps. We uphold and coordinate Help Exchange activities of all kinds.',
+    validity: '0',
+    fee: '0.0000100',
+    data: [
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct]
+    ],
+    memo: Memo { _type: 'text', _value: 'Offer' }
+  },
+  ontake: 9
+}
+- Did Sashko OnLoadPresenter.#onMake: {
+  bad: [Function (anonymous)],
+  make: Request {
+    description: 'The focus of our current project is reducing corruption associated with help distribution. Use cases welcome.',
+    validity: '0',
+    fee: '0.0000100',
+    data: [ [ChildStruct], [ChildStruct], [ChildStruct], [ChildStruct] ],
+    memo: Memo { _type: 'text', _value: 'Request' }
+  },
+  ontake: 12
+}
+- Did Sashko exiting...
+- Did Alik OnLoadPresenter.#onMake: {
+  bad: [Function (anonymous)],
+  make: Offer {
+    description: 'The Stellar Help Exchange API will be made open source when completed. Presently, SHEX API is being offered for pilot projects at a nominal price of HEXA 1.',
+    validity: '0',
+    fee: '0.0000100',
+    data: [
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct]
+    ],
+    memo: Memo { _type: 'text', _value: 'Offer' }
+  },
+  ontake: 3
+}
+- Did Alik OnLoadPresenter.#onMake: {
+  bad: [Function (anonymous)],
+  make: Request {
+    description: "Suffering is real - and so is anything that reduces it. Let's make Stellar Help Exchange (SHEX) real! Business partners, codebase contributors and maintainers welcome. Paying a nominal price of HEXA 1.",
+    validity: '0',
+    fee: '0.0000100',
+    data: [
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct],
+      [ChildStruct]
+    ],
+    memo: Memo { _type: 'text', _value: 'Request' }
+  },
+  ontake: 6
+}
+- Did Alik exiting...
+===  STOP ./spawn-founders.sh on Mon Jul  4 12:27:52 EDT 2022 ===
+
+Press ENTER or type command to continue
+
