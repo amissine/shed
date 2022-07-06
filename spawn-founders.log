@@ -74,3 +74,15 @@
 
 Press ENTER or type command to continue
 
+=== START ./spawn-founders.sh on Wed Jul  6 09:12:55 EDT 2022 ===
+- Did Sashko session initialized
+- Did Alik session initialized
+- Did Alik GBAJOV42OGRUUVEADTBHTSCWB2URUR3CHFLD4BXVK46DXKZKOYCM6ZLY OnLoadPresenter.#onMvpInit...onmake: Offer a52620b64a6983033f2d422a5601fa0f0855d2a199554789b4f262c898caa289 2022-07-06T13:13:01Z
+- Did Sashko GBH7OTXMB4O3A3QO5EY6KL4EN2GNPTUF3IU45DE7F6X2W3AK5ES4TYGQ OnLoadPresenter.#onMvpInit...onmake: Offer 9f65922d7e761b55101ef43f9d8535a8a5457c3e75ed9d08aae0000376913a67 2022-07-06T13:13:01Z
+- Did Sashko GBH7OTXMB4O3A3QO5EY6KL4EN2GNPTUF3IU45DE7F6X2W3AK5ES4TYGQ OnLoadPresenter.#onMvpInit...onmake: Request 572d88b65e456c2f9a77a8bf61adb6b21257129956b4d46ce399b1b74da71d1e 2022-07-06T13:13:06Z
+- Did Sashko received 2 makes
+- /Users/alec/process/tmp/shed/cli/spawn-founders.mjs Did Sashko exiting
+- Did Alik GBAJOV42OGRUUVEADTBHTSCWB2URUR3CHFLD4BXVK46DXKZKOYCM6ZLY OnLoadPresenter.#onMvpInit...onmake: Request 6df4596ba2827f80b2555a924ea909a3a071520adc82a5fb863b42a38d1cd00f 2022-07-06T13:13:06Z
+- Did Alik received 2 makes
+- /Users/alec/process/tmp/shed/cli/spawn-founders.mjs Did Alik exiting
+===  STOP ./spawn-founders.sh on Wed Jul  6 09:13:07 EDT 2022 ===
