@@ -22,7 +22,7 @@
 - Did Sashko OnLoadPresenter.#onMake: {
   bad: [Function (anonymous)],
   make: Request {
-    description: 'The focus of our current project is reducing corruption associated with help distribution. Use cases welcome.',
+    description: 'The focus of our current project is reducing corruption associated with global help distribution. Use cases welcome.',
     validity: '0',
     fee: '0.0000100',
     data: [ [ChildStruct], [ChildStruct], [ChildStruct], [ChildStruct] ],
