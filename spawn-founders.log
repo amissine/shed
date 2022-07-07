@@ -1,88 +1,36 @@
-=== START ./spawn-founders.sh on Mon Jul  4 12:27:51 EDT 2022 ===
-- Did Sashko OnLoadPresenter.#onMake: {
-  bad: [Function (anonymous)],
-  make: Offer {
-    description: 'Stellar Help Exchange Acceptance Initiative (SHEXAI) is a Distributed Autonomous Organisation (DAO) that develops and supports SHEX-based websites and apps. We uphold and coordinate Help Exchange activities of all kinds.',
-    validity: '0',
-    fee: '0.0000100',
-    data: [
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct]
-    ],
-    memo: Memo { _type: 'text', _value: 'Offer' }
-  },
-  ontake: 9
-}
-- Did Sashko OnLoadPresenter.#onMake: {
-  bad: [Function (anonymous)],
-  make: Request {
-    description: 'The focus of our current project is reducing corruption associated with global help distribution. Use cases welcome.',
-    validity: '0',
-    fee: '0.0000100',
-    data: [ [ChildStruct], [ChildStruct], [ChildStruct], [ChildStruct] ],
-    memo: Memo { _type: 'text', _value: 'Request' }
-  },
-  ontake: 12
-}
-- Did Sashko exiting...
-- Did Alik OnLoadPresenter.#onMake: {
-  bad: [Function (anonymous)],
-  make: Offer {
-    description: 'The Stellar Help Exchange API will be made open source when completed. Presently, SHEX API is being offered for pilot projects at a nominal price of HEXA 1.',
-    validity: '0',
-    fee: '0.0000100',
-    data: [
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct]
-    ],
-    memo: Memo { _type: 'text', _value: 'Offer' }
-  },
-  ontake: 3
-}
-- Did Alik OnLoadPresenter.#onMake: {
-  bad: [Function (anonymous)],
-  make: Request {
-    description: "Suffering is real - and so is anything that reduces it. Let's make Stellar Help Exchange (SHEX) real! Business partners, codebase contributors and maintainers welcome. Paying a nominal price of HEXA 1.",
-    validity: '0',
-    fee: '0.0000100',
-    data: [
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct],
-      [ChildStruct]
-    ],
-    memo: Memo { _type: 'text', _value: 'Request' }
-  },
-  ontake: 6
-}
-- Did Alik exiting...
-===  STOP ./spawn-founders.sh on Mon Jul  4 12:27:52 EDT 2022 ===
-
-Press ENTER or type command to continue
-
-=== START ./spawn-founders.sh on Wed Jul  6 09:12:55 EDT 2022 ===
+=== START ./spawn-founders.sh on Thu Jul  7 07:36:27 EDT 2022 ===
 - Did Sashko session initialized
 - Did Alik session initialized
-- Did Alik GBAJOV42OGRUUVEADTBHTSCWB2URUR3CHFLD4BXVK46DXKZKOYCM6ZLY OnLoadPresenter.#onMvpInit...onmake: Offer a52620b64a6983033f2d422a5601fa0f0855d2a199554789b4f262c898caa289 2022-07-06T13:13:01Z
-- Did Sashko GBH7OTXMB4O3A3QO5EY6KL4EN2GNPTUF3IU45DE7F6X2W3AK5ES4TYGQ OnLoadPresenter.#onMvpInit...onmake: Offer 9f65922d7e761b55101ef43f9d8535a8a5457c3e75ed9d08aae0000376913a67 2022-07-06T13:13:01Z
-- Did Sashko GBH7OTXMB4O3A3QO5EY6KL4EN2GNPTUF3IU45DE7F6X2W3AK5ES4TYGQ OnLoadPresenter.#onMvpInit...onmake: Request 572d88b65e456c2f9a77a8bf61adb6b21257129956b4d46ce399b1b74da71d1e 2022-07-06T13:13:06Z
-- Did Sashko received 2 makes
-- /Users/alec/process/tmp/shed/cli/spawn-founders.mjs Did Sashko exiting
-- Did Alik GBAJOV42OGRUUVEADTBHTSCWB2URUR3CHFLD4BXVK46DXKZKOYCM6ZLY OnLoadPresenter.#onMvpInit...onmake: Request 6df4596ba2827f80b2555a924ea909a3a071520adc82a5fb863b42a38d1cd00f 2022-07-06T13:13:06Z
+- Did Alik GBAJOV42OGRUUVEADTBHTSCWB2URUR3CHFLD4BXVK46DXKZKOYCM6ZLY logMake: {
+  kind: 'Offer',
+  source_account: 'GBH7OTXMB4O3A3QO5EY6KL4EN2GNPTUF3IU45DE7F6X2W3AK5ES4TYGQ',
+  created_at: '2022-07-07T11:36:32Z',
+  description: 'Stellar Help Exchange Acceptance Initiative (SHEXAI) is a Distributed Autonomous Organisation (DAO) that develops and supports SHEX-based websites and apps. We uphold and coordinate Help Exchange activities of all kinds.',
+  txId: 'c3f8bcaa217fe9833de6a7eef0155acaf792c92fa541656d0843d2852d9c2b22'
+}
+- Did Sashko GBH7OTXMB4O3A3QO5EY6KL4EN2GNPTUF3IU45DE7F6X2W3AK5ES4TYGQ logMake: {
+  kind: 'Offer',
+  source_account: 'GBAJOV42OGRUUVEADTBHTSCWB2URUR3CHFLD4BXVK46DXKZKOYCM6ZLY',
+  created_at: '2022-07-07T11:36:32Z',
+  description: 'The Stellar Help Exchange API shall be made open source when completed. Presently, SHEX API is being offered for pilot projects at a nominal price of HEXA 1.',
+  txId: 'b82ee07442975bd2317869e152da88969186f1eb237d1b5dd9c0d97b256a66d0'
+}
+- Did Alik GBAJOV42OGRUUVEADTBHTSCWB2URUR3CHFLD4BXVK46DXKZKOYCM6ZLY logMake: {
+  kind: 'Request',
+  source_account: 'GBH7OTXMB4O3A3QO5EY6KL4EN2GNPTUF3IU45DE7F6X2W3AK5ES4TYGQ',
+  created_at: '2022-07-07T11:36:37Z',
+  description: 'The focus of our current project is reducing corruption associated with global help distribution. Use cases welcome.',
+  txId: '89313e57c8671b2f206bf6e3eb009ab914a6ba1296682afd4cec875892d58fe6'
+}
 - Did Alik received 2 makes
 - /Users/alec/process/tmp/shed/cli/spawn-founders.mjs Did Alik exiting
-===  STOP ./spawn-founders.sh on Wed Jul  6 09:13:07 EDT 2022 ===
+- Did Sashko GBH7OTXMB4O3A3QO5EY6KL4EN2GNPTUF3IU45DE7F6X2W3AK5ES4TYGQ logMake: {
+  kind: 'Request',
+  source_account: 'GBAJOV42OGRUUVEADTBHTSCWB2URUR3CHFLD4BXVK46DXKZKOYCM6ZLY',
+  created_at: '2022-07-07T11:36:37Z',
+  description: "Suffering is real - and so is anything that reduces it. Let's make Stellar Help Exchange (SHEX) real! Business partners, codebase contributors and maintainers welcome. Paying a nominal price of HEXA 1.",
+  txId: '66062ae34aaa6cd74de5b2c2cd44e0ac87ddf4896d90e2a4d98434bbae500ded'
+}
+- Did Sashko received 2 makes
+- /Users/alec/process/tmp/shed/cli/spawn-founders.mjs Did Sashko exiting
+===  STOP ./spawn-founders.sh on Thu Jul  7 07:36:39 EDT 2022 ===
