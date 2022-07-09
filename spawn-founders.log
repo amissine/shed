@@ -131,3 +131,160 @@ Did Alik
 
 Press ENTER or type command to continue
 
+=== START ./spawn-founders.sh on Sat Jul  9 14:50:32 EDT 2022 ===
+- Did Sashko session initialized
+- Did Alik session initialized
+Did Sashko : reclaim scheduled
+Did Alik : reclaim scheduled
+- Did Sashko GCP27XHJM5ICSFWG6XTO27NT33BSIDLVPUQQFFU4TMOFBPMUG4J5DLXB logTake: {
+  make: {
+    memo: 'Offer',
+    description: 'The Stellar Help Exchange API shall be made open source when completed. Presently, SHEX API is being offered for pilot projects at a nominal price of HEXA 1.',
+    id: 'f15a797a88f944453b0bfcff879018784be5a4fc9e486060879aea3abe91ea2e',
+    source_account: 'GDQS3VUNN676YUWPSBETK7PI4SJLTOS2U35VF5233QC5DGQWUOYN7HXF',
+    created_at: '2022-07-09T18:50:39Z'
+  },
+  take: {
+    description: 'Asking to use SHEX API in the SHEXAI pilot project.',
+    amount: '1',
+    balanceId: '000000003bb206edbc4c5a44fbdc23a01f3db136834ee6fa2770c4600afe9f3e11c2f4f3'
+  }
+}
+- Did Alik GDQS3VUNN676YUWPSBETK7PI4SJLTOS2U35VF5233QC5DGQWUOYN7HXF logTake: {
+  make: {
+    memo: 'Offer',
+    description: 'Stellar Help Exchange Acceptance Initiative (SHEXAI) is a Distributed Autonomous Organisation (DAO) that develops and supports SHEX-based websites and apps. We uphold and coordinate Help Exchange activities of all kinds. Join us now!',
+    id: '678ed9ccfc08ab23f9fb37b91e2b12fd44cebb66110606585d1780a9795465a1',
+    source_account: 'GCP27XHJM5ICSFWG6XTO27NT33BSIDLVPUQQFFU4TMOFBPMUG4J5DLXB',
+    created_at: '2022-07-09T18:50:39Z'
+  },
+  take: {
+    description: 'Asking to join.',
+    amount: null,
+    balanceId: '000000001fe9275d531545ac47f7d19c15b7b8c5be779690cca36568a1df879404494dfb'
+  }
+}
+- Did Alik received 2 makes
+- Did Sashko received 2 makes
+Did Sashko : reclaim scheduled
+- Did Sashko GCP27XHJM5ICSFWG6XTO27NT33BSIDLVPUQQFFU4TMOFBPMUG4J5DLXB logTake: {
+  make: {
+    memo: 'Request',
+    description: "Suffering is real - and so is anything that reduces it. Let's make Stellar Help Exchange (SHEX) real! Business partners, codebase contributors and maintainers welcome. Paying a nominal price of HEXA 1.",
+    id: '83884df24c8ac1b17a133066cab35743bdff1af4180ccc8a6393c3d0152ac7f3',
+    source_account: 'GDQS3VUNN676YUWPSBETK7PI4SJLTOS2U35VF5233QC5DGQWUOYN7HXF',
+    created_at: '2022-07-09T18:50:44Z'
+  },
+  take: {
+    description: 'Bidding on business partnership. Please also see our offer and request.',
+    amount: '1',
+    balanceId: '00000000164b02acecf3ae0eae15b42216f1dad2bd9f116473199e956709dd05c05190db'
+  }
+}
+Did Alik : reclaim scheduled
+- Did Alik GDQS3VUNN676YUWPSBETK7PI4SJLTOS2U35VF5233QC5DGQWUOYN7HXF logTake: {
+  make: {
+    memo: 'Request',
+    description: 'The focus of our current project is reducing corruption associated with global help distribution. Use cases welcome.',
+    id: '075854109c4fe3409dae3d79881af7f3f62602b29be33740f5a0986189d4d4d6',
+    source_account: 'GCP27XHJM5ICSFWG6XTO27NT33BSIDLVPUQQFFU4TMOFBPMUG4J5DLXB',
+    created_at: '2022-07-09T18:50:44Z'
+  },
+  take: {
+    description: 'Bidding on cooperative development and automated integration modeling of SHEXAI use cases.',
+    amount: null,
+    balanceId: '00000000870afc127cda43dc8e165253ba56fb5f7ae3a7c1bf3a069725bda1ed832a9414'
+  }
+}
+- Did Alik ontake: {
+  take: {
+    amount: '1',
+    balanceId: '000000003bb206edbc4c5a44fbdc23a01f3db136834ee6fa2770c4600afe9f3e11c2f4f3',
+    description: 'Asking to use SHEX API in the SHEXAI pilot project.',
+    make: Offer {
+      description: 'The Stellar Help Exchange API shall be made open source when completed. Presently, SHEX API is being offered for pilot projects at a nominal price of HEXA 1.',
+      validity: '0',
+      fee: '0.0000100',
+      data: [Array],
+      memo: [Memo],
+      txId: 'f15a797a88f944453b0bfcff879018784be5a4fc9e486060879aea3abe91ea2e'
+    },
+    taker: 'GCP27XHJM5ICSFWG6XTO27NT33BSIDLVPUQQFFU4TMOFBPMUG4J5DLXB',
+    txId: '1eba099cdcd69244569cf53e936ed18965876dc27feb7c071ba21d73edf1cde2'
+  },
+  claim: {
+    txId: 'be94a410ce732d0c5baf560529cd41e830b94eecffbeaca3198de4358399c31f'
+  }
+}
+- Did Sashko ontake: {
+  take: {
+    amount: null,
+    balanceId: '000000001fe9275d531545ac47f7d19c15b7b8c5be779690cca36568a1df879404494dfb',
+    description: 'Asking to join.',
+    make: Offer {
+      description: 'Stellar Help Exchange Acceptance Initiative (SHEXAI) is a Distributed Autonomous Organisation (DAO) that develops and supports SHEX-based websites and apps. We uphold and coordinate Help Exchange activities of all kinds. Join us now!',
+      validity: '0',
+      fee: '0.0000100',
+      data: [Array],
+      memo: [Memo],
+      txId: '678ed9ccfc08ab23f9fb37b91e2b12fd44cebb66110606585d1780a9795465a1'
+    },
+    taker: 'GDQS3VUNN676YUWPSBETK7PI4SJLTOS2U35VF5233QC5DGQWUOYN7HXF',
+    txId: '900989339b61f7aa8eca030b321d03dc85f302a2581166c433da503bcaf1fb3e'
+  },
+  claim: {
+    txId: 'd6515de70f9f7bdd6557e37cdd09837d498427931ba8a34a4584b5333cc60912'
+  }
+}
+- Did Alik ontake: {
+  take: {
+    amount: '1',
+    balanceId: '00000000164b02acecf3ae0eae15b42216f1dad2bd9f116473199e956709dd05c05190db',
+    description: 'Bidding on business partnership. Please also see our offer and request.',
+    make: Request {
+      description: "Suffering is real - and so is anything that reduces it. Let's make Stellar Help Exchange (SHEX) real! Business partners, codebase contributors and maintainers welcome. Paying a nominal price of HEXA 1.",
+      validity: '0',
+      fee: '0.0000100',
+      data: [Array],
+      memo: [Memo],
+      txId: '83884df24c8ac1b17a133066cab35743bdff1af4180ccc8a6393c3d0152ac7f3'
+    },
+    taker: 'GCP27XHJM5ICSFWG6XTO27NT33BSIDLVPUQQFFU4TMOFBPMUG4J5DLXB',
+    txId: 'e1a7fcd30fee6bd67e30d93288dfb2e87acad920658e325191160e96c988e7a1'
+  },
+  claim: {
+    txId: 'c31de57555b73d09805af13db6cad420a00de14ae5202a828d011085e5f966f9'
+  }
+}
+Did Sashko : reclaim cleared, claim.id be94a410ce732d0c5baf560529cd41e830b94eecffbeaca3198de4358399c31f
+- Did Sashko ontake: {
+  take: {
+    amount: null,
+    balanceId: '00000000870afc127cda43dc8e165253ba56fb5f7ae3a7c1bf3a069725bda1ed832a9414',
+    description: 'Bidding on cooperative development and automated integration modeling of SHEXAI use cases.',
+    make: Request {
+      description: 'The focus of our current project is reducing corruption associated with global help distribution. Use cases welcome.',
+      validity: '0',
+      fee: '0.0000100',
+      data: [Array],
+      memo: [Memo],
+      txId: '075854109c4fe3409dae3d79881af7f3f62602b29be33740f5a0986189d4d4d6'
+    },
+    taker: 'GDQS3VUNN676YUWPSBETK7PI4SJLTOS2U35VF5233QC5DGQWUOYN7HXF',
+    txId: '48a10eb390c11045ed91299a4216da0c13b3c20f83afbfe66a81a3271ae86a42'
+  },
+  claim: {
+    txId: '2e992a61d167e2a024f810a58f8dff3d4a8e506c0ab9a40a8e1b69930fb4513a'
+  }
+}
+Did Alik : reclaim cleared, claim.id d6515de70f9f7bdd6557e37cdd09837d498427931ba8a34a4584b5333cc60912
+Did Alik : reclaim cleared, claim.id 2e992a61d167e2a024f810a58f8dff3d4a8e506c0ab9a40a8e1b69930fb4513a
+Did Alik done
+- /Users/alec/process/tmp/shed/cli/spawn-founders.mjs Did Alik exiting
+Did Sashko : reclaim cleared, claim.id c31de57555b73d09805af13db6cad420a00de14ae5202a828d011085e5f966f9
+Did Sashko done
+- /Users/alec/process/tmp/shed/cli/spawn-founders.mjs Did Sashko exiting
+===  STOP ./spawn-founders.sh on Sat Jul  9 14:51:07 EDT 2022 ===
+
+Press ENTER or type command to continue
+
