@@ -1,0 +1,260 @@
+/* Always set the map height explicitly to define the size of the div {{{1
+ * element that contains the map. */
+#map {
+  height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. {{{1 */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* The popup bubble styling. {{{1 */
+.popup-bubble {
+  /* Position the bubble centred-above its parent. */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -100%);
+  /* Style the bubble. */
+  background-color: white;
+  width: 230px;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  /* font-size: 14px; TODO make it work */
+  overflow-y: auto;
+  max-height: 150px;
+  cursor: pointer;
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* The parent of the bubble. A zero-height div at the top of the tip. {{{1 */
+.popup-bubble-anchor {
+  /* Position the div a fixed distance above the tip. */
+  position: absolute;
+  width: 100%;
+  bottom: 8px;
+  left: 0;
+}
+
+/* This element draws the tip. {{{1 */
+.popup-bubble-anchor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Center the tip horizontally. */
+  transform: translate(-50%, 0);
+  /* The tip is a https://css-tricks.com/snippets/css/css-triangle/ */
+  width: 0;
+  height: 0;
+  /* The tip is 8px high, and 12px wide. */
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid white;
+}
+
+/* JavaScript will position this div at the bottom of the popup tip. {{{1 */
+.popup-container {
+  cursor: auto;
+  height: 0;
+  position: absolute;
+  /* The max width of the info window. */
+  width: 200px;
+}
+
+.popup-container:hover {
+  background: #ebebeb;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* The Modal (background) {{{1 */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+}
+
+/* Modal Content {{{1 */
+.modal-content {
+  background-color: #fefefe;
+  display: none; /* Hidden by default */
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+  font: 400 18px Roboto, Arial, sans-serif;
+}
+
+/* The Close Button {{{1 */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The IPv4 / IPv6 info {{{1 */
+#ip-info, #ip-info-wait, #ip-info-add {
+  text-align: center;
+  font-family: Pacifico, sans-serif;
+  font-size: 4em;
+  color: #3eb5f1;
+  margin: 0;
+}
+
+/* Custom Map Control Button {{{1 */
+.custom-map-control-button {
+  background-color: #fff;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  padding: 0 0.5em;
+  font: 400 18px Roboto, Arial, sans-serif;
+  overflow: hidden;
+  height: 40px;
+  cursor: pointer;
+}
+.custom-map-control-button:hover {
+  background: rgb(235, 235, 235);
+}
+
+/* claimable, claimed: make/take {{{1 */
+p.ask-claimable {
+  color: red;
+  text-decoration-line: underline;
+  text-decoration-color: red;
+  text-decoration-style: wavy;
+}
+
+p.ask-claimable:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+p.ask-claimed {
+  color: red;
+}
+
+p.ask-reclaimed {
+  color: red;
+  text-decoration-line: line-through;
+  text-decoration-color: red;
+  text-decoration-style: solid;
+}
+
+p.bid-claimable {
+  color: green;
+  text-decoration-line: underline;
+  text-decoration-color: green;
+  text-decoration-style: wavy;
+}
+
+p.bid-claimable:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+p.bid-claimed {
+  color: green;
+}
+
+p.bid-reclaimed {
+  color: green;
+  text-decoration-line: line-through;
+  text-decoration-color: green;
+  text-decoration-style: solid;
+}
+
+p.offer-claimable {
+  color: green;
+  text-decoration-line: underline;
+  text-decoration-color: green;
+  text-decoration-style: wavy;
+}
+
+p.offer-claimable:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+p.offer-claimed {
+  color: green;
+}
+
+p.offer-claimed:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+p.request-claimable {
+  color: red;
+  text-decoration-line: underline;
+  text-decoration-color: red;
+  text-decoration-style: wavy;
+}
+
+p.request-claimable:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+p.request-claimed {
+  color: red;
+}
+
+p.request-claimed:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+/* }}}1 */

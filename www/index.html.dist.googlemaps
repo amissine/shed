@@ -1,0 +1,397 @@
+<!--
+  NEVER edit index.html - ALWAYS edit index.html.dist
+-->
+<!DOCTYPE html>
+<html lang='en'>
+  <head> <!-- {{{1 -->
+    <meta charset="utf-8"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    FOR MAKERS: <i class="fas fa-user-clock"></i>
+    FOR TAKERS: <i class="fas fa-user-cog"></i>
+    colors: requestor, asker - red, offerer, bidder - green
+    -->
+    <script src='kit.fontawesome.com-a076d05399.js'></script>
+    <title>Stellar Help Exchange</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body onload='initApp()' onunload='releaseApp()'> <!-- {{{1 -->
+    <div id="map"></div>
+    <!-- The common parent Modal {{{2 -->
+    <div id="commonParentModal" class="modal">
+
+      <!-- accountIPaInProgress {{{3 -->
+      <div id='accountIPaInProgress' class="modal-content">
+        <span id='accountIPaInProgressX' class="close">&times;</span>
+        <p> <!-- {{{4 -->
+Hello, XXX! Your current IP address is as follows:</p>
+<p id='ip-info-wait'>XXX</p>
+
+<p>The process of associating your account with this IP address is manual and hasn't 
+yet been completed. It usually takes a day to get it done.
+</p>
+
+<p>To get notified by email when this process completes, please make sure your email
+below is valid and active:
+</p>
+<div id='updateFields1'>
+  <b>Greeting</b>
+  <input type="text" placeholder="XXX">
+  <b>Email</b>
+  <input type="text" placeholder="XXX">
+</div>
+<button id='updateButton' type="button" onclick='update(false)'>Update</button>
+
+<p>Thanks!
+        </p>
+        <!-- }}}4 -->
+      </div>
+
+      <!-- associateThisAddressToo {{{3 -->
+      <div id='associateThisAddressToo' class="modal-content">
+        <span id='associateThisAddressTooX' class="close">&times;</span>
+        <p> <!-- {{{4 -->
+Hello, XXX! Your current IP address is as follows:</p>
+<p id='ip-info-add'>XXX</p>
+
+<p>The process of associating your account with another IP address(es) is still in 
+progress. This process is manual and it usually takes a day to get it done.
+</p>
+
+<p>If you wish to add your current IP address to the list of addresses, associated
+with your account, click the "Update/Add" button below. Otherwise, uncheck this 
+checkbox:
+</p>
+<input type="checkbox" id="atat" name="atat" checked 
+  value="associateThisAddressToo">
+<label for="atat"> Add current IP address </label><br>
+
+<p>To get notified by email when this process completes, please make sure your email
+below is valid and active:
+</p>
+<div id='updateFields2'>
+  <b>Greeting</b>
+  <input type="text" placeholder="XXX">
+  <b>Email</b>
+  <input type="text" placeholder="XXX">
+</div>
+<button id='updateAddButton' type="button" onclick='update(true)'>Update/Add</button>
+
+<p>Thanks!
+        </p>
+        <!-- }}}4 -->
+      </div>
+
+      <!-- inviteOrSK {{{3 -->
+      <div id='inviteOrSK' class="modal-content">
+        <span id='inviteOrSKX' class="close">&times;</span>
+        <form> 
+          <p> <!-- {{{4 -->
+          Welcome to Stellar Help Exchange!</p>
+          <p>
+          What would you like to do? (See our <a href='https://github.com/amissine/shed#frequently-asked-questions'>FAQ</a>
+          for more info on your choices.)</p>
+          <div>
+          <input type='radio' name='welcome-choice' onclick='requestInvite()'>
+                 Request a special invite
+          </div>
+          <div>
+          <input type='radio' name='welcome-choice' onclick='acceptInvite()'>
+                 Accept the invite
+          </div>
+          <div>
+          <input type='radio' name='welcome-choice' onclick='storeSK()'>
+                Store your Stellar Secret Key on this device
+          </div>
+          <div id='invite' style='display:none'>
+            <b>Invite</b>
+            <input type="text" size='40' placeholder='Paste here the invite from our email'>
+          </div>
+          <div id='greeting' style='display:none'>
+            <b>Greeting</b>
+            <input type="text" placeholder="E.g., Miss Alice" required>
+          </div>
+          <div id='emailAddress' style='display:none'>
+            <b>Email</b>
+            <input type="text" placeholder="Your email address" required>
+          </div>
+          <div id='secretKey' style='display:none'>
+            <input type="text" size='60' maxlength='56' placeholder="Your Stellar account secret key" required>
+          </div>
+          <div id='fundsRequested' style='display:none'>
+            <b>Funds requested</b>, HEXA
+            <input type="text" size='3' maxlength='3' placeholder='999'>
+          </div>
+          <hr>
+          <!-- }}}4 -->
+          <p>By continuing you agree to our 
+          <a href="https://www.termsfeed.com/live/47782836-acc3-4660-a75b-a44a24dc50fb" style="color:dodgerblue">Terms & Conditions</a>.
+          </p>
+          <button id='inviteOrSK_go' type="button" 
+            disabled onclick='inviteOrSK_f()'>Continue</button>
+          <div id='inviteOrSK_goCogs' style="display:none">
+            XXX... <img src='favicon.ico'/>
+          </div>
+          <div id='onJoin' style="display:none">
+            Congratulations on joining our Help Exchange, XXX!
+            The Stellar Network in use is XXX.
+            XXX
+            You can now start your first user session with us. To do so, simply
+            close (click on the &times; thing in the top-right corner of) this 
+            modal window.
+          </div>
+        </form>
+      </div>
+
+      <!-- showBrowserIP {{{3 -->
+      <div id='showBrowserIP' class="modal-content">
+        <span id='showBrowserIPX' class="close">&times;</span>
+        <p> <!-- {{{4 -->
+Welcome to Stellar Help Exchange (SHEX) TESTNET website! We use Google Maps API here.
+To eliminate the risk of being overcharged by Google, we allow access to the site to
+known IP addresses only.</p>
+
+<p>Your current IP address is as follows:</p>
+<p id='ip-info'>XXX</p>
+
+<p>Please make sure this is NOT your personal hotspot address, because personal 
+hotspot addresses change too often for us to stay in sync.</p>
+
+<p>One way to join us on Stellar TESTNET is to simply do it right now. We will create
+and fund a SHEX user account for you. Its Stellar secret key will be stored on this
+device. The SHEX user  account will be associated with your current IP address. This
+address will then be allowed to access our TESTNET website.</p>
+
+<input type="checkbox" id="joinSHEXdefaults" name="joinSHEXdefaults" checked 
+  value="useDefaults" onclick='joinSHEXtoggle()'>
+<label for="joinSHEXdefaults"> Use defaults for greeting, email </label><br>
+<div id='joinSHEXfields' style='display:none'>
+  <b>Greeting</b>
+  <input type="text" placeholder="Guest">
+  <b>Email</b>
+  <input type="text" placeholder="email@not.set">
+</div>
+<button id='joinSHEXbutton' type="button" onclick='joinSHEX()'>Join SHEX Now</button>
+<div id='joinSHEXappend' style='white-space: pre-line; display: none;'></div>
+<div id='joinSHEXalt' style='display:block'>
+<p>Alternatively, if you already have a Stellar TESTNET account and would like to
+associate it with your current IP address, please 
+<a id='ip-email' href='mailto:didalik.aim@gmail.com?subject=My IP&body=XXX'>email 
+the IP address to us</a>. We will let you know when you can access Google Maps API 
+from this address and store your Stellar secret key on this device.</p>
+
+<p>Thanks!
+        </p>
+</div>
+        <!-- }}}4 -->
+      </div>
+
+      <!-- }}}3 -->
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/9.1.0/stellar-sdk.js"></script><!-- {{{2 -->
+    <script> // {{{2
+function update (add) { // {{{3
+  let cb = document.getElementById('atat')
+  let atat = add ? cb.checked : null
+  let fields = document.getElementById(add ? 'updateFields2' : 'updateFields1')
+  let g = fields.firstElementChild.nextElementSibling
+  let e = fields.lastElementChild
+  let greeting = g.value ? g.value : g.placeholder
+  let email = e.value ? e.value : e.placeholder
+
+  let detail = add ? { greeting, email, atat } : { greeting, email }
+  process.presenter.dispatchEvent(new CustomEvent('updateUserInfo', { detail }))
+  let button = add ? 'updateAddButton' : 'updateButton'
+  document.getElementById(button).disabled = true
+}
+
+function joinSHEXtoggle () { // {{{3
+  let cb = document.getElementById('joinSHEXdefaults')
+  let fields = document.getElementById('joinSHEXfields')
+  fields.style.display = cb.checked ? 'none' : 'block'
+}
+
+function joinSHEX () { // {{{3
+  let fields = document.getElementById('joinSHEXfields')
+  let g = fields.firstElementChild.nextElementSibling
+  let e = fields.lastElementChild
+  let greeting = g.value ? g.value : g.placeholder
+  let email = e.value ? e.value : e.placeholder
+
+  let detail = { greeting, email }
+  process.presenter.dispatchEvent(new CustomEvent('joinSHEX', { detail }))
+  document.getElementById('joinSHEXbutton').disabled = true
+}
+
+function requestInvite () { // {{{3
+  process.choice = 'requestInvite'
+  document.getElementById('inviteOrSK_go').disabled = false
+  document.getElementById('invite').style.display = 'none'
+  document.getElementById('invite').lastElementChild.value = ''
+  document.getElementById('greeting').style.display = 'block'
+  document.getElementById('emailAddress').style.display = 'block'
+  document.getElementById('secretKey').style.display = 'none'
+  document.getElementById('secretKey').lastElementChild.value = ''
+  document.getElementById('fundsRequested').style.display = 'none'
+  document.getElementById('fundsRequested').lastElementChild.value = ''
+}
+
+function acceptInvite () { // {{{3
+  process.choice = 'acceptInvite'
+  document.getElementById('inviteOrSK_go').disabled = false
+  document.getElementById('invite').style.display = 'block'
+  document.getElementById('greeting').style.display = 'none'
+  document.getElementById('greeting').lastElementChild.value = ''
+  document.getElementById('emailAddress').style.display = 'none'
+  document.getElementById('emailAddress').lastElementChild.value = ''
+  document.getElementById('secretKey').style.display = 'none'
+  document.getElementById('secretKey').lastElementChild.value = ''
+  document.getElementById('fundsRequested').style.display = 'none'
+  document.getElementById('fundsRequested').lastElementChild.value = ''
+}
+
+function storeSK () { // {{{3
+  process.choice = 'storeSecretKey'
+  document.getElementById('inviteOrSK_go').disabled = false
+  document.getElementById('invite').style.display = 'none'
+  document.getElementById('invite').lastElementChild.value = ''
+  document.getElementById('greeting').style.display = 'block'
+  document.getElementById('emailAddress').style.display = 'block'
+  document.getElementById('secretKey').style.display = 'block'
+  document.getElementById('fundsRequested').style.display = 'block'
+}
+
+function inviteOrSK_f () { // {{{3
+  // Collect data {{{4
+  let invite = document.getElementById('invite').lastElementChild.value
+  let greeting = document.getElementById('greeting').lastElementChild.value
+  let emailAddress = document.getElementById('emailAddress').lastElementChild.value
+  let secretKey = document.getElementById('secretKey').lastElementChild.value
+  let fundsRequested = document.getElementById('fundsRequested').lastElementChild.value
+  let textContent
+  try {
+    // Validate data {{{4
+    switch (process.choice) {
+      case 'acceptInvite':
+        if (!ok(invite)) throw 'Bad Invite';
+        textContent = 'Creating your Stellar account and funding it with HEXA 1000'
+        break;
+      case 'storeSecretKey':
+        if (!ok(secretKey)) throw 'Bad Secret Key';
+        textContent = 'Storing your info on this device'
+        if (fundsRequested) {
+          textContent += ', funding your account with HEXA ' + fundsRequested
+        }
+      case 'requestInvite':
+        if (!ok(greeting)) throw 'Bad Greeting';
+        if (!ok(emailAddress, true)) throw 'Bad Email';
+        textContent = process.choice == 'requestInvite' ?
+          'Sending you an email with your special invite' : textContent
+        break;
+      default:
+        throw 'UNEXPECTED';
+    }
+    // Process data {{{4
+    let cogs = document.getElementById('inviteOrSK_goCogs')
+    textContent = cogs.firstChild.textContent.replace('XXX', textContent)
+    cogs.firstChild.textContent = textContent
+    document.getElementById('inviteOrSK_go').style.display = 'none'
+    cogs.style.display = 'block'
+    let detail = {
+      choice: process.choice, // 'requestInvite', 'acceptInvite', 'storeSecretKey'
+      invite, greeting, emailAddress, secretKey, fundsRequested
+    }
+    delete process.choice
+    process.presenter.dispatchEvent(new CustomEvent('inviteOrSK', { detail }))
+  } catch(e) {
+    alert(e)
+  }
+  // }}}4
+}
+
+function ok (s, email = false) { // {{{3
+  if (s.length == 0 || !/^[\w\s.,\-:()@]+$/.test(s)) {
+    return false;
+  }
+  return email ? /^[\w.]+@[\w]+\.[a-z]{2,5}$/.test(s) : true;
+/* See also:
+  https://www.regular-expressions.info/shorthand.html
+  https://regex101.com/
+*/
+}
+
+let myMap // {{{3
+function initMap() {
+  try {
+    myMap = new google.maps.Map(document.getElementById("map"), {
+      center: new google.maps.LatLng(51.508742,-0.120850),
+      zoom: 2,
+    })
+  } catch(e) {
+    console.error(e)
+    alert(e)
+  }
+}
+
+function handleRefererNotAllowedMapError(){ // {{{3
+    myMap = null
+}
+/* Source:
+
+https://code-examples.net/en/q/2b3cf70
+
+*/
+
+(function takeOverConsole() { // taken from http://tobyho.com/2012/07/27/taking-over-console-log/
+    var console = window.console
+    if (!console) return
+
+    function intercept(method) {
+        var original = console[method]
+        console[method] = function() {
+          if (myMap != null) {
+           if(arguments[0] && arguments[0].indexOf('RefererNotAllowedMapError') !== -1) {
+             handleRefererNotAllowedMapError();
+           }
+          }
+           
+            if (original.apply) {
+                // Do this for normal browsers
+                original.apply(console, arguments)
+            } else {
+                // Do this for IE
+                var message = Array.prototype.slice.apply(arguments).join(' ')
+                original(message)
+            }
+        }
+    }
+    var methods = ['error']; // only interested in the console.error method
+    for (var i = 0; i < methods.length; i++)
+        intercept(methods[i])
+}())
+
+function initApp () { // {{{3
+  try {
+    process.view.init()
+  } catch(e) {
+    console.error(e)
+    alert(e)
+  }
+}
+
+async function releaseApp () { // {{{3
+  await process.presenter.release()
+}
+// }}}3
+    </script> <!-- }}}2 -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=${GOOGLEMAPS_API_KEY}&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script src='./presenter.js'></script>
+    <script src="./index.js"></script>
+  </body> <!-- }}}1 -->
+</html>
