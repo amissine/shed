@@ -17,31 +17,41 @@
 
 <div class="topnav"> <!-- {{{2 -->
   <b>&nbsp;SHEX Lab network:&nbsp;</b>
-  <select id='network'>
-    <option selected value='test'>test</option>
-    <option value='public'>public</option>
-    <option value='custom'>custom</option>
+  <select id='network' onchange='process.view.networkChanged(this)'>
+    <option selected value='TESTNET'>test</option>
+    <option value='PUBLIC'>public</option>
+    <option value='CUSTOM'>custom</option>
   </select>
-  <button type="button" onclick="alert('Buy HEXA')">✨</a>
-  <button type="button" onclick="alert('Add User')">➕</a>
-  <button type="button" style="float:right" onclick="alert('FAQ')">❓</a>
+  <button type="button" id='buttonBuyHEXA' onclick="alert('Buy HEXA')">💥</button>
+  <button type="button" onclick="alert('Add User')">➕</button>
+  <button type="button" style="float:right" onclick="alert('FAQ')">❓</button>
 </div>
 
 <div class="row"> <!-- {{{2 -->
   <div class="column">
     <h2>What is SHEX?</h2>
-    <p>SHEX is a communication service that enables its users to make and take help offers and help requests.</p>
+    <p>An AIM project by Did Alik, SHEX is a communication service that enables its users to make and take help offers and help requests.</p>
   </div>
   
   <div class="column">
     <h2>How does it work?</h2>
-    <p>It runs on Stellar - an open network for money. When you take an offer or accept a bid on your request, you send back HEXA ✨ - the asset SHEX runs on.</p>
+    <p>It runs on Stellar, an open network for money. When you take a help offer or accept a bid on your help request, you send back HEXA 💥 - the asset SHEX runs on.</p>
   </div>
   
   <div class="column">
     <h2>Why should I care?</h2>
-    <p>You can benefit from it.</p>
+    <p>You can benefit from it:
+<ul>
+  <li>as a code contributor;</li>
+  <li>as a code maintainer; and</li>
+  <li>as a business partner.</li>
+</ul>
+    </p>
   </div>
+</div>
+
+<div id="commonParentModal" class="modal"> <!-- {{{2 -->
+
 </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/10.1.2/stellar-sdk.js"></script><!-- {{{2 -->

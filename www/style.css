@@ -6,20 +6,20 @@ body {
   margin: 0;
 }
 
-/* Style the header */
+/* Style the header {{{2 */
 .header {
   background-color: #f1f1f1;
   padding: 20px;
   text-align: center;
 }
 
-/* Style the top navigation bar */
+/* Style the top navigation bar {{{2 */
 .topnav {
   overflow: hidden;
   background-color: #06beb6;
 }
 
-/* Style the topnav elements */
+/* Style the topnav elements {{{2 */
 .topnav b select button {
   float: left;
 }
@@ -33,25 +33,41 @@ body {
   cursor: pointer;
 }
 
-/* Create three equal columns that float next to each other */
+/* Create three equal columns that float next to each other {{{2 */
 .column {
   float: left;
   width: 33.33%;
   padding: 15px;
 }
 
-/* Clear floats after the columns */
+/* Clear floats after the columns {{{2 */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other {{{2 */
 @media screen and (max-width:600px) {
   .column {
     width: 100%;
   }
+}
+
+/* }}}2 */
+/* The Modal (background) {{{1 */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
 }
 
 /* }}}1 */
