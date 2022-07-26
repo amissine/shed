@@ -17,16 +17,20 @@
 
 <div class="topnav"> <!-- {{{2 -->
   <b>&nbsp;SHEX Lab network:&nbsp;</b>
-  <select id='network' onchange='process.presenter.networkChanged(this)'>
+  <select id='network' onchange='process.view.networkChanged(this)'>
     <option selected value='test'>test</option>
     <option value='public'>public</option>
 <!--    
     <option value='custom'>custom</option>
+
+See also:
+https://www.w3schools.com/charsets/ref_emoji.asp
+
 -->
   </select>
-  <button type="button" id='buttonBuyHEXA' onclick="alert('Buy HEXA')">💥</button>
-  <button type="button" onclick="alert('Add User')">➕</button>
-  <button type="button" style="float:right" onclick="alert('FAQ')">❓</button>
+  <button type="button" id='buttonBuyHEXA' onclick="process.view.buyHEXA()">&#x2744;</button>
+  <button type="button" onclick="alert('Add User')">&#x2795</button>
+  <button type="button" style="float:right" onclick="alert('FAQ')">&#x2753;</button>
 </div>
 
 <div class="row"> <!-- {{{2 -->
@@ -37,7 +41,7 @@
   
   <div class="column">
     <h2>How does it work?</h2>
-    <p>It runs on Stellar, an open network for money. When you take a help offer or accept a bid on your help request, you send back HEXA 💥 - the asset SHEX runs on.</p>
+    <p>It runs on Stellar, an open network for money. When you take a help offer or accept a bid on your help request, you send back HEXA &#x2744; - the asset SHEX runs on.</p>
   </div>
   
   <div class="column">
@@ -53,12 +57,53 @@
   </div>
 </div>
 
-<div id="commonParentModal" class="modal"> <!-- {{{2 -->
+    <div id="commonParentModal" class="modal"> <!-- {{{2 -->
+<!-- mcBuyHEXA {{{3 -->
+<div class="modal-content" id='mcBuyHEXA'>
+<span id='mcBuyHEXAclose' class="close">&#x274C;</span>
+<span id='mcBuyHEXAhelp' class="help">&#x2753;</span>
+<form>
+  <div class="header"> <!-- {{{4 --> 
+    <h2>Buy HEXA</h2>
+  </div>
+  <p>
+    To buy HEXA &#x2744;, do you want to use your existing Stellar account and store its Stellar Secret Key on this device?
+      <input type='radio' name='yesno-group1' onclick='buyHEXA_yes()'>Yes
+      <input type='radio' name='yesno-group1' onclick='buyHEXA_no()'>No
+    <div>
+    </div>
+    <div>
+    </div>
+  </p>
+  <div id='mcBuyHEXA_ui' style='display:none'> <!-- {{{4 -->
+    Please add or edit your info:
+    <div>
+      <b>Greeting</b><input type="text" placeholder="E.g., Miss Alice" required>
+    </div>
+    <div>
+      <b>Email</b><input type="text" placeholder="Your email address" required>
+    </div>
+    <div>
+      <input type="password" size='60' maxlength='56' placeholder="Your Stellar account secret key" required>
+    </div>
+    <p>By continuing you agree to our 
+      <a href="https://www.termsfeed.com/live/47782836-acc3-4660-a75b-a44a24dc50fb" style="color:dodgerblue">Terms & Conditions</a>.
+    </p>
+    <button id='mcBuyHEXA_go' type="button" disabled onclick='mcBuyHEXA_f()'>Continue</button>
+    <div id='mcBuyHEXA_goCogs' style="display:none">
+      XXX... <img src='favicon.ico'/>
+    </div>
+  </div>
 
-</div>
+  <!-- }}}4 -->
+</form>
+</div> 
+
+<!-- }}}3 -->
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/10.1.2/stellar-sdk.js"></script><!-- {{{2 -->
-    <script>
+    <script><!-- {{{2 -->
 function initApp () { // {{{3
   try {
     //alert('Hi there')

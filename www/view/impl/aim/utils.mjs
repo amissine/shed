@@ -7,7 +7,7 @@ function replaceXXX(contentId, ...values) { // {{{1
 }
 
 function showModal (contentId, close, ...r) { // {{{1
-  // Show the modal
+  // Show the modal {{{2
   let modal = document.getElementById("commonParentModal");
   modal.style.display = "block";
   let content = document.getElementById(contentId)
@@ -29,23 +29,27 @@ function showModal (contentId, close, ...r) { // {{{1
       break
 
     default: // req1Intro, confirmBidAccept, makeRequest, testClawbacks
+      console.log(contentId, process)
+
+      /*
       text = content.children[1].firstElementChild.textContent
       content.children[1].firstElementChild.textContent =
         process.presenter.userInfo.greeting + text
+      */
   }
   content.style.display = "block";
 
-  // Get the <span> element that closes the modal
-  let span = document.getElementById(`${contentId}X`)
+  // Get the mc_close element that closes the modal {{{2
+  let mc_close = document.getElementById(`${contentId}close`)
 
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
+  // When the user clicks on mc_close, close the modal {{{2
+  mc_close.onclick = function() {
     modal.style.display = "none";
     content.style.display = "none";
     !!close && close()
   }
 
-  // When the user clicks anywhere outside of the modal, close it
+  // When the user clicks anywhere outside of the modal, close it {{{2
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
@@ -53,6 +57,16 @@ function showModal (contentId, close, ...r) { // {{{1
       !!close && close()
     }
   }
+
+  // Get the mc_help element that provides context-specific help {{{2
+  let mc_help = document.getElementById(`${contentId}help`)
+
+  // When the user clicks on mc_help, goto FAQ {{{2
+  mc_help.onclick = function() {
+    alert('XO!')
+  }
+
+  // }}}2
 }
 
 // }}}1

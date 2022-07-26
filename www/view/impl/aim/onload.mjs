@@ -4,14 +4,27 @@ class OnLoadView { // {{{1
   constructor (presenter) { // {{{2
   }
 
-  networkChanged () { // {{{2
-    console.log(process.env.STELLAR_NETWORK)
+  buyHEXA () { // {{{2
+    console.log(this.userInfo, this.localSessionInfo)
 
+    showModal('mcBuyHEXA', () => alert('XA'))
   }
 
-  show (userInfo, localSessionInfo) { // {{{2
-    console.log(userInfo, localSessionInfo)
+  networkChanged (elementSelectNetwork) { // {{{2
+    process.presenter.dispatchEvent(
+      new CustomEvent(
+        'networkChanged', 
+        { 
+          detail: {
+            network: elementSelectNetwork.value
+          }
+        }
+      )
+    )
+  }
 
+  show (userInfo, localSessionInfo) { // called by OnLoadPresenter.#onInit {{{2
+    Object.assign(this, { userInfo, localSessionInfo })
   }
   // }}}2
 }

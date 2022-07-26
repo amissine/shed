@@ -1,5 +1,10 @@
+/* Use :vert diffsplit ~/Downloads/style.css {{{1
+ * to edit this file
+ */
+
 * { /* {{{1 */
-  box-sizing: border-box;
+  box-sizing: border-box; /* padding and border are included in the width and height */
+  font: Roboto, Arial, sans-serif;
 }
 
 body {
@@ -9,8 +14,13 @@ body {
 /* Style the header {{{2 */
 .header {
   background-color: #f1f1f1;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
+}
+
+.header h2 {
+  margin: 0px;
+  /*text-align: center;*/
 }
 
 /* Style the top navigation bar {{{2 */
@@ -55,6 +65,7 @@ body {
 }
 
 /* }}}2 */
+
 /* The Modal (background) {{{1 */
 .modal {
   display: none; /* Hidden by default */
@@ -68,6 +79,44 @@ body {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+}
+
+/* Modal Content {{{1 */
+.modal-content {
+  background-color: #fefefe;
+  display: none; /* Hidden by default */
+  margin: auto; /* horizontally center the element within its container */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* The Close Button {{{1 */
+.close {
+  float: left;
+  padding: 8px;
+  font-size: 20px;
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
+}
+
+/* The Help Button {{{1 */
+.help {
+  float: right;
+  padding: 4px;
+  font-size: 28px;
+/*  font-weight: bold;*/
+}
+
+.help:hover,
+.help:focus {
+  cursor: pointer;
 }
 
 /* }}}1 */
