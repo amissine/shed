@@ -29,7 +29,7 @@ https://www.w3schools.com/charsets/ref_emoji.asp
 -->
   </select>
   <button type="button" id='buttonBuyHEXA' onclick="process.view.buyHEXA()">&#x2744;</button>
-  <button type="button" onclick="alert('Add User')">&#x2795</button>
+  <button type="button" onclick="alert('Add User')">&#x2795;</button>
   <button type="button" style="float:right" onclick="alert('FAQ')">&#x2753;</button>
 </div>
 
@@ -78,18 +78,18 @@ https://www.w3schools.com/charsets/ref_emoji.asp
   <div id='mcBuyHEXA_ui' style='display:none'> <!-- {{{4 -->
     Please add or edit your info:
     <div>
-      <b>Greeting</b><input type="text" placeholder="E.g., Miss Alice" required>
+      <b>Greeting&nbsp;</b><input type="text" placeholder="E.g., Miss Alice" required onchange='buyHEXA_go()'>
     </div>
     <div>
-      <b>Email</b><input type="text" placeholder="Your email address" required>
+      <b>Email&nbsp;</b><input type="text" placeholder="Your email address" required onchange='buyHEXA_go()'>
     </div>
     <div>
-      <input type="password" size='60' maxlength='56' placeholder="Your Stellar account secret key" required>
+      <input type="password" size='28' maxlength='56' placeholder="Your Stellar account secret key" required oninput='buyHEXA_go()'>
     </div>
     <p>By continuing you agree to our 
       <a href="https://www.termsfeed.com/live/47782836-acc3-4660-a75b-a44a24dc50fb" style="color:dodgerblue">Terms & Conditions</a>.
     </p>
-    <button id='mcBuyHEXA_go' type="button" disabled onclick='mcBuyHEXA_f()'>Continue</button>
+    <button id='mcBuyHEXA_go' type="button" disabled onclick='buyHEXA_trade()'>Continue</button>
     <div id='mcBuyHEXA_goCogs' style="display:none">
       XXX... <img src='favicon.ico'/>
     </div>
@@ -104,6 +104,28 @@ https://www.w3schools.com/charsets/ref_emoji.asp
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/10.1.2/stellar-sdk.js"></script><!-- {{{2 -->
     <script><!-- {{{2 -->
+function buyHEXA_go () { // {{{3
+  let kids = document.getElementById('mcBuyHEXA_ui').children
+  for (let kid of kids) {
+    if (kid.tagName != 'DIV') {
+      break;
+    }
+    let v = kid.lastElementChild.value
+    if (!v) {
+      return;
+    }
+  }
+  document.getElementById('mcBuyHEXA_go').disabled = false
+}
+
+function buyHEXA_no () { // {{{3
+  alert(TODO)
+}
+
+function buyHEXA_yes () { // {{{3
+  document.getElementById('mcBuyHEXA_ui').style='display:block'
+}
+
 function initApp () { // {{{3
   try {
     //alert('Hi there')

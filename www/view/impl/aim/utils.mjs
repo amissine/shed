@@ -28,8 +28,8 @@ function showModal (contentId, close, ...r) { // {{{1
       content.children[1].textContent = process.presenter.userInfo.greeting + text
       break
 
-    default: // req1Intro, confirmBidAccept, makeRequest, testClawbacks
-      console.log(contentId, process)
+    default:
+      debug && console.log(contentId, process)
 
       /*
       text = content.children[1].firstElementChild.textContent

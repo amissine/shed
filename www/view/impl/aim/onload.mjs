@@ -5,9 +5,13 @@ class OnLoadView { // {{{1
   }
 
   buyHEXA () { // {{{2
-    console.log(this.userInfo, this.localSessionInfo)
+    debug && console.log(this.userInfo, this.localSessionInfo)
 
-    showModal('mcBuyHEXA', () => alert('XA'))
+    if (!this.userInfo && !this.localSessionInfo) {
+      showModal('mcBuyHEXA', () => alert(TODO))
+    } else {
+      alert(TODO)
+    }
   }
 
   networkChanged (elementSelectNetwork) { // {{{2
