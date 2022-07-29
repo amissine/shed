@@ -14,6 +14,26 @@ class OnLoadView { // {{{1
     }
   }
 
+  buyHEXA_done () { // store user info locally, continue {{{2
+    let kids = document.getElementById('mcBuyHEXA_ui').children
+    let keys = ['greeting', 'email', 'sk'], i = 0
+    for (let kid of kids) {
+      if (kid.tagName != 'DIV') {
+        break;
+      }
+      let k = keys[i++], v = kid.lastElementChild.value
+      console.log(k, v)
+    }
+
+    // Store user info locally
+
+    // Continue
+    document.getElementById('mcBuyHEXA_yesno').style = 'display:none'
+    document.getElementById('mcBuyHEXA_ui').style = 'display:none'
+    document.getElementById('mcBuyHEXA_DEX').style = 'display:block'
+    document.getElementById('mcBuyHEXA_order').style = 'display:block'
+  }
+
   networkChanged (elementSelectNetwork) { // {{{2
     process.presenter.dispatchEvent(
       new CustomEvent(

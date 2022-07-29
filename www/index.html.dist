@@ -62,49 +62,52 @@ https://www.w3schools.com/charsets/ref_emoji.asp
 <div class="modal-content" id='mcBuyHEXA'>
 <span id='mcBuyHEXAclose' class="close">&#x274C;</span>
 <span id='mcBuyHEXAhelp' class="help">&#x2753;</span>
-<form>
-  <div class="header"> <!-- {{{4 --> 
-    <h2>Buy HEXA</h2>
+<div class="header">
+  <h2>Buy HEXA</h2>
+</div>
+<p id='mcBuyHEXA_yesno'> <!-- {{{4 --> 
+  To buy HEXA &#x2744;, do you want to use your existing Stellar account and store its Stellar Secret Key on this device?
+  <input type='radio' name='yesno-group1' onclick='buyHEXA_yes()'>Yes
+  <input type='radio' name='yesno-group1' onclick='buyHEXA_no()'>No
+</p>
+<div id='mcBuyHEXA_ui' style='display:none'> <!-- {{{4 -->
+  Please add or edit your info:
+  <div>
+    <b>Greeting&nbsp;</b><input type="text" placeholder="E.g., Miss Alice" required onchange='buyHEXA_do()'>
   </div>
-  <p>
-    To buy HEXA &#x2744;, do you want to use your existing Stellar account and store its Stellar Secret Key on this device?
-      <input type='radio' name='yesno-group1' onclick='buyHEXA_yes()'>Yes
-      <input type='radio' name='yesno-group1' onclick='buyHEXA_no()'>No
-    <div>
-    </div>
-    <div>
-    </div>
+  <div>
+    <b>Email&nbsp;</b><input type="text" placeholder="Your email address" required onchange='buyHEXA_do()'>
+  </div>
+  <div>
+    <input type="password" size='28' maxlength='56' placeholder="Your Stellar account secret key" required oninput='buyHEXA_do()'>
+  </div>
+  <p>By continuing you agree to our 
+    <a href="https://github.com/amissine/shed/blob/main/terms-and-conditions.md#terms-and-conditions-for-stellar-help-exchange-shex">Terms & Conditions</a>.
   </p>
-  <div id='mcBuyHEXA_ui' style='display:none'> <!-- {{{4 -->
-    Please add or edit your info:
-    <div>
-      <b>Greeting&nbsp;</b><input type="text" placeholder="E.g., Miss Alice" required onchange='buyHEXA_go()'>
-    </div>
-    <div>
-      <b>Email&nbsp;</b><input type="text" placeholder="Your email address" required onchange='buyHEXA_go()'>
-    </div>
-    <div>
-      <input type="password" size='28' maxlength='56' placeholder="Your Stellar account secret key" required oninput='buyHEXA_go()'>
-    </div>
-    <p>By continuing you agree to our 
-      <a href="https://www.termsfeed.com/live/47782836-acc3-4660-a75b-a44a24dc50fb" style="color:dodgerblue">Terms & Conditions</a>.
-    </p>
-    <button id='mcBuyHEXA_go' type="button" disabled onclick='buyHEXA_trade()'>Continue</button>
-    <div id='mcBuyHEXA_goCogs' style="display:none">
-      XXX... <img src='favicon.ico'/>
-    </div>
-  </div>
+  <button id='mcBuyHEXA_go' type="button" disabled onclick='process.view.buyHEXA_done()'>Continue</button>
+</div>
+<div id='mcBuyHEXA_DEX' style='display:none'> <!-- {{{4 -->
+  <b>DEX console</b><br/>
+  <textarea rows="16" cols="44" style='resize:none' readonly='true'>Stellar Distributed Exchange HEXA@XLM events</textarea>
+  <hr/>
+</div>
+<div id='mcBuyHEXA_order' style='display:none'> <!-- {{{4 -->
+  <b>Your HEXA@XLM Order&nbsp;</b><input type="text" size='14' placeholder="E.g., b100.1@99.2" required oninput='buyHEXA_order()'>
+  <br/><button id='mcBuyHEXA_order_do' type="button" disabled onclick='process.view.buyHEXA_order()'>Continue</button>
+</div>
+<div id='mcBuyHEXA_goCogs' style="display:none"> <!-- {{{4 -->
+  XXX... <img src='favicon.ico'/>
+</div>
 
-  <!-- }}}4 -->
-</form>
-</div> 
+<!-- }}}4 -->
+</div> <!-- mcBuyHEXA -->
 
 <!-- }}}3 -->
-    </div>
+    </div> <!-- commonParentModal -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/10.1.2/stellar-sdk.js"></script><!-- {{{2 -->
     <script><!-- {{{2 -->
-function buyHEXA_go () { // {{{3
+function buyHEXA_do () { // add or edit user info {{{3
   let kids = document.getElementById('mcBuyHEXA_ui').children
   for (let kid of kids) {
     if (kid.tagName != 'DIV') {
@@ -120,6 +123,10 @@ function buyHEXA_go () { // {{{3
 
 function buyHEXA_no () { // {{{3
   alert(TODO)
+}
+
+function buyHEXA_order () { // {{{3
+  document.getElementById('mcBuyHEXA_order_do').disabled = false
 }
 
 function buyHEXA_yes () { // {{{3
