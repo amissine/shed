@@ -26,10 +26,6 @@ When a user makes a help offer, the description of the offer is made available t
 
 If the offer taker, who already sent the gratitude to the offer maker, does not get the offered help from the offer maker, the offer taker opens the dispute case with the agent. If the offer maker is unable to prove to the agent that help has actually been provided, the agent confiscates the gratitude from the offer maker and sends it back to the offer taker.
 
-## On Using the TESTNET website
-
-This site uses Google Maps API. Its [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key) is associated with our Google billing account. On Stellar TESTNET, we restrict access to the site to eliminate the risk of being overcharged by Google. Only known IP addresses are allowed to use Google Maps API on our TESTNET site.
-
 ## See also
 
 - [Offer/Ask Protocol Sample Sequence Diagram](./NOTES.md#offerask-protocol-sample-sequence-diagram)
