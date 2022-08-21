@@ -6,7 +6,7 @@
   <head> <!-- {{{1 -->
     <meta charset="utf-8"/>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>SHEX Lab</title>
+    <title>SHEX Demo</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body onload='initApp()' onunload='releaseApp()'> <!-- {{{1 -->
@@ -16,7 +16,7 @@
 </div>
 
 <div class="topnav"> <!-- {{{2 -->
-  <b>&nbsp;SHEX Lab network:&nbsp;</b>
+  <b>&nbsp;Demo network:&nbsp;</b>
   <select id='network' onchange='process.view.networkChanged(this)'>
     <option selected value='test'>test</option>
     <option value='public'>public</option>
@@ -84,7 +84,7 @@ https://www.w3schools.com/charsets/ref_emoji.asp
   <p>By continuing you agree to our 
     <a href="https://github.com/amissine/shed/blob/main/terms-and-conditions.md#terms-and-conditions-for-stellar-help-exchange-shex">Terms & Conditions</a>.
   </p>
-  <button id='mcBuyHEXA_go' type="button" disabled onclick='process.view.buyHEXA_done()'>Continue</button>
+  <button id='mcBuyHEXA_go' type="button" disabled onclick='process.view.buyHEXA_continue()'>Continue</button>
 </div>
 <div id='mcBuyHEXA_DEX' style='display:none'> <!-- {{{4 -->
   <b>DEX console</b><br/>

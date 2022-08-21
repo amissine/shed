@@ -14,7 +14,7 @@ class OnLoadView { // {{{1
     }
   }
 
-  buyHEXA_done () { // store user info locally, continue {{{2
+  buyHEXA_continue () { // store user info locally, continue {{{2
     let kids = document.getElementById('mcBuyHEXA_ui').children
     let keys = ['greeting', 'email', 'sk'], i = 0
     for (let kid of kids) {
@@ -32,6 +32,16 @@ class OnLoadView { // {{{1
     document.getElementById('mcBuyHEXA_ui').style = 'display:none'
     document.getElementById('mcBuyHEXA_DEX').style = 'display:block'
     document.getElementById('mcBuyHEXA_order').style = 'display:block'
+    if (process.session.network == 'test') {
+      let detail = { 
+        traders: {
+          count: Math.ceil(Math.random() * 3),
+        },
+      }
+      process.presenter.dispatchEvent(
+        new CustomEvent('simulateTradingHEXA_start', { detail })
+      )
+    }
   }
 
   networkChanged (elementSelectNetwork) { // {{{2
