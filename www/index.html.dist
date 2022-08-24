@@ -88,7 +88,7 @@ https://www.w3schools.com/charsets/ref_emoji.asp
 </div>
 <div id='mcBuyHEXA_DEX' style='display:none'> <!-- {{{4 -->
   <b>DEX console</b><br/>
-  <textarea rows="16" cols="44" style='resize:none' readonly='true'>Stellar Distributed Exchange HEXA@XLM events</textarea>
+  <textarea rows="16" cols="44" id='mcBuyHEXA_DEX_textarea' style='resize:none' readonly='true'>Stellar Distributed Exchange HEXA@XLM events</textarea>
   <hr/>
 </div>
 <div id='mcBuyHEXA_order' style='display:none'> <!-- {{{4 -->

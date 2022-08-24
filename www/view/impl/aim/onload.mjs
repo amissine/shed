@@ -58,9 +58,17 @@ class OnLoadView { // {{{1
     )
   }
 
+  orderbookShow (line) { // {{{2
+    let dexConsole = document.getElementById('mcBuyHEXA_DEX_textarea')
+    dexConsole.textContent = line + '\n' + dexConsole.textContent
+    console.log(line)
+
+  }
+
   show (userInfo, localSessionInfo) { // called by OnLoadPresenter.#onInit {{{2
     Object.assign(this, { userInfo, localSessionInfo })
   }
+
   // }}}2
 }
 
