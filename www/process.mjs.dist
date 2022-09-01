@@ -21,6 +21,12 @@ function setenv () { // {{{1
       STELLAR_NETWORK_custom: '${STELLAR_NETWORK_custom}',
       STELLAR_NETWORK_public: '${STELLAR_NETWORK_public}',
       STELLAR_NETWORK_test: '${STELLAR_NETWORK_test}',
+      U0_custom_userPK: '${U0_custom_userPK}',
+      U0_public_userPK: '${U0_public_userPK}',
+      U0_test_userPK: '${U0_test_userPK}',
+      U1_custom_userPK: '${U1_custom_userPK}',
+      U1_public_userPK: '${U1_public_userPK}',
+      U1_test_userPK: '${U1_test_userPK}',
     },
     session: {},
     view: {
