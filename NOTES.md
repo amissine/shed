@@ -25,7 +25,7 @@ See also:
 Run
 
 ```bash
-npm i && npm run i --sk=<CREATOR_SK> [ --run=<stellar_network> ]
+npm i && npm run i --sk=<CREATOR_SK> [ --run=<stellar_network> ] [ --with=extras ]
 ```
 
 and add env values when prompted. Then take care of *wrangler secret* values.
