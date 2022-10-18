@@ -130,6 +130,24 @@ To show how these sequence diagrams work in real time, I recorded a quick [YouTu
 
 The log data (see the link below) has this use case, and another one. In the other use case, the maker claims only one take and another take gets reclaimed.
 
+## Some SHEX Actions
+
+### List All Makes
+
+### Load User
+
+#### Buy / Sell HEXA
+
+#### Claim Back HexaClawable
+
+#### List User Makes
+
+#### Make Help Offer / Request
+
+#### Schedule HexaClawable to HEXA Transformation
+
+#### Take Help Offer / Request
+
 ## See Also
 
 - [The POC Demo log data](./test/logs/1maker2takers.log)
